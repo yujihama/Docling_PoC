@@ -1,0 +1,12 @@
+.env
+.venv/
+.uv-cache/
+__pycache__/
+*.py[cod]
+.streamlit/secrets.toml
+streamlit*.log
+scratch/
+
+outputs/*
+!outputs/docling_benchmark/
+!outputs/docling_benchmark/**

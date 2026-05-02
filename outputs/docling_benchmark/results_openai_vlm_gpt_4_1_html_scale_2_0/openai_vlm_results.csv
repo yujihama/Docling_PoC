@@ -1,0 +1,6 @@
+case_id,filename,status,expected_pages,expected_tables,detected_tables,text_anchor_recall,table_cell_recall,table_detection_ratio,overall_score,total_seconds,seconds_per_page,markdown_chars,error
+C01,case01_clean_financial_2p.pdf,ok,2,2,2,1.0,0.9206,1.0,0.9563,15.347,7.674,3179,
+C02,case02_dense_multisection_5p.pdf,ok,5,5,5,0.4,0.6577,1.0,0.6018,78.634,15.727,23590,
+C03,case03_mixed_orientation_9p.pdf,ok,9,9,9,0.8889,0.89,1.0,0.9006,121.801,13.533,17641,
+C04,case04_long_register_16p.pdf,ok,16,16,16,1.0,0.6017,1.0,0.7809,222.528,13.908,39150,
+C05,case05_scanned_image_4p.pdf,ok,4,4,4,1.0,0.8616,1.0,0.9239,21.736,5.434,3728,
