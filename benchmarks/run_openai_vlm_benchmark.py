@@ -16,6 +16,12 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 load_dotenv(ROOT / ".env", override=True)
 
+from benchmarks.metrics import (  # noqa: E402
+    calc_detection_metrics,
+    compute_page_level_score,
+    shape_match_rates,
+    table_shapes,
+)
 from docling_openai_vlm import (  # noqa: E402
     DEFAULT_VLM_MAX_COMPLETION_TOKENS,
     DEFAULT_VLM_REASONING_EFFORT,
@@ -130,6 +136,16 @@ def benchmark_case(converter: Any, case: dict[str, Any]) -> dict[str, Any]:
         overall = (0.35 * text_score) + (0.55 * table_score) + (
             0.10 * table_detection_ratio
         )
+        detection_metrics = calc_detection_metrics(expected_tables, detected_tables)
+        shape_metrics = shape_match_rates(expected_tables, table_shapes(tables))
+        structured_table_cell_recall = table_score
+        page_level_score = compute_page_level_score(overall, detection_metrics["table_detection_f1"], detection_metrics["over_detection_penalty"])
+        low_confidence = (
+            len(markdown.strip()) < 200
+            or detection_metrics["over_detection_penalty"] > 0.25
+            or detection_metrics["table_detection_recall"] < 0.8
+            or page_level_score < 0.75
+        )
         return {
             "case_id": case["case_id"],
             "filename": case["filename"],
@@ -145,6 +161,16 @@ def benchmark_case(converter: Any, case: dict[str, Any]) -> dict[str, Any]:
             "table_cell_hits": table_hits,
             "table_cell_total": table_total,
             "table_detection_ratio": round(table_detection_ratio, 4),
+            "table_detection_precision": round(detection_metrics["table_detection_precision"], 4),
+            "table_detection_f1": round(detection_metrics["table_detection_f1"], 4),
+            "row_count_match_rate": round(shape_metrics["row_count_match_rate"], 4),
+            "column_count_match_rate": round(shape_metrics["column_count_match_rate"], 4),
+            "header_match_rate": round(shape_metrics["header_match_rate"], 4),
+            "structured_table_cell_recall": round(structured_table_cell_recall, 4),
+            "duplicate_table_rate": round(detection_metrics["duplicate_table_rate"], 4),
+            "over_detection_penalty": round(detection_metrics["over_detection_penalty"], 4),
+            "page_level_score": round(page_level_score, 4),
+            "low_confidence": low_confidence,
             "overall_score": round(overall, 4),
             "total_seconds": round(time.perf_counter() - started, 3),
             "seconds_per_page": round((time.perf_counter() - started) / int(case["pages"]), 3),
@@ -169,6 +195,16 @@ def benchmark_case(converter: Any, case: dict[str, Any]) -> dict[str, Any]:
             "table_cell_hits": 0,
             "table_cell_total": len(case["expected_table_cells"]),
             "table_detection_ratio": 0.0,
+            "table_detection_precision": 0.0,
+            "table_detection_f1": 0.0,
+            "row_count_match_rate": 0.0,
+            "column_count_match_rate": 0.0,
+            "header_match_rate": 0.0,
+            "structured_table_cell_recall": 0.0,
+            "duplicate_table_rate": 0.0,
+            "over_detection_penalty": 1.0,
+            "page_level_score": 0.0,
+            "low_confidence": True,
             "overall_score": 0.0,
             "total_seconds": round(elapsed, 3),
             "seconds_per_page": round(elapsed / int(case["pages"]), 3),
@@ -185,6 +221,7 @@ def write_outputs(rows: list[dict[str, Any]], model: str, settings: dict[str, An
         "model": model,
         "settings": settings,
         "metric": "0.35 * text_anchor_recall + 0.55 * table_cell_recall + 0.10 * table_detection_ratio",
+        "extended_metrics": ["table_detection_precision", "table_detection_f1", "row_count_match_rate", "column_count_match_rate", "header_match_rate", "structured_table_cell_recall", "duplicate_table_rate", "page_level_score", "over_detection_penalty", "low_confidence"],
         "results": rows,
     }
     JSON_PATH.write_text(json.dumps(payload, indent=2), encoding="utf-8")
@@ -198,6 +235,16 @@ def write_outputs(rows: list[dict[str, Any]], model: str, settings: dict[str, An
         "text_anchor_recall",
         "table_cell_recall",
         "table_detection_ratio",
+        "table_detection_precision",
+        "table_detection_f1",
+        "row_count_match_rate",
+        "column_count_match_rate",
+        "header_match_rate",
+        "structured_table_cell_recall",
+        "duplicate_table_rate",
+        "over_detection_penalty",
+        "page_level_score",
+        "low_confidence",
         "overall_score",
         "total_seconds",
         "seconds_per_page",
@@ -325,6 +372,16 @@ def main() -> int:
             "table_cell_hits": 0,
             "table_cell_total": 0,
             "table_detection_ratio": 0.0,
+            "table_detection_precision": 0.0,
+            "table_detection_f1": 0.0,
+            "row_count_match_rate": 0.0,
+            "column_count_match_rate": 0.0,
+            "header_match_rate": 0.0,
+            "structured_table_cell_recall": 0.0,
+            "duplicate_table_rate": 0.0,
+            "over_detection_penalty": 1.0,
+            "page_level_score": 0.0,
+            "low_confidence": True,
             "overall_score": 0.0,
             "total_seconds": 0.0,
             "seconds_per_page": 0.0,
