@@ -10,3 +10,8 @@ scratch/
 outputs/*
 !outputs/docling_benchmark/
 !outputs/docling_benchmark/**
+!outputs/docling_poc_runs/
+outputs/docling_poc_runs/*
+!outputs/docling_poc_runs/poc_all_20260504_001/
+!outputs/docling_poc_runs/poc_all_20260504_001/**
+outputs/docling_poc_runs/**/*.log

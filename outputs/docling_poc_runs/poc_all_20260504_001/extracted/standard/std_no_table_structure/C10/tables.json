@@ -1,0 +1,82 @@
+[
+  {
+    "index": 1,
+    "rows": 1,
+    "columns": 1,
+    "headers": [
+      "0"
+    ],
+    "csv": "0\r\n\"Parent Group C10-P01-SPAN\n\nGroup\n\nNested ID\n\nSKU\n\nQuantity\n\nAmount\n\nComment\n\nC10-P01-T1-R01\n\nSKU-01101-165\n\nQTY-395\n\nAMT-2275.94\n\nAMO-01-01-05\n\nCOM-01-01-06\n\nC10-P01-T1-R02\n\nSKU-01102-222\n\nQTY-180\n\nAMT-9717.59\n\nAMO-01-02-05\n\nCOM-01-02-06\n\nC10-P01-T1-R03\n\nSKU-01103-383\n\nQTY-499\n\nAMT-7830.94\n\nAMO-01-03-05\n\nCOM-01-03-06\n\nC10-P01-T1-R04\n\nSKU-01104-971\n\nQTY-934\n\nAMT-9039.97\n\nAMO-01-04-05\n\nCOM-01-04-06\n\nWRAP-C10-01-04\n\nC10-P01-T1-R05\n\nSKU-01105-212\n\nQTY-97\n\nAMT-1797.12\n\nAMO-01-05-05\n\nCOM-01-05-06\n\nC10-P01-T1-R06\n\nSKU-01106-307\n\nQTY-844\n\nAMT-8905.54\n\nAMO-01-06-05\n\nCOM-01-06-06\n\nC10-P01-T1-R07\n\nSKU-01107-597\n\nQTY-56\n\nAMT-8293.81\n\nAMO-01-07-05\n\nCOM-01-07-06\n\nC10-P01-T1-R08\n\nSKU-01108-358\n\nQTY-300\n\nAMT-3096.80\n\nAMO-01-08-05\n\nCOM-01-08-06\n\nWRAP-C10-01-08\"\r\n",
+    "html": "<table><tbody><tr><td><p>Parent Group C10-P01-SPAN</p>\n<p>Group</p>\n<p>Nested ID</p>\n<p>SKU</p>\n<p>Quantity</p>\n<p>Amount</p>\n<p>Comment</p>\n<p>C10-P01-T1-R01</p>\n<p>SKU-01101-165</p>\n<p>QTY-395</p>\n<p>AMT-2275.94</p>\n<p>AMO-01-01-05</p>\n<p>COM-01-01-06</p>\n<p>C10-P01-T1-R02</p>\n<p>SKU-01102-222</p>\n<p>QTY-180</p>\n<p>AMT-9717.59</p>\n<p>AMO-01-02-05</p>\n<p>COM-01-02-06</p>\n<p>C10-P01-T1-R03</p>\n<p>SKU-01103-383</p>\n<p>QTY-499</p>\n<p>AMT-7830.94</p>\n<p>AMO-01-03-05</p>\n<p>COM-01-03-06</p>\n<p>C10-P01-T1-R04</p>\n<p>SKU-01104-971</p>\n<p>QTY-934</p>\n<p>AMT-9039.97</p>\n<p>AMO-01-04-05</p>\n<p>COM-01-04-06</p>\n<p>WRAP-C10-01-04</p>\n<p>C10-P01-T1-R05</p>\n<p>SKU-01105-212</p>\n<p>QTY-97</p>\n<p>AMT-1797.12</p>\n<p>AMO-01-05-05</p>\n<p>COM-01-05-06</p>\n<p>C10-P01-T1-R06</p>\n<p>SKU-01106-307</p>\n<p>QTY-844</p>\n<p>AMT-8905.54</p>\n<p>AMO-01-06-05</p>\n<p>COM-01-06-06</p>\n<p>C10-P01-T1-R07</p>\n<p>SKU-01107-597</p>\n<p>QTY-56</p>\n<p>AMT-8293.81</p>\n<p>AMO-01-07-05</p>\n<p>COM-01-07-06</p>\n<p>C10-P01-T1-R08</p>\n<p>SKU-01108-358</p>\n<p>QTY-300</p>\n<p>AMT-3096.80</p>\n<p>AMO-01-08-05</p>\n<p>COM-01-08-06</p>\n<p>WRAP-C10-01-08</p></td></tr></tbody></table>"
+  },
+  {
+    "index": 2,
+    "rows": 1,
+    "columns": 1,
+    "headers": [
+      "0"
+    ],
+    "csv": "0\r\n\"Sub ID\n\nSKU\n\nQuantity\n\nAmount\n\nC10-P01-T2-R01\n\nSKU-01201-520\n\nQTY-872\n\nAMT-4337.71\n\nC10-P01-T2-R02\n\nSKU-01202-976\n\nQTY-339\n\nAMT-1837.91\n\nC10-P01-T2-R03\n\nSKU-01203-596\n\nQTY-414\n\nAMT-9404.96\n\nC10-P01-T2-R04\n\nSKU-01204-318\n\nQTY-599\n\nAMT-4859.41\"\r\n",
+    "html": "<table><tbody><tr><td><p>Sub ID</p>\n<p>SKU</p>\n<p>Quantity</p>\n<p>Amount</p>\n<p>C10-P01-T2-R01</p>\n<p>SKU-01201-520</p>\n<p>QTY-872</p>\n<p>AMT-4337.71</p>\n<p>C10-P01-T2-R02</p>\n<p>SKU-01202-976</p>\n<p>QTY-339</p>\n<p>AMT-1837.91</p>\n<p>C10-P01-T2-R03</p>\n<p>SKU-01203-596</p>\n<p>QTY-414</p>\n<p>AMT-9404.96</p>\n<p>C10-P01-T2-R04</p>\n<p>SKU-01204-318</p>\n<p>QTY-599</p>\n<p>AMT-4859.41</p></td></tr></tbody></table>"
+  },
+  {
+    "index": 3,
+    "rows": 1,
+    "columns": 1,
+    "headers": [
+      "0"
+    ],
+    "csv": "0\r\n\"Parent Group C10-P02-SPAN\n\nGroup\n\nNested ID\n\nSKU\n\nQuantity\n\nAmount\n\nComment\n\nC10-P02-T1-R01\n\nSKU-02101-669\n\nQTY-728\n\nAMT-6198.52\n\nAMO-02-01-05\n\nCOM-02-01-06\n\nC10-P02-T1-R02\n\nSKU-02102-850\n\nQTY-364\n\nAMT-4404.79\n\nAMO-02-02-05\n\nCOM-02-02-06\n\nC10-P02-T1-R03\n\nSKU-02103-791\n\nQTY-746\n\nAMT-1481.49\n\nAMO-02-03-05\n\nCOM-02-03-06\n\nC10-P02-T1-R04\n\nSKU-02104-880\n\nQTY-747\n\nAMT-8039.69\n\nAMO-02-04-05\n\nCOM-02-04-06\n\nWRAP-C10-02-04\n\nC10-P02-T1-R05\n\nSKU-02105-535\n\nQTY-404\n\nAMT-6964.54\n\nAMO-02-05-05\n\nCOM-02-05-06\n\nC10-P02-T1-R06\n\nSKU-02106-496\n\nQTY-894\n\nAMT-6282.40\n\nAMO-02-06-05\n\nCOM-02-06-06\n\nC10-P02-T1-R07\n\nSKU-02107-363\n\nQTY-895\n\nAMT-9126.24\n\nAMO-02-07-05\n\nCOM-02-07-06\n\nC10-P02-T1-R08\n\nSKU-02108-223\n\nQTY-67\n\nAMT-3329.56\n\nAMO-02-08-05\n\nCOM-02-08-06\n\nWRAP-C10-02-08\"\r\n",
+    "html": "<table><tbody><tr><td><p>Parent Group C10-P02-SPAN</p>\n<p>Group</p>\n<p>Nested ID</p>\n<p>SKU</p>\n<p>Quantity</p>\n<p>Amount</p>\n<p>Comment</p>\n<p>C10-P02-T1-R01</p>\n<p>SKU-02101-669</p>\n<p>QTY-728</p>\n<p>AMT-6198.52</p>\n<p>AMO-02-01-05</p>\n<p>COM-02-01-06</p>\n<p>C10-P02-T1-R02</p>\n<p>SKU-02102-850</p>\n<p>QTY-364</p>\n<p>AMT-4404.79</p>\n<p>AMO-02-02-05</p>\n<p>COM-02-02-06</p>\n<p>C10-P02-T1-R03</p>\n<p>SKU-02103-791</p>\n<p>QTY-746</p>\n<p>AMT-1481.49</p>\n<p>AMO-02-03-05</p>\n<p>COM-02-03-06</p>\n<p>C10-P02-T1-R04</p>\n<p>SKU-02104-880</p>\n<p>QTY-747</p>\n<p>AMT-8039.69</p>\n<p>AMO-02-04-05</p>\n<p>COM-02-04-06</p>\n<p>WRAP-C10-02-04</p>\n<p>C10-P02-T1-R05</p>\n<p>SKU-02105-535</p>\n<p>QTY-404</p>\n<p>AMT-6964.54</p>\n<p>AMO-02-05-05</p>\n<p>COM-02-05-06</p>\n<p>C10-P02-T1-R06</p>\n<p>SKU-02106-496</p>\n<p>QTY-894</p>\n<p>AMT-6282.40</p>\n<p>AMO-02-06-05</p>\n<p>COM-02-06-06</p>\n<p>C10-P02-T1-R07</p>\n<p>SKU-02107-363</p>\n<p>QTY-895</p>\n<p>AMT-9126.24</p>\n<p>AMO-02-07-05</p>\n<p>COM-02-07-06</p>\n<p>C10-P02-T1-R08</p>\n<p>SKU-02108-223</p>\n<p>QTY-67</p>\n<p>AMT-3329.56</p>\n<p>AMO-02-08-05</p>\n<p>COM-02-08-06</p>\n<p>WRAP-C10-02-08</p></td></tr></tbody></table>"
+  },
+  {
+    "index": 4,
+    "rows": 1,
+    "columns": 1,
+    "headers": [
+      "0"
+    ],
+    "csv": "0\r\n\"Sub ID\n\nSKU\n\nQuantity\n\nAmount\n\nC10-P02-T2-R01\n\nSKU-02201-751\n\nQTY-303\n\nAMT-4307.89\n\nC10-P02-T2-R02\n\nSKU-02202-249\n\nQTY-527\n\nAMT-1756.95\n\nC10-P02-T2-R03\n\nSKU-02203-197\n\nQTY-319\n\nAMT-3923.38\n\nC10-P02-T2-R04\n\nSKU-02204-964\n\nQTY-665\n\nAMT-6502.37\"\r\n",
+    "html": "<table><tbody><tr><td><p>Sub ID</p>\n<p>SKU</p>\n<p>Quantity</p>\n<p>Amount</p>\n<p>C10-P02-T2-R01</p>\n<p>SKU-02201-751</p>\n<p>QTY-303</p>\n<p>AMT-4307.89</p>\n<p>C10-P02-T2-R02</p>\n<p>SKU-02202-249</p>\n<p>QTY-527</p>\n<p>AMT-1756.95</p>\n<p>C10-P02-T2-R03</p>\n<p>SKU-02203-197</p>\n<p>QTY-319</p>\n<p>AMT-3923.38</p>\n<p>C10-P02-T2-R04</p>\n<p>SKU-02204-964</p>\n<p>QTY-665</p>\n<p>AMT-6502.37</p></td></tr></tbody></table>"
+  },
+  {
+    "index": 5,
+    "rows": 1,
+    "columns": 1,
+    "headers": [
+      "0"
+    ],
+    "csv": "0\r\n\"Parent Group C10-P03-SPAN\n\nGroup\n\nNested ID\n\nSKU\n\nQuantity\n\nAmount\n\nComment\n\nC10-P03-T1-R01\n\nSKU-03101-640\n\nQTY-530\n\nAMT-5040.74\n\nAMO-03-01-05\n\nCOM-03-01-06\n\nC10-P03-T1-R02\n\nSKU-03102-359\n\nQTY-135\n\nAMT-5485.25\n\nAMO-03-02-05\n\nCOM-03-02-06\n\nC10-P03-T1-R03\n\nSKU-03103-987\n\nQTY-521\n\nAMT-1895.42\n\nAMO-03-03-05\n\nCOM-03-03-06\n\nC10-P03-T1-R04\n\nSKU-03104-625\n\nQTY-363\n\nAMT-4182.43\n\nAMO-03-04-05\n\nCOM-03-04-06\n\nWRAP-C10-03-04\n\nC10-P03-T1-R05\n\nSKU-03105-170\n\nQTY-199\n\nAMT-3942.10\n\nAMO-03-05-05\n\nCOM-03-05-06\n\nC10-P03-T1-R06\n\nSKU-03106-655\n\nQTY-787\n\nAMT-7968.28\n\nAMO-03-06-05\n\nCOM-03-06-06\n\nC10-P03-T1-R07\n\nSKU-03107-296\n\nQTY-307\n\nAMT-3094.45\n\nAMO-03-07-05\n\nCOM-03-07-06\n\nC10-P03-T1-R08\n\nSKU-03108-532\n\nQTY-259\n\nAMT-5461.65\n\nAMO-03-08-05\n\nCOM-03-08-06\n\nWRAP-C10-03-08\"\r\n",
+    "html": "<table><tbody><tr><td><p>Parent Group C10-P03-SPAN</p>\n<p>Group</p>\n<p>Nested ID</p>\n<p>SKU</p>\n<p>Quantity</p>\n<p>Amount</p>\n<p>Comment</p>\n<p>C10-P03-T1-R01</p>\n<p>SKU-03101-640</p>\n<p>QTY-530</p>\n<p>AMT-5040.74</p>\n<p>AMO-03-01-05</p>\n<p>COM-03-01-06</p>\n<p>C10-P03-T1-R02</p>\n<p>SKU-03102-359</p>\n<p>QTY-135</p>\n<p>AMT-5485.25</p>\n<p>AMO-03-02-05</p>\n<p>COM-03-02-06</p>\n<p>C10-P03-T1-R03</p>\n<p>SKU-03103-987</p>\n<p>QTY-521</p>\n<p>AMT-1895.42</p>\n<p>AMO-03-03-05</p>\n<p>COM-03-03-06</p>\n<p>C10-P03-T1-R04</p>\n<p>SKU-03104-625</p>\n<p>QTY-363</p>\n<p>AMT-4182.43</p>\n<p>AMO-03-04-05</p>\n<p>COM-03-04-06</p>\n<p>WRAP-C10-03-04</p>\n<p>C10-P03-T1-R05</p>\n<p>SKU-03105-170</p>\n<p>QTY-199</p>\n<p>AMT-3942.10</p>\n<p>AMO-03-05-05</p>\n<p>COM-03-05-06</p>\n<p>C10-P03-T1-R06</p>\n<p>SKU-03106-655</p>\n<p>QTY-787</p>\n<p>AMT-7968.28</p>\n<p>AMO-03-06-05</p>\n<p>COM-03-06-06</p>\n<p>C10-P03-T1-R07</p>\n<p>SKU-03107-296</p>\n<p>QTY-307</p>\n<p>AMT-3094.45</p>\n<p>AMO-03-07-05</p>\n<p>COM-03-07-06</p>\n<p>C10-P03-T1-R08</p>\n<p>SKU-03108-532</p>\n<p>QTY-259</p>\n<p>AMT-5461.65</p>\n<p>AMO-03-08-05</p>\n<p>COM-03-08-06</p>\n<p>WRAP-C10-03-08</p></td></tr></tbody></table>"
+  },
+  {
+    "index": 6,
+    "rows": 1,
+    "columns": 1,
+    "headers": [
+      "0"
+    ],
+    "csv": "0\r\n\"Sub ID\n\nSKU\n\nQuantity\n\nAmount\n\nC10-P03-T2-R01\n\nSKU-03201-616\n\nQTY-660\n\nAMT-9721.78\n\nC10-P03-T2-R02\n\nSKU-03202-779\n\nQTY-756\n\nAMT-9602.87\n\nC10-P03-T2-R03\n\nSKU-03203-559\n\nQTY-541\n\nAMT-7088.22\n\nC10-P03-T2-R04\n\nSKU-03204-955\n\nQTY-105\n\nAMT-5988.89\"\r\n",
+    "html": "<table><tbody><tr><td><p>Sub ID</p>\n<p>SKU</p>\n<p>Quantity</p>\n<p>Amount</p>\n<p>C10-P03-T2-R01</p>\n<p>SKU-03201-616</p>\n<p>QTY-660</p>\n<p>AMT-9721.78</p>\n<p>C10-P03-T2-R02</p>\n<p>SKU-03202-779</p>\n<p>QTY-756</p>\n<p>AMT-9602.87</p>\n<p>C10-P03-T2-R03</p>\n<p>SKU-03203-559</p>\n<p>QTY-541</p>\n<p>AMT-7088.22</p>\n<p>C10-P03-T2-R04</p>\n<p>SKU-03204-955</p>\n<p>QTY-105</p>\n<p>AMT-5988.89</p></td></tr></tbody></table>"
+  },
+  {
+    "index": 7,
+    "rows": 1,
+    "columns": 1,
+    "headers": [
+      "0"
+    ],
+    "csv": "0\r\n\"Parent Group C10-P04-SPAN\n\nGroup\n\nNested ID\n\nSKU\n\nQuantity\n\nAmount\n\nComment\n\nC10-P04-T1-R01\n\nSKU-04101-969\n\nQTY-936\n\nAMT-4575.47\n\nAMO-04-01-05\n\nCOM-04-01-06\n\nC10-P04-T1-R02\n\nSKU-04102-823\n\nQTY-747\n\nAMT-7551.97\n\nAMO-04-02-05\n\nCOM-04-02-06\n\nC10-P04-T1-R03\n\nSKU-04103-718\n\nQTY-85\n\nAMT-1969.32\n\nAMO-04-03-05\n\nCOM-04-03-06\n\nC10-P04-T1-R04\n\nSKU-04104-160\n\nQTY-521\n\nAMT-9143.86\n\nAMO-04-04-05\n\nCOM-04-04-06\n\nWRAP-C10-04-04\n\nC10-P04-T1-R05\n\nSKU-04105-216\n\nQTY-854\n\nAMT-3249.56\n\nAMO-04-05-05\n\nCOM-04-05-06\n\nC10-P04-T1-R06\n\nSKU-04106-279\n\nQTY-36\n\nAMT-8348.64\n\nAMO-04-06-05\n\nCOM-04-06-06\n\nC10-P04-T1-R07\n\nSKU-04107-142\n\nQTY-344\n\nAMT-3225.23\n\nAMO-04-07-05\n\nCOM-04-07-06\n\nC10-P04-T1-R08\n\nSKU-04108-132\n\nQTY-311\n\nAMT-2696.98\n\nAMO-04-08-05\n\nCOM-04-08-06\n\nWRAP-C10-04-08\"\r\n",
+    "html": "<table><tbody><tr><td><p>Parent Group C10-P04-SPAN</p>\n<p>Group</p>\n<p>Nested ID</p>\n<p>SKU</p>\n<p>Quantity</p>\n<p>Amount</p>\n<p>Comment</p>\n<p>C10-P04-T1-R01</p>\n<p>SKU-04101-969</p>\n<p>QTY-936</p>\n<p>AMT-4575.47</p>\n<p>AMO-04-01-05</p>\n<p>COM-04-01-06</p>\n<p>C10-P04-T1-R02</p>\n<p>SKU-04102-823</p>\n<p>QTY-747</p>\n<p>AMT-7551.97</p>\n<p>AMO-04-02-05</p>\n<p>COM-04-02-06</p>\n<p>C10-P04-T1-R03</p>\n<p>SKU-04103-718</p>\n<p>QTY-85</p>\n<p>AMT-1969.32</p>\n<p>AMO-04-03-05</p>\n<p>COM-04-03-06</p>\n<p>C10-P04-T1-R04</p>\n<p>SKU-04104-160</p>\n<p>QTY-521</p>\n<p>AMT-9143.86</p>\n<p>AMO-04-04-05</p>\n<p>COM-04-04-06</p>\n<p>WRAP-C10-04-04</p>\n<p>C10-P04-T1-R05</p>\n<p>SKU-04105-216</p>\n<p>QTY-854</p>\n<p>AMT-3249.56</p>\n<p>AMO-04-05-05</p>\n<p>COM-04-05-06</p>\n<p>C10-P04-T1-R06</p>\n<p>SKU-04106-279</p>\n<p>QTY-36</p>\n<p>AMT-8348.64</p>\n<p>AMO-04-06-05</p>\n<p>COM-04-06-06</p>\n<p>C10-P04-T1-R07</p>\n<p>SKU-04107-142</p>\n<p>QTY-344</p>\n<p>AMT-3225.23</p>\n<p>AMO-04-07-05</p>\n<p>COM-04-07-06</p>\n<p>C10-P04-T1-R08</p>\n<p>SKU-04108-132</p>\n<p>QTY-311</p>\n<p>AMT-2696.98</p>\n<p>AMO-04-08-05</p>\n<p>COM-04-08-06</p>\n<p>WRAP-C10-04-08</p></td></tr></tbody></table>"
+  },
+  {
+    "index": 8,
+    "rows": 1,
+    "columns": 1,
+    "headers": [
+      "0"
+    ],
+    "csv": "0\r\n\"Sub ID\n\nSKU\n\nQuantity\n\nAmount\n\nC10-P04-T2-R01\n\nSKU-04201-482\n\nQTY-594\n\nAMT-4809.49\n\nC10-P04-T2-R02\n\nSKU-04202-290\n\nQTY-62\n\nAMT-2451.62\n\nC10-P04-T2-R03\n\nSKU-04203-550\n\nQTY-322\n\nAMT-2957.52\n\nC10-P04-T2-R04\n\nSKU-04204-661\n\nQTY-280\n\nAMT-2175.15\"\r\n",
+    "html": "<table><tbody><tr><td><p>Sub ID</p>\n<p>SKU</p>\n<p>Quantity</p>\n<p>Amount</p>\n<p>C10-P04-T2-R01</p>\n<p>SKU-04201-482</p>\n<p>QTY-594</p>\n<p>AMT-4809.49</p>\n<p>C10-P04-T2-R02</p>\n<p>SKU-04202-290</p>\n<p>QTY-62</p>\n<p>AMT-2451.62</p>\n<p>C10-P04-T2-R03</p>\n<p>SKU-04203-550</p>\n<p>QTY-322</p>\n<p>AMT-2957.52</p>\n<p>C10-P04-T2-R04</p>\n<p>SKU-04204-661</p>\n<p>QTY-280</p>\n<p>AMT-2175.15</p></td></tr></tbody></table>"
+  }
+]

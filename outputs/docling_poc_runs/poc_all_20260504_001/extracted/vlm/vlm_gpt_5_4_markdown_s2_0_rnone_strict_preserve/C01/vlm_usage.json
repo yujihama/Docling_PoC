@@ -1,0 +1,22 @@
+[
+  {
+    "model": "gpt-5.4",
+    "image_detail": "auto",
+    "prompt_chars": 437,
+    "generated_chars": 1421,
+    "finish_reason": "stop",
+    "prompt_tokens": 2874,
+    "completion_tokens": 600,
+    "total_tokens": 3474
+  },
+  {
+    "model": "gpt-5.4",
+    "image_detail": "auto",
+    "prompt_chars": 437,
+    "generated_chars": 1510,
+    "finish_reason": "stop",
+    "prompt_tokens": 2874,
+    "completion_tokens": 646,
+    "total_tokens": 3520
+  }
+]

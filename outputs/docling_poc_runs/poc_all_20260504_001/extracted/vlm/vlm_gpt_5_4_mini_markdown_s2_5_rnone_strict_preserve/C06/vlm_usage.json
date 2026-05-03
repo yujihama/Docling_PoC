@@ -1,0 +1,32 @@
+[
+  {
+    "model": "gpt-5.4-mini",
+    "image_detail": "auto",
+    "prompt_chars": 437,
+    "generated_chars": 537,
+    "finish_reason": "stop",
+    "prompt_tokens": 2874,
+    "completion_tokens": 380,
+    "total_tokens": 3254
+  },
+  {
+    "model": "gpt-5.4-mini",
+    "image_detail": "auto",
+    "prompt_chars": 437,
+    "generated_chars": 1515,
+    "finish_reason": "stop",
+    "prompt_tokens": 2874,
+    "completion_tokens": 1057,
+    "total_tokens": 3931
+  },
+  {
+    "model": "gpt-5.4-mini",
+    "image_detail": "auto",
+    "prompt_chars": 437,
+    "generated_chars": 1240,
+    "finish_reason": "stop",
+    "prompt_tokens": 2874,
+    "completion_tokens": 922,
+    "total_tokens": 3796
+  }
+]

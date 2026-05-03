@@ -1,0 +1,32 @@
+[
+  {
+    "index": 1,
+    "rows": 1,
+    "columns": 1,
+    "headers": [
+      "0"
+    ],
+    "csv": "0\r\n\"Chart ID\n\nSKU\n\nQuantity\n\nAmount\n\nVariance\n\nC11-P01-T1-R01\n\nSKU-01101-699\n\nQTY-966\n\nAMT-5518.77\n\nVAR-01-01-05\n\nC11-P01-T1-R02\n\nSKU-01102-647\n\nQTY-913\n\nAMT-7199.46\n\nVAR-01-02-05\n\nC11-P01-T1-R03\n\nSKU-01103-583\n\nQTY-140\n\nAMT-3307.61\n\nVAR-01-03-05\n\nC11-P01-T1-R04\n\nSKU-01104-250\n\nQTY-911\n\nAMT-5837.51\n\nVAR-01-04-05\n\nC11-P01-T1-R05\n\nSKU-01105-772\n\nQTY-611\n\nAMT-6785.81\n\nVAR-01-05-05\n\nC11-P01-T1-R06\n\nSKU-01106-730\n\nQTY-138\n\nAMT-8373.91\n\nVAR-01-06-05\"\r\n",
+    "html": "<table><tbody><tr><td><p>Chart ID</p>\n<p>SKU</p>\n<p>Quantity</p>\n<p>Amount</p>\n<p>Variance</p>\n<p>C11-P01-T1-R01</p>\n<p>SKU-01101-699</p>\n<p>QTY-966</p>\n<p>AMT-5518.77</p>\n<p>VAR-01-01-05</p>\n<p>C11-P01-T1-R02</p>\n<p>SKU-01102-647</p>\n<p>QTY-913</p>\n<p>AMT-7199.46</p>\n<p>VAR-01-02-05</p>\n<p>C11-P01-T1-R03</p>\n<p>SKU-01103-583</p>\n<p>QTY-140</p>\n<p>AMT-3307.61</p>\n<p>VAR-01-03-05</p>\n<p>C11-P01-T1-R04</p>\n<p>SKU-01104-250</p>\n<p>QTY-911</p>\n<p>AMT-5837.51</p>\n<p>VAR-01-04-05</p>\n<p>C11-P01-T1-R05</p>\n<p>SKU-01105-772</p>\n<p>QTY-611</p>\n<p>AMT-6785.81</p>\n<p>VAR-01-05-05</p>\n<p>C11-P01-T1-R06</p>\n<p>SKU-01106-730</p>\n<p>QTY-138</p>\n<p>AMT-8373.91</p>\n<p>VAR-01-06-05</p></td></tr></tbody></table>"
+  },
+  {
+    "index": 2,
+    "rows": 1,
+    "columns": 1,
+    "headers": [
+      "0"
+    ],
+    "csv": "0\r\n\"Chart ID\n\nSKU\n\nQuantity\n\nAmount\n\nVariance\n\nC11-P02-T1-R01\n\nSKU-02101-900\n\nQTY-854\n\nAMT-7293.42\n\nVAR-02-01-05\n\nC11-P02-T1-R02\n\nSKU-02102-909\n\nQTY-431\n\nAMT-1437.90\n\nVAR-02-02-05\n\nC11-P02-T1-R03\n\nSKU-02103-381\n\nQTY-595\n\nAMT-1206.99\n\nVAR-02-03-05\n\nC11-P02-T1-R04\n\nSKU-02104-868\n\nQTY-998\n\nAMT-8832.10\n\nVAR-02-04-05\n\nC11-P02-T1-R05\n\nSKU-02105-601\n\nQTY-353\n\nAMT-4285.68\n\nVAR-02-05-05\n\nC11-P02-T1-R06\n\nSKU-02106-626\n\nQTY-507\n\nAMT-4296.31\n\nVAR-02-06-05\"\r\n",
+    "html": "<table><tbody><tr><td><p>Chart ID</p>\n<p>SKU</p>\n<p>Quantity</p>\n<p>Amount</p>\n<p>Variance</p>\n<p>C11-P02-T1-R01</p>\n<p>SKU-02101-900</p>\n<p>QTY-854</p>\n<p>AMT-7293.42</p>\n<p>VAR-02-01-05</p>\n<p>C11-P02-T1-R02</p>\n<p>SKU-02102-909</p>\n<p>QTY-431</p>\n<p>AMT-1437.90</p>\n<p>VAR-02-02-05</p>\n<p>C11-P02-T1-R03</p>\n<p>SKU-02103-381</p>\n<p>QTY-595</p>\n<p>AMT-1206.99</p>\n<p>VAR-02-03-05</p>\n<p>C11-P02-T1-R04</p>\n<p>SKU-02104-868</p>\n<p>QTY-998</p>\n<p>AMT-8832.10</p>\n<p>VAR-02-04-05</p>\n<p>C11-P02-T1-R05</p>\n<p>SKU-02105-601</p>\n<p>QTY-353</p>\n<p>AMT-4285.68</p>\n<p>VAR-02-05-05</p>\n<p>C11-P02-T1-R06</p>\n<p>SKU-02106-626</p>\n<p>QTY-507</p>\n<p>AMT-4296.31</p>\n<p>VAR-02-06-05</p></td></tr></tbody></table>"
+  },
+  {
+    "index": 3,
+    "rows": 1,
+    "columns": 1,
+    "headers": [
+      "0"
+    ],
+    "csv": "0\r\n\"Chart ID\n\nSKU\n\nQuantity\n\nAmount\n\nVariance\n\nC11-P03-T1-R01\n\nSKU-03101-153\n\nQTY-268\n\nAMT-3357.21\n\nVAR-03-01-05\n\nC11-P03-T1-R02\n\nSKU-03102-983\n\nQTY-563\n\nAMT-4687.44\n\nVAR-03-02-05\n\nC11-P03-T1-R03\n\nSKU-03103-917\n\nQTY-664\n\nAMT-3427.40\n\nVAR-03-03-05\n\nC11-P03-T1-R04\n\nSKU-03104-545\n\nQTY-332\n\nAMT-8197.77\n\nVAR-03-04-05\n\nC11-P03-T1-R05\n\nSKU-03105-524\n\nQTY-506\n\nAMT-5752.71\n\nVAR-03-05-05\n\nC11-P03-T1-R06\n\nSKU-03106-101\n\nQTY-728\n\nAMT-8268.31\n\nVAR-03-06-05\"\r\n",
+    "html": "<table><tbody><tr><td><p>Chart ID</p>\n<p>SKU</p>\n<p>Quantity</p>\n<p>Amount</p>\n<p>Variance</p>\n<p>C11-P03-T1-R01</p>\n<p>SKU-03101-153</p>\n<p>QTY-268</p>\n<p>AMT-3357.21</p>\n<p>VAR-03-01-05</p>\n<p>C11-P03-T1-R02</p>\n<p>SKU-03102-983</p>\n<p>QTY-563</p>\n<p>AMT-4687.44</p>\n<p>VAR-03-02-05</p>\n<p>C11-P03-T1-R03</p>\n<p>SKU-03103-917</p>\n<p>QTY-664</p>\n<p>AMT-3427.40</p>\n<p>VAR-03-03-05</p>\n<p>C11-P03-T1-R04</p>\n<p>SKU-03104-545</p>\n<p>QTY-332</p>\n<p>AMT-8197.77</p>\n<p>VAR-03-04-05</p>\n<p>C11-P03-T1-R05</p>\n<p>SKU-03105-524</p>\n<p>QTY-506</p>\n<p>AMT-5752.71</p>\n<p>VAR-03-05-05</p>\n<p>C11-P03-T1-R06</p>\n<p>SKU-03106-101</p>\n<p>QTY-728</p>\n<p>AMT-8268.31</p>\n<p>VAR-03-06-05</p></td></tr></tbody></table>"
+  }
+]

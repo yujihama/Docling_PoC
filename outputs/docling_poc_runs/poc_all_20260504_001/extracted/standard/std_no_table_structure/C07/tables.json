@@ -1,0 +1,62 @@
+[
+  {
+    "index": 1,
+    "rows": 1,
+    "columns": 1,
+    "headers": [
+      "0"
+    ],
+    "csv": "0\r\n\"段落 1: 抽出確認 C07-COL1-P01-L01\n\n段落 2: 抽出確認 C07-COL1-P01-L02\n\n段落 3: 抽出確認 C07-COL1-P01-L03\n\n段落 4: 抽出確認 C07-COL1-P01-L04\n\n段落 5: 抽出確認 C07-COL1-P01-L05\n\n段落 1: 抽出確認 C07-COL2-P01-L01\n\n段落 2: 抽出確認 C07-COL2-P01-L02\n\n段落 3: 抽出確認 C07-COL2-P01-L03\n\n段落 4: 抽出確認 C07-COL2-P01-L04\n\n段落 5: 抽出確認 C07-COL2-P01-L05\"\r\n",
+    "html": "<table><tbody><tr><td><p>段落 1: 抽出確認 C07-COL1-P01-L01</p>\n<p>段落 2: 抽出確認 C07-COL1-P01-L02</p>\n<p>段落 3: 抽出確認 C07-COL1-P01-L03</p>\n<p>段落 4: 抽出確認 C07-COL1-P01-L04</p>\n<p>段落 5: 抽出確認 C07-COL1-P01-L05</p>\n<p>段落 1: 抽出確認 C07-COL2-P01-L01</p>\n<p>段落 2: 抽出確認 C07-COL2-P01-L02</p>\n<p>段落 3: 抽出確認 C07-COL2-P01-L03</p>\n<p>段落 4: 抽出確認 C07-COL2-P01-L04</p>\n<p>段落 5: 抽出確認 C07-COL2-P01-L05</p></td></tr></tbody></table>"
+  },
+  {
+    "index": 2,
+    "rows": 1,
+    "columns": 1,
+    "headers": [
+      "0"
+    ],
+    "csv": "0\r\n\"Metric ID\n\nSKU\n\nQuantity\n\nAmount\n\nSegment\n\nRemark\n\nC07-P01-T1-R01\n\nSKU-01101-901\n\nQTY-727\n\nAMT-2355.66\n\nSEG-01-01-05\n\nREM-01-01-06\n\nC07-P01-T1-R02\n\nSKU-01102-173\n\nQTY-459\n\nAMT-6805.44\n\nSEG-01-02-05\n\nREM-01-02-06\n\nC07-P01-T1-R03\n\nSKU-01103-862\n\nQTY-526\n\nAMT-6446.42\n\nSEG-01-03-05\n\nREM-01-03-06\n\nC07-P01-T1-R04\n\nSKU-01104-776\n\nQTY-54\n\nAMT-1123.95\n\nSEG-01-04-05\n\nREM-01-04-06\n\nWRAP-C07-01-04\n\nC07-P01-T1-R05\n\nSKU-01105-956\n\nQTY-371\n\nAMT-6002.40\n\nSEG-01-05-05\n\nREM-01-05-06\n\nC07-P01-T1-R06\n\nSKU-01106-284\n\nQTY-698\n\nAMT-3711.58\n\nSEG-01-06-05\n\nREM-01-06-06\n\nC07-P01-T1-R07\n\nSKU-01107-646\n\nQTY-483\n\nAMT-4653.29\n\nSEG-01-07-05\n\nREM-01-07-06\"\r\n",
+    "html": "<table><tbody><tr><td><p>Metric ID</p>\n<p>SKU</p>\n<p>Quantity</p>\n<p>Amount</p>\n<p>Segment</p>\n<p>Remark</p>\n<p>C07-P01-T1-R01</p>\n<p>SKU-01101-901</p>\n<p>QTY-727</p>\n<p>AMT-2355.66</p>\n<p>SEG-01-01-05</p>\n<p>REM-01-01-06</p>\n<p>C07-P01-T1-R02</p>\n<p>SKU-01102-173</p>\n<p>QTY-459</p>\n<p>AMT-6805.44</p>\n<p>SEG-01-02-05</p>\n<p>REM-01-02-06</p>\n<p>C07-P01-T1-R03</p>\n<p>SKU-01103-862</p>\n<p>QTY-526</p>\n<p>AMT-6446.42</p>\n<p>SEG-01-03-05</p>\n<p>REM-01-03-06</p>\n<p>C07-P01-T1-R04</p>\n<p>SKU-01104-776</p>\n<p>QTY-54</p>\n<p>AMT-1123.95</p>\n<p>SEG-01-04-05</p>\n<p>REM-01-04-06</p>\n<p>WRAP-C07-01-04</p>\n<p>C07-P01-T1-R05</p>\n<p>SKU-01105-956</p>\n<p>QTY-371</p>\n<p>AMT-6002.40</p>\n<p>SEG-01-05-05</p>\n<p>REM-01-05-06</p>\n<p>C07-P01-T1-R06</p>\n<p>SKU-01106-284</p>\n<p>QTY-698</p>\n<p>AMT-3711.58</p>\n<p>SEG-01-06-05</p>\n<p>REM-01-06-06</p>\n<p>C07-P01-T1-R07</p>\n<p>SKU-01107-646</p>\n<p>QTY-483</p>\n<p>AMT-4653.29</p>\n<p>SEG-01-07-05</p>\n<p>REM-01-07-06</p></td></tr></tbody></table>"
+  },
+  {
+    "index": 3,
+    "rows": 1,
+    "columns": 1,
+    "headers": [
+      "0"
+    ],
+    "csv": "0\r\n\"段落 1: 抽出確認 C07-COL1-P02-L01\n\n段落 2: 抽出確認 C07-COL1-P02-L02\n\n段落 3: 抽出確認 C07-COL1-P02-L03\n\n段落 4: 抽出確認 C07-COL1-P02-L04\n\n段落 5: 抽出確認 C07-COL1-P02-L05\n\n段落 1: 抽出確認 C07-COL2-P02-L01\n\n段落 2: 抽出確認 C07-COL2-P02-L02\n\n段落 3: 抽出確認 C07-COL2-P02-L03\n\n段落 4: 抽出確認 C07-COL2-P02-L04\n\n段落 5: 抽出確認 C07-COL2-P02-L05\"\r\n",
+    "html": "<table><tbody><tr><td><p>段落 1: 抽出確認 C07-COL1-P02-L01</p>\n<p>段落 2: 抽出確認 C07-COL1-P02-L02</p>\n<p>段落 3: 抽出確認 C07-COL1-P02-L03</p>\n<p>段落 4: 抽出確認 C07-COL1-P02-L04</p>\n<p>段落 5: 抽出確認 C07-COL1-P02-L05</p>\n<p>段落 1: 抽出確認 C07-COL2-P02-L01</p>\n<p>段落 2: 抽出確認 C07-COL2-P02-L02</p>\n<p>段落 3: 抽出確認 C07-COL2-P02-L03</p>\n<p>段落 4: 抽出確認 C07-COL2-P02-L04</p>\n<p>段落 5: 抽出確認 C07-COL2-P02-L05</p></td></tr></tbody></table>"
+  },
+  {
+    "index": 4,
+    "rows": 1,
+    "columns": 1,
+    "headers": [
+      "0"
+    ],
+    "csv": "0\r\n\"Metric ID\n\nSKU\n\nQuantity\n\nAmount\n\nSegment\n\nRemark\n\nC07-P02-T1-R01\n\nSKU-02101-985\n\nQTY-922\n\nAMT-1733.74\n\nSEG-02-01-05\n\nREM-02-01-06\n\nC07-P02-T1-R02\n\nSKU-02102-777\n\nQTY-51\n\nAMT-8234.50\n\nSEG-02-02-05\n\nREM-02-02-06\n\nC07-P02-T1-R03\n\nSKU-02103-927\n\nQTY-698\n\nAMT-8862.84\n\nSEG-02-03-05\n\nREM-02-03-06\n\nC07-P02-T1-R04\n\nSKU-02104-908\n\nQTY-268\n\nAMT-8709.23\n\nSEG-02-04-05\n\nREM-02-04-06\n\nWRAP-C07-02-04\n\nC07-P02-T1-R05\n\nSKU-02105-975\n\nQTY-317\n\nAMT-5239.50\n\nSEG-02-05-05\n\nREM-02-05-06\n\nC07-P02-T1-R06\n\nSKU-02106-619\n\nQTY-262\n\nAMT-6389.33\n\nSEG-02-06-05\n\nREM-02-06-06\n\nC07-P02-T1-R07\n\nSKU-02107-917\n\nQTY-881\n\nAMT-8117.97\n\nSEG-02-07-05\n\nREM-02-07-06\"\r\n",
+    "html": "<table><tbody><tr><td><p>Metric ID</p>\n<p>SKU</p>\n<p>Quantity</p>\n<p>Amount</p>\n<p>Segment</p>\n<p>Remark</p>\n<p>C07-P02-T1-R01</p>\n<p>SKU-02101-985</p>\n<p>QTY-922</p>\n<p>AMT-1733.74</p>\n<p>SEG-02-01-05</p>\n<p>REM-02-01-06</p>\n<p>C07-P02-T1-R02</p>\n<p>SKU-02102-777</p>\n<p>QTY-51</p>\n<p>AMT-8234.50</p>\n<p>SEG-02-02-05</p>\n<p>REM-02-02-06</p>\n<p>C07-P02-T1-R03</p>\n<p>SKU-02103-927</p>\n<p>QTY-698</p>\n<p>AMT-8862.84</p>\n<p>SEG-02-03-05</p>\n<p>REM-02-03-06</p>\n<p>C07-P02-T1-R04</p>\n<p>SKU-02104-908</p>\n<p>QTY-268</p>\n<p>AMT-8709.23</p>\n<p>SEG-02-04-05</p>\n<p>REM-02-04-06</p>\n<p>WRAP-C07-02-04</p>\n<p>C07-P02-T1-R05</p>\n<p>SKU-02105-975</p>\n<p>QTY-317</p>\n<p>AMT-5239.50</p>\n<p>SEG-02-05-05</p>\n<p>REM-02-05-06</p>\n<p>C07-P02-T1-R06</p>\n<p>SKU-02106-619</p>\n<p>QTY-262</p>\n<p>AMT-6389.33</p>\n<p>SEG-02-06-05</p>\n<p>REM-02-06-06</p>\n<p>C07-P02-T1-R07</p>\n<p>SKU-02107-917</p>\n<p>QTY-881</p>\n<p>AMT-8117.97</p>\n<p>SEG-02-07-05</p>\n<p>REM-02-07-06</p></td></tr></tbody></table>"
+  },
+  {
+    "index": 5,
+    "rows": 1,
+    "columns": 1,
+    "headers": [
+      "0"
+    ],
+    "csv": "0\r\n\"段落 1: 抽出確認 C07-COL1-P03-L01\n\n段落 2: 抽出確認 C07-COL1-P03-L02\n\n段落 3: 抽出確認 C07-COL1-P03-L03\n\n段落 4: 抽出確認 C07-COL1-P03-L04\n\n段落 5: 抽出確認 C07-COL1-P03-L05\n\n段落 1: 抽出確認 C07-COL2-P03-L01\n\n段落 2: 抽出確認 C07-COL2-P03-L02\n\n段落 3: 抽出確認 C07-COL2-P03-L03\n\n段落 4: 抽出確認 C07-COL2-P03-L04\n\n段落 5: 抽出確認 C07-COL2-P03-L05\"\r\n",
+    "html": "<table><tbody><tr><td><p>段落 1: 抽出確認 C07-COL1-P03-L01</p>\n<p>段落 2: 抽出確認 C07-COL1-P03-L02</p>\n<p>段落 3: 抽出確認 C07-COL1-P03-L03</p>\n<p>段落 4: 抽出確認 C07-COL1-P03-L04</p>\n<p>段落 5: 抽出確認 C07-COL1-P03-L05</p>\n<p>段落 1: 抽出確認 C07-COL2-P03-L01</p>\n<p>段落 2: 抽出確認 C07-COL2-P03-L02</p>\n<p>段落 3: 抽出確認 C07-COL2-P03-L03</p>\n<p>段落 4: 抽出確認 C07-COL2-P03-L04</p>\n<p>段落 5: 抽出確認 C07-COL2-P03-L05</p></td></tr></tbody></table>"
+  },
+  {
+    "index": 6,
+    "rows": 1,
+    "columns": 1,
+    "headers": [
+      "0"
+    ],
+    "csv": "0\r\n\"Metric ID\n\nSKU\n\nQuantity\n\nAmount\n\nSegment\n\nRemark\n\nC07-P03-T1-R01\n\nSKU-03101-525\n\nQTY-805\n\nAMT-9831.66\n\nSEG-03-01-05\n\nREM-03-01-06\n\nC07-P03-T1-R02\n\nSKU-03102-881\n\nQTY-372\n\nAMT-7796.83\n\nSEG-03-02-05\n\nREM-03-02-06\n\nC07-P03-T1-R03\n\nSKU-03103-748\n\nQTY-732\n\nAMT-8267.78\n\nSEG-03-03-05\n\nREM-03-03-06\n\nC07-P03-T1-R04\n\nSKU-03104-232\n\nQTY-234\n\nAMT-8825.10\n\nSEG-03-04-05\n\nREM-03-04-06\n\nWRAP-C07-03-04\n\nC07-P03-T1-R05\n\nSKU-03105-891\n\nQTY-323\n\nAMT-2311.52\n\nSEG-03-05-05\n\nREM-03-05-06\n\nC07-P03-T1-R06\n\nSKU-03106-366\n\nQTY-851\n\nAMT-4589.86\n\nSEG-03-06-05\n\nREM-03-06-06\n\nC07-P03-T1-R07\n\nSKU-03107-826\n\nQTY-77\n\nAMT-8818.55\n\nSEG-03-07-05\n\nREM-03-07-06\"\r\n",
+    "html": "<table><tbody><tr><td><p>Metric ID</p>\n<p>SKU</p>\n<p>Quantity</p>\n<p>Amount</p>\n<p>Segment</p>\n<p>Remark</p>\n<p>C07-P03-T1-R01</p>\n<p>SKU-03101-525</p>\n<p>QTY-805</p>\n<p>AMT-9831.66</p>\n<p>SEG-03-01-05</p>\n<p>REM-03-01-06</p>\n<p>C07-P03-T1-R02</p>\n<p>SKU-03102-881</p>\n<p>QTY-372</p>\n<p>AMT-7796.83</p>\n<p>SEG-03-02-05</p>\n<p>REM-03-02-06</p>\n<p>C07-P03-T1-R03</p>\n<p>SKU-03103-748</p>\n<p>QTY-732</p>\n<p>AMT-8267.78</p>\n<p>SEG-03-03-05</p>\n<p>REM-03-03-06</p>\n<p>C07-P03-T1-R04</p>\n<p>SKU-03104-232</p>\n<p>QTY-234</p>\n<p>AMT-8825.10</p>\n<p>SEG-03-04-05</p>\n<p>REM-03-04-06</p>\n<p>WRAP-C07-03-04</p>\n<p>C07-P03-T1-R05</p>\n<p>SKU-03105-891</p>\n<p>QTY-323</p>\n<p>AMT-2311.52</p>\n<p>SEG-03-05-05</p>\n<p>REM-03-05-06</p>\n<p>C07-P03-T1-R06</p>\n<p>SKU-03106-366</p>\n<p>QTY-851</p>\n<p>AMT-4589.86</p>\n<p>SEG-03-06-05</p>\n<p>REM-03-06-06</p>\n<p>C07-P03-T1-R07</p>\n<p>SKU-03107-826</p>\n<p>QTY-77</p>\n<p>AMT-8818.55</p>\n<p>SEG-03-07-05</p>\n<p>REM-03-07-06</p></td></tr></tbody></table>"
+  }
+]

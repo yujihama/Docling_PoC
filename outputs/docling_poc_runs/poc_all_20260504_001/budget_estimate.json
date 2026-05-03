@@ -1,0 +1,52 @@
+{
+  "status": "estimated",
+  "models": [
+    "gpt-5.5",
+    "gpt-5.4",
+    "gpt-5.4-mini",
+    "gpt-5.2"
+  ],
+  "price_table_per_mtok": {
+    "gpt-5.5": {
+      "input": 5.0,
+      "output": 30.0
+    },
+    "gpt-5.4": {
+      "input": 2.5,
+      "output": 15.0
+    },
+    "gpt-5.4-mini": {
+      "input": 0.75,
+      "output": 4.5
+    },
+    "gpt-5.2": {
+      "input": 2.5,
+      "output": 15.0
+    }
+  },
+  "estimated_full_cost_usd": 205.0153,
+  "already_measured_cost_usd": 2.9345,
+  "estimated_additional_cost_usd": 202.0808,
+  "full_vlm_config_count": 144,
+  "full_case_count": 11,
+  "full_case_pages": 55,
+  "model_token_averages": {
+    "gpt-5.5": {
+      "prompt_tokens_per_page": 8485.380952380952,
+      "completion_tokens_per_page": 658.7619047619048
+    },
+    "gpt-5.4": {
+      "prompt_tokens_per_page": 2852.3333333333335,
+      "completion_tokens_per_page": 653.5238095238095
+    },
+    "gpt-5.4-mini": {
+      "prompt_tokens_per_page": 2560.6938775510203,
+      "completion_tokens_per_page": 913.7414965986394
+    },
+    "gpt-5.2": {
+      "prompt_tokens_per_page": 3427.0,
+      "completion_tokens_per_page": 654.7142857142857
+    }
+  },
+  "full_phase_recommendation": "blocked_by_budget"
+}

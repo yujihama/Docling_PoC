@@ -1,0 +1,32 @@
+[
+  {
+    "index": 1,
+    "rows": 1,
+    "columns": 1,
+    "headers": [
+      "0"
+    ],
+    "csv": "0\r\n\"Exception\n\nQuantity\n\nAmount\n\nSKU\n\nScanRow\n\nAMT-1421.53\n\nEXC-01-01-05\n\nQTY-842\n\nSKU-01101-183\n\nC09-P01-T1-R01\n\nEXC-01-02-05\n\nQTY-242\n\nAMT-7787.68\n\nSKU-01102-383\n\nC09-P01-T1-R02\n\nQTY-955\n\nAMT-2578.29\n\nEXC-01-03-05\n\nSKU-01103-838\n\nC09-P01-T1-R03\n\nQTY-564\n\nAMT-2325.71\n\nEXC-01-04-05WRAP-C09-01-04\n\nCO9-P01-T1-R04\n\nSKU-01104-436\n\nEXC-01-05-05\n\nQTY-762\n\nAMT-1947.44\n\nSKU-01105-634\n\nC09-P01-T1-R05\n\nEXC-01-06-05\n\nQTY-372\n\nAMT-1215.14\n\nC09-P01-T1-R06\n\nSKU-01106-170\n\nEXC-01-07-05\n\nAMT-9881.85\n\nQTY-333\n\nSKU-01107-767\n\nC09-P01-T1-R07\"\r\n",
+    "html": "<table><tbody><tr><td><p>Exception</p>\n<p>Quantity</p>\n<p>Amount</p>\n<p>SKU</p>\n<p>ScanRow</p>\n<p>AMT-1421.53</p>\n<p>EXC-01-01-05</p>\n<p>QTY-842</p>\n<p>SKU-01101-183</p>\n<p>C09-P01-T1-R01</p>\n<p>EXC-01-02-05</p>\n<p>QTY-242</p>\n<p>AMT-7787.68</p>\n<p>SKU-01102-383</p>\n<p>C09-P01-T1-R02</p>\n<p>QTY-955</p>\n<p>AMT-2578.29</p>\n<p>EXC-01-03-05</p>\n<p>SKU-01103-838</p>\n<p>C09-P01-T1-R03</p>\n<p>QTY-564</p>\n<p>AMT-2325.71</p>\n<p>EXC-01-04-05WRAP-C09-01-04</p>\n<p>CO9-P01-T1-R04</p>\n<p>SKU-01104-436</p>\n<p>EXC-01-05-05</p>\n<p>QTY-762</p>\n<p>AMT-1947.44</p>\n<p>SKU-01105-634</p>\n<p>C09-P01-T1-R05</p>\n<p>EXC-01-06-05</p>\n<p>QTY-372</p>\n<p>AMT-1215.14</p>\n<p>C09-P01-T1-R06</p>\n<p>SKU-01106-170</p>\n<p>EXC-01-07-05</p>\n<p>AMT-9881.85</p>\n<p>QTY-333</p>\n<p>SKU-01107-767</p>\n<p>C09-P01-T1-R07</p></td></tr></tbody></table>"
+  },
+  {
+    "index": 2,
+    "rows": 1,
+    "columns": 1,
+    "headers": [
+      "0"
+    ],
+    "csv": "0\r\n\"ScanRow\n\nSKU\n\nQuantty\n\nAmount\n\nException\n\nC09-P02-T1-R01\n\nSKU-02101-160\n\nQTY-739\n\nAMT-8232.88\n\nEXC-02-01-05\n\nC09-P02-T1-R02\n\nSKU-02102-939\n\nQTY-415\n\nAMT-9141.38\n\nEXC-02-02-05\n\nC09-P02-T1-R03\n\nSKU-02103-210\n\nQTY-48\n\nAMT-1416.82\n\nEXC-02-03-05\n\nC09-P02-T1-R04\n\nSKU-02104-307\n\nQTY-107\n\nAMT-6740.44\n\nEXC-02-04-05WRAP-C09-02-04\n\nC09-P02-T1-R05\n\nSKU-02105-909\n\nQTY-319\n\nAMT-4751.25\n\nEXC-02-05-05\n\nC09-P02-T1-R06\n\nSKU-02106-490\n\nQTY-886\n\nAMT-3813.12\n\nEXC-02-06-05\n\nCO9-P02-T1-R07\n\nSKU-02107-545\n\nQTY-111\n\nAMT-1611.35\n\nEXC-02-07-05\"\r\n",
+    "html": "<table><tbody><tr><td><p>ScanRow</p>\n<p>SKU</p>\n<p>Quantty</p>\n<p>Amount</p>\n<p>Exception</p>\n<p>C09-P02-T1-R01</p>\n<p>SKU-02101-160</p>\n<p>QTY-739</p>\n<p>AMT-8232.88</p>\n<p>EXC-02-01-05</p>\n<p>C09-P02-T1-R02</p>\n<p>SKU-02102-939</p>\n<p>QTY-415</p>\n<p>AMT-9141.38</p>\n<p>EXC-02-02-05</p>\n<p>C09-P02-T1-R03</p>\n<p>SKU-02103-210</p>\n<p>QTY-48</p>\n<p>AMT-1416.82</p>\n<p>EXC-02-03-05</p>\n<p>C09-P02-T1-R04</p>\n<p>SKU-02104-307</p>\n<p>QTY-107</p>\n<p>AMT-6740.44</p>\n<p>EXC-02-04-05WRAP-C09-02-04</p>\n<p>C09-P02-T1-R05</p>\n<p>SKU-02105-909</p>\n<p>QTY-319</p>\n<p>AMT-4751.25</p>\n<p>EXC-02-05-05</p>\n<p>C09-P02-T1-R06</p>\n<p>SKU-02106-490</p>\n<p>QTY-886</p>\n<p>AMT-3813.12</p>\n<p>EXC-02-06-05</p>\n<p>CO9-P02-T1-R07</p>\n<p>SKU-02107-545</p>\n<p>QTY-111</p>\n<p>AMT-1611.35</p>\n<p>EXC-02-07-05</p></td></tr></tbody></table>"
+  },
+  {
+    "index": 3,
+    "rows": 1,
+    "columns": 1,
+    "headers": [
+      "0"
+    ],
+    "csv": "0\r\n\"Exception\n\nQuantity\n\nAmount\n\nSKU\n\nScanRow\n\nQTY-317\n\nAMT-7601.23\n\nEXC-03-01-05\n\nSKU-03101-977\n\nC09-P03-T1-R01\n\nEXC-03-02-05\n\nQTY-97\n\nAMT-8654.40\n\nSKU-03102-935\n\nC09-P03-T1-R02\n\nQTY-392\n\nAMT-2561.37\n\nEXC-03-03-05\n\nSKU-03103-718\n\nC09-P03-T1-R03\n\nQTY-742\n\nAMT-4554.95\n\nEXC-03-04-05WRAP-C09-03-04\n\nSKU-03104-383\n\nC09-P03-T1-R04\n\nEXC-03-05-05\n\nQTY-674\n\nAMT-3381.62\n\nSKU-03105-814\n\nC09-P03-T1-R05\n\nEXC-03-06-05\n\nQTY-397\n\nAMT-7891.96\n\nC09-P03-T1-R06\n\nSKU-03106-466\n\nEXC-03-07-05\n\nAMT-3098.40\n\nQTY-292\n\nSKU-03107-295\n\nC09-P03-T1-R07\"\r\n",
+    "html": "<table><tbody><tr><td><p>Exception</p>\n<p>Quantity</p>\n<p>Amount</p>\n<p>SKU</p>\n<p>ScanRow</p>\n<p>QTY-317</p>\n<p>AMT-7601.23</p>\n<p>EXC-03-01-05</p>\n<p>SKU-03101-977</p>\n<p>C09-P03-T1-R01</p>\n<p>EXC-03-02-05</p>\n<p>QTY-97</p>\n<p>AMT-8654.40</p>\n<p>SKU-03102-935</p>\n<p>C09-P03-T1-R02</p>\n<p>QTY-392</p>\n<p>AMT-2561.37</p>\n<p>EXC-03-03-05</p>\n<p>SKU-03103-718</p>\n<p>C09-P03-T1-R03</p>\n<p>QTY-742</p>\n<p>AMT-4554.95</p>\n<p>EXC-03-04-05WRAP-C09-03-04</p>\n<p>SKU-03104-383</p>\n<p>C09-P03-T1-R04</p>\n<p>EXC-03-05-05</p>\n<p>QTY-674</p>\n<p>AMT-3381.62</p>\n<p>SKU-03105-814</p>\n<p>C09-P03-T1-R05</p>\n<p>EXC-03-06-05</p>\n<p>QTY-397</p>\n<p>AMT-7891.96</p>\n<p>C09-P03-T1-R06</p>\n<p>SKU-03106-466</p>\n<p>EXC-03-07-05</p>\n<p>AMT-3098.40</p>\n<p>QTY-292</p>\n<p>SKU-03107-295</p>\n<p>C09-P03-T1-R07</p></td></tr></tbody></table>"
+  }
+]

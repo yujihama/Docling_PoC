@@ -1,0 +1,92 @@
+[
+  {
+    "model": "gpt-5.4-mini",
+    "image_detail": "auto",
+    "prompt_chars": 437,
+    "generated_chars": 1405,
+    "finish_reason": "stop",
+    "prompt_tokens": 717,
+    "completion_tokens": 676,
+    "total_tokens": 1393
+  },
+  {
+    "model": "gpt-5.4-mini",
+    "image_detail": "auto",
+    "prompt_chars": 437,
+    "generated_chars": 1449,
+    "finish_reason": "stop",
+    "prompt_tokens": 717,
+    "completion_tokens": 695,
+    "total_tokens": 1412
+  },
+  {
+    "model": "gpt-5.4-mini",
+    "image_detail": "auto",
+    "prompt_chars": 437,
+    "generated_chars": 2106,
+    "finish_reason": "stop",
+    "prompt_tokens": 717,
+    "completion_tokens": 1075,
+    "total_tokens": 1792
+  },
+  {
+    "model": "gpt-5.4-mini",
+    "image_detail": "auto",
+    "prompt_chars": 437,
+    "generated_chars": 1572,
+    "finish_reason": "stop",
+    "prompt_tokens": 717,
+    "completion_tokens": 693,
+    "total_tokens": 1410
+  },
+  {
+    "model": "gpt-5.4-mini",
+    "image_detail": "auto",
+    "prompt_chars": 437,
+    "generated_chars": 1569,
+    "finish_reason": "stop",
+    "prompt_tokens": 717,
+    "completion_tokens": 672,
+    "total_tokens": 1389
+  },
+  {
+    "model": "gpt-5.4-mini",
+    "image_detail": "auto",
+    "prompt_chars": 437,
+    "generated_chars": 2277,
+    "finish_reason": "stop",
+    "prompt_tokens": 717,
+    "completion_tokens": 1170,
+    "total_tokens": 1887
+  },
+  {
+    "model": "gpt-5.4-mini",
+    "image_detail": "auto",
+    "prompt_chars": 437,
+    "generated_chars": 1403,
+    "finish_reason": "stop",
+    "prompt_tokens": 717,
+    "completion_tokens": 669,
+    "total_tokens": 1386
+  },
+  {
+    "model": "gpt-5.4-mini",
+    "image_detail": "auto",
+    "prompt_chars": 437,
+    "generated_chars": 1434,
+    "finish_reason": "stop",
+    "prompt_tokens": 717,
+    "completion_tokens": 686,
+    "total_tokens": 1403
+  },
+  {
+    "model": "gpt-5.4-mini",
+    "image_detail": "auto",
+    "prompt_chars": 437,
+    "generated_chars": 2117,
+    "finish_reason": "stop",
+    "prompt_tokens": 717,
+    "completion_tokens": 1096,
+    "total_tokens": 1813
+  }
+]

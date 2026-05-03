@@ -1,0 +1,42 @@
+[
+  {
+    "index": 1,
+    "rows": 1,
+    "columns": 1,
+    "headers": [
+      "0"
+    ],
+    "csv": "0\r\n\"ScanID\n\nSKU\n\nQuantity\n\nAmount\n\nRoute\n\nC05-P01-T1-R01\n\nSKU-01101-111\n\nQTY-144\n\nAMT-9830.45\n\nROU-01-01-05\n\nC05-P01-T1-R02\n\nSKU-01102-713\n\nQTY-176\n\nAMT-6480.17\n\nROU-01-02-05\n\nC05-P01-T1-R03\n\nSKU-01103-345\n\nQTY-901\n\nAMT-8304.28\n\nROU-01-03-05\n\nC05-P01-T1-R04\n\nSKU-01104-636\n\nQTY-849\n\nAMT-6897.30\n\nROU-01-04-05\n\nC05-P01-T1-R05\n\nSKU-01105-423\n\nQTY-516\n\nAMT-6618.98\n\nROU-01-05-05\n\nC05-P01-T1-R06\n\nSKU-01106-962\n\nQTY-806\n\nAMT-6978.31\n\nROU-01-06-05\n\nC05-P01-T1-R07\n\nSKU-01107-235\n\nQTY-492\n\nAMT-1542.98\n\nROU-01-07-05\n\nC05-P01-T1-R08\n\nSKU-01108-455\n\nQTY-782\n\nAMT-9132.91\n\nROU-01-08-05\"\r\n",
+    "html": "<table><tbody><tr><td><p>ScanID</p>\n<p>SKU</p>\n<p>Quantity</p>\n<p>Amount</p>\n<p>Route</p>\n<p>C05-P01-T1-R01</p>\n<p>SKU-01101-111</p>\n<p>QTY-144</p>\n<p>AMT-9830.45</p>\n<p>ROU-01-01-05</p>\n<p>C05-P01-T1-R02</p>\n<p>SKU-01102-713</p>\n<p>QTY-176</p>\n<p>AMT-6480.17</p>\n<p>ROU-01-02-05</p>\n<p>C05-P01-T1-R03</p>\n<p>SKU-01103-345</p>\n<p>QTY-901</p>\n<p>AMT-8304.28</p>\n<p>ROU-01-03-05</p>\n<p>C05-P01-T1-R04</p>\n<p>SKU-01104-636</p>\n<p>QTY-849</p>\n<p>AMT-6897.30</p>\n<p>ROU-01-04-05</p>\n<p>C05-P01-T1-R05</p>\n<p>SKU-01105-423</p>\n<p>QTY-516</p>\n<p>AMT-6618.98</p>\n<p>ROU-01-05-05</p>\n<p>C05-P01-T1-R06</p>\n<p>SKU-01106-962</p>\n<p>QTY-806</p>\n<p>AMT-6978.31</p>\n<p>ROU-01-06-05</p>\n<p>C05-P01-T1-R07</p>\n<p>SKU-01107-235</p>\n<p>QTY-492</p>\n<p>AMT-1542.98</p>\n<p>ROU-01-07-05</p>\n<p>C05-P01-T1-R08</p>\n<p>SKU-01108-455</p>\n<p>QTY-782</p>\n<p>AMT-9132.91</p>\n<p>ROU-01-08-05</p></td></tr></tbody></table>"
+  },
+  {
+    "index": 2,
+    "rows": 1,
+    "columns": 1,
+    "headers": [
+      "0"
+    ],
+    "csv": "0\r\n\"ScanID\n\nSKU\n\nQuantity\n\nAmount\n\nRoute\n\nC05-P02-T1-R01\n\nSKU-02101-484\n\nQTY-309\n\nAMT-4154.83\n\nROU-02-01-05\n\nC05-P02-T1-R02\n\nSKU-02102-675\n\nQTY-532\n\nAMT-4249.21\n\nROU-02-02-05\n\nC05-P02-T1-R03\n\nSKU-02103-405\n\nQTY-441\n\nAMT-7269.73\n\nROU-02-03-05\n\nC05-P02-T1-R04\n\nSKU-02104-429\n\nQTY-705\n\nAMT-6468.31\n\nROU-02-04-05\n\nC05-P02-T1-R05\n\nSKU-02105-515\n\nQTY-90\n\nAMT-1387.33\n\nROU-02-05-05\n\nC05-P02-T1-R06\n\nSKU-02106-164\n\nQTY-924\n\nAMT-7929.56\n\nROU-02-06-05\n\nC05-P02-T1-R07\n\nSKU-02107-338\n\nQTY-672\n\nAMT-7005.33\n\nROU-02-07-05\n\nC05-P02-T1-R08\n\nSKU-02108-688\n\nQTY-728\n\nAMT-3478.38\n\nROU-02-08-05\"\r\n",
+    "html": "<table><tbody><tr><td><p>ScanID</p>\n<p>SKU</p>\n<p>Quantity</p>\n<p>Amount</p>\n<p>Route</p>\n<p>C05-P02-T1-R01</p>\n<p>SKU-02101-484</p>\n<p>QTY-309</p>\n<p>AMT-4154.83</p>\n<p>ROU-02-01-05</p>\n<p>C05-P02-T1-R02</p>\n<p>SKU-02102-675</p>\n<p>QTY-532</p>\n<p>AMT-4249.21</p>\n<p>ROU-02-02-05</p>\n<p>C05-P02-T1-R03</p>\n<p>SKU-02103-405</p>\n<p>QTY-441</p>\n<p>AMT-7269.73</p>\n<p>ROU-02-03-05</p>\n<p>C05-P02-T1-R04</p>\n<p>SKU-02104-429</p>\n<p>QTY-705</p>\n<p>AMT-6468.31</p>\n<p>ROU-02-04-05</p>\n<p>C05-P02-T1-R05</p>\n<p>SKU-02105-515</p>\n<p>QTY-90</p>\n<p>AMT-1387.33</p>\n<p>ROU-02-05-05</p>\n<p>C05-P02-T1-R06</p>\n<p>SKU-02106-164</p>\n<p>QTY-924</p>\n<p>AMT-7929.56</p>\n<p>ROU-02-06-05</p>\n<p>C05-P02-T1-R07</p>\n<p>SKU-02107-338</p>\n<p>QTY-672</p>\n<p>AMT-7005.33</p>\n<p>ROU-02-07-05</p>\n<p>C05-P02-T1-R08</p>\n<p>SKU-02108-688</p>\n<p>QTY-728</p>\n<p>AMT-3478.38</p>\n<p>ROU-02-08-05</p></td></tr></tbody></table>"
+  },
+  {
+    "index": 3,
+    "rows": 1,
+    "columns": 1,
+    "headers": [
+      "0"
+    ],
+    "csv": "0\r\n\"ScanID\n\nSKU\n\nQuantity\n\nAmount\n\nRoute\n\nC05-P03-T1-R01\n\nSKU-03101-179\n\nQTY-722\n\nAMT-9580.82\n\nROU-03-01-05\n\nC05-P03-T1-R02\n\nSKU-03102-140\n\nQTY-113\n\nAMT-4567.70\n\nROU-03-02-05\n\nC05-P03-T1-R03\n\nSKU-03103-542\n\nQTY-113\n\nAMT-3422.77\n\nROU-03-03-05\n\nC05-P03-T1-R04\n\nSKU-03104-574\n\nQTY-406\n\nAMT-8360.56\n\nROU-03-04-05\n\nC05-P03-T1-R05\n\nSKU-03105-354\n\nQTY-268\n\nAMT-1975.28\n\nROU-03-05-05\n\nC05-P03-T1-R06\n\nSKU-03106-463\n\nQTY-498\n\nAMT-9438.79\n\nROU-03-06-05\n\nC05-P03-T1-R07\n\nSKU-03107-858\n\nQTY-987\n\nAMT-6362.76\n\nROU-03-07-05\n\nC05-P03-T1-R08\n\nSKU-03108-559\n\nQTY-270\n\nAMT-6283.20\n\nROU-03-08-05\"\r\n",
+    "html": "<table><tbody><tr><td><p>ScanID</p>\n<p>SKU</p>\n<p>Quantity</p>\n<p>Amount</p>\n<p>Route</p>\n<p>C05-P03-T1-R01</p>\n<p>SKU-03101-179</p>\n<p>QTY-722</p>\n<p>AMT-9580.82</p>\n<p>ROU-03-01-05</p>\n<p>C05-P03-T1-R02</p>\n<p>SKU-03102-140</p>\n<p>QTY-113</p>\n<p>AMT-4567.70</p>\n<p>ROU-03-02-05</p>\n<p>C05-P03-T1-R03</p>\n<p>SKU-03103-542</p>\n<p>QTY-113</p>\n<p>AMT-3422.77</p>\n<p>ROU-03-03-05</p>\n<p>C05-P03-T1-R04</p>\n<p>SKU-03104-574</p>\n<p>QTY-406</p>\n<p>AMT-8360.56</p>\n<p>ROU-03-04-05</p>\n<p>C05-P03-T1-R05</p>\n<p>SKU-03105-354</p>\n<p>QTY-268</p>\n<p>AMT-1975.28</p>\n<p>ROU-03-05-05</p>\n<p>C05-P03-T1-R06</p>\n<p>SKU-03106-463</p>\n<p>QTY-498</p>\n<p>AMT-9438.79</p>\n<p>ROU-03-06-05</p>\n<p>C05-P03-T1-R07</p>\n<p>SKU-03107-858</p>\n<p>QTY-987</p>\n<p>AMT-6362.76</p>\n<p>ROU-03-07-05</p>\n<p>C05-P03-T1-R08</p>\n<p>SKU-03108-559</p>\n<p>QTY-270</p>\n<p>AMT-6283.20</p>\n<p>ROU-03-08-05</p></td></tr></tbody></table>"
+  },
+  {
+    "index": 4,
+    "rows": 1,
+    "columns": 1,
+    "headers": [
+      "0"
+    ],
+    "csv": "0\r\n\"ScanID\n\nSKU\n\nQuantity\n\nAmount\n\nRoute\n\nC05-P04-T1-R01\n\nSKU-04101-448\n\nQTY-99\n\nAMT-6977.78\n\nROU-04-01-05\n\nC05-P04-T1-R02\n\nSKU-04102-836\n\nQTY-799\n\nAMT-6456.20\n\nROU-04-02-05\n\nC05-P04-T1-R03\n\nSKU-04103-181\n\nQTY-286\n\nAMT-8855.55\n\nROU-04-03-05\n\nC05-P04-T1-R04\n\nSKU-04104-961\n\nQTY-783\n\nAMT-3982.64\n\nROU-04-04-05\n\nC05-P04-T1-R05\n\nSKU-04105-193\n\nQTY-42\n\nAMT-9121.82\n\nROU-04-05-05\n\nC05-P04-T1-R06\n\nSKU-04106-692\n\nQTY-960\n\nAMT-1360.86\n\nROU-04-06-05\n\nC05-P04-T1-R07\n\nSKU-04107-556\n\nQTY-477\n\nAMT-2357.53\n\nROU-04-07-05\n\nC05-P04-T1-R08\n\nSKU-04108-548\n\nQTY-659\n\nAMT-1892.40\n\nROU-04-08-05\"\r\n",
+    "html": "<table><tbody><tr><td><p>ScanID</p>\n<p>SKU</p>\n<p>Quantity</p>\n<p>Amount</p>\n<p>Route</p>\n<p>C05-P04-T1-R01</p>\n<p>SKU-04101-448</p>\n<p>QTY-99</p>\n<p>AMT-6977.78</p>\n<p>ROU-04-01-05</p>\n<p>C05-P04-T1-R02</p>\n<p>SKU-04102-836</p>\n<p>QTY-799</p>\n<p>AMT-6456.20</p>\n<p>ROU-04-02-05</p>\n<p>C05-P04-T1-R03</p>\n<p>SKU-04103-181</p>\n<p>QTY-286</p>\n<p>AMT-8855.55</p>\n<p>ROU-04-03-05</p>\n<p>C05-P04-T1-R04</p>\n<p>SKU-04104-961</p>\n<p>QTY-783</p>\n<p>AMT-3982.64</p>\n<p>ROU-04-04-05</p>\n<p>C05-P04-T1-R05</p>\n<p>SKU-04105-193</p>\n<p>QTY-42</p>\n<p>AMT-9121.82</p>\n<p>ROU-04-05-05</p>\n<p>C05-P04-T1-R06</p>\n<p>SKU-04106-692</p>\n<p>QTY-960</p>\n<p>AMT-1360.86</p>\n<p>ROU-04-06-05</p>\n<p>C05-P04-T1-R07</p>\n<p>SKU-04107-556</p>\n<p>QTY-477</p>\n<p>AMT-2357.53</p>\n<p>ROU-04-07-05</p>\n<p>C05-P04-T1-R08</p>\n<p>SKU-04108-548</p>\n<p>QTY-659</p>\n<p>AMT-1892.40</p>\n<p>ROU-04-08-05</p></td></tr></tbody></table>"
+  }
+]

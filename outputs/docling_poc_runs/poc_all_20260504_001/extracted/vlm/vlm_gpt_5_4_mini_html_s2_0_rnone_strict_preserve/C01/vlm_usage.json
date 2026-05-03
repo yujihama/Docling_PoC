@@ -1,0 +1,22 @@
+[
+  {
+    "model": "gpt-5.4-mini",
+    "image_detail": "auto",
+    "prompt_chars": 495,
+    "generated_chars": 2805,
+    "finish_reason": "stop",
+    "prompt_tokens": 2894,
+    "completion_tokens": 1134,
+    "total_tokens": 4028
+  },
+  {
+    "model": "gpt-5.4-mini",
+    "image_detail": "auto",
+    "prompt_chars": 495,
+    "generated_chars": 2374,
+    "finish_reason": "stop",
+    "prompt_tokens": 2894,
+    "completion_tokens": 1076,
+    "total_tokens": 3970
+  }
+]

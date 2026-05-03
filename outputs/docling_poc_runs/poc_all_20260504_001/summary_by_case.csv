@@ -1,0 +1,12 @@
+case_id,filename,tags,best_accuracy_config,best_accuracy_pipeline,best_accuracy_overall,best_accuracy_seconds_per_page,fastest_config,fastest_pipeline,fastest_overall,fastest_seconds_per_page
+C01,case01_clean_financial_2p.pdf,"clean, vector, short",vlm_gpt_5_5_markdown_s2_0_rnone_strict_preserve,vlm,1.0,8.527,std_no_table_structure,standard,0.9125,0.842
+C02,case02_dense_multisection_5p.pdf,"dense, merged-header, rotated",std_baseline_accurate,standard,1.0,3.181,std_no_table_structure,standard,1.0,0.623
+C03,case03_mixed_orientation_9p.pdf,"mixed-orientation, charts, sidebars",vlm_gpt_5_4_markdown_s2_0_rnone_strict_preserve,vlm,0.9598,10.364,std_no_table_structure,standard,0.6514,0.59
+C04,case04_long_register_16p.pdf,"long, dense, cross-page",std_baseline_accurate,standard,1.0,3.215,std_no_table_structure,standard,1.0,0.676
+C05,case05_scanned_image_4p.pdf,"scanned, image-only, ocr",std_baseline_accurate,standard,1.0,13.269,std_no_ocr,standard,0.1,1.611
+C06,case6.pdf,"real, japanese, financial-disclosure, tables",std_baseline_accurate,standard,1.0,1.114,std_no_table_structure,standard,1.0,0.551
+C07,case07_japanese_multicolumn_vertical_3p.pdf,"japanese, multicolumn, vertical-label",std_baseline_accurate,standard,0.9731,1.974,std_no_table_structure,standard,0.9731,0.553
+C08,case08_form_checkboxes_3p.pdf,"form, checkbox, blank-fields",std_baseline_accurate,standard,1.0,1.96,std_no_table_structure,standard,1.0,0.544
+C09,case09_low_quality_skewed_scan_3p.pdf,"scanned, low-quality, skewed, ocr",vlm_gpt_5_5_markdown_s2_0_rnone_strict_preserve,vlm,1.0,6.802,std_no_ocr,standard,0.1,1.478
+C10,case10_irregular_nested_tables_4p.pdf,"nested-tables, merged-header, irregular",std_baseline_accurate,standard,1.0,2.348,std_no_table_structure,standard,1.0,0.572
+C11,case11_chart_formula_code_3p.pdf,"charts, formula, code, tables",std_baseline_accurate,standard,0.6937,1.305,std_no_table_structure,standard,0.6937,0.529

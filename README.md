@@ -96,9 +96,55 @@ Run case-level hybrid selection. This first runs Standard Docling for each case,
 python benchmarks\run_hybrid_benchmark.py --limit 1 --model gpt-5.4-mini
 ```
 
+## Broad PoC Matrix
+
+The broad PoC runner keeps Standard Docling and OpenAI VLM results under a
+run-specific directory:
+
+```powershell
+python benchmarks\run_poc_matrix.py --dry-run --matrix all
+python benchmarks\run_poc_matrix.py --matrix standard --phase full
+python benchmarks\run_poc_matrix.py --matrix vlm --phase pilot --budget-usd 30
+python benchmarks\report_poc.py --run-id <run_id>
+```
+
+Outputs are written to:
+
+```text
+outputs/docling_poc_runs/<run_id>/
+```
+
+The runner regenerates the benchmark corpus before execution unless
+`--skip-generate-corpus` is passed. The corpus now includes C01-C05, optional
+local `case6.pdf` as C06 when present, and generated cases C07-C11 for Japanese
+multi-column content, forms, skewed scans, irregular tables, and chart/formula
+content.
+
+Standard Docling focused mode covers these settings:
+
+- `do_table_structure`: on/off.
+- `table_structure_options.mode`: `fast` and `accurate`.
+- `table_structure_options.do_cell_matching`: on/off.
+- `do_ocr`, `ocr_options.force_full_page_ocr`, and `force_backend_text`.
+- `images_scale=2.0` with page image generation.
+- `ocr_batch_size`, `layout_batch_size`, and `table_batch_size` small/default/large profiles.
+
+OpenAI VLM full mode covers:
+
+- Models: `gpt-5.5`, `gpt-5.4`, `gpt-5.4-mini`, `gpt-5.2`.
+- Response formats: `markdown`, `html`.
+- Scale: `1.0`, `2.0`, `2.5`.
+- Reasoning effort: `none`, `low`, `medium`.
+- Prompt variants: `strict_preserve`, `table_first`.
+- `max_completion_tokens=12000` fixed.
+
+Pilot mode runs a smaller VLM probe set, estimates full-matrix cost from the
+measured token usage, and records whether the full VLM phase is within the
+`--budget-usd` gate.
+
 Useful VLM benchmark options:
 
-- `--model`: OpenAI model, for example `gpt-5.2`, `gpt-5.4-mini`, or `gpt-4.1`.
+- `--model`: OpenAI model, for example `gpt-5.2`, `gpt-5.4`, or `gpt-5.4-mini`.
 - `--response-format`: `markdown` or `html`.
 - `--scale`: page image scaling before VLM inference.
 - `--max-completion-tokens`: completion cap for long page outputs.

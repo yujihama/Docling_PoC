@@ -9,6 +9,8 @@ from reportlab.lib import colors
 from reportlab.lib.pagesizes import A4, landscape
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.lib.units import mm
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.cidfonts import UnicodeCIDFont
 from reportlab.pdfgen import canvas
 from reportlab.platypus import Paragraph, Table, TableStyle
 
@@ -17,6 +19,10 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT_DIR = ROOT / "outputs" / "docling_benchmark"
 PDF_DIR = OUT_DIR / "pdfs"
 GT_PATH = OUT_DIR / "ground_truth.json"
+
+
+def make_canvas(path: Path, page_size: tuple[float, float]) -> canvas.Canvas:
+    return canvas.Canvas(str(path), pagesize=page_size, invariant=1)
 
 
 def norm_page_size(page_size: tuple[float, float]) -> tuple[float, float]:
@@ -187,7 +193,7 @@ def build_case_01(cases: list[dict[str, object]], rng: random.Random) -> None:
     filename = "case01_clean_financial_2p.pdf"
     path = PDF_DIR / filename
     page_count = 2
-    c = canvas.Canvas(str(path), pagesize=A4)
+    c = make_canvas(path, A4)
     anchors: list[str] = []
     cells: list[str] = []
     for page_no in range(1, page_count + 1):
@@ -229,7 +235,7 @@ def build_case_02(cases: list[dict[str, object]], rng: random.Random) -> None:
     filename = "case02_dense_multisection_5p.pdf"
     path = PDF_DIR / filename
     page_count = 5
-    c = canvas.Canvas(str(path), pagesize=A4)
+    c = make_canvas(path, A4)
     anchors: list[str] = []
     cells: list[str] = []
     for page_no in range(1, page_count + 1):
@@ -279,7 +285,7 @@ def build_case_03(cases: list[dict[str, object]], rng: random.Random) -> None:
     filename = "case03_mixed_orientation_9p.pdf"
     path = PDF_DIR / filename
     page_count = 9
-    c = canvas.Canvas(str(path), pagesize=A4)
+    c = make_canvas(path, A4)
     anchors: list[str] = []
     cells: list[str] = []
     for page_no in range(1, page_count + 1):
@@ -340,7 +346,7 @@ def build_case_04(cases: list[dict[str, object]], rng: random.Random) -> None:
     filename = "case04_long_register_16p.pdf"
     path = PDF_DIR / filename
     page_count = 16
-    c = canvas.Canvas(str(path), pagesize=A4)
+    c = make_canvas(path, A4)
     anchors: list[str] = []
     cells: list[str] = []
     for page_no in range(1, page_count + 1):
@@ -426,6 +432,266 @@ def build_case_05(cases: list[dict[str, object]], rng: random.Random) -> None:
     add_case(cases, case_id, filename, "4-page image-only PDF that simulates scanned forms.", page_count, 4, anchors, cells, ["scanned", "image-only", "ocr"])
 
 
+def register_cjk_font() -> str:
+    font_name = "HeiseiKakuGo-W5"
+    if font_name not in pdfmetrics.getRegisteredFontNames():
+        pdfmetrics.registerFont(UnicodeCIDFont(font_name))
+    return font_name
+
+
+def add_case_06_existing(cases: list[dict[str, object]]) -> None:
+    filename = "case6.pdf"
+    path = PDF_DIR / filename
+    if not path.exists():
+        return
+    add_case(
+        cases,
+        "C06",
+        filename,
+        "3-page real Japanese financial disclosure excerpt with Japanese tables.",
+        3,
+        1,
+        [
+            "半期報告書",
+            "トヨタ自動車株式会社",
+            "TOYOTA MOTOR CORPORATION",
+            "2025年11月13日",
+            "第一部 【企業情報】",
+        ],
+        [
+            "営業収益",
+            "24,630,753",
+            "税引前中間（当期）利益",
+            "2,478,127",
+            "総資産",
+            "97,574,878",
+        ],
+        ["real", "japanese", "financial-disclosure", "tables"],
+    )
+
+
+def draw_checkbox(c: canvas.Canvas, x: float, y: float, checked: bool) -> None:
+    c.rect(x, y, 4 * mm, 4 * mm, fill=0, stroke=1)
+    if checked:
+        c.setLineWidth(1.2)
+        c.line(x + 0.7 * mm, y + 2 * mm, x + 1.8 * mm, y + 0.8 * mm)
+        c.line(x + 1.8 * mm, y + 0.8 * mm, x + 3.4 * mm, y + 3.3 * mm)
+        c.setLineWidth(1)
+
+
+def build_case_07(cases: list[dict[str, object]], rng: random.Random) -> None:
+    case_id = "C07"
+    filename = "case07_japanese_multicolumn_vertical_3p.pdf"
+    path = PDF_DIR / filename
+    page_count = 3
+    c = make_canvas(path, A4)
+    cjk_font = register_cjk_font()
+    anchors: list[str] = []
+    cells: list[str] = []
+    for page_no in range(1, page_count + 1):
+        c.setPageSize(A4)
+        width, height = norm_page_size(A4)
+        draw_header(c, case_id, "Japanese multi-column packet", page_no, page_count, A4)
+        anchor = f"{case_id}-JP-P{page_no:02d}-ANCHOR"
+        anchors.append(anchor)
+        c.setFillColor(colors.HexColor("#263238"))
+        c.setFont(cjk_font, 14)
+        c.drawString(18 * mm, height - 31 * mm, f"日本語多段レポート {anchor}")
+        c.setFont(cjk_font, 8)
+        c.drawString(18 * mm, height - 43 * mm, f"重要指標と注記を左右二段で配置します。管理番号 {case_id}-JP-NOTE-P{page_no:02d}")
+        anchors.append(f"{case_id}-JP-NOTE-P{page_no:02d}")
+        for col in range(2):
+            x = (18 + col * 88) * mm
+            y = height - 58 * mm
+            for line in range(5):
+                token = f"{case_id}-COL{col + 1}-P{page_no:02d}-L{line + 1:02d}"
+                anchors.append(token)
+                c.drawString(x, y - line * 7 * mm, f"段落 {line + 1}: 抽出確認 {token}")
+        c.saveState()
+        c.translate(width - 22 * mm, height - 52 * mm)
+        c.rotate(90)
+        vertical_token = f"{case_id}-VERTICAL-P{page_no:02d}"
+        anchors.append(vertical_token)
+        c.setFont(cjk_font, 10)
+        c.drawString(0, 0, f"縦方向ラベル {vertical_token}")
+        c.restoreState()
+        columns = ["Metric ID", "SKU", "Quantity", "Amount", "Segment", "Remark"]
+        data, expected = make_table_data(case_id, page_no, 1, 7, columns, rng=rng, multiline=True)
+        cells.extend(expected)
+        draw_table(c, data, 18 * mm, height - 120 * mm, width - 36 * mm, font_size=6, header_fill=colors.HexColor("#C5E1A5"))
+        c.showPage()
+    c.save()
+    add_case(cases, case_id, filename, "Japanese text, two columns, rotated labels, and compact tables.", page_count, 3, anchors, cells, ["japanese", "multicolumn", "vertical-label"])
+
+
+def build_case_08(cases: list[dict[str, object]], rng: random.Random) -> None:
+    case_id = "C08"
+    filename = "case08_form_checkboxes_3p.pdf"
+    path = PDF_DIR / filename
+    page_count = 3
+    c = make_canvas(path, A4)
+    anchors: list[str] = []
+    cells: list[str] = []
+    for page_no in range(1, page_count + 1):
+        c.setPageSize(A4)
+        width, height = norm_page_size(A4)
+        draw_header(c, case_id, "Form with checkboxes", page_no, page_count, A4)
+        anchor = f"{case_id}-FORM-P{page_no:02d}-ANCHOR"
+        anchors.append(anchor)
+        c.setFillColor(colors.HexColor("#263238"))
+        c.setFont("Helvetica-Bold", 14)
+        c.drawString(18 * mm, height - 31 * mm, f"Inspection Form {anchor}")
+        c.setFont("Helvetica", 8)
+        y = height - 48 * mm
+        for item in range(1, 9):
+            checked = (item + page_no) % 3 == 0
+            token = f"{case_id}-CHECK-P{page_no:02d}-I{item:02d}"
+            anchors.append(token)
+            draw_checkbox(c, 20 * mm, y - 1 * mm, checked)
+            c.drawString(28 * mm, y, f"Checklist item {item}: {token} status={'CHECKED' if checked else 'OPEN'}")
+            c.line(85 * mm, y - 1 * mm, width - 18 * mm, y - 1 * mm)
+            y -= 9 * mm
+        columns = ["Field ID", "SKU", "Quantity", "Amount", "Reviewer", "Disposition"]
+        data, expected = make_table_data(case_id, page_no, 1, 6, columns, rng=rng)
+        cells.extend(expected)
+        draw_table(c, data, 18 * mm, y - 8 * mm, width - 36 * mm, font_size=6, header_fill=colors.HexColor("#FFE082"))
+        c.showPage()
+    c.save()
+    add_case(cases, case_id, filename, "Structured form pages with checkboxes, blanks, and a small table.", page_count, 3, anchors, cells, ["form", "checkbox", "blank-fields"])
+
+
+def build_case_09(cases: list[dict[str, object]], rng: random.Random) -> None:
+    case_id = "C09"
+    filename = "case09_low_quality_skewed_scan_3p.pdf"
+    path = PDF_DIR / filename
+    page_count = 3
+    pages: list[Image.Image] = []
+    anchors: list[str] = []
+    cells: list[str] = []
+    font_title = load_font(30)
+    font_body = load_font(18)
+    font_cell = load_font(15)
+    for page_no in range(1, page_count + 1):
+        img = Image.new("RGB", (1700, 2200), (248, 247, 240))
+        draw = ImageDraw.Draw(img)
+        anchor = f"{case_id}-SKEW-P{page_no:02d}-ANCHOR"
+        anchors.append(anchor)
+        draw.text((130, 120), f"Low Quality Scan {page_no} {anchor}", font=font_title, fill=(45, 45, 45))
+        note = f"Faint raster text with skew and noise marker {case_id}-NOISE-P{page_no:02d}."
+        anchors.append(f"{case_id}-NOISE-P{page_no:02d}")
+        draw.text((130, 185), note, font=font_body, fill=(80, 80, 80))
+        for _ in range(900):
+            x = rng.randint(80, 1620)
+            y = rng.randint(80, 2120)
+            shade = rng.randint(160, 245)
+            draw.point((x, y), fill=(shade, shade, shade))
+        columns = ["Scan Row", "SKU", "Quantity", "Amount", "Exception"]
+        data, expected = make_table_data(case_id, page_no, 1, 7, columns, rng=rng, multiline=True)
+        cells.extend(expected)
+        x0, y0 = 130, 300
+        cell_w, cell_h = 285, 80
+        for row in range(len(data) + 1):
+            y = y0 + row * cell_h
+            draw.line((x0, y, x0 + len(columns) * cell_w, y), fill=(65, 65, 65), width=2)
+        for col in range(len(columns) + 1):
+            x = x0 + col * cell_w
+            draw.line((x, y0, x, y0 + len(data) * cell_h), fill=(65, 65, 65), width=2)
+        for r, row in enumerate(data):
+            for col, value in enumerate(row):
+                draw.text((x0 + col * cell_w + 8, y0 + r * cell_h + 20), str(value).replace("\n", " "), font=font_cell, fill=(45, 45, 45))
+        rotated = img.rotate(rng.choice([-2.8, -1.8, 2.2]), resample=Image.Resampling.BICUBIC, expand=True, fillcolor=(248, 247, 240))
+        page = Image.new("RGB", (1700, 2200), (248, 247, 240))
+        page.paste(rotated, ((1700 - rotated.width) // 2, (2200 - rotated.height) // 2))
+        pages.append(page)
+    pages[0].save(path, save_all=True, append_images=pages[1:], resolution=180.0)
+    add_case(cases, case_id, filename, "Low-quality image-only PDF with skew, noise, and faint tables.", page_count, 3, anchors, cells, ["scanned", "low-quality", "skewed", "ocr"])
+
+
+def build_case_10(cases: list[dict[str, object]], rng: random.Random) -> None:
+    case_id = "C10"
+    filename = "case10_irregular_nested_tables_4p.pdf"
+    path = PDF_DIR / filename
+    page_count = 4
+    c = make_canvas(path, A4)
+    anchors: list[str] = []
+    cells: list[str] = []
+    for page_no in range(1, page_count + 1):
+        c.setPageSize(A4)
+        width, height = norm_page_size(A4)
+        draw_header(c, case_id, "Irregular nested tables", page_no, page_count, A4)
+        anchor = f"{case_id}-NEST-P{page_no:02d}-ANCHOR"
+        anchors.append(anchor)
+        c.setFillColor(colors.HexColor("#263238"))
+        c.setFont("Helvetica-Bold", 13)
+        c.drawString(18 * mm, height - 31 * mm, f"Irregular Table Packet {anchor}")
+        columns = ["Group", "Nested ID", "SKU", "Quantity", "Amount", "Comment"]
+        data, expected = make_table_data(case_id, page_no, 1, 8, columns, rng=rng, multiline=True)
+        cells.extend(expected)
+        draw_table(
+            c,
+            data,
+            18 * mm,
+            height - 54 * mm,
+            width - 36 * mm,
+            font_size=6,
+            header_fill=colors.HexColor("#CE93D8"),
+            span_title=f"Parent Group {case_id}-P{page_no:02d}-SPAN",
+        )
+        anchors.append(f"{case_id}-P{page_no:02d}-SPAN")
+        columns2 = ["Sub ID", "SKU", "Quantity", "Amount"]
+        data2, expected2 = make_table_data(case_id, page_no, 2, 4, columns2, rng=rng)
+        cells.extend(expected2)
+        draw_table(c, data2, 33 * mm, 82 * mm, width - 66 * mm, font_size=6, header_fill=colors.HexColor("#BCAAA4"))
+        c.showPage()
+    c.save()
+    add_case(cases, case_id, filename, "Irregular tables with spanning headers and smaller nested tables.", page_count, 8, anchors, cells, ["nested-tables", "merged-header", "irregular"])
+
+
+def build_case_11(cases: list[dict[str, object]], rng: random.Random) -> None:
+    case_id = "C11"
+    filename = "case11_chart_formula_code_3p.pdf"
+    path = PDF_DIR / filename
+    page_count = 3
+    c = make_canvas(path, A4)
+    anchors: list[str] = []
+    cells: list[str] = []
+    for page_no in range(1, page_count + 1):
+        c.setPageSize(A4)
+        width, height = norm_page_size(A4)
+        draw_header(c, case_id, "Charts formulas and code", page_no, page_count, A4)
+        anchor = f"{case_id}-CHART-P{page_no:02d}-ANCHOR"
+        anchors.append(anchor)
+        c.setFillColor(colors.HexColor("#263238"))
+        c.setFont("Helvetica-Bold", 13)
+        c.drawString(18 * mm, height - 31 * mm, f"Analytics Appendix {anchor}")
+        chart_x, chart_y = 20 * mm, height - 65 * mm
+        c.setStrokeColor(colors.HexColor("#455A64"))
+        c.rect(chart_x, chart_y - 58 * mm, 78 * mm, 58 * mm, fill=0, stroke=1)
+        for bar in range(5):
+            value = rng.randint(18, 52)
+            token = f"{case_id}-BAR-P{page_no:02d}-{bar + 1:02d}-{value}"
+            anchors.append(token)
+            c.setFillColor(colors.HexColor("#4DB6AC"))
+            c.rect(chart_x + (8 + bar * 13) * mm, chart_y - (8 + value) * mm, 8 * mm, value * mm, fill=1, stroke=0)
+            c.setFillColor(colors.HexColor("#263238"))
+            c.setFont("Helvetica", 6)
+            c.drawString(chart_x + (8 + bar * 13) * mm, chart_y - 63 * mm, token[-5:])
+        formula = f"FORMULA-{case_id}-P{page_no:02d}: gross_margin = (revenue - cost) / revenue"
+        code = f"CODE-{case_id}-P{page_no:02d}: if variance > threshold: escalate(row_id)"
+        anchors.extend([formula, code])
+        c.setFont("Courier", 7)
+        c.setFillColor(colors.HexColor("#37474F"))
+        c.drawString(112 * mm, height - 58 * mm, formula)
+        c.drawString(112 * mm, height - 69 * mm, code)
+        columns = ["Chart ID", "SKU", "Quantity", "Amount", "Variance"]
+        data, expected = make_table_data(case_id, page_no, 1, 6, columns, rng=rng)
+        cells.extend(expected)
+        draw_table(c, data, 18 * mm, height - 145 * mm, width - 36 * mm, font_size=6, header_fill=colors.HexColor("#90CAF9"))
+        c.showPage()
+    c.save()
+    add_case(cases, case_id, filename, "Pages combining charts, formulas, code-like text, and chart data tables.", page_count, 3, anchors, cells, ["charts", "formula", "code", "tables"])
+
+
 def main() -> None:
     PDF_DIR.mkdir(parents=True, exist_ok=True)
     rng = random.Random(20260502)
@@ -435,8 +701,14 @@ def main() -> None:
     build_case_03(cases, rng)
     build_case_04(cases, rng)
     build_case_05(cases, rng)
+    add_case_06_existing(cases)
+    build_case_07(cases, rng)
+    build_case_08(cases, rng)
+    build_case_09(cases, rng)
+    build_case_10(cases, rng)
+    build_case_11(cases, rng)
     payload = {
-        "generated_at": "2026-05-02",
+        "generated_at": "2026-05-04",
         "metric_notes": {
             "text_anchor_recall": "Share of expected control markers found in Docling Markdown.",
             "table_cell_recall": "Share of expected table cell strings found in exported Docling tables.",

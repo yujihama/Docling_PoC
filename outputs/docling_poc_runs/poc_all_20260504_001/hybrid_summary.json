@@ -1,0 +1,98 @@
+{
+  "selected": [
+    {
+      "case_id": "C01",
+      "selected_pipeline": "standard",
+      "selected_config": "std_baseline_accurate",
+      "overall_score": 0.9125,
+      "seconds_per_page": 2.597,
+      "baseline_low_confidence": false
+    },
+    {
+      "case_id": "C02",
+      "selected_pipeline": "standard",
+      "selected_config": "std_baseline_accurate",
+      "overall_score": 1.0,
+      "seconds_per_page": 3.181,
+      "baseline_low_confidence": false
+    },
+    {
+      "case_id": "C03",
+      "selected_pipeline": "vlm",
+      "selected_config": "vlm_gpt_5_4_markdown_s2_0_rnone_strict_preserve",
+      "overall_score": 0.9598,
+      "seconds_per_page": 10.364,
+      "baseline_low_confidence": true
+    },
+    {
+      "case_id": "C04",
+      "selected_pipeline": "standard",
+      "selected_config": "std_baseline_accurate",
+      "overall_score": 1.0,
+      "seconds_per_page": 3.215,
+      "baseline_low_confidence": false
+    },
+    {
+      "case_id": "C05",
+      "selected_pipeline": "standard",
+      "selected_config": "std_baseline_accurate",
+      "overall_score": 1.0,
+      "seconds_per_page": 13.269,
+      "baseline_low_confidence": false
+    },
+    {
+      "case_id": "C06",
+      "selected_pipeline": "standard",
+      "selected_config": "std_baseline_accurate",
+      "overall_score": 1.0,
+      "seconds_per_page": 1.114,
+      "baseline_low_confidence": false
+    },
+    {
+      "case_id": "C07",
+      "selected_pipeline": "standard",
+      "selected_config": "std_baseline_accurate",
+      "overall_score": 0.9731,
+      "seconds_per_page": 1.974,
+      "baseline_low_confidence": true
+    },
+    {
+      "case_id": "C08",
+      "selected_pipeline": "standard",
+      "selected_config": "std_baseline_accurate",
+      "overall_score": 1.0,
+      "seconds_per_page": 1.96,
+      "baseline_low_confidence": true
+    },
+    {
+      "case_id": "C09",
+      "selected_pipeline": "standard",
+      "selected_config": "std_baseline_accurate",
+      "overall_score": 0.8145,
+      "seconds_per_page": 11.39,
+      "baseline_low_confidence": false
+    },
+    {
+      "case_id": "C10",
+      "selected_pipeline": "standard",
+      "selected_config": "std_baseline_accurate",
+      "overall_score": 1.0,
+      "seconds_per_page": 2.348,
+      "baseline_low_confidence": false
+    },
+    {
+      "case_id": "C11",
+      "selected_pipeline": "standard",
+      "selected_config": "std_baseline_accurate",
+      "overall_score": 0.6937,
+      "seconds_per_page": 1.305,
+      "baseline_low_confidence": false
+    }
+  ],
+  "case_count": 11,
+  "mean_overall": 0.9412,
+  "mean_seconds_per_page": 4.792,
+  "vlm_selected_cases": [
+    "C03"
+  ]
+}

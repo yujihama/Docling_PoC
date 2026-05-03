@@ -1,0 +1,11 @@
+model,response_format,scale,reasoning_effort,prompt_variant,runs,success,pages,mean_overall,mean_text_recall,mean_table_recall,mean_detection_f1,total_seconds,seconds_per_page,estimated_cost_usd
+gpt-5.4-mini,html,2.0,none,strict_preserve,5,5,21,0.9727,0.9231,0.9993,0.88,142.838,6.802,0.159044
+gpt-5.4-mini,markdown,2.0,none,table_first,5,5,21,0.971,0.9378,0.9869,0.8167,100.681,4.794,0.107643
+gpt-5.2,markdown,2.0,none,strict_preserve,5,5,21,0.9533,0.9778,0.9292,0.8467,189.253,9.012,0.386152
+gpt-5.4,markdown,2.0,none,strict_preserve,5,5,21,0.9413,0.9378,0.9329,0.8571,184.107,8.767,0.355608
+gpt-5.4-mini,markdown,2.0,low,strict_preserve,5,5,21,0.9192,0.9378,0.8927,0.8081,114.444,5.45,0.124283
+gpt-5.4-mini,markdown,2.5,none,strict_preserve,5,5,21,0.9191,0.9378,0.8924,0.8081,113.138,5.388,0.107019
+gpt-5.4-mini,markdown,2.0,none,strict_preserve,5,5,21,0.9145,0.9378,0.8841,0.7829,104.094,4.957,0.106845
+gpt-5.4-mini,markdown,2.0,medium,strict_preserve,5,5,21,0.9142,0.9378,0.8836,0.7778,201.504,9.595,0.209444
+gpt-5.5,markdown,2.0,none,strict_preserve,5,5,21,0.8776,0.9378,0.817,0.7905,177.982,8.475,1.305985
+gpt-5.4-mini,markdown,1.0,none,strict_preserve,5,5,21,0.8473,0.9378,0.762,0.8444,79.369,3.779,0.072478
