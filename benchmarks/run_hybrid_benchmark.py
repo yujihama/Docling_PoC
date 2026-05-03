@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+from datetime import date
 from pathlib import Path
 from typing import Any
 
@@ -38,7 +39,7 @@ def main() -> int:
     cases = gt["cases"][: args.limit] if args.limit else gt["cases"]
 
     docling_converter = DocumentConverter()
-    vlm_converter = build_openai_vlm_converter(args.model)
+    vlm_converter = None
 
     rows = []
     for case in cases:
@@ -46,6 +47,8 @@ def main() -> int:
         selected = "docling"
         final_row = base_row
         if should_rerun_with_vlm(base_row, args.threshold):
+            if vlm_converter is None:
+                vlm_converter = build_openai_vlm_converter(args.model)
             vlm_row = benchmark_vlm_case(vlm_converter, case)
             if vlm_row.get("status") == "ok" and vlm_row.get("overall_score", 0.0) >= base_row.get("overall_score", 0.0):
                 final_row = vlm_row
@@ -56,7 +59,7 @@ def main() -> int:
         rows.append(final_row)
 
     payload = {
-        "generated_at": "2026-05-02",
+        "generated_at": date.today().isoformat(),
         "mode": "hybrid",
         "fallback_model": args.model,
         "threshold": args.threshold,

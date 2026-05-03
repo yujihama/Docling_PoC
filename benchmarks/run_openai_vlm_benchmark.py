@@ -7,6 +7,7 @@ import re
 import sys
 import time
 import argparse
+from datetime import date
 from pathlib import Path
 from typing import Any
 
@@ -217,7 +218,7 @@ def benchmark_case(converter: Any, case: dict[str, Any]) -> dict[str, Any]:
 def write_outputs(rows: list[dict[str, Any]], model: str, settings: dict[str, Any]) -> None:
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
     payload = {
-        "generated_at": "2026-05-02",
+        "generated_at": date.today().isoformat(),
         "model": model,
         "settings": settings,
         "metric": "0.35 * text_anchor_recall + 0.55 * table_cell_recall + 0.10 * table_detection_ratio",

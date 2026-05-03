@@ -5,6 +5,7 @@ import json
 import re
 import statistics
 import time
+from datetime import date
 from pathlib import Path
 from typing import Any
 
@@ -254,7 +255,7 @@ def main() -> None:
             flush=True,
         )
     payload = {
-        "generated_at": "2026-05-02",
+        "generated_at": date.today().isoformat(),
         "metric": "0.35 * text_anchor_recall + 0.55 * table_cell_recall + 0.10 * table_detection_ratio",
         "extended_metrics": ["table_detection_precision", "table_detection_f1", "row_count_match_rate", "column_count_match_rate", "header_match_rate", "structured_table_cell_recall", "duplicate_table_rate", "page_level_score", "over_detection_penalty", "low_confidence"],
         "results": rows,
