@@ -34,30 +34,30 @@ def table_shapes(tables: list[dict[str, Any]]) -> list[TableShape]:
     return [TableShape(rows=int(t.get("rows", 0)), columns=int(t.get("columns", 0))) for t in tables]
 
 
-def shape_match_rates(expected_count: int, detected: list[TableShape]) -> dict[str, float]:
+def shape_presence_rates(expected_count: int, detected: list[TableShape]) -> dict[str, float]:
     if expected_count <= 0:
         return {
-            "row_count_match_rate": 1.0,
-            "column_count_match_rate": 1.0,
-            "header_match_rate": 1.0,
+            "row_count_present_rate": 1.0,
+            "column_count_present_rate": 1.0,
+            "table_structure_present_rate": 1.0,
         }
     comparable = min(expected_count, len(detected))
     if comparable == 0:
         return {
-            "row_count_match_rate": 0.0,
-            "column_count_match_rate": 0.0,
-            "header_match_rate": 0.0,
+            "row_count_present_rate": 0.0,
+            "column_count_present_rate": 0.0,
+            "table_structure_present_rate": 0.0,
         }
     row_nonzero = sum(1 for s in detected[:comparable] if s.rows > 0)
     col_nonzero = sum(1 for s in detected[:comparable] if s.columns > 0)
-    header_like = sum(1 for s in detected[:comparable] if s.columns > 1 and s.rows > 1)
+    table_like = sum(1 for s in detected[:comparable] if s.columns > 1 and s.rows > 1)
     return {
-        "row_count_match_rate": row_nonzero / comparable,
-        "column_count_match_rate": col_nonzero / comparable,
-        "header_match_rate": header_like / comparable,
+        "row_count_present_rate": row_nonzero / expected_count,
+        "column_count_present_rate": col_nonzero / expected_count,
+        "table_structure_present_rate": table_like / expected_count,
     }
 
 
-def compute_page_level_score(base_score: float, detection_f1: float, over_penalty: float) -> float:
+def compute_case_confidence_score(base_score: float, detection_f1: float, over_penalty: float) -> float:
     score = (0.75 * base_score) + (0.25 * detection_f1) - (0.20 * over_penalty)
     return max(0.0, min(1.0, score))

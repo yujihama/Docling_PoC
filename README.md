@@ -90,6 +90,12 @@ Run OpenAI VLM:
 python benchmarks\run_openai_vlm_benchmark.py --model gpt-5.4-mini --response-format markdown --scale 2.0
 ```
 
+Run case-level hybrid selection. This first runs Standard Docling for each case, then reruns the whole case with VLM only when the Docling case is marked low confidence:
+
+```powershell
+python benchmarks\run_hybrid_benchmark.py --limit 1 --model gpt-5.4-mini
+```
+
 Useful VLM benchmark options:
 
 - `--model`: OpenAI model, for example `gpt-5.2`, `gpt-5.4-mini`, or `gpt-4.1`.
@@ -107,6 +113,10 @@ All measurements below use 5 generated PDFs, 36 total pages. The score is a dete
 ```text
 0.35 * text_anchor_recall + 0.55 * table_cell_recall + 0.10 * table_detection_ratio
 ```
+
+`table_cell_recall` and `structured_table_cell_recall` are measured against exported structured table text, not the full Markdown body. Additional case-level metrics include `table_detection_precision`, `table_detection_f1`, `duplicate_table_rate`, `over_detection_penalty`, `row_count_present_rate`, `column_count_present_rate`, `table_structure_present_rate`, `case_confidence_score`, and `low_confidence`.
+
+The current hybrid benchmark is intentionally case-level: a low-confidence case is rerun as a whole with VLM. Page-level selection and page-only VLM reruns remain future work for the broader Issue #1 plan.
 
 | Run | Success | Pages | Total sec | Sec/page | Mean overall |
 |---|---:|---:|---:|---:|---:|

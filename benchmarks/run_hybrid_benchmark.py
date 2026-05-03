@@ -2,9 +2,13 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 from datetime import date
 from pathlib import Path
 from typing import Any
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
 
 from docling.document_converter import DocumentConverter
 
@@ -12,7 +16,6 @@ from benchmarks.run_docling_benchmark import benchmark_case as benchmark_docling
 from benchmarks.run_openai_vlm_benchmark import benchmark_case as benchmark_vlm_case
 from docling_openai_vlm import build_openai_vlm_converter
 
-ROOT = Path(__file__).resolve().parents[1]
 OUT_DIR = ROOT / "outputs" / "docling_benchmark"
 GT_PATH = OUT_DIR / "ground_truth.json"
 RESULTS_DIR = OUT_DIR / "results_hybrid"
@@ -20,7 +23,8 @@ JSON_PATH = RESULTS_DIR / "hybrid_results.json"
 
 
 def should_rerun_with_vlm(row: dict[str, Any], threshold: float) -> bool:
-    return bool(row.get("low_confidence", False) or float(row.get("page_level_score", 0.0)) < threshold)
+    confidence_score = row.get("case_confidence_score", 0.0)
+    return bool(row.get("low_confidence", False) or float(confidence_score) < threshold)
 
 
 def parse_args() -> argparse.Namespace:
@@ -56,11 +60,13 @@ def main() -> int:
         final_row = dict(final_row)
         final_row["selected_pipeline"] = selected
         final_row["docling_overall_score"] = base_row.get("overall_score", 0.0)
+        final_row["docling_case_confidence_score"] = base_row.get("case_confidence_score", 0.0)
         rows.append(final_row)
 
     payload = {
         "generated_at": date.today().isoformat(),
-        "mode": "hybrid",
+        "mode": "case_level_hybrid",
+        "selection_scope": "case",
         "fallback_model": args.model,
         "threshold": args.threshold,
         "results": rows,
