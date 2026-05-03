@@ -1,6 +1,6 @@
-case_id,filename,expected_pages,file_size_mb,expected_tables,detected_tables,text_anchor_recall,table_cell_recall,table_detection_ratio,overall_score,convert_seconds,total_seconds,seconds_per_page,markdown_chars
-C01,case01_clean_financial_2p.pdf,2,0.005,2,2,0.75,1.0,1.0,0.9125,5.303,5.336,2.668,2830
-C02,case02_dense_multisection_5p.pdf,5,0.015,5,5,1.0,1.0,1.0,1.0,16.626,16.666,3.333,28643
-C03,case03_mixed_orientation_9p.pdf,9,0.024,9,7,0.5556,0.6895,0.7778,0.6514,15.804,15.844,1.76,11829
-C04,case04_long_register_16p.pdf,16,0.042,16,16,1.0,1.0,1.0,1.0,51.709,51.901,3.244,37694
-C05,case05_scanned_image_4p.pdf,4,0.614,4,4,1.0,1.0,1.0,1.0,52.942,52.95,13.238,3678
+case_id,filename,expected_pages,file_size_mb,expected_tables,detected_tables,text_anchor_recall,table_cell_recall,table_detection_ratio,table_detection_precision,table_detection_f1,row_count_present_rate,column_count_present_rate,table_structure_present_rate,structured_table_cell_recall,duplicate_table_rate,over_detection_penalty,case_confidence_score,low_confidence,overall_score,convert_seconds,total_seconds,seconds_per_page,markdown_chars
+C01,case01_clean_financial_2p.pdf,2,0.005,2,2,0.75,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0,0.0,0.9344,False,0.9125,4.976,5.007,2.504,2830
+C02,case02_dense_multisection_5p.pdf,5,0.015,5,5,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0,0.0,1.0,False,1.0,16.126,16.165,3.233,28643
+C03,case03_mixed_orientation_9p.pdf,9,0.024,9,7,0.5556,0.6895,0.7778,1.0,0.875,0.7778,0.7778,0.7778,0.6895,0.0,0.0,0.7073,True,0.6514,15.034,15.073,1.675,11829
+C04,case04_long_register_16p.pdf,16,0.042,16,16,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0,0.0,1.0,False,1.0,50.857,51.038,3.19,37694
+C05,case05_scanned_image_4p.pdf,4,0.614,4,4,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0,0.0,1.0,False,1.0,52.71,52.718,13.18,3678

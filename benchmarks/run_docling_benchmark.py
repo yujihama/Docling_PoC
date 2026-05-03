@@ -4,14 +4,25 @@ import csv
 import json
 import re
 import statistics
+import sys
 import time
+from datetime import date
 from pathlib import Path
 from typing import Any
 
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+
 from docling.document_converter import DocumentConverter
 
+from benchmarks.metrics import (
+    calc_detection_metrics,
+    compute_case_confidence_score,
+    shape_presence_rates,
+    table_shapes,
+)
 
-ROOT = Path(__file__).resolve().parents[1]
+
 OUT_DIR = ROOT / "outputs" / "docling_benchmark"
 PDF_DIR = OUT_DIR / "pdfs"
 RESULTS_DIR = OUT_DIR / "results"
@@ -55,6 +66,7 @@ def export_tables(document: Any) -> tuple[list[dict[str, Any]], str]:
                 "index": index,
                 "rows": int(len(dataframe)),
                 "columns": int(len(dataframe.columns)),
+                "headers": [str(column) for column in dataframe.columns],
                 "csv": csv_text,
                 "html": html_text,
             }
@@ -94,6 +106,16 @@ def benchmark_case(converter: DocumentConverter, case: dict[str, Any]) -> dict[s
     detected_tables = len(tables)
     table_detection_ratio = min(detected_tables / expected_tables, 1.0) if expected_tables else 1.0
     overall = (0.35 * text_score) + (0.55 * table_score) + (0.10 * table_detection_ratio)
+    detection_metrics = calc_detection_metrics(expected_tables, detected_tables)
+    shape_metrics = shape_presence_rates(expected_tables, table_shapes(tables))
+    structured_table_cell_recall = table_score
+    case_confidence_score = compute_case_confidence_score(overall, detection_metrics["table_detection_f1"], detection_metrics["over_detection_penalty"])
+    low_confidence = (
+        len(markdown.strip()) < 200
+        or detection_metrics["over_detection_penalty"] > 0.25
+        or detection_metrics["table_detection_recall"] < 0.8
+        or case_confidence_score < 0.75
+    )
     convert_seconds = converted_at - started
     total_seconds = finished - started
     pages = int(case["pages"])
@@ -114,6 +136,16 @@ def benchmark_case(converter: DocumentConverter, case: dict[str, Any]) -> dict[s
         "table_cell_hits": table_hits,
         "table_cell_total": table_total,
         "table_detection_ratio": round(table_detection_ratio, 4),
+        "table_detection_precision": round(detection_metrics["table_detection_precision"], 4),
+        "table_detection_f1": round(detection_metrics["table_detection_f1"], 4),
+        "row_count_present_rate": round(shape_metrics["row_count_present_rate"], 4),
+        "column_count_present_rate": round(shape_metrics["column_count_present_rate"], 4),
+        "table_structure_present_rate": round(shape_metrics["table_structure_present_rate"], 4),
+        "structured_table_cell_recall": round(structured_table_cell_recall, 4),
+        "duplicate_table_rate": round(detection_metrics["duplicate_table_rate"], 4),
+        "over_detection_penalty": round(detection_metrics["over_detection_penalty"], 4),
+        "case_confidence_score": round(case_confidence_score, 4),
+        "low_confidence": low_confidence,
         "overall_score": round(overall, 4),
         "convert_seconds": round(convert_seconds, 3),
         "total_seconds": round(total_seconds, 3),
@@ -135,6 +167,16 @@ def write_csv(rows: list[dict[str, Any]]) -> None:
         "text_anchor_recall",
         "table_cell_recall",
         "table_detection_ratio",
+        "table_detection_precision",
+        "table_detection_f1",
+        "row_count_present_rate",
+        "column_count_present_rate",
+        "table_structure_present_rate",
+        "structured_table_cell_recall",
+        "duplicate_table_rate",
+        "over_detection_penalty",
+        "case_confidence_score",
+        "low_confidence",
         "overall_score",
         "convert_seconds",
         "total_seconds",
@@ -167,12 +209,12 @@ def write_report(rows: list[dict[str, Any]]) -> None:
         "",
         "## Results",
         "",
-        "| Case | Pages | Tags | Tables expected/detected | Text recall | Table recall | Overall | Total sec | Sec/page |",
-        "|---|---:|---|---:|---:|---:|---:|---:|---:|",
+        "| Case | Pages | Tags | Tables expected/detected | Text recall | Table recall | Detection F1 | Confidence | Low confidence | Overall | Total sec | Sec/page |",
+        "|---|---:|---|---:|---:|---:|---:|---:|---|---:|---:|---:|",
     ]
     for row in rows:
         lines.append(
-            "| {case_id} | {pages} | {tags} | {expected_tables}/{detected_tables} | {text:.3f} | {table:.3f} | {overall:.3f} | {seconds:.3f} | {spp:.3f} |".format(
+            "| {case_id} | {pages} | {tags} | {expected_tables}/{detected_tables} | {text:.3f} | {table:.3f} | {detection_f1:.3f} | {confidence:.3f} | {low_confidence} | {overall:.3f} | {seconds:.3f} | {spp:.3f} |".format(
                 case_id=row["case_id"],
                 pages=row["expected_pages"],
                 tags=", ".join(row["tags"]),
@@ -180,6 +222,9 @@ def write_report(rows: list[dict[str, Any]]) -> None:
                 detected_tables=row["detected_tables"],
                 text=float(row["text_anchor_recall"]),
                 table=float(row["table_cell_recall"]),
+                detection_f1=float(row["table_detection_f1"]),
+                confidence=float(row["case_confidence_score"]),
+                low_confidence=str(row["low_confidence"]).lower(),
                 overall=float(row["overall_score"]),
                 seconds=float(row["total_seconds"]),
                 spp=float(row["seconds_per_page"]),
@@ -217,8 +262,9 @@ def main() -> None:
             flush=True,
         )
     payload = {
-        "generated_at": "2026-05-02",
+        "generated_at": date.today().isoformat(),
         "metric": "0.35 * text_anchor_recall + 0.55 * table_cell_recall + 0.10 * table_detection_ratio",
+        "extended_metrics": ["table_detection_precision", "table_detection_f1", "row_count_present_rate", "column_count_present_rate", "table_structure_present_rate", "structured_table_cell_recall", "duplicate_table_rate", "case_confidence_score", "over_detection_penalty", "low_confidence"],
         "results": rows,
     }
     JSON_PATH.write_text(json.dumps(payload, indent=2), encoding="utf-8")

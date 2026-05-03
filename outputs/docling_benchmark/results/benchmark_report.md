@@ -7,18 +7,18 @@ Accuracy is a string-recall benchmark, not a semantic human-evaluation score.
 
 - PDFs: 5
 - Total pages: 36
-- Total measured time: 142.697 sec
+- Total measured time: 140.001 sec
 - Mean overall score: 0.913
 
 ## Results
 
-| Case | Pages | Tags | Tables expected/detected | Text recall | Table recall | Overall | Total sec | Sec/page |
-|---|---:|---|---:|---:|---:|---:|---:|---:|
-| C01 | 2 | clean, vector, short | 2/2 | 0.750 | 1.000 | 0.912 | 5.336 | 2.668 |
-| C02 | 5 | dense, merged-header, rotated | 5/5 | 1.000 | 1.000 | 1.000 | 16.666 | 3.333 |
-| C03 | 9 | mixed-orientation, charts, sidebars | 9/7 | 0.556 | 0.690 | 0.651 | 15.844 | 1.760 |
-| C04 | 16 | long, dense, cross-page | 16/16 | 1.000 | 1.000 | 1.000 | 51.901 | 3.244 |
-| C05 | 4 | scanned, image-only, ocr | 4/4 | 1.000 | 1.000 | 1.000 | 52.950 | 13.238 |
+| Case | Pages | Tags | Tables expected/detected | Text recall | Table recall | Detection F1 | Confidence | Low confidence | Overall | Total sec | Sec/page |
+|---|---:|---|---:|---:|---:|---:|---:|---|---:|---:|---:|
+| C01 | 2 | clean, vector, short | 2/2 | 0.750 | 1.000 | 1.000 | 0.934 | false | 0.912 | 5.007 | 2.504 |
+| C02 | 5 | dense, merged-header, rotated | 5/5 | 1.000 | 1.000 | 1.000 | 1.000 | false | 1.000 | 16.165 | 3.233 |
+| C03 | 9 | mixed-orientation, charts, sidebars | 9/7 | 0.556 | 0.690 | 0.875 | 0.707 | true | 0.651 | 15.073 | 1.675 |
+| C04 | 16 | long, dense, cross-page | 16/16 | 1.000 | 1.000 | 1.000 | 1.000 | false | 1.000 | 51.038 | 3.190 |
+| C05 | 4 | scanned, image-only, ocr | 4/4 | 1.000 | 1.000 | 1.000 | 1.000 | false | 1.000 | 52.718 | 13.180 |
 
 ## Notes
 
