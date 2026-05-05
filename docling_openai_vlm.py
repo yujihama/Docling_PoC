@@ -3,6 +3,7 @@ from __future__ import annotations
 import base64
 import json
 import os
+import threading
 from io import BytesIO
 from typing import Any
 
@@ -44,6 +45,9 @@ Rules:
 - Convert every visible table into a Markdown table.
 - Preserve numbers, dates, IDs, symbols, punctuation, units, and column names exactly.
 - If a cell is blank, leave it blank.
+- A blank table cell means there are no visible characters, numbers, or symbols in that cell; keep it empty and do not write [[読み取り不明]].
+- If any visible character, number, date, ID, amount, or table cell is unreadable, do not guess. Write [[読み取り不明]].
+- Use [[読み取り不明]] only when visible content exists but cannot be read.
 - Do not summarize or invent missing content.
 """
 
@@ -55,6 +59,9 @@ Rules:
 - Convert every visible table into a semantic <table> with <thead>, <tbody>, <tr>, <th>, and <td> where appropriate.
 - Preserve numbers, dates, IDs, symbols, punctuation, units, and column names exactly.
 - If a cell is blank, leave it blank.
+- A blank table cell means there are no visible characters, numbers, or symbols in that cell; keep it empty and do not write [[読み取り不明]].
+- If any visible character, number, date, ID, amount, or table cell is unreadable, do not guess. Write [[読み取り不明]].
+- Use [[読み取り不明]] only when visible content exists but cannot be read.
 - Do not summarize or invent missing content.
 """
 
@@ -76,7 +83,15 @@ Table priority:
 
 
 _DOCLING_OPENAI_PATCHED = False
-_VLM_USAGE_EVENTS: list[dict[str, Any]] = []
+_VLM_USAGE_LOCAL = threading.local()
+
+
+def _current_vlm_usage_events() -> list[dict[str, Any]]:
+    events = getattr(_VLM_USAGE_LOCAL, "events", None)
+    if events is None:
+        events = []
+        _VLM_USAGE_LOCAL.events = events
+    return events
 
 
 def supports_reasoning_effort(model: str) -> bool:
@@ -127,11 +142,11 @@ def prompt_for_response_format(
 
 
 def clear_vlm_usage_events() -> None:
-    _VLM_USAGE_EVENTS.clear()
+    _current_vlm_usage_events().clear()
 
 
 def get_vlm_usage_events() -> list[dict[str, Any]]:
-    return list(_VLM_USAGE_EVENTS)
+    return list(_current_vlm_usage_events())
 
 
 def patch_docling_openai_gpt5_params() -> None:
@@ -230,7 +245,7 @@ def patch_docling_openai_gpt5_params() -> None:
         usage_payload: dict[str, Any] = {}
         if usage is not None:
             usage_payload = usage.model_dump(mode="json")
-        _VLM_USAGE_EVENTS.append(
+        _current_vlm_usage_events().append(
             {
                 "model": params.get("model"),
                 "image_detail": image_detail,

@@ -2,10 +2,11 @@
 
 Streamlit proof of concept for PDF extraction with Docling.
 
-The app supports two conversion paths:
+The app supports three conversion paths:
 
 - `Standard Docling`: Docling's default PDF pipeline. No LLM or VLM is used for conversion.
 - `OpenAI VLM`: Docling's `VlmPipeline` renders each PDF page as an image, sends the page image plus a prompt to an OpenAI vision-capable model, then reparses the returned Markdown or HTML into a `DoclingDocument`.
+- `Routed OCR/VLM Reconcile`: Runs a lightweight PDF preflight, routes text-layer pages to CPU-oriented Docling modes, and sends weak text-layer image pages through both OCR and VLM. If a good text-layer page still contains a large low-text-overlap embedded visual region, it keeps the text route and appends an OCR/VLM reconciliation pass for that page. OCR/VLM disagreements are emitted as warnings and unsafe values are masked as `[[読み取り不明]]` in the safe output.
 
 The `Ask GPT` tab is separate from conversion. It sends already extracted Markdown and table CSV text to the OpenAI Responses API for summarization or Q&A.
 
@@ -89,6 +90,43 @@ Run OpenAI VLM:
 ```powershell
 python benchmarks\run_openai_vlm_benchmark.py --model gpt-5.4-mini --response-format markdown --scale 2.0
 ```
+
+Run routed CPU-oriented processing with OCR/VLM reconciliation:
+
+```powershell
+python run_routed_pdf.py --pdf outputs\docling_benchmark\pdfs\case01_clean_financial_2p.pdf --run-id routed_case01
+```
+
+Useful routed options:
+
+- `--force-reconcile-pages 2,5-7`: force selected pages through OCR/VLM reconciliation.
+- `--disable-embedded-visual-append`: disable the extra OCR/VLM append pass for embedded visual regions on text-layer pages.
+- `--embedded-visual-min-area-ratio`: adjust the minimum page-area ratio for embedded visual detection.
+- `--model`: OpenAI model used for `IMAGE_RECONCILE` and `IMAGE_RECONCILE_APPEND` pages.
+- `--compare-mode ocr-vlm|vlm-vlm`: compare OCR against the VLM model, or compare two VLM models.
+- `--secondary-model`: second OpenAI model used when `--compare-mode vlm-vlm`.
+- `--disable-parallel-reconcile-candidates`: run reconcile candidates sequentially instead of concurrently.
+- `--max-parallel-table-groups`: maximum number of independent standard table groups to run concurrently.
+- `--use-coordinate-table-reconstruction`: experimental PDF line/text-coordinate grid reconstruction for `TEXT_TABLE_ACCURATE` pages. Column headers are not inferred; PDF grid rows are preserved under `col_001`, `col_002`, ...
+- `--vlm-scale`: rendered image scale for VLM.
+- `--response-format`: `markdown` or `html`.
+
+Routed outputs are written to:
+
+```text
+outputs/docling_routing_runs/<run_id>/
+```
+
+Key files:
+
+- `safe_output.md`: user-facing output with low-confidence values masked as `[[読み取り不明]]`.
+- `raw_output.md`: merged unmasked extraction output.
+- `raw_ocr_output.md` and `raw_vlm_output.md`: source outputs for reconciled pages.
+- `raw_candidate_a_output.md` and `raw_candidate_b_output.md`: comparison candidates. In `vlm-vlm` mode these are primary and secondary VLM outputs.
+- `preflight.csv`: page routing signals and selected mode.
+- `warnings.csv`: warning code, level, evidence, and suggested action. Text-layer table repair can emit `ROW_HEADER_SPAN_MISSED` or `TABLE_TEXT_COVERAGE_LOSS` when PDF text exists in a table region but Docling did not place it into structured cells.
+
+`metadata.json` includes `candidate_timing_seconds`, `segment_timing_seconds_by_mode`, and `page_timing_estimates` for bottleneck analysis. `IMAGE_RECONCILE_APPEND` uses cropped embedded visual regions as the OCR/VLM input instead of rerunning the whole page.
 
 Run case-level hybrid selection. This first runs Standard Docling for each case, then reruns the whole case with VLM only when the Docling case is marked low confidence:
 
