@@ -1,0 +1,15 @@
+[
+  {
+    "page": 4,
+    "mode": "IMAGE_RECONCILE",
+    "level": "warning",
+    "code": "OCR_VLM_DISAGREEMENT",
+    "score": 0.55,
+    "message": "表内テキストにOCR/VLMの表記ゆれがあります。safe出力ではVLM側の表記を採用しました。",
+    "suggested_action": "必要に応じてraw_outputのOCR/VLM候補値を確認してください。",
+    "evidence": {
+      "text_cell_disagreement_count": 13
+    },
+    "target": null
+  }
+]

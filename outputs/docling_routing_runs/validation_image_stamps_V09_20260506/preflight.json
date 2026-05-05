@@ -1,0 +1,102 @@
+[
+  {
+    "page": 1,
+    "width": 595.28,
+    "height": 841.89,
+    "text_chars": 755,
+    "text_density": 0.001507,
+    "text_quality_score": 0.8,
+    "image_area_ratio": 0.0864,
+    "line_count": 1,
+    "rect_count": 38,
+    "table_score": 0.7663,
+    "complex_table_score": 0.351,
+    "image_read_risk_score": 0.2621,
+    "mode": "TEXT_TABLE_FAST",
+    "reasons": [
+      "good_text_layer",
+      "simple_table_signal",
+      "embedded_visual_region_candidate"
+    ],
+    "elapsed_seconds": 0.0199,
+    "extra_actions": [
+      "IMAGE_RECONCILE_APPEND"
+    ],
+    "embedded_visual_region_count": 1,
+    "embedded_visual_regions": [
+      {
+        "region_index": 1,
+        "bbox": [
+          280.63,
+          330.41,
+          564.09,
+          483.14
+        ],
+        "area_ratio": 0.0864,
+        "width_ratio": 0.4762,
+        "height_ratio": 0.1814,
+        "text_overlap_ratio": 0.0188,
+        "visual_complexity_score": 0.8804,
+        "caption_geometry_score": 0.85,
+        "nearest_caption": "Page 1 of 2",
+        "page_visual_reference_count": 1,
+        "reasons": [
+          "visual_complexity",
+          "caption_geometry",
+          "text_layer_visual_reference"
+        ]
+      }
+    ],
+    "visual_reference_count": 1
+  },
+  {
+    "page": 2,
+    "width": 595.28,
+    "height": 841.89,
+    "text_chars": 856,
+    "text_density": 0.001708,
+    "text_quality_score": 0.8,
+    "image_area_ratio": 0.1452,
+    "line_count": 1,
+    "rect_count": 52,
+    "table_score": 0.8125,
+    "complex_table_score": 0.426,
+    "image_read_risk_score": 0.2979,
+    "mode": "TEXT_TABLE_FAST",
+    "reasons": [
+      "good_text_layer",
+      "simple_table_signal",
+      "embedded_visual_region_candidate"
+    ],
+    "elapsed_seconds": 0.0173,
+    "extra_actions": [
+      "IMAGE_RECONCILE_APPEND"
+    ],
+    "embedded_visual_region_count": 1,
+    "embedded_visual_regions": [
+      {
+        "region_index": 1,
+        "bbox": [
+          51.02,
+          295.07,
+          368.5,
+          447.61
+        ],
+        "area_ratio": 0.0966,
+        "width_ratio": 0.5333,
+        "height_ratio": 0.1812,
+        "text_overlap_ratio": 0.0,
+        "visual_complexity_score": 0.8906,
+        "caption_geometry_score": 0.987,
+        "nearest_caption": "Figure 2 Received and checked stamps are embedded image objects.",
+        "page_visual_reference_count": 1,
+        "reasons": [
+          "visual_complexity",
+          "caption_geometry",
+          "text_layer_visual_reference"
+        ]
+      }
+    ],
+    "visual_reference_count": 1
+  }
+]

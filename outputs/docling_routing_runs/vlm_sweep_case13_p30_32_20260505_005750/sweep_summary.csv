@@ -1,0 +1,13 @@
+﻿status,error,model,prompt_variant,reasoning_effort,image_detail,elapsed_seconds,markdown_chars,unknown_marker_count,table_count,zero_row_table_count,one_row_table_count,table_shapes,adjustment_pool_mentions,adjustment_pool_unknown
+ok,,gpt-5.4-mini,strict_preserve,none,auto,33.256,11529,0,7,0,0,17x9;25x6;18x8;2x9;10x8;11x6;22x6,2,False
+ok,,gpt-5.4-mini,strict_preserve,low,auto,39.443,10582,0,8,1,1,16x9;25x6;20x8;0x4;1x9;10x6;11x6;22x6,2,False
+ok,,gpt-5.4-mini,strict_preserve,medium,auto,134.411,7611,0,5,0,0,16x9;25x6;34x4;2x9;20x4,2,False
+ok,,gpt-5.4-mini,table_first,none,auto,31.24,11531,0,7,0,0,17x9;25x6;17x8;2x9;10x8;11x6;22x6,2,False
+ok,,gpt-5.4-mini,table_first,low,auto,36.689,11296,1,8,0,0,16x9;25x6;17x4;17x4;2x9;20x4;12x6;22x6,2,False
+ok,,gpt-5.4-mini,table_first,medium,auto,169.742,9026,0,12,9,1,16x9;25x6;0x1;0x6;0x4;1x9;0x1;0x6;0x1;0x6;0x1;0x6,1,False
+ok,,gpt-5.4-nano,strict_preserve,none,auto,42.716,10921,11,7,0,0,16x9;26x6;17x6;2x9;10x6;22x6;22x6,2,False
+ok,,gpt-5.4-nano,strict_preserve,low,auto,89.292,10661,4,10,0,0,16x3;16x3;16x3;25x3;24x3;17x6;2x9;10x6;11x6;22x6,1,False
+ok,,gpt-5.4-nano,strict_preserve,medium,auto,237.826,6756,4,4,0,2,16x9;25x6;1x6;1x6,0,False
+ok,,gpt-5.4-nano,table_first,none,auto,40.892,11233,2,7,0,0,18x12;26x6;17x6;2x9;10x6;3x6;22x6,2,False
+ok,,gpt-5.4-nano,table_first,low,auto,58.054,11227,48,7,0,0,16x9;25x6;34x3;2x9;19x3;22x6;22x6,2,False
+ok,,gpt-5.4-nano,table_first,medium,auto,245.929,7268,4,5,0,0,16x9;25x6;17x6;2x9;10x6,2,False

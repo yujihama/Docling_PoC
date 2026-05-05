@@ -1,0 +1,50 @@
+[
+  {
+    "page": 1,
+    "width": 595.28,
+    "height": 841.89,
+    "text_chars": 527,
+    "text_density": 0.001052,
+    "text_quality_score": 0.8,
+    "image_area_ratio": 0.0,
+    "line_count": 1,
+    "rect_count": 42,
+    "table_score": 0.825,
+    "complex_table_score": 0.4052,
+    "image_read_risk_score": 0.235,
+    "mode": "TEXT_TABLE_FAST",
+    "reasons": [
+      "good_text_layer",
+      "simple_table_signal"
+    ],
+    "elapsed_seconds": 0.0595,
+    "extra_actions": [],
+    "embedded_visual_region_count": 0,
+    "embedded_visual_regions": [],
+    "visual_reference_count": 0
+  },
+  {
+    "page": 2,
+    "width": 595.28,
+    "height": 841.89,
+    "text_chars": 527,
+    "text_density": 0.001052,
+    "text_quality_score": 0.8,
+    "image_area_ratio": 0.0,
+    "line_count": 1,
+    "rect_count": 42,
+    "table_score": 0.825,
+    "complex_table_score": 0.4052,
+    "image_read_risk_score": 0.235,
+    "mode": "TEXT_TABLE_FAST",
+    "reasons": [
+      "good_text_layer",
+      "simple_table_signal"
+    ],
+    "elapsed_seconds": 0.0018,
+    "extra_actions": [],
+    "embedded_visual_region_count": 0,
+    "embedded_visual_regions": [],
+    "visual_reference_count": 0
+  }
+]

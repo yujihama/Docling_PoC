@@ -1,0 +1,3 @@
+complex_table_score,elapsed_seconds,height,image_area_ratio,image_read_risk_score,line_count,mode,page,reasons,rect_count,table_score,text_chars,text_density,text_quality_score,width
+0.4302,0.0077,841.89,0.0,0.2425,20,TEXT_TABLE_FAST,1,"good_text_layer,simple_table_signal",21,0.8625,1250,0.002494,0.8,595.28
+0.4469,0.0014,841.89,0.0,0.245,21,TEXT_TABLE_FAST,2,"good_text_layer,simple_table_signal",22,0.875,1326,0.002646,0.8,595.28

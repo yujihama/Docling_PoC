@@ -1,0 +1,23 @@
+[
+  {
+    "index": 1,
+    "rows": 6,
+    "columns": 5,
+    "headers": [
+      "Mark",
+      "Type",
+      "Size",
+      "Rating",
+      "Note"
+    ],
+    "csv": "Mark,Type,Size,Rating,Note\r\nDOOR-V06-01,FRP,825x2100,F10,Room 101\r\nDOOR-V06-02,FRP,850x2100,F20,Room 102\r\nDOOR-V06-03,FRP,875x2100,F30,Room 103\r\nDOOR-V06-04,FRP,900x2100,F40,Room 104\r\nDOOR-V06-05,FRP,925x2100,F50,Room 105\r\nDOOR-V06-06,FRP,950x2100,F60,Room 106\r\n",
+    "html": "<table><tbody><tr><th>Mark</th><th>Type</th><th>Size</th><th>Rating</th><th>Note</th></tr><tr><td>DOOR-V06-01</td><td>FRP</td><td>825x2100</td><td>F10</td><td>Room 101</td></tr><tr><td>DOOR-V06-02</td><td>FRP</td><td>850x2100</td><td>F20</td><td>Room 102</td></tr><tr><td>DOOR-V06-03</td><td>FRP</td><td>875x2100</td><td>F30</td><td>Room 103</td></tr><tr><td>DOOR-V06-04</td><td>FRP</td><td>900x2100</td><td>F40</td><td>Room 104</td></tr><tr><td>DOOR-V06-05</td><td>FRP</td><td>925x2100</td><td>F50</td><td>Room 105</td></tr><tr><td>DOOR-V06-06</td><td>FRP</td><td>950x2100</td><td>F60</td><td>Room 106</td></tr></tbody></table>",
+    "page": 1,
+    "repair": {
+      "enabled": false
+    },
+    "source_start_page": 1,
+    "source_end_page": 1,
+    "mode": "IMAGE_RECONCILE"
+  }
+]

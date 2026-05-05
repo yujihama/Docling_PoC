@@ -1,0 +1,118 @@
+[
+  {
+    "page": 1,
+    "mode": "IMAGE_RECONCILE",
+    "level": "needs_retry",
+    "code": "CRITICAL_VALUE_DISAGREEMENT",
+    "score": 0.9,
+    "message": "id のOCR/VLM読み取り結果が一致しません。",
+    "suggested_action": "該当ページを確認し、必要なら高解像度で再投入してください。",
+    "evidence": {
+      "field_type": "id",
+      "ocr_values": [
+        "FaintrastertextwithskewandnoisemarkerCo9-NOISE-P01",
+        "CO9-P01-T1-R04",
+        "EXC-01-04-05WRAP-C09-01-04"
+      ],
+      "vlm_values": [
+        "C09-NOISE-P01",
+        "C09-P01-T1-R04",
+        "EXC-01-04-05",
+        "WRAP-C09-01-04"
+      ]
+    },
+    "target": null
+  },
+  {
+    "page": 1,
+    "mode": "IMAGE_RECONCILE",
+    "level": "warning",
+    "code": "MASKED_AS_UNKNOWN",
+    "score": 0.8,
+    "message": "safe出力で低信頼箇所を読み取り不明に置換しました。",
+    "suggested_action": "raw_outputのOCR/VLM候補値を確認してください。",
+    "evidence": {
+      "masked_value_count": 4,
+      "masked_cell_count": 0,
+      "invalid_value_count": 0
+    },
+    "target": null
+  },
+  {
+    "page": 2,
+    "mode": "IMAGE_RECONCILE",
+    "level": "needs_retry",
+    "code": "CRITICAL_VALUE_DISAGREEMENT",
+    "score": 0.9,
+    "message": "id のOCR/VLM読み取り結果が一致しません。",
+    "suggested_action": "該当ページを確認し、必要なら高解像度で再投入してください。",
+    "evidence": {
+      "field_type": "id",
+      "ocr_values": [
+        "FaintrastertextwithskewandnoisemarkerCo9-NOISE-P02",
+        "EXC-02-04-05WRAP-C09-02-04",
+        "CO9-P02-T1-R07"
+      ],
+      "vlm_values": [
+        "C09-NOISE-P02",
+        "EXC-02-04-05",
+        "WRAP-C09-02-04",
+        "C09-P02-T1-R07"
+      ]
+    },
+    "target": null
+  },
+  {
+    "page": 2,
+    "mode": "IMAGE_RECONCILE",
+    "level": "warning",
+    "code": "MASKED_AS_UNKNOWN",
+    "score": 0.8,
+    "message": "safe出力で低信頼箇所を読み取り不明に置換しました。",
+    "suggested_action": "raw_outputのOCR/VLM候補値を確認してください。",
+    "evidence": {
+      "masked_value_count": 4,
+      "masked_cell_count": 0,
+      "invalid_value_count": 0
+    },
+    "target": null
+  },
+  {
+    "page": 3,
+    "mode": "IMAGE_RECONCILE",
+    "level": "needs_retry",
+    "code": "CRITICAL_VALUE_DISAGREEMENT",
+    "score": 0.9,
+    "message": "id のOCR/VLM読み取り結果が一致しません。",
+    "suggested_action": "該当ページを確認し、必要なら高解像度で再投入してください。",
+    "evidence": {
+      "field_type": "id",
+      "ocr_values": [
+        "QualityScan3",
+        "FaintrastertextwithskewandnoisemarkerCo9-NOISE-P03",
+        "EXC-03-04-05WRAP-C09-03-04"
+      ],
+      "vlm_values": [
+        "C09-NOISE-P03",
+        "EXC-03-04-05",
+        "WRAP-C09-03-04"
+      ]
+    },
+    "target": null
+  },
+  {
+    "page": 3,
+    "mode": "IMAGE_RECONCILE",
+    "level": "warning",
+    "code": "MASKED_AS_UNKNOWN",
+    "score": 0.8,
+    "message": "safe出力で低信頼箇所を読み取り不明に置換しました。",
+    "suggested_action": "raw_outputのOCR/VLM候補値を確認してください。",
+    "evidence": {
+      "masked_value_count": 3,
+      "masked_cell_count": 0,
+      "invalid_value_count": 0
+    },
+    "target": null
+  }
+]

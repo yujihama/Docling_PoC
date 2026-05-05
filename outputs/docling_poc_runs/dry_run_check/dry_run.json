@@ -1,0 +1,378 @@
+{
+  "run_id": "dry_run_check",
+  "phase": "pilot",
+  "matrix": "all",
+  "cases": [
+    {
+      "case_id": "C01",
+      "filename": "case01_clean_financial_2p.pdf",
+      "pages": 2,
+      "tags": [
+        "clean",
+        "vector",
+        "short"
+      ]
+    },
+    {
+      "case_id": "C03",
+      "filename": "case03_mixed_orientation_9p.pdf",
+      "pages": 9,
+      "tags": [
+        "mixed-orientation",
+        "charts",
+        "sidebars"
+      ]
+    },
+    {
+      "case_id": "C05",
+      "filename": "case05_scanned_image_4p.pdf",
+      "pages": 4,
+      "tags": [
+        "scanned",
+        "image-only",
+        "ocr"
+      ]
+    },
+    {
+      "case_id": "C06",
+      "filename": "case6.pdf",
+      "pages": 3,
+      "tags": [
+        "real",
+        "japanese",
+        "financial-disclosure",
+        "tables"
+      ]
+    },
+    {
+      "case_id": "C09",
+      "filename": "case09_low_quality_skewed_scan_3p.pdf",
+      "pages": 3,
+      "tags": [
+        "scanned",
+        "low-quality",
+        "skewed",
+        "ocr"
+      ]
+    }
+  ],
+  "case_count": 5,
+  "case_pages": 21,
+  "standard_config_count": 10,
+  "vlm_config_count": 10,
+  "full_vlm_config_count": 144,
+  "estimated_vlm_requests_for_selected_phase": 210,
+  "estimated_vlm_requests_for_full": 7920,
+  "configs": [
+    {
+      "pipeline": "standard",
+      "config_id": "std_baseline_accurate",
+      "settings": {
+        "do_table_structure": true,
+        "tableformer_mode": "accurate",
+        "do_cell_matching": true,
+        "do_ocr": true,
+        "force_full_page_ocr": false,
+        "force_backend_text": false,
+        "images_scale": 1.0,
+        "generate_page_images": false,
+        "batch_profile": "default",
+        "ocr_batch_size": 4,
+        "layout_batch_size": 4,
+        "table_batch_size": 4
+      }
+    },
+    {
+      "pipeline": "standard",
+      "config_id": "std_no_table_structure",
+      "settings": {
+        "do_table_structure": false,
+        "tableformer_mode": "accurate",
+        "do_cell_matching": true,
+        "do_ocr": true,
+        "force_full_page_ocr": false,
+        "force_backend_text": false,
+        "images_scale": 1.0,
+        "generate_page_images": false,
+        "batch_profile": "default",
+        "ocr_batch_size": 4,
+        "layout_batch_size": 4,
+        "table_batch_size": 4
+      }
+    },
+    {
+      "pipeline": "standard",
+      "config_id": "std_table_fast",
+      "settings": {
+        "do_table_structure": true,
+        "tableformer_mode": "fast",
+        "do_cell_matching": true,
+        "do_ocr": true,
+        "force_full_page_ocr": false,
+        "force_backend_text": false,
+        "images_scale": 1.0,
+        "generate_page_images": false,
+        "batch_profile": "default",
+        "ocr_batch_size": 4,
+        "layout_batch_size": 4,
+        "table_batch_size": 4
+      }
+    },
+    {
+      "pipeline": "standard",
+      "config_id": "std_table_no_cell_match",
+      "settings": {
+        "do_table_structure": true,
+        "tableformer_mode": "accurate",
+        "do_cell_matching": false,
+        "do_ocr": true,
+        "force_full_page_ocr": false,
+        "force_backend_text": false,
+        "images_scale": 1.0,
+        "generate_page_images": false,
+        "batch_profile": "default",
+        "ocr_batch_size": 4,
+        "layout_batch_size": 4,
+        "table_batch_size": 4
+      }
+    },
+    {
+      "pipeline": "standard",
+      "config_id": "std_no_ocr",
+      "settings": {
+        "do_table_structure": true,
+        "tableformer_mode": "accurate",
+        "do_cell_matching": true,
+        "do_ocr": false,
+        "force_full_page_ocr": false,
+        "force_backend_text": false,
+        "images_scale": 1.0,
+        "generate_page_images": false,
+        "batch_profile": "default",
+        "ocr_batch_size": 4,
+        "layout_batch_size": 4,
+        "table_batch_size": 4
+      }
+    },
+    {
+      "pipeline": "standard",
+      "config_id": "std_force_full_page_ocr",
+      "settings": {
+        "do_table_structure": true,
+        "tableformer_mode": "accurate",
+        "do_cell_matching": true,
+        "do_ocr": true,
+        "force_full_page_ocr": true,
+        "force_backend_text": false,
+        "images_scale": 1.0,
+        "generate_page_images": false,
+        "batch_profile": "default",
+        "ocr_batch_size": 4,
+        "layout_batch_size": 4,
+        "table_batch_size": 4
+      }
+    },
+    {
+      "pipeline": "standard",
+      "config_id": "std_force_backend_text",
+      "settings": {
+        "do_table_structure": true,
+        "tableformer_mode": "accurate",
+        "do_cell_matching": true,
+        "do_ocr": true,
+        "force_full_page_ocr": false,
+        "force_backend_text": true,
+        "images_scale": 1.0,
+        "generate_page_images": false,
+        "batch_profile": "default",
+        "ocr_batch_size": 4,
+        "layout_batch_size": 4,
+        "table_batch_size": 4
+      }
+    },
+    {
+      "pipeline": "standard",
+      "config_id": "std_page_images_scale_2",
+      "settings": {
+        "do_table_structure": true,
+        "tableformer_mode": "accurate",
+        "do_cell_matching": true,
+        "do_ocr": true,
+        "force_full_page_ocr": false,
+        "force_backend_text": false,
+        "images_scale": 2.0,
+        "generate_page_images": true,
+        "batch_profile": "default",
+        "ocr_batch_size": 4,
+        "layout_batch_size": 4,
+        "table_batch_size": 4
+      }
+    },
+    {
+      "pipeline": "standard",
+      "config_id": "std_batch_small",
+      "settings": {
+        "do_table_structure": true,
+        "tableformer_mode": "accurate",
+        "do_cell_matching": true,
+        "do_ocr": true,
+        "force_full_page_ocr": false,
+        "force_backend_text": false,
+        "images_scale": 1.0,
+        "generate_page_images": false,
+        "batch_profile": "small",
+        "ocr_batch_size": 1,
+        "layout_batch_size": 1,
+        "table_batch_size": 1
+      }
+    },
+    {
+      "pipeline": "standard",
+      "config_id": "std_batch_large",
+      "settings": {
+        "do_table_structure": true,
+        "tableformer_mode": "accurate",
+        "do_cell_matching": true,
+        "do_ocr": true,
+        "force_full_page_ocr": false,
+        "force_backend_text": false,
+        "images_scale": 1.0,
+        "generate_page_images": false,
+        "batch_profile": "large",
+        "ocr_batch_size": 8,
+        "layout_batch_size": 8,
+        "table_batch_size": 8
+      }
+    },
+    {
+      "pipeline": "vlm",
+      "config_id": "vlm_gpt_5_5_markdown_s2_0_rnone_strict_preserve",
+      "settings": {
+        "model": "gpt-5.5",
+        "response_format": "markdown",
+        "scale": 2.0,
+        "reasoning_effort": "none",
+        "prompt_variant": "strict_preserve",
+        "max_completion_tokens": 12000,
+        "timeout_seconds": 180.0
+      }
+    },
+    {
+      "pipeline": "vlm",
+      "config_id": "vlm_gpt_5_4_markdown_s2_0_rnone_strict_preserve",
+      "settings": {
+        "model": "gpt-5.4",
+        "response_format": "markdown",
+        "scale": 2.0,
+        "reasoning_effort": "none",
+        "prompt_variant": "strict_preserve",
+        "max_completion_tokens": 12000,
+        "timeout_seconds": 180.0
+      }
+    },
+    {
+      "pipeline": "vlm",
+      "config_id": "vlm_gpt_5_4_mini_markdown_s2_0_rnone_strict_preserve",
+      "settings": {
+        "model": "gpt-5.4-mini",
+        "response_format": "markdown",
+        "scale": 2.0,
+        "reasoning_effort": "none",
+        "prompt_variant": "strict_preserve",
+        "max_completion_tokens": 12000,
+        "timeout_seconds": 180.0
+      }
+    },
+    {
+      "pipeline": "vlm",
+      "config_id": "vlm_gpt_5_2_markdown_s2_0_rnone_strict_preserve",
+      "settings": {
+        "model": "gpt-5.2",
+        "response_format": "markdown",
+        "scale": 2.0,
+        "reasoning_effort": "none",
+        "prompt_variant": "strict_preserve",
+        "max_completion_tokens": 12000,
+        "timeout_seconds": 180.0
+      }
+    },
+    {
+      "pipeline": "vlm",
+      "config_id": "vlm_gpt_5_4_mini_markdown_s1_0_rnone_strict_preserve",
+      "settings": {
+        "model": "gpt-5.4-mini",
+        "response_format": "markdown",
+        "scale": 1.0,
+        "reasoning_effort": "none",
+        "prompt_variant": "strict_preserve",
+        "max_completion_tokens": 12000,
+        "timeout_seconds": 180.0
+      }
+    },
+    {
+      "pipeline": "vlm",
+      "config_id": "vlm_gpt_5_4_mini_markdown_s2_0_rnone_table_first",
+      "settings": {
+        "model": "gpt-5.4-mini",
+        "response_format": "markdown",
+        "scale": 2.0,
+        "reasoning_effort": "none",
+        "prompt_variant": "table_first",
+        "max_completion_tokens": 12000,
+        "timeout_seconds": 180.0
+      }
+    },
+    {
+      "pipeline": "vlm",
+      "config_id": "vlm_gpt_5_4_mini_markdown_s2_0_rlow_strict_preserve",
+      "settings": {
+        "model": "gpt-5.4-mini",
+        "response_format": "markdown",
+        "scale": 2.0,
+        "reasoning_effort": "low",
+        "prompt_variant": "strict_preserve",
+        "max_completion_tokens": 12000,
+        "timeout_seconds": 180.0
+      }
+    },
+    {
+      "pipeline": "vlm",
+      "config_id": "vlm_gpt_5_4_mini_markdown_s2_0_rmedium_strict_preserve",
+      "settings": {
+        "model": "gpt-5.4-mini",
+        "response_format": "markdown",
+        "scale": 2.0,
+        "reasoning_effort": "medium",
+        "prompt_variant": "strict_preserve",
+        "max_completion_tokens": 12000,
+        "timeout_seconds": 180.0
+      }
+    },
+    {
+      "pipeline": "vlm",
+      "config_id": "vlm_gpt_5_4_mini_markdown_s2_5_rnone_strict_preserve",
+      "settings": {
+        "model": "gpt-5.4-mini",
+        "response_format": "markdown",
+        "scale": 2.5,
+        "reasoning_effort": "none",
+        "prompt_variant": "strict_preserve",
+        "max_completion_tokens": 12000,
+        "timeout_seconds": 180.0
+      }
+    },
+    {
+      "pipeline": "vlm",
+      "config_id": "vlm_gpt_5_4_mini_html_s2_0_rnone_strict_preserve",
+      "settings": {
+        "model": "gpt-5.4-mini",
+        "response_format": "html",
+        "scale": 2.0,
+        "reasoning_effort": "none",
+        "prompt_variant": "strict_preserve",
+        "max_completion_tokens": 12000,
+        "timeout_seconds": 180.0
+      }
+    }
+  ]
+}

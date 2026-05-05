@@ -1,0 +1,74 @@
+[
+  {
+    "page": 1,
+    "width": 419.53,
+    "height": 595.28,
+    "text_chars": 1899,
+    "text_density": 0.007604,
+    "text_quality_score": 0.8511,
+    "image_area_ratio": 0.0,
+    "line_count": 21,
+    "rect_count": 21,
+    "table_score": 1.0,
+    "complex_table_score": 0.6312,
+    "image_read_risk_score": 0.2521,
+    "mode": "TEXT_TABLE_ACCURATE",
+    "reasons": [
+      "good_text_layer",
+      "complex_table_signal"
+    ],
+    "elapsed_seconds": 0.0187,
+    "extra_actions": [],
+    "embedded_visual_region_count": 0,
+    "embedded_visual_regions": [],
+    "visual_reference_count": 0
+  },
+  {
+    "page": 2,
+    "width": 419.53,
+    "height": 595.28,
+    "text_chars": 1641,
+    "text_density": 0.006571,
+    "text_quality_score": 0.8772,
+    "image_area_ratio": 0.0,
+    "line_count": 48,
+    "rect_count": 49,
+    "table_score": 0.9695,
+    "complex_table_score": 0.8031,
+    "image_read_risk_score": 0.2369,
+    "mode": "TEXT_TABLE_ACCURATE",
+    "reasons": [
+      "good_text_layer",
+      "complex_table_signal"
+    ],
+    "elapsed_seconds": 0.0091,
+    "extra_actions": [],
+    "embedded_visual_region_count": 0,
+    "embedded_visual_regions": [],
+    "visual_reference_count": 0
+  },
+  {
+    "page": 3,
+    "width": 419.53,
+    "height": 595.28,
+    "text_chars": 1954,
+    "text_density": 0.007824,
+    "text_quality_score": 0.9433,
+    "image_area_ratio": 0.0,
+    "line_count": 16,
+    "rect_count": 16,
+    "table_score": 0.9232,
+    "complex_table_score": 0.6,
+    "image_read_risk_score": 0.2045,
+    "mode": "TEXT_TABLE_ACCURATE",
+    "reasons": [
+      "good_text_layer",
+      "complex_table_signal"
+    ],
+    "elapsed_seconds": 0.0103,
+    "extra_actions": [],
+    "embedded_visual_region_count": 0,
+    "embedded_visual_regions": [],
+    "visual_reference_count": 0
+  }
+]

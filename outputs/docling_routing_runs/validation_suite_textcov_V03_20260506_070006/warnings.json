@@ -1,0 +1,48 @@
+[
+  {
+    "page": 1,
+    "mode": "TEXT_TABLE_COORD",
+    "level": "info",
+    "code": "COORDINATE_TEXT_LAYER_SUPPLEMENTED",
+    "score": 0.7,
+    "message": "Coordinate table output was supplemented with PDF text-layer lines that were not represented in the reconstructed table.",
+    "suggested_action": "Review supplemented lines if this page is business-critical.",
+    "evidence": {
+      "raw_line_count": 15,
+      "supplemented_line_count": 1,
+      "supplemented_lines": [
+        {
+          "text": "Supplier onboarding FORM-V03-APPL-01",
+          "missing_tokens": [
+            "form-v03-appl-01"
+          ]
+        }
+      ],
+      "table_index_in_segment": 1
+    },
+    "target": null
+  },
+  {
+    "page": 2,
+    "mode": "TEXT_TABLE_COORD",
+    "level": "info",
+    "code": "COORDINATE_TEXT_LAYER_SUPPLEMENTED",
+    "score": 0.7,
+    "message": "Coordinate table output was supplemented with PDF text-layer lines that were not represented in the reconstructed table.",
+    "suggested_action": "Review supplemented lines if this page is business-critical.",
+    "evidence": {
+      "raw_line_count": 15,
+      "supplemented_line_count": 1,
+      "supplemented_lines": [
+        {
+          "text": "Supplier onboarding FORM-V03-APPL-02",
+          "missing_tokens": [
+            "form-v03-appl-02"
+          ]
+        }
+      ],
+      "table_index_in_segment": 1
+    },
+    "target": null
+  }
+]

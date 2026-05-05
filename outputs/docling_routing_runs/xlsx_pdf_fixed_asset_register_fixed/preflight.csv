@@ -1,0 +1,2 @@
+complex_table_score,elapsed_seconds,embedded_visual_region_count,embedded_visual_regions,extra_actions,height,image_area_ratio,image_read_risk_score,line_count,mode,page,reasons,rect_count,table_score,text_chars,text_density,text_quality_score,visual_reference_count,width
+1.0,0.2955,0,[],[],841.92,0.0,0.27,273,TEXT_TABLE_ACCURATE,1,"good_text_layer,complex_table_signal",344,1.0,30211,0.030141,0.8,0,1190.52

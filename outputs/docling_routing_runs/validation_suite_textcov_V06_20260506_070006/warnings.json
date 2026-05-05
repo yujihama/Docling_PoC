@@ -1,0 +1,31 @@
+[
+  {
+    "page": 1,
+    "mode": "TEXT_TABLE_COORD",
+    "level": "info",
+    "code": "COORDINATE_TEXT_LAYER_SUPPLEMENTED",
+    "score": 0.7,
+    "message": "Coordinate table output was supplemented with PDF text-layer lines that were not represented in the reconstructed table.",
+    "suggested_action": "Review supplemented lines if this page is business-critical.",
+    "evidence": {
+      "raw_line_count": 16,
+      "supplemented_line_count": 2,
+      "supplemented_lines": [
+        {
+          "text": "CALL-V06-03-GRID",
+          "missing_tokens": [
+            "call-v06-03-grid"
+          ]
+        },
+        {
+          "text": "ROTATE-V06-NORTH-ELEVATION",
+          "missing_tokens": [
+            "rotate-v06-north-elevation"
+          ]
+        }
+      ],
+      "table_index_in_segment": 1
+    },
+    "target": null
+  }
+]

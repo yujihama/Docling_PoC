@@ -1,0 +1,183 @@
+[
+  {
+    "index": 1,
+    "rows": 2,
+    "columns": 2,
+    "headers": [
+      "1",
+      "Name of entity/individual. An entry is required. (For a sole proprietor or disregarded entity, enter the owner’s name on line 1, and enter the business/disregarded entity’s name on line 2.)"
+    ],
+    "csv": "1,\"Name of entity/individual. An entry is required. (For a sole proprietor or disregarded entity, enter the owner’s name on line 1, and enter the business/disregarded entity’s name on line 2.)\"\r\n2,\"Business name/disregarded entity name, if different from above.\"\r\n3a,Check the appropriate box for federal tax classification of the entity/individual whose name is entered on line 1. Check only one of the following seven boxes.\r\n",
+    "html": "<table><tbody><tr><th>1</th><th>Name of entity/individual. An entry is required. (For a sole proprietor or disregarded entity, enter the owner’s name on line 1, and enter the business/disregarded entity’s name on line 2.)</th></tr><tr><td>2</td><td>Business name/disregarded entity name, if different from above.</td></tr><tr><td>3a</td><td>Check the appropriate box for federal tax classification of the entity/individual whose name is entered on line 1. Check only one of the following seven boxes.</td></tr></tbody></table>",
+    "page": 1,
+    "repair": {
+      "enabled": false
+    },
+    "source_start_page": 1,
+    "source_end_page": 1,
+    "mode": "TEXT_TABLE_VLM"
+  },
+  {
+    "index": 2,
+    "rows": 7,
+    "columns": 2,
+    "headers": [
+      "3a",
+      ""
+    ],
+    "csv": "3a,\r\n,Individual/sole proprietor\r\n,C corporation\r\n,S corporation\r\n,Partnership\r\n,Trust/estate\r\n,\"LLC. Enter the tax classification (C = C corporation, S = S corporation, P = Partnership)\"\r\n,Other (see instructions)\r\n",
+    "html": "<table><tbody><tr><th>3a</th><th></th></tr><tr><td></td><td>Individual/sole proprietor</td></tr><tr><td></td><td>C corporation</td></tr><tr><td></td><td>S corporation</td></tr><tr><td></td><td>Partnership</td></tr><tr><td></td><td>Trust/estate</td></tr><tr><td></td><td>LLC. Enter the tax classification (C = C corporation, S = S corporation, P = Partnership)</td></tr><tr><td></td><td>Other (see instructions)</td></tr></tbody></table>",
+    "page": 1,
+    "repair": {
+      "enabled": false
+    },
+    "source_start_page": 1,
+    "source_end_page": 1,
+    "mode": "TEXT_TABLE_VLM"
+  },
+  {
+    "index": 3,
+    "rows": 8,
+    "columns": 2,
+    "headers": [
+      "3b",
+      "If on line 3a you checked “Partnership” or “Trust/estate,” or checked “LLC” and entered “P” as its tax classification, and you are providing this form to a partnership, trust, or estate in which you have an ownership interest, check this box if you have any foreign partners, owners, or beneficiaries. See instructions."
+    ],
+    "csv": "3b,\"If on line 3a you checked “Partnership” or “Trust/estate,” or checked “LLC” and entered “P” as its tax classification, and you are providing this form to a partnership, trust, or estate in which you have an ownership interest, check this box if you have any foreign partners, owners, or beneficiaries. See instructions.\"\r\n4,\"Exemptions (codes apply only to certain entities, not individuals; see instructions on page 3):\"\r\n,Exempt payee code (if any) ______\r\n,Exemption from Foreign Account Tax Compliance Act (FATCA) reporting code (if any) ______\r\n,(Applies to accounts maintained outside the United States.)\r\n5,\"Address (number, street, and apt. or suite no.). See instructions.\"\r\n,Requester’s name and address (optional)\r\n6,\"City, state, and ZIP code\"\r\n7,List account number(s) here (optional)\r\n",
+    "html": "<table><tbody><tr><th>3b</th><th>If on line 3a you checked “Partnership” or “Trust/estate,” or checked “LLC” and entered “P” as its tax classification, and you are providing this form to a partnership, trust, or estate in which you have an ownership interest, check this box if you have any foreign partners, owners, or beneficiaries. See instructions.</th></tr><tr><td>4</td><td>Exemptions (codes apply only to certain entities, not individuals; see instructions on page 3):</td></tr><tr><td></td><td>Exempt payee code (if any) ______</td></tr><tr><td></td><td>Exemption from Foreign Account Tax Compliance Act (FATCA) reporting code (if any) ______</td></tr><tr><td></td><td>(Applies to accounts maintained outside the United States.)</td></tr><tr><td>5</td><td>Address (number, street, and apt. or suite no.). See instructions.</td></tr><tr><td></td><td>Requester’s name and address (optional)</td></tr><tr><td>6</td><td>City, state, and ZIP code</td></tr><tr><td>7</td><td>List account number(s) here (optional)</td></tr></tbody></table>",
+    "page": 1,
+    "repair": {
+      "enabled": false
+    },
+    "source_start_page": 1,
+    "source_end_page": 1,
+    "mode": "TEXT_TABLE_VLM"
+  },
+  {
+    "index": 4,
+    "rows": 3,
+    "columns": 2,
+    "headers": [
+      "",
+      ""
+    ],
+    "csv": ",\r\nSocial security number,\r\nor,\r\nEmployer identification number,\r\n",
+    "html": "<table><tbody><tr><th></th><th></th></tr><tr><td>Social security number</td><td></td></tr><tr><td>or</td><td></td></tr><tr><td>Employer identification number</td><td></td></tr></tbody></table>",
+    "page": 1,
+    "repair": {
+      "enabled": false
+    },
+    "source_start_page": 1,
+    "source_end_page": 1,
+    "mode": "TEXT_TABLE_VLM"
+  },
+  {
+    "index": 5,
+    "rows": 0,
+    "columns": 3,
+    "headers": [
+      "Sign Here",
+      "Signature of U.S. person",
+      "Date"
+    ],
+    "csv": "Sign Here,Signature of U.S. person,Date\r\n",
+    "html": "<table><tbody><tr><th>Sign Here</th><th>Signature of U.S. person</th><th>Date</th></tr></tbody></table>",
+    "page": 1,
+    "repair": {
+      "enabled": false
+    },
+    "source_start_page": 1,
+    "source_end_page": 1,
+    "mode": "TEXT_TABLE_VLM"
+  },
+  {
+    "index": 6,
+    "rows": 2,
+    "columns": 2,
+    "headers": [
+      "IF the entity/individual on line 1 is a(n) . . .",
+      "THEN check the box for . . ."
+    ],
+    "csv": "IF the entity/individual on line 1 is a(n) . . .,THEN check the box for . . .\r\nCorporation,Corporation.\r\n,\r\n",
+    "html": "<table><tbody><tr><th>IF the entity/individual on line 1 is a(n) . . .</th><th>THEN check the box for . . .</th></tr><tr><td>Corporation</td><td>Corporation.</td></tr><tr><td></td><td></td></tr></tbody></table>",
+    "page": 1,
+    "repair": {
+      "enabled": false
+    },
+    "source_start_page": 3,
+    "source_end_page": 3,
+    "mode": "TEXT_TABLE_VLM"
+  },
+  {
+    "index": 7,
+    "rows": 0,
+    "columns": 2,
+    "headers": [
+      "Partnership",
+      "Partnership."
+    ],
+    "csv": "Partnership,Partnership.\r\n",
+    "html": "<table><tbody><tr><th>Partnership</th><th>Partnership.</th></tr></tbody></table>",
+    "page": 1,
+    "repair": {
+      "enabled": false
+    },
+    "source_start_page": 3,
+    "source_end_page": 3,
+    "mode": "TEXT_TABLE_VLM"
+  },
+  {
+    "index": 8,
+    "rows": 5,
+    "columns": 2,
+    "headers": [
+      "IF the payment is for . . .",
+      "THEN the payment is exempt for . . ."
+    ],
+    "csv": "IF the payment is for . . .,THEN the payment is exempt for . . .\r\n• Interest and dividend payments,All exempt payees except for 7.\r\n• Broker transactions,Exempt payees 1 through 4 and 6 through 11 and all C corporations. S corporations must not enter an exempt payee code because they are exempt only for sales of noncovered securities acquired prior to 2012.\r\n• Barter exchange transactions and patronage dividends,Exempt payees 1 through 4.\r\n\"• Payments over $600 required to be reported and direct sales over $5,000¹\",\"Generally, exempt payees 1 through 5.²\"\r\n• Payments made in settlement of payment card or third-party network transactions,Exempt payees 1 through 4.\r\n",
+    "html": "<table><tbody><tr><th>IF the payment is for . . .</th><th>THEN the payment is exempt for . . .</th></tr><tr><td>• Interest and dividend payments</td><td>All exempt payees except for 7.</td></tr><tr><td>• Broker transactions</td><td>Exempt payees 1 through 4 and 6 through 11 and all C corporations. S corporations must not enter an exempt payee code because they are exempt only for sales of noncovered securities acquired prior to 2012.</td></tr><tr><td>• Barter exchange transactions and patronage dividends</td><td>Exempt payees 1 through 4.</td></tr><tr><td>• Payments over $600 required to be reported and direct sales over $5,000¹</td><td>Generally, exempt payees 1 through 5.²</td></tr><tr><td>• Payments made in settlement of payment card or third-party network transactions</td><td>Exempt payees 1 through 4.</td></tr></tbody></table>",
+    "page": 1,
+    "repair": {
+      "enabled": false
+    },
+    "source_start_page": 4,
+    "source_end_page": 4,
+    "mode": "TEXT_TABLE_VLM"
+  },
+  {
+    "index": 9,
+    "rows": 9,
+    "columns": 2,
+    "headers": [
+      "For this type of account:",
+      "Give name and SSN of:"
+    ],
+    "csv": "For this type of account:,Give name and SSN of:\r\n1. Individual,The individual\r\n2. Two or more individuals (joint account) other than an account maintained by an FFI,\"The actual owner of the account, or if combined funds, the first individual on the account¹\"\r\n3. Two or more U.S. persons (joint account maintained by an FFI),Each holder of the account\r\n4. Custodial account of a minor (Uniform Gift to Minors Act),The minor²\r\n5. a. The usual revocable savings trust (grantor is also trustee),The grantor-trustee¹\r\n,\r\n5. b. So-called trust account that is not a legal or valid trust under state law,The actual owner¹\r\n6. Sole proprietorship or disregarded entity owned by an individual,The owner³\r\n7. Grantor trust filing under Optional Filing Method 1 (see Regulations section 1.671-4(b)(2)(i)(A))**,The grantor*\r\n",
+    "html": "<table><tbody><tr><th>For this type of account:</th><th>Give name and SSN of:</th></tr><tr><td>1. Individual</td><td>The individual</td></tr><tr><td>2. Two or more individuals (joint account) other than an account maintained by an FFI</td><td>The actual owner of the account, or if combined funds, the first individual on the account¹</td></tr><tr><td>3. Two or more U.S. persons (joint account maintained by an FFI)</td><td>Each holder of the account</td></tr><tr><td>4. Custodial account of a minor (Uniform Gift to Minors Act)</td><td>The minor²</td></tr><tr><td>5. a. The usual revocable savings trust (grantor is also trustee)</td><td>The grantor-trustee¹</td></tr><tr><td></td><td></td></tr><tr><td>5. b. So-called trust account that is not a legal or valid trust under state law</td><td>The actual owner¹</td></tr><tr><td>6. Sole proprietorship or disregarded entity owned by an individual</td><td>The owner³</td></tr><tr><td>7. Grantor trust filing under Optional Filing Method 1 (see Regulations section 1.671-4(b)(2)(i)(A))**</td><td>The grantor*</td></tr></tbody></table>",
+    "page": 1,
+    "repair": {
+      "enabled": false
+    },
+    "source_start_page": 5,
+    "source_end_page": 5,
+    "mode": "TEXT_TABLE_VLM"
+  },
+  {
+    "index": 10,
+    "rows": 8,
+    "columns": 2,
+    "headers": [
+      "For this type of account:",
+      "Give name and EIN of:"
+    ],
+    "csv": "For this type of account:,Give name and EIN of:\r\n8. Disregarded entity not owned by an individual,The owner\r\n\"9. A valid trust, estate, or pension trust\",Legal entity⁴\r\n10. Corporation or LLC electing corporate status on Form 8832 or Form 2553,The corporation\r\n\"11. Association, club, religious, charitable, educational, or other tax-exempt organization\",The organization\r\n12. Partnership or multi-member LLC,The partnership\r\n13. A broker or registered nominee,The broker or nominee\r\n\"14. Account with the Department of Agriculture in the name of a public entity (such as a state or local government, school district, or prison) that receives agricultural program payments\",The public entity\r\n\"15. Grantor trust filing Form 1041 or under the Optional Filing Method 2, requiring Form 1099 (see Regulations section 1.671-4(b)(2)(i)(B))**\",The trust\r\n",
+    "html": "<table><tbody><tr><th>For this type of account:</th><th>Give name and EIN of:</th></tr><tr><td>8. Disregarded entity not owned by an individual</td><td>The owner</td></tr><tr><td>9. A valid trust, estate, or pension trust</td><td>Legal entity⁴</td></tr><tr><td>10. Corporation or LLC electing corporate status on Form 8832 or Form 2553</td><td>The corporation</td></tr><tr><td>11. Association, club, religious, charitable, educational, or other tax-exempt organization</td><td>The organization</td></tr><tr><td>12. Partnership or multi-member LLC</td><td>The partnership</td></tr><tr><td>13. A broker or registered nominee</td><td>The broker or nominee</td></tr><tr><td>14. Account with the Department of Agriculture in the name of a public entity (such as a state or local government, school district, or prison) that receives agricultural program payments</td><td>The public entity</td></tr><tr><td>15. Grantor trust filing Form 1041 or under the Optional Filing Method 2, requiring Form 1099 (see Regulations section 1.671-4(b)(2)(i)(B))**</td><td>The trust</td></tr></tbody></table>",
+    "page": 1,
+    "repair": {
+      "enabled": false
+    },
+    "source_start_page": 5,
+    "source_end_page": 5,
+    "mode": "TEXT_TABLE_VLM"
+  }
+]

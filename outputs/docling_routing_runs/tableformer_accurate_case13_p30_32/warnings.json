@@ -1,0 +1,476 @@
+[
+  {
+    "page": 30,
+    "table_index": 1,
+    "code": "ROW_HEADER_SPAN_MISSED",
+    "level": "warning",
+    "score": 0.78,
+    "message": "PDFテキストレイヤー上の行見出しSPANがDoclingの構造化テーブルから欠落していたため、座標ベースで補完しました。",
+    "suggested_action": "補完セルを確認してください。補完できない未使用テキストが残る場合は対象ページだけVLM突合を検討してください。",
+    "evidence": {
+      "repaired_cell_count": 10,
+      "repaired_cells": [
+        {
+          "row": 1,
+          "column": 2,
+          "text": "全国",
+          "source_bbox": [
+            24.74,
+            87.47,
+            38.99,
+            94.51
+          ],
+          "covered_rows": [
+            1
+          ]
+        },
+        {
+          "row": 2,
+          "column": 2,
+          "text": "北海道",
+          "source_bbox": [
+            24.95,
+            95.53,
+            46.43,
+            102.55
+          ],
+          "covered_rows": [
+            2
+          ]
+        },
+        {
+          "row": 3,
+          "column": 2,
+          "text": "青森県",
+          "source_bbox": [
+            24.92,
+            103.78,
+            46.52,
+            110.95
+          ],
+          "covered_rows": [
+            3
+          ]
+        },
+        {
+          "row": 4,
+          "column": 2,
+          "text": "岩手県",
+          "source_bbox": [
+            24.54,
+            112.15,
+            46.52,
+            119.04
+          ],
+          "covered_rows": [
+            4
+          ]
+        },
+        {
+          "row": 6,
+          "column": 2,
+          "text": "秋田県",
+          "source_bbox": [
+            24.6,
+            128.68,
+            46.52,
+            135.45
+          ],
+          "covered_rows": [
+            6
+          ]
+        },
+        {
+          "row": 8,
+          "column": 2,
+          "text": "福島県",
+          "source_bbox": [
+            24.63,
+            144.9,
+            46.52,
+            151.86
+          ],
+          "covered_rows": [
+            8
+          ]
+        },
+        {
+          "row": 9,
+          "column": 2,
+          "text": "茨城県",
+          "source_bbox": [
+            24.83,
+            153.15,
+            46.52,
+            160.1
+          ],
+          "covered_rows": [
+            9
+          ]
+        },
+        {
+          "row": 10,
+          "column": 2,
+          "text": "栃木県",
+          "source_bbox": [
+            24.68,
+            161.31,
+            46.52,
+            168.28
+          ],
+          "covered_rows": [
+            10
+          ]
+        },
+        {
+          "row": 11,
+          "column": 2,
+          "text": "群馬県",
+          "source_bbox": [
+            24.68,
+            169.54,
+            46.52,
+            176.48
+          ],
+          "covered_rows": [
+            11
+          ]
+        },
+        {
+          "row": 15,
+          "column": 2,
+          "text": "神奈川県",
+          "source_bbox": [
+            24.57,
+            202.21,
+            53.97,
+            209.31
+          ],
+          "covered_rows": [
+            15
+          ]
+        }
+      ],
+      "candidate_columns": [
+        2
+      ]
+    }
+  },
+  {
+    "page": 30,
+    "table_index": 1,
+    "code": "TABLE_TEXT_COVERAGE_LOSS",
+    "level": "warning",
+    "score": 0.72,
+    "message": "表領域内のPDFテキストの一部を構造化テーブルへ安全に割り当てられませんでした。",
+    "suggested_action": "該当テーブルのraw出力とPDFを確認してください。必要なら対象ページだけVLM突合を実行してください。",
+    "evidence": {
+      "unrepaired_spans": [
+        {
+          "column": 1,
+          "row": 5,
+          "text": "宮城県",
+          "existing": "1)"
+        },
+        {
+          "column": 1,
+          "row": 7,
+          "text": "山形県",
+          "existing": "1)"
+        },
+        {
+          "column": 1,
+          "row": 12,
+          "text": "埼玉県",
+          "existing": "1)"
+        },
+        {
+          "column": 1,
+          "row": 13,
+          "text": "千葉県",
+          "existing": "1)"
+        },
+        {
+          "column": 1,
+          "row": 14,
+          "text": "東京都",
+          "existing": "1)"
+        },
+        {
+          "column": 1,
+          "row": 16,
+          "text": "新潟県",
+          "existing": "1)"
+        }
+      ]
+    }
+  },
+  {
+    "page": 31,
+    "table_index": 5,
+    "code": "ROW_HEADER_SPAN_MISSED",
+    "level": "warning",
+    "score": 0.78,
+    "message": "PDFテキストレイヤー上の行見出しSPANがDoclingの構造化テーブルから欠落していたため、座標ベースで補完しました。",
+    "suggested_action": "補完セルを確認してください。補完できない未使用テキストが残る場合は対象ページだけVLM突合を検討してください。",
+    "evidence": {
+      "repaired_cell_count": 14,
+      "repaired_cells": [
+        {
+          "row": 3,
+          "column": 1,
+          "text": "屈斜路湖",
+          "source_bbox": [
+            39.13,
+            504.0,
+            69.47,
+            511.34
+          ],
+          "covered_rows": [
+            3
+          ]
+        },
+        {
+          "row": 4,
+          "column": 1,
+          "text": "宍道湖",
+          "source_bbox": [
+            39.22,
+            512.52,
+            61.69,
+            519.79
+          ],
+          "covered_rows": [
+            4
+          ]
+        },
+        {
+          "row": 5,
+          "column": 1,
+          "text": "支笏湖",
+          "source_bbox": [
+            39.04,
+            521.25,
+            61.69,
+            528.33
+          ],
+          "covered_rows": [
+            5
+          ]
+        },
+        {
+          "row": 6,
+          "column": 1,
+          "text": "洞爺湖",
+          "source_bbox": [
+            38.98,
+            529.91,
+            61.69,
+            537.36
+          ],
+          "covered_rows": [
+            6,
+            7
+          ]
+        },
+        {
+          "row": 3,
+          "column": 2,
+          "text": "くっしゃろこ",
+          "source_bbox": [
+            78.9,
+            504.36,
+            122.75,
+            511.26
+          ],
+          "covered_rows": [
+            3
+          ]
+        },
+        {
+          "row": 4,
+          "column": 2,
+          "text": "しんじこ",
+          "source_bbox": [
+            78.97,
+            513.15,
+            107.18,
+            519.25
+          ],
+          "covered_rows": [
+            4
+          ]
+        },
+        {
+          "row": 5,
+          "column": 2,
+          "text": "しこつこ",
+          "source_bbox": [
+            78.97,
+            521.96,
+            107.18,
+            527.85
+          ],
+          "covered_rows": [
+            5
+          ]
+        },
+        {
+          "row": 6,
+          "column": 2,
+          "text": "とうやこ",
+          "source_bbox": [
+            78.97,
+            529.88,
+            107.18,
+            537.02
+          ],
+          "covered_rows": [
+            6,
+            7
+          ]
+        },
+        {
+          "row": 2,
+          "column": 4,
+          "text": "島根県、鳥取県",
+          "source_bbox": [
+            161.51,
+            495.42,
+            212.47,
+            502.39
+          ],
+          "covered_rows": [
+            2
+          ]
+        },
+        {
+          "row": 3,
+          "column": 4,
+          "text": "厚岸湖",
+          "source_bbox": [
+            217.62,
+            504.05,
+            240.37,
+            511.31
+          ],
+          "covered_rows": [
+            3
+          ]
+        },
+        {
+          "row": 4,
+          "column": 4,
+          "text": "網走湖",
+          "source_bbox": [
+            217.72,
+            512.68,
+            240.37,
+            519.89
+          ],
+          "covered_rows": [
+            4
+          ]
+        },
+        {
+          "row": 5,
+          "column": 4,
+          "text": "八郎潟",
+          "source_bbox": [
+            217.84,
+            521.34,
+            240.49,
+            528.52
+          ],
+          "covered_rows": [
+            5
+          ]
+        },
+        {
+          "row": 6,
+          "column": 4,
+          "text": "調整池",
+          "source_bbox": [
+            217.68,
+            529.91,
+            240.55,
+            537.2
+          ],
+          "covered_rows": [
+            6
+          ]
+        },
+        {
+          "row": 7,
+          "column": 4,
+          "text": "田沢湖",
+          "source_bbox": [
+            218.78,
+            538.63,
+            240.37,
+            545.71
+          ],
+          "covered_rows": [
+            7
+          ]
+        }
+      ],
+      "candidate_columns": [
+        1,
+        2,
+        4
+      ]
+    }
+  },
+  {
+    "page": 31,
+    "table_index": 5,
+    "code": "TABLE_TEXT_COVERAGE_LOSS",
+    "level": "warning",
+    "score": 0.72,
+    "message": "表領域内のPDFテキストの一部を構造化テーブルへ安全に割り当てられませんでした。",
+    "suggested_action": "該当テーブルのraw出力とPDFを確認してください。必要なら対象ページだけVLM突合を実行してください。",
+    "evidence": {
+      "unrepaired_spans": [
+        {
+          "column": 0,
+          "row": 1,
+          "text": "中海",
+          "existing": "琵琶湖 霞ヶ浦 猪苗代湖 中海 屈斜路湖 宍道湖 支笏湖 洞爺湖"
+        },
+        {
+          "column": 1,
+          "row": 1,
+          "text": "なかうみ",
+          "existing": "びわこ かすみがうら さろまこ いなわしろこ なかうみ くっしゃろこ しんじこ しこつこ とうやこ"
+        },
+        {
+          "column": 3,
+          "text": "北浦"
+        },
+        {
+          "column": 3,
+          "row": 1,
+          "text": "北海道",
+          "existing": "滋賀県 茨城県 北海道 福島県 島根県、鳥取県 北海道 島根県 北海道 北海道 静岡県"
+        },
+        {
+          "column": 3,
+          "text": "島根県"
+        },
+        {
+          "column": 3,
+          "text": "北海道"
+        },
+        {
+          "column": 3,
+          "text": "北海道"
+        },
+        {
+          "column": 3,
+          "text": "静岡県"
+        }
+      ]
+    }
+  }
+]

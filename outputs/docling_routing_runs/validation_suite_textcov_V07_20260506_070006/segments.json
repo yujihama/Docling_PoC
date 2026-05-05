@@ -1,0 +1,207 @@
+[
+  {
+    "mode": "TEXT_TABLE_COORD",
+    "start_page": 1,
+    "end_page": 1,
+    "markdown": "| col_001        | col_002    | col_003             | col_004 | col_005     | col_006 | col_007       | col_008   | col_009 | col_010              | col_011 | col_012 | col_013        | col_014        | col_015 | col_016 |\n| -------------- | ---------- | ------------------- | ------- | ----------- | ------- | ------------- | --------- | ------- | -------------------- | ------- | ------- | -------------- | -------------- | ------- | ------- |\n| V07 |          | report     | with                | units   |             |         |               |           |         |                      |         |         |                | Page           | 1       | of 1    |\n|                |            | LAB-V07-2026-05-ABC |         |             |         |               |           |         |                      |         |         |                |                |         |         |\n| Patient:       | Validation | /                   | DOB:    | 1980-02-03  |         |               |           |         | MRN-V07-REDACTED-BAR |         |         |                |                |         |         |\n| Test           |            |                     | Result  |             | Unit    |               | Reference | Range   |                      | Flag    | Code    |                |                |         |         |\n| Glucose        |            |                     | 102     |             | mg/dL   |               | 70-99     |         |                      | H       |         | LABCODE-V07-01 |                |         |         |\n| Creatinine     |            |                     | 0.82    |             | mg/dL   |               | 0.60-1.10 |         |                      |         |         | LABCODE-V07-02 |                |         |         |\n| eGFR           |            |                     | >90     |             |         | mL/min/1.73m2 | >=60      |         |                      |         |         | LABCODE-V07-03 |                |         |         |\n| HbA1c          |            |                     | 5.8     |             | %       |               | 4.0-5.6   |         |                      | H       |         | LABCODE-V07-04 |                |         |         |\n| TSH            |            |                     | 1.72    |             | uIU/mL  |               | 0.40-4.00 |         |                      |         |         | LABCODE-V07-05 |                |         |         |\n| CRP            |            |                     | <0.3    |             | mg/dL   |               | <0.5      |         |                      |         |         | LABCODE-V07-06 |                |         |         |\n| Vitamin D      |            |                     | 24.1    |             | ng/mL   |               | 30-100    |         |                      | L       |         | LABCODE-V07-07 |                |         |         |\n|                |            |                     | compare | against     | 2026-04 | specimen.     |           |         |                      |         |         |                |                |         |         |\n| PDF validation | suite for  | routed              | PDF     | extraction. |         |               |           |         |                      |         |         |                | V07-FOOTER-P01 |         |         |\n\n<!-- text_layer_coverage_supplement lines=2 -->\n\nPatient: Jane Validation / DOB: 1980-02-03 MRN-V07-REDACTED-BAR\nNOTE-V07-DELTA-CHECK: compare against 2026-04 specimen.",
+    "safe_markdown": "| col_001        | col_002    | col_003             | col_004 | col_005     | col_006 | col_007       | col_008   | col_009 | col_010              | col_011 | col_012 | col_013        | col_014        | col_015 | col_016 |\n| -------------- | ---------- | ------------------- | ------- | ----------- | ------- | ------------- | --------- | ------- | -------------------- | ------- | ------- | -------------- | -------------- | ------- | ------- |\n| V07 |          | report     | with                | units   |             |         |               |           |         |                      |         |         |                | Page           | 1       | of 1    |\n|                |            | LAB-V07-2026-05-ABC |         |             |         |               |           |         |                      |         |         |                |                |         |         |\n| Patient:       | Validation | /                   | DOB:    | 1980-02-03  |         |               |           |         | MRN-V07-REDACTED-BAR |         |         |                |                |         |         |\n| Test           |            |                     | Result  |             | Unit    |               | Reference | Range   |                      | Flag    | Code    |                |                |         |         |\n| Glucose        |            |                     | 102     |             | mg/dL   |               | 70-99     |         |                      | H       |         | LABCODE-V07-01 |                |         |         |\n| Creatinine     |            |                     | 0.82    |             | mg/dL   |               | 0.60-1.10 |         |                      |         |         | LABCODE-V07-02 |                |         |         |\n| eGFR           |            |                     | >90     |             |         | mL/min/1.73m2 | >=60      |         |                      |         |         | LABCODE-V07-03 |                |         |         |\n| HbA1c          |            |                     | 5.8     |             | %       |               | 4.0-5.6   |         |                      | H       |         | LABCODE-V07-04 |                |         |         |\n| TSH            |            |                     | 1.72    |             | uIU/mL  |               | 0.40-4.00 |         |                      |         |         | LABCODE-V07-05 |                |         |         |\n| CRP            |            |                     | <0.3    |             | mg/dL   |               | <0.5      |         |                      |         |         | LABCODE-V07-06 |                |         |         |\n| Vitamin D      |            |                     | 24.1    |             | ng/mL   |               | 30-100    |         |                      | L       |         | LABCODE-V07-07 |                |         |         |\n|                |            |                     | compare | against     | 2026-04 | specimen.     |           |         |                      |         |         |                |                |         |         |\n| PDF validation | suite for  | routed              | PDF     | extraction. |         |               |           |         |                      |         |         |                | V07-FOOTER-P01 |         |         |\n\n<!-- text_layer_coverage_supplement lines=2 -->\n\nPatient: Jane Validation / DOB: 1980-02-03 MRN-V07-REDACTED-BAR\nNOTE-V07-DELTA-CHECK: compare against 2026-04 specimen.",
+    "raw_ocr_markdown": "",
+    "raw_vlm_markdown": "",
+    "tables": [
+      {
+        "index": 1,
+        "rows": 13,
+        "columns": 16,
+        "headers": [
+          "col_001",
+          "col_002",
+          "col_003",
+          "col_004",
+          "col_005",
+          "col_006",
+          "col_007",
+          "col_008",
+          "col_009",
+          "col_010",
+          "col_011",
+          "col_012",
+          "col_013",
+          "col_014",
+          "col_015",
+          "col_016"
+        ],
+        "csv": "col_001,col_002,col_003,col_004,col_005,col_006,col_007,col_008,col_009,col_010,col_011,col_012,col_013,col_014,col_015,col_016\r\nV07 |,report,with,units,,,,,,,,,,Page,1,of 1\r\n,,LAB-V07-2026-05-ABC,,,,,,,,,,,,,\r\nPatient:,Validation,/,DOB:,1980-02-03,,,,,MRN-V07-REDACTED-BAR,,,,,,\r\nTest,,,Result,,Unit,,Reference,Range,,Flag,Code,,,,\r\nGlucose,,,102,,mg/dL,,70-99,,,H,,LABCODE-V07-01,,,\r\nCreatinine,,,0.82,,mg/dL,,0.60-1.10,,,,,LABCODE-V07-02,,,\r\neGFR,,,>90,,,mL/min/1.73m2,>=60,,,,,LABCODE-V07-03,,,\r\nHbA1c,,,5.8,,%,,4.0-5.6,,,H,,LABCODE-V07-04,,,\r\nTSH,,,1.72,,uIU/mL,,0.40-4.00,,,,,LABCODE-V07-05,,,\r\nCRP,,,<0.3,,mg/dL,,<0.5,,,,,LABCODE-V07-06,,,\r\nVitamin D,,,24.1,,ng/mL,,30-100,,,L,,LABCODE-V07-07,,,\r\n,,,compare,against,2026-04,specimen.,,,,,,,,,\r\nPDF validation,suite for,routed,PDF,extraction.,,,,,,,,,V07-FOOTER-P01,,\r\n",
+        "html": "<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th>col_001</th>\n      <th>col_002</th>\n      <th>col_003</th>\n      <th>col_004</th>\n      <th>col_005</th>\n      <th>col_006</th>\n      <th>col_007</th>\n      <th>col_008</th>\n      <th>col_009</th>\n      <th>col_010</th>\n      <th>col_011</th>\n      <th>col_012</th>\n      <th>col_013</th>\n      <th>col_014</th>\n      <th>col_015</th>\n      <th>col_016</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>V07 |</td>\n      <td>report</td>\n      <td>with</td>\n      <td>units</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>Page</td>\n      <td>1</td>\n      <td>of 1</td>\n    </tr>\n    <tr>\n      <td></td>\n      <td></td>\n      <td>LAB-V07-2026-05-ABC</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>Patient:</td>\n      <td>Validation</td>\n      <td>/</td>\n      <td>DOB:</td>\n      <td>1980-02-03</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>MRN-V07-REDACTED-BAR</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>Test</td>\n      <td></td>\n      <td></td>\n      <td>Result</td>\n      <td></td>\n      <td>Unit</td>\n      <td></td>\n      <td>Reference</td>\n      <td>Range</td>\n      <td></td>\n      <td>Flag</td>\n      <td>Code</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>Glucose</td>\n      <td></td>\n      <td></td>\n      <td>102</td>\n      <td></td>\n      <td>mg/dL</td>\n      <td></td>\n      <td>70-99</td>\n      <td></td>\n      <td></td>\n      <td>H</td>\n      <td></td>\n      <td>LABCODE-V07-01</td>\n      <td></td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>Creatinine</td>\n      <td></td>\n      <td></td>\n      <td>0.82</td>\n      <td></td>\n      <td>mg/dL</td>\n      <td></td>\n      <td>0.60-1.10</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>LABCODE-V07-02</td>\n      <td></td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>eGFR</td>\n      <td></td>\n      <td></td>\n      <td>>90</td>\n      <td></td>\n      <td></td>\n      <td>mL/min/1.73m2</td>\n      <td>>=60</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>LABCODE-V07-03</td>\n      <td></td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>HbA1c</td>\n      <td></td>\n      <td></td>\n      <td>5.8</td>\n      <td></td>\n      <td>%</td>\n      <td></td>\n      <td>4.0-5.6</td>\n      <td></td>\n      <td></td>\n      <td>H</td>\n      <td></td>\n      <td>LABCODE-V07-04</td>\n      <td></td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>TSH</td>\n      <td></td>\n      <td></td>\n      <td>1.72</td>\n      <td></td>\n      <td>uIU/mL</td>\n      <td></td>\n      <td>0.40-4.00</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>LABCODE-V07-05</td>\n      <td></td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>CRP</td>\n      <td></td>\n      <td></td>\n      <td><0.3</td>\n      <td></td>\n      <td>mg/dL</td>\n      <td></td>\n      <td><0.5</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>LABCODE-V07-06</td>\n      <td></td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>Vitamin D</td>\n      <td></td>\n      <td></td>\n      <td>24.1</td>\n      <td></td>\n      <td>ng/mL</td>\n      <td></td>\n      <td>30-100</td>\n      <td></td>\n      <td></td>\n      <td>L</td>\n      <td></td>\n      <td>LABCODE-V07-07</td>\n      <td></td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>compare</td>\n      <td>against</td>\n      <td>2026-04</td>\n      <td>specimen.</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>PDF validation</td>\n      <td>suite for</td>\n      <td>routed</td>\n      <td>PDF</td>\n      <td>extraction.</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>V07-FOOTER-P01</td>\n      <td></td>\n      <td></td>\n    </tr>\n  </tbody>\n</table>",
+        "page": 1,
+        "repair": {
+          "enabled": false,
+          "coordinate_reconstruction": {
+            "method": "pdf_text_alignment",
+            "page": 1,
+            "status": "ok",
+            "bbox": [
+              39.69,
+              29.57,
+              554.31,
+              810.79
+            ],
+            "table_area_ratio": 0.8022,
+            "horizontal_line_count": 1,
+            "vertical_line_count": 0,
+            "line_count": 13,
+            "table_line_count": 13,
+            "raw_rows": 13,
+            "raw_columns": 16,
+            "trimmed_rows": 13,
+            "trimmed_columns": 16,
+            "span_count": 77,
+            "assigned_span_count": 74,
+            "span_coverage": 0.961,
+            "spans_per_trimmed_row": 5.9231,
+            "max_cell_chars": 20,
+            "median_cell_chars": 5.0,
+            "max_to_median_cell_char_ratio": 4.0,
+            "max_long_text_row_ratio": 0.0,
+            "header_mode": "none",
+            "header_inference_enabled": false,
+            "header_row_count": 0,
+            "measure_start_column": null,
+            "filled_row_header_count": 0,
+            "pdf_grid_rows_preserved": true,
+            "headers": [
+              "col_001",
+              "col_002",
+              "col_003",
+              "col_004",
+              "col_005",
+              "col_006",
+              "col_007",
+              "col_008",
+              "col_009",
+              "col_010",
+              "col_011",
+              "col_012",
+              "col_013",
+              "col_014",
+              "col_015",
+              "col_016"
+            ],
+            "non_table_text_line_count": 0,
+            "non_table_text_chars": 0,
+            "text_layer_coverage": {
+              "raw_line_count": 13,
+              "supplemented_line_count": 2,
+              "supplemented_lines": [
+                {
+                  "text": "Patient: Jane Validation / DOB: 1980-02-03 MRN-V07-REDACTED-BAR",
+                  "missing_tokens": [
+                    "jane"
+                  ]
+                },
+                {
+                  "text": "NOTE-V07-DELTA-CHECK: compare against 2026-04 specimen.",
+                  "missing_tokens": [
+                    "note-v07-delta-check"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    ],
+    "elapsed_seconds": 0.018,
+    "candidate_timings_seconds": {},
+    "diagnostics": {
+      "routing_source_mode": "TEXT_TABLE_FAST",
+      "coordinate_table_reconstruction": true,
+      "coordinate_quality": {
+        "ok": false,
+        "reasons": [
+          "low_span_coverage"
+        ],
+        "rows": 13,
+        "columns": 16,
+        "span_count": 77,
+        "span_coverage": 0.961,
+        "spans_per_row": 5.9231,
+        "span_per_row_limit": 48.0,
+        "max_cell_chars": 20,
+        "max_to_median_cell_char_ratio": 4.0,
+        "max_long_text_row_ratio": 0.0
+      },
+      "coordinate_diagnostics": {
+        "method": "pdf_text_alignment",
+        "page": 1,
+        "status": "ok",
+        "bbox": [
+          39.69,
+          29.57,
+          554.31,
+          810.79
+        ],
+        "table_area_ratio": 0.8022,
+        "horizontal_line_count": 1,
+        "vertical_line_count": 0,
+        "line_count": 13,
+        "table_line_count": 13,
+        "raw_rows": 13,
+        "raw_columns": 16,
+        "trimmed_rows": 13,
+        "trimmed_columns": 16,
+        "span_count": 77,
+        "assigned_span_count": 74,
+        "span_coverage": 0.961,
+        "spans_per_trimmed_row": 5.9231,
+        "max_cell_chars": 20,
+        "median_cell_chars": 5.0,
+        "max_to_median_cell_char_ratio": 4.0,
+        "max_long_text_row_ratio": 0.0,
+        "header_mode": "none",
+        "header_inference_enabled": false,
+        "header_row_count": 0,
+        "measure_start_column": null,
+        "filled_row_header_count": 0,
+        "pdf_grid_rows_preserved": true,
+        "headers": [
+          "col_001",
+          "col_002",
+          "col_003",
+          "col_004",
+          "col_005",
+          "col_006",
+          "col_007",
+          "col_008",
+          "col_009",
+          "col_010",
+          "col_011",
+          "col_012",
+          "col_013",
+          "col_014",
+          "col_015",
+          "col_016"
+        ],
+        "non_table_text_line_count": 0,
+        "non_table_text_chars": 0,
+        "text_layer_coverage": {
+          "raw_line_count": 13,
+          "supplemented_line_count": 2,
+          "supplemented_lines": [
+            {
+              "text": "Patient: Jane Validation / DOB: 1980-02-03 MRN-V07-REDACTED-BAR",
+              "missing_tokens": [
+                "jane"
+              ]
+            },
+            {
+              "text": "NOTE-V07-DELTA-CHECK: compare against 2026-04 specimen.",
+              "missing_tokens": [
+                "note-v07-delta-check"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+]

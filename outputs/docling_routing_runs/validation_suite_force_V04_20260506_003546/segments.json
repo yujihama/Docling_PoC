@@ -1,0 +1,528 @@
+[
+  {
+    "mode": "IMAGE_RECONCILE",
+    "start_page": 1,
+    "end_page": 1,
+    "markdown": "V04 | Japanese mixed layout\n\nPage 1 of 2\n\n請求明細書 JP-V04-請求-01\n\n取引先: 東西検証株式会社 参照番号 V04-参照-P01\n\n|   ■ | ■■■■■          | ■■                |   ■■ | ■■        |\n|-----|----------------|-------------------|------|-----------|\n|   1 | JP-SKU-V04-101 | 部品交換費用 摘要-V04-1-1 |    2 | JPY-11801 |\n|   2 | JP-SKU-V04-102 | 部品交換費用 摘要-V04-1-2 |    3 | JPY-12802 |\n|   3 | JP-SKU-V04-103 | 部品交換費用 摘要-V04-1-3 |    4 | JPY-13803 |\n|   4 | JP-SKU-V04-104 | 部品交換費用 摘要-V04-1-4 |    5 | JPY-14804 |\n|   5 | JP-SKU-V04-105 | 部品交換費用 摘要-V04-1-5 |    6 | JPY-15805 |\n|   6 | JP-SKU-V04-106 | 部品交換費用 摘要-V04-1-6 |    7 | JPY-16806 |\n|   7 | JP-SKU-V04-107 | 部品交換費用 摘要-V04-1-7 |    8 | JPY-17807 |\n\n縦書き確認 V04-縦書き-P01\n\nPDF validation suite for routed PDF extraction.\n\nV04-FOOTER-P01",
+    "safe_markdown": "V04 | Japanese mixed layout\n\nPage 1 of 2\n\n請求明細書 JP-V04-請求-01\n\n取引先: 東西検証株式会社 参照番号 V04-参照-P01\n\n|   ■ | ■■■■■          | ■■                |   ■■ | ■■        |\n|-----|----------------|-------------------|------|-----------|\n|   1 | JP-SKU-V04-101 | 部品交換費用 摘要-V04-1-1 |    2 | JPY-11801 |\n|   2 | JP-SKU-V04-102 | 部品交換費用 摘要-V04-1-2 |    3 | JPY-12802 |\n|   3 | JP-SKU-V04-103 | 部品交換費用 摘要-V04-1-3 |    4 | JPY-13803 |\n|   4 | JP-SKU-V04-104 | 部品交換費用 摘要-V04-1-4 |    5 | JPY-14804 |\n|   5 | JP-SKU-V04-105 | 部品交換費用 摘要-V04-1-5 |    6 | JPY-15805 |\n|   6 | JP-SKU-V04-106 | 部品交換費用 摘要-V04-1-6 |    7 | JPY-16806 |\n|   7 | JP-SKU-V04-107 | 部品交換費用 摘要-V04-1-7 |    8 | JPY-17807 |\n\n縦書き確認 V04-縦書き-P01\n\nPDF validation suite for routed PDF extraction.\n\nV04-FOOTER-P01",
+    "raw_ocr_markdown": "V04 | Japanese mixed layout\n\nPage 1 of 2\n\n請求明細書 JP-V04-請求-01\n\n取引先: 東西検証株式会社 参照番号 V04-参照-P01\n\n|   ■ | ■■■■■          | ■■                |   ■■ | ■■        |\n|-----|----------------|-------------------|------|-----------|\n|   1 | JP-SKU-V04-101 | 部品交換費用 摘要-V04-1-1 |    2 | JPY-11801 |\n|   2 | JP-SKU-V04-102 | 部品交換費用 摘要-V04-1-2 |    3 | JPY-12802 |\n|   3 | JP-SKU-V04-103 | 部品交換費用 摘要-V04-1-3 |    4 | JPY-13803 |\n|   4 | JP-SKU-V04-104 | 部品交換費用 摘要-V04-1-4 |    5 | JPY-14804 |\n|   5 | JP-SKU-V04-105 | 部品交換費用 摘要-V04-1-5 |    6 | JPY-15805 |\n|   6 | JP-SKU-V04-106 | 部品交換費用 摘要-V04-1-6 |    7 | JPY-16806 |\n|   7 | JP-SKU-V04-107 | 部品交換費用 摘要-V04-1-7 |    8 | JPY-17807 |\n\n縦書き確認 V04-縦書き-P01\n\nPDF validation suite for routed PDF extraction.\n\nV04-FOOTER-P01",
+    "raw_vlm_markdown": "V04 | Japanese mixed layout\n\nPage 1 of 2\n\n請求明細書 JP-V04-請求-01\n\n取引先: 東西検証株式会社 参照番号 V04-参照-P01\n\n|   ■ | ■■■■■          | ■■                |   ■■ | ■■        |\n|-----|----------------|-------------------|------|-----------|\n|   1 | JP-SKU-V04-101 | 部品交換費用 摘要-V04-1-1 |    2 | JPY-11801 |\n|   2 | JP-SKU-V04-102 | 部品交換費用 摘要-V04-1-2 |    3 | JPY-12802 |\n|   3 | JP-SKU-V04-103 | 部品交換費用 摘要-V04-1-3 |    4 | JPY-13803 |\n|   4 | JP-SKU-V04-104 | 部品交換費用 摘要-V04-1-4 |    5 | JPY-14804 |\n|   5 | JP-SKU-V04-105 | 部品交換費用 摘要-V04-1-5 |    6 | JPY-15805 |\n|   6 | JP-SKU-V04-106 | 部品交換費用 摘要-V04-1-6 |    7 | JPY-16806 |\n|   7 | JP-SKU-V04-107 | 部品交換費用 摘要-V04-1-7 |    8 | JPY-17807 |\n\n縦書き確認 V04-縦書き-P01\n\nPDF validation suite for routed PDF extraction.\n\nV04-FOOTER-P01",
+    "tables": [
+      {
+        "index": 1,
+        "rows": 7,
+        "columns": 5,
+        "headers": [
+          "■",
+          "■■■■■",
+          "■■",
+          "■■",
+          "■■"
+        ],
+        "csv": "■,■■■■■,■■,■■,■■\r\n1,JP-SKU-V04-101,部品交換費用 摘要-V04-1-1,2,JPY-11801\r\n2,JP-SKU-V04-102,部品交換費用 摘要-V04-1-2,3,JPY-12802\r\n3,JP-SKU-V04-103,部品交換費用 摘要-V04-1-3,4,JPY-13803\r\n4,JP-SKU-V04-104,部品交換費用 摘要-V04-1-4,5,JPY-14804\r\n5,JP-SKU-V04-105,部品交換費用 摘要-V04-1-5,6,JPY-15805\r\n6,JP-SKU-V04-106,部品交換費用 摘要-V04-1-6,7,JPY-16806\r\n7,JP-SKU-V04-107,部品交換費用 摘要-V04-1-7,8,JPY-17807\r\n",
+        "html": "<table><tbody><tr><th>■</th><th>■■■■■</th><th>■■</th><th>■■</th><th>■■</th></tr><tr><td>1</td><td>JP-SKU-V04-101</td><td>部品交換費用 摘要-V04-1-1</td><td>2</td><td>JPY-11801</td></tr><tr><td>2</td><td>JP-SKU-V04-102</td><td>部品交換費用 摘要-V04-1-2</td><td>3</td><td>JPY-12802</td></tr><tr><td>3</td><td>JP-SKU-V04-103</td><td>部品交換費用 摘要-V04-1-3</td><td>4</td><td>JPY-13803</td></tr><tr><td>4</td><td>JP-SKU-V04-104</td><td>部品交換費用 摘要-V04-1-4</td><td>5</td><td>JPY-14804</td></tr><tr><td>5</td><td>JP-SKU-V04-105</td><td>部品交換費用 摘要-V04-1-5</td><td>6</td><td>JPY-15805</td></tr><tr><td>6</td><td>JP-SKU-V04-106</td><td>部品交換費用 摘要-V04-1-6</td><td>7</td><td>JPY-16806</td></tr><tr><td>7</td><td>JP-SKU-V04-107</td><td>部品交換費用 摘要-V04-1-7</td><td>8</td><td>JPY-17807</td></tr></tbody></table>",
+        "page": 1,
+        "repair": {
+          "enabled": false
+        }
+      }
+    ],
+    "elapsed_seconds": 9.349,
+    "candidate_timings_seconds": {
+      "vlm_primary": 3.602,
+      "vlm_secondary": 3.767,
+      "coordinate_vlm_fallback:gpt-5.4": 5.565
+    },
+    "diagnostics": {
+      "compare_mode": "vlm_vlm",
+      "parallel_reconcile_candidates": true,
+      "reconcile_table_fallback": {
+        "attempted": false,
+        "enabled": true,
+        "triggers": []
+      },
+      "coordinate_vlm_quality": {
+        "enabled": true,
+        "applicable": true,
+        "source": "vlm_vlm_safe_output",
+        "initial_report": {
+          "needs_fallback": true,
+          "quality_score": 8.0,
+          "coordinate_evidence_strength": "strong",
+          "coordinate_numeric_evidence_weak": false,
+          "coordinate_absence_is_evidence": true,
+          "coordinate_presence_is_evidence": true,
+          "vlm_only_values": {},
+          "coordinate_only_values": {},
+          "unsupported_value_count": 0,
+          "missing_value_count": 0,
+          "actionable_unsupported_value_count": 0,
+          "actionable_missing_value_count": 0,
+          "actionable_structure_mismatch_count": 2,
+          "structure_mismatches": [
+            "column_count_mismatch",
+            "numeric_cell_count_mismatch"
+          ],
+          "coordinate_metrics": {
+            "chars": 3978,
+            "table_count": 1,
+            "numeric_cell_count": 17,
+            "unknown_token_count": 0,
+            "max_table_columns": 14,
+            "table_column_counts": [
+              14
+            ]
+          },
+          "vlm_metrics": {
+            "chars": 752,
+            "table_count": 1,
+            "numeric_cell_count": 14,
+            "unknown_token_count": 0,
+            "max_table_columns": 5,
+            "table_column_counts": [
+              5
+            ]
+          },
+          "coordinate_quality": {
+            "ok": true,
+            "reasons": [],
+            "rows": 21,
+            "columns": 14,
+            "span_count": 86,
+            "span_coverage": 1.0,
+            "spans_per_row": 4.0952,
+            "span_per_row_limit": 42.0,
+            "max_cell_chars": 14,
+            "max_to_median_cell_char_ratio": 2.8,
+            "max_long_text_row_ratio": 0.0
+          },
+          "coordinate_diagnostics_summary": {
+            "status": "ok",
+            "rows": 21,
+            "columns": 14,
+            "span_count": 86,
+            "span_coverage": 1.0,
+            "table_area_ratio": 0.8159
+          }
+        },
+        "fallback": {
+          "attempted": true,
+          "accepted": false,
+          "reason": "coordinate_vlm_fallback_not_better",
+          "model": "gpt-5.4",
+          "elapsed_seconds": 5.565,
+          "report": {
+            "needs_fallback": true,
+            "quality_score": 43.0,
+            "coordinate_evidence_strength": "strong",
+            "coordinate_numeric_evidence_weak": false,
+            "coordinate_absence_is_evidence": true,
+            "coordinate_presence_is_evidence": true,
+            "vlm_only_values": {
+              "id": [
+                "U-V04-101",
+                "U-V04-102",
+                "U-V04-103",
+                "U-V04-104",
+                "U-V04-105",
+                "U-V04-106",
+                "U-V04-107"
+              ]
+            },
+            "coordinate_only_values": {
+              "id": [
+                "JP-SKU-V04-101",
+                "JP-SKU-V04-102",
+                "JP-SKU-V04-103",
+                "JP-SKU-V04-104",
+                "JP-SKU-V04-105",
+                "JP-SKU-V04-106",
+                "JP-SKU-V04-107"
+              ]
+            },
+            "unsupported_value_count": 7,
+            "missing_value_count": 7,
+            "actionable_unsupported_value_count": 7,
+            "actionable_missing_value_count": 7,
+            "actionable_structure_mismatch_count": 2,
+            "structure_mismatches": [
+              "column_count_mismatch",
+              "numeric_cell_count_mismatch"
+            ],
+            "coordinate_metrics": {
+              "chars": 3978,
+              "table_count": 1,
+              "numeric_cell_count": 17,
+              "unknown_token_count": 0,
+              "max_table_columns": 14,
+              "table_column_counts": [
+                14
+              ]
+            },
+            "vlm_metrics": {
+              "chars": 763,
+              "table_count": 1,
+              "numeric_cell_count": 14,
+              "unknown_token_count": 0,
+              "max_table_columns": 5,
+              "table_column_counts": [
+                5
+              ]
+            },
+            "coordinate_quality": {
+              "ok": true,
+              "reasons": [],
+              "rows": 21,
+              "columns": 14,
+              "span_count": 86,
+              "span_coverage": 1.0,
+              "spans_per_row": 4.0952,
+              "span_per_row_limit": 42.0,
+              "max_cell_chars": 14,
+              "max_to_median_cell_char_ratio": 2.8,
+              "max_long_text_row_ratio": 0.0
+            },
+            "coordinate_diagnostics_summary": {
+              "status": "ok",
+              "rows": 21,
+              "columns": 14,
+              "span_count": 86,
+              "span_coverage": 1.0,
+              "table_area_ratio": 0.8159
+            }
+          },
+          "auto_corrections": [],
+          "usage_events": []
+        },
+        "final_report": {
+          "needs_fallback": true,
+          "quality_score": 8.0,
+          "coordinate_evidence_strength": "strong",
+          "coordinate_numeric_evidence_weak": false,
+          "coordinate_absence_is_evidence": true,
+          "coordinate_presence_is_evidence": true,
+          "vlm_only_values": {},
+          "coordinate_only_values": {},
+          "unsupported_value_count": 0,
+          "missing_value_count": 0,
+          "actionable_unsupported_value_count": 0,
+          "actionable_missing_value_count": 0,
+          "actionable_structure_mismatch_count": 2,
+          "structure_mismatches": [
+            "column_count_mismatch",
+            "numeric_cell_count_mismatch"
+          ],
+          "coordinate_metrics": {
+            "chars": 3978,
+            "table_count": 1,
+            "numeric_cell_count": 17,
+            "unknown_token_count": 0,
+            "max_table_columns": 14,
+            "table_column_counts": [
+              14
+            ]
+          },
+          "vlm_metrics": {
+            "chars": 752,
+            "table_count": 1,
+            "numeric_cell_count": 14,
+            "unknown_token_count": 0,
+            "max_table_columns": 5,
+            "table_column_counts": [
+              5
+            ]
+          },
+          "coordinate_quality": {
+            "ok": true,
+            "reasons": [],
+            "rows": 21,
+            "columns": 14,
+            "span_count": 86,
+            "span_coverage": 1.0,
+            "spans_per_row": 4.0952,
+            "span_per_row_limit": 42.0,
+            "max_cell_chars": 14,
+            "max_to_median_cell_char_ratio": 2.8,
+            "max_long_text_row_ratio": 0.0
+          },
+          "coordinate_diagnostics_summary": {
+            "status": "ok",
+            "rows": 21,
+            "columns": 14,
+            "span_count": 86,
+            "span_coverage": 1.0,
+            "table_area_ratio": 0.8159
+          }
+        }
+      },
+      "input_pages": {
+        "pdf": "source_pdf",
+        "start_page": 1,
+        "end_page": 1
+      }
+    }
+  },
+  {
+    "mode": "IMAGE_RECONCILE",
+    "start_page": 2,
+    "end_page": 2,
+    "markdown": "V04 | Japanese mixed layout\n\nPage 2 of 2\n\n# 請求明細書 JP-V04-請求-02\n\n取引先: 東西検証株式会社 参照番号 V04-参照-P02\n\n|   ■ | ■■■■■          | ■■                |   ■■ | ■■        |\n|-----|----------------|-------------------|------|-----------|\n|   1 | JP-SKU-V04-201 | 部品交換費用 摘要-V04-2-1 |    2 | JPY-21801 |\n|   2 | JP-SKU-V04-202 | 部品交換費用 摘要-V04-2-2 |    3 | JPY-22802 |\n|   3 | JP-SKU-V04-203 | 部品交換費用 摘要-V04-2-3 |    4 | JPY-23803 |\n|   4 | JP-SKU-V04-204 | 部品交換費用 摘要-V04-2-4 |    5 | JPY-24804 |\n|   5 | JP-SKU-V04-205 | 部品交換費用 摘要-V04-2-5 |    6 | JPY-25805 |\n|   6 | JP-SKU-V04-206 | 部品交換費用 摘要-V04-2-6 |    7 | JPY-26806 |\n|   7 | JP-SKU-V04-207 | 部品交換費用 摘要-V04-2-7 |    8 | JPY-27807 |\n\n縦書き確認 V04-縦書き-P02\n\nPDF validation suite for routed PDF extraction.\n\nV04-FOOTER-P02",
+    "safe_markdown": "V04 | Japanese mixed layout\n\nPage 2 of 2\n\n# 請求明細書 JP-V04-請求-02\n\n取引先: 東西検証株式会社 参照番号 V04-参照-P02\n\n|   ■ | ■■■■■          | ■■                |   ■■ | ■■        |\n|-----|----------------|-------------------|------|-----------|\n|   1 | JP-SKU-V04-201 | 部品交換費用 摘要-V04-2-1 |    2 | JPY-21801 |\n|   2 | JP-SKU-V04-202 | 部品交換費用 摘要-V04-2-2 |    3 | JPY-22802 |\n|   3 | JP-SKU-V04-203 | 部品交換費用 摘要-V04-2-3 |    4 | JPY-23803 |\n|   4 | JP-SKU-V04-204 | 部品交換費用 摘要-V04-2-4 |    5 | JPY-24804 |\n|   5 | JP-SKU-V04-205 | 部品交換費用 摘要-V04-2-5 |    6 | JPY-25805 |\n|   6 | JP-SKU-V04-206 | 部品交換費用 摘要-V04-2-6 |    7 | JPY-26806 |\n|   7 | JP-SKU-V04-207 | 部品交換費用 摘要-V04-2-7 |    8 | JPY-27807 |\n\n縦書き確認 V04-縦書き-P02\n\nPDF validation suite for routed PDF extraction.\n\nV04-FOOTER-P02",
+    "raw_ocr_markdown": "V04 | Japanese mixed layout\n\nPage 2 of 2\n\n# 請求明細書 JP-V04-請求-02\n\n取引先: 東西検証株式会社 参照番号 V04-参照-P02\n\n|   ■ | ■■■■■          | ■■                |   ■■ | ■■        |\n|-----|----------------|-------------------|------|-----------|\n|   1 | JP-SKU-V04-201 | 部品交換費用 摘要-V04-2-1 |    2 | JPY-21801 |\n|   2 | JP-SKU-V04-202 | 部品交換費用 摘要-V04-2-2 |    3 | JPY-22802 |\n|   3 | JP-SKU-V04-203 | 部品交換費用 摘要-V04-2-3 |    4 | JPY-23803 |\n|   4 | JP-SKU-V04-204 | 部品交換費用 摘要-V04-2-4 |    5 | JPY-24804 |\n|   5 | JP-SKU-V04-205 | 部品交換費用 摘要-V04-2-5 |    6 | JPY-25805 |\n|   6 | JP-SKU-V04-206 | 部品交換費用 摘要-V04-2-6 |    7 | JPY-26806 |\n|   7 | JP-SKU-V04-207 | 部品交換費用 摘要-V04-2-7 |    8 | JPY-27807 |\n\n縦書き確認 V04-縦書き-P02\n\nPDF validation suite for routed PDF extraction.\n\nV04-FOOTER-P02",
+    "raw_vlm_markdown": "V04 | Japanese mixed layout\n\nPage 2 of 2\n\n請求明細書 JP-V04-請求-02\n\n取引先: 東西検証株式会社 参照番号 V04-参照-P02\n\n|   ■ | ■■■■■          | ■■                |   ■■ | ■■        |\n|-----|----------------|-------------------|------|-----------|\n|   1 | JP-SKU-V04-201 | 部品交換費用 摘要-V04-2-1 |    2 | JPY-21801 |\n|   2 | JP-SKU-V04-202 | 部品交換費用 摘要-V04-2-2 |    3 | JPY-22802 |\n|   3 | JP-SKU-V04-203 | 部品交換費用 摘要-V04-2-3 |    4 | JPY-23803 |\n|   4 | JP-SKU-V04-204 | 部品交換費用 摘要-V04-2-4 |    5 | JPY-24804 |\n|   5 | JP-SKU-V04-205 | 部品交換費用 摘要-V04-2-5 |    6 | JPY-25805 |\n|   6 | JP-SKU-V04-206 | 部品交換費用 摘要-V04-2-6 |    7 | JPY-26806 |\n|   7 | JP-SKU-V04-207 | 部品交換費用 摘要-V04-2-7 |    8 | JPY-27807 |\n\n縦書き確認 V04-縦書き-P02\n\nPDF validation suite for routed PDF extraction.\n\nV04-FOOTER-P02",
+    "tables": [
+      {
+        "index": 1,
+        "rows": 7,
+        "columns": 5,
+        "headers": [
+          "■",
+          "■■■■■",
+          "■■",
+          "■■",
+          "■■"
+        ],
+        "csv": "■,■■■■■,■■,■■,■■\r\n1,JP-SKU-V04-201,部品交換費用 摘要-V04-2-1,2,JPY-21801\r\n2,JP-SKU-V04-202,部品交換費用 摘要-V04-2-2,3,JPY-22802\r\n3,JP-SKU-V04-203,部品交換費用 摘要-V04-2-3,4,JPY-23803\r\n4,JP-SKU-V04-204,部品交換費用 摘要-V04-2-4,5,JPY-24804\r\n5,JP-SKU-V04-205,部品交換費用 摘要-V04-2-5,6,JPY-25805\r\n6,JP-SKU-V04-206,部品交換費用 摘要-V04-2-6,7,JPY-26806\r\n7,JP-SKU-V04-207,部品交換費用 摘要-V04-2-7,8,JPY-27807\r\n",
+        "html": "<table><tbody><tr><th>■</th><th>■■■■■</th><th>■■</th><th>■■</th><th>■■</th></tr><tr><td>1</td><td>JP-SKU-V04-201</td><td>部品交換費用 摘要-V04-2-1</td><td>2</td><td>JPY-21801</td></tr><tr><td>2</td><td>JP-SKU-V04-202</td><td>部品交換費用 摘要-V04-2-2</td><td>3</td><td>JPY-22802</td></tr><tr><td>3</td><td>JP-SKU-V04-203</td><td>部品交換費用 摘要-V04-2-3</td><td>4</td><td>JPY-23803</td></tr><tr><td>4</td><td>JP-SKU-V04-204</td><td>部品交換費用 摘要-V04-2-4</td><td>5</td><td>JPY-24804</td></tr><tr><td>5</td><td>JP-SKU-V04-205</td><td>部品交換費用 摘要-V04-2-5</td><td>6</td><td>JPY-25805</td></tr><tr><td>6</td><td>JP-SKU-V04-206</td><td>部品交換費用 摘要-V04-2-6</td><td>7</td><td>JPY-26806</td></tr><tr><td>7</td><td>JP-SKU-V04-207</td><td>部品交換費用 摘要-V04-2-7</td><td>8</td><td>JPY-27807</td></tr></tbody></table>",
+        "page": 1,
+        "repair": {
+          "enabled": false
+        }
+      }
+    ],
+    "elapsed_seconds": 14.102,
+    "candidate_timings_seconds": {
+      "vlm_primary": 3.741,
+      "vlm_secondary": 4.395,
+      "coordinate_vlm_fallback:gpt-5.4": 9.69
+    },
+    "diagnostics": {
+      "compare_mode": "vlm_vlm",
+      "parallel_reconcile_candidates": true,
+      "reconcile_table_fallback": {
+        "attempted": false,
+        "enabled": true,
+        "triggers": []
+      },
+      "coordinate_vlm_quality": {
+        "enabled": true,
+        "applicable": true,
+        "source": "vlm_vlm_safe_output",
+        "initial_report": {
+          "needs_fallback": true,
+          "quality_score": 8.0,
+          "coordinate_evidence_strength": "strong",
+          "coordinate_numeric_evidence_weak": false,
+          "coordinate_absence_is_evidence": true,
+          "coordinate_presence_is_evidence": true,
+          "vlm_only_values": {},
+          "coordinate_only_values": {},
+          "unsupported_value_count": 0,
+          "missing_value_count": 0,
+          "actionable_unsupported_value_count": 0,
+          "actionable_missing_value_count": 0,
+          "actionable_structure_mismatch_count": 2,
+          "structure_mismatches": [
+            "column_count_mismatch",
+            "numeric_cell_count_mismatch"
+          ],
+          "coordinate_metrics": {
+            "chars": 3978,
+            "table_count": 1,
+            "numeric_cell_count": 17,
+            "unknown_token_count": 0,
+            "max_table_columns": 14,
+            "table_column_counts": [
+              14
+            ]
+          },
+          "vlm_metrics": {
+            "chars": 754,
+            "table_count": 1,
+            "numeric_cell_count": 14,
+            "unknown_token_count": 0,
+            "max_table_columns": 5,
+            "table_column_counts": [
+              5
+            ]
+          },
+          "coordinate_quality": {
+            "ok": true,
+            "reasons": [],
+            "rows": 21,
+            "columns": 14,
+            "span_count": 86,
+            "span_coverage": 1.0,
+            "spans_per_row": 4.0952,
+            "span_per_row_limit": 42.0,
+            "max_cell_chars": 14,
+            "max_to_median_cell_char_ratio": 2.8,
+            "max_long_text_row_ratio": 0.0
+          },
+          "coordinate_diagnostics_summary": {
+            "status": "ok",
+            "rows": 21,
+            "columns": 14,
+            "span_count": 86,
+            "span_coverage": 1.0,
+            "table_area_ratio": 0.8159
+          }
+        },
+        "fallback": {
+          "attempted": true,
+          "accepted": false,
+          "reason": "coordinate_vlm_fallback_not_better",
+          "model": "gpt-5.4",
+          "elapsed_seconds": 9.69,
+          "report": {
+            "needs_fallback": true,
+            "quality_score": 43.0,
+            "coordinate_evidence_strength": "strong",
+            "coordinate_numeric_evidence_weak": false,
+            "coordinate_absence_is_evidence": true,
+            "coordinate_presence_is_evidence": true,
+            "vlm_only_values": {
+              "id": [
+                "U-V04-201",
+                "U-V04-202",
+                "U-V04-203",
+                "U-V04-204",
+                "U-V04-205",
+                "U-V04-206",
+                "U-V04-207"
+              ]
+            },
+            "coordinate_only_values": {
+              "id": [
+                "JP-SKU-V04-201",
+                "JP-SKU-V04-202",
+                "JP-SKU-V04-203",
+                "JP-SKU-V04-204",
+                "JP-SKU-V04-205",
+                "JP-SKU-V04-206",
+                "JP-SKU-V04-207"
+              ]
+            },
+            "unsupported_value_count": 7,
+            "missing_value_count": 7,
+            "actionable_unsupported_value_count": 7,
+            "actionable_missing_value_count": 7,
+            "actionable_structure_mismatch_count": 2,
+            "structure_mismatches": [
+              "column_count_mismatch",
+              "numeric_cell_count_mismatch"
+            ],
+            "coordinate_metrics": {
+              "chars": 3978,
+              "table_count": 1,
+              "numeric_cell_count": 17,
+              "unknown_token_count": 0,
+              "max_table_columns": 14,
+              "table_column_counts": [
+                14
+              ]
+            },
+            "vlm_metrics": {
+              "chars": 761,
+              "table_count": 1,
+              "numeric_cell_count": 14,
+              "unknown_token_count": 0,
+              "max_table_columns": 5,
+              "table_column_counts": [
+                5
+              ]
+            },
+            "coordinate_quality": {
+              "ok": true,
+              "reasons": [],
+              "rows": 21,
+              "columns": 14,
+              "span_count": 86,
+              "span_coverage": 1.0,
+              "spans_per_row": 4.0952,
+              "span_per_row_limit": 42.0,
+              "max_cell_chars": 14,
+              "max_to_median_cell_char_ratio": 2.8,
+              "max_long_text_row_ratio": 0.0
+            },
+            "coordinate_diagnostics_summary": {
+              "status": "ok",
+              "rows": 21,
+              "columns": 14,
+              "span_count": 86,
+              "span_coverage": 1.0,
+              "table_area_ratio": 0.8159
+            }
+          },
+          "auto_corrections": [],
+          "usage_events": []
+        },
+        "final_report": {
+          "needs_fallback": true,
+          "quality_score": 8.0,
+          "coordinate_evidence_strength": "strong",
+          "coordinate_numeric_evidence_weak": false,
+          "coordinate_absence_is_evidence": true,
+          "coordinate_presence_is_evidence": true,
+          "vlm_only_values": {},
+          "coordinate_only_values": {},
+          "unsupported_value_count": 0,
+          "missing_value_count": 0,
+          "actionable_unsupported_value_count": 0,
+          "actionable_missing_value_count": 0,
+          "actionable_structure_mismatch_count": 2,
+          "structure_mismatches": [
+            "column_count_mismatch",
+            "numeric_cell_count_mismatch"
+          ],
+          "coordinate_metrics": {
+            "chars": 3978,
+            "table_count": 1,
+            "numeric_cell_count": 17,
+            "unknown_token_count": 0,
+            "max_table_columns": 14,
+            "table_column_counts": [
+              14
+            ]
+          },
+          "vlm_metrics": {
+            "chars": 754,
+            "table_count": 1,
+            "numeric_cell_count": 14,
+            "unknown_token_count": 0,
+            "max_table_columns": 5,
+            "table_column_counts": [
+              5
+            ]
+          },
+          "coordinate_quality": {
+            "ok": true,
+            "reasons": [],
+            "rows": 21,
+            "columns": 14,
+            "span_count": 86,
+            "span_coverage": 1.0,
+            "spans_per_row": 4.0952,
+            "span_per_row_limit": 42.0,
+            "max_cell_chars": 14,
+            "max_to_median_cell_char_ratio": 2.8,
+            "max_long_text_row_ratio": 0.0
+          },
+          "coordinate_diagnostics_summary": {
+            "status": "ok",
+            "rows": 21,
+            "columns": 14,
+            "span_count": 86,
+            "span_coverage": 1.0,
+            "table_area_ratio": 0.8159
+          }
+        }
+      },
+      "input_pages": {
+        "pdf": "source_pdf",
+        "start_page": 2,
+        "end_page": 2
+      }
+    }
+  }
+]

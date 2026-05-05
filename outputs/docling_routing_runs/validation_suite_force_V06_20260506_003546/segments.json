@@ -1,0 +1,216 @@
+[
+  {
+    "mode": "IMAGE_RECONCILE",
+    "start_page": 1,
+    "end_page": 1,
+    "markdown": "V06 | Landscape drawing and schedule\n\nPage 1 of 1\n\nDWG-V06-FLOOR-A-117\n\nROTATE-V06-NORTH-ELEVATION\n\n| Mark        | Type   | Size     | Rating   | Note     |\n|-------------|--------|----------|----------|----------|\n| DOOR-V06-01 | FRP    | 825x2100 | F10      | Room 101 |\n| DOOR-V06-02 | FRP    | 850x2100 | F20      | Room 102 |\n| DOOR-V06-03 | FRP    | 875x2100 | F30      | Room 103 |\n| DOOR-V06-04 | FRP    | 900x2100 | F40      | Room 104 |\n| DOOR-V06-05 | FRP    | 925x2100 | F50      | Room 105 |\n| DOOR-V06-06 | FRP    | 950x2100 | F60      | Room 106 |\n\nCALL-V06-04-GRID\n\nCALL-V06-02-GRID\n\nCALL-V06-01-GRID\n\nCALL-V06-03-GRID\n\nTINY-V06-REVISION-CLOUD-04\n\nPDF validation suite for routed PDF extraction.\n\nV06-FOOTER-P01",
+    "safe_markdown": "V06 | Landscape drawing and schedule\n\nPage 1 of 1\n\n[[読み取り不明]]\n\n# DWG-V06-FLOOR-A-117\n\nCALL-V06-01-GRID\n\nCALL-V06-02-GRID\n\n[[読み取り不明]]\n\nCALL-V06-04-GRID\n\n| Mark        | Type   | Size     | Rating   | Note     |\n|-------------|--------|----------|----------|----------|\n| DOOR-V06-01 | FRP    | 825x2100 | F10      | Room 101 |\n| DOOR-V06-02 | FRP    | 850x2100 | F20      | Room 102 |\n| DOOR-V06-03 | FRP    | 875x2100 | F30      | Room 103 |\n| DOOR-V06-04 | FRP    | 900x2100 | F40      | Room 104 |\n| DOOR-V06-05 | FRP    | 925x2100 | F50      | Room 105 |\n| DOOR-V06-06 | FRP    | 950x2100 | F60      | Room 106 |\n\nTINY-V06-REVISION-CLOUD-04\n\nPDF validation suite for routed PDF extraction.\n\nV06-FOOTER-P01",
+    "raw_ocr_markdown": "V06 | Landscape drawing and schedule\n\nPage 1 of 1\n\nDWG-V06-FLOOR-A-117\n\nROTATE-V06-NORTH-ELEVATION\n\n| Mark        | Type   | Size     | Rating   | Note     |\n|-------------|--------|----------|----------|----------|\n| DOOR-V06-01 | FRP    | 825x2100 | F10      | Room 101 |\n| DOOR-V06-02 | FRP    | 850x2100 | F20      | Room 102 |\n| DOOR-V06-03 | FRP    | 875x2100 | F30      | Room 103 |\n| DOOR-V06-04 | FRP    | 900x2100 | F40      | Room 104 |\n| DOOR-V06-05 | FRP    | 925x2100 | F50      | Room 105 |\n| DOOR-V06-06 | FRP    | 950x2100 | F60      | Room 106 |\n\nCALL-V06-04-GRID\n\nCALL-V06-02-GRID\n\nCALL-V06-01-GRID\n\nCALL-V06-03-GRID\n\nTINY-V06-REVISION-CLOUD-04\n\nPDF validation suite for routed PDF extraction.\n\nV06-FOOTER-P01",
+    "raw_vlm_markdown": "V06 | Landscape drawing and schedule\n\nPage 1 of 1\n\nDWG-V06-FLOOR-A-117\n\nROTATE-V06-NORTH ELEVATION\n\n| Mark        | Type   | Size     | Rating   | Note     |\n|-------------|--------|----------|----------|----------|\n| DOOR-V06-01 | FRP    | 825x2100 | F10      | Room 101 |\n| DOOR-V06-02 | FRP    | 850x2100 | F20      | Room 102 |\n| DOOR-V06-03 | FRP    | 875x2100 | F30      | Room 103 |\n| DOOR-V06-04 | FRP    | 900x2100 | F40      | Room 104 |\n| DOOR-V06-05 | FRP    | 925x2100 | F50      | Room 105 |\n| DOOR-V06-06 | FRP    | 950x2100 | F60      | Room 106 |\n\nCALL-V06-04-GRID\n\nCALL-V06-02-GRID\n\nCALL-V06-01-GRID\n\nCALL-V06-03-GRID\n\nTINY-V06-REVISION-CLOUD-04\n\nPDF validation suite for routed PDF extraction.\n\nV06-FOOTER-P01",
+    "tables": [
+      {
+        "index": 1,
+        "rows": 6,
+        "columns": 5,
+        "headers": [
+          "Mark",
+          "Type",
+          "Size",
+          "Rating",
+          "Note"
+        ],
+        "csv": "Mark,Type,Size,Rating,Note\r\nDOOR-V06-01,FRP,825x2100,F10,Room 101\r\nDOOR-V06-02,FRP,850x2100,F20,Room 102\r\nDOOR-V06-03,FRP,875x2100,F30,Room 103\r\nDOOR-V06-04,FRP,900x2100,F40,Room 104\r\nDOOR-V06-05,FRP,925x2100,F50,Room 105\r\nDOOR-V06-06,FRP,950x2100,F60,Room 106\r\n",
+        "html": "<table><tbody><tr><th>Mark</th><th>Type</th><th>Size</th><th>Rating</th><th>Note</th></tr><tr><td>DOOR-V06-01</td><td>FRP</td><td>825x2100</td><td>F10</td><td>Room 101</td></tr><tr><td>DOOR-V06-02</td><td>FRP</td><td>850x2100</td><td>F20</td><td>Room 102</td></tr><tr><td>DOOR-V06-03</td><td>FRP</td><td>875x2100</td><td>F30</td><td>Room 103</td></tr><tr><td>DOOR-V06-04</td><td>FRP</td><td>900x2100</td><td>F40</td><td>Room 104</td></tr><tr><td>DOOR-V06-05</td><td>FRP</td><td>925x2100</td><td>F50</td><td>Room 105</td></tr><tr><td>DOOR-V06-06</td><td>FRP</td><td>950x2100</td><td>F60</td><td>Room 106</td></tr></tbody></table>",
+        "page": 1,
+        "repair": {
+          "enabled": false
+        }
+      }
+    ],
+    "elapsed_seconds": 40.632,
+    "candidate_timings_seconds": {
+      "vlm_primary": 2.984,
+      "vlm_secondary": 35.288,
+      "reconcile_table_fallback:gpt-5.4": 5.337
+    },
+    "diagnostics": {
+      "compare_mode": "vlm_vlm",
+      "parallel_reconcile_candidates": true,
+      "reconcile_table_fallback": {
+        "attempted": true,
+        "accepted": true,
+        "reason": "unknown_count_reduced",
+        "model": "gpt-5.4",
+        "triggers": [
+          "MASKED_AS_UNKNOWN",
+          "unknown_token"
+        ],
+        "metrics": {
+          "current": {
+            "chars": 712,
+            "table_count": 1,
+            "numeric_cell_count": 0,
+            "unknown_token_count": 1,
+            "max_table_columns": 5,
+            "table_column_counts": [
+              5
+            ]
+          },
+          "fallback": {
+            "chars": 730,
+            "table_count": 1,
+            "numeric_cell_count": 0,
+            "unknown_token_count": 0,
+            "max_table_columns": 5,
+            "table_column_counts": [
+              5
+            ]
+          },
+          "triggers": [
+            "MASKED_AS_UNKNOWN",
+            "unknown_token"
+          ]
+        },
+        "usage_events": []
+      },
+      "coordinate_vlm_quality": {
+        "enabled": true,
+        "applicable": true,
+        "source": "vlm_vlm_safe_output",
+        "initial_report": {
+          "needs_fallback": true,
+          "quality_score": 10.0,
+          "coordinate_evidence_strength": "strong",
+          "coordinate_numeric_evidence_weak": false,
+          "coordinate_absence_is_evidence": true,
+          "coordinate_presence_is_evidence": true,
+          "vlm_only_values": {
+            "id": [
+              "ROTATE-V06-NORTH-ELEVATION",
+              "CALL-V06-03-GRID"
+            ]
+          },
+          "coordinate_only_values": {},
+          "unsupported_value_count": 2,
+          "missing_value_count": 0,
+          "actionable_unsupported_value_count": 2,
+          "actionable_missing_value_count": 0,
+          "actionable_structure_mismatch_count": 1,
+          "structure_mismatches": [
+            "column_count_mismatch"
+          ],
+          "coordinate_metrics": {
+            "chars": 6943,
+            "table_count": 1,
+            "numeric_cell_count": 1,
+            "unknown_token_count": 0,
+            "max_table_columns": 18,
+            "table_column_counts": [
+              18
+            ]
+          },
+          "vlm_metrics": {
+            "chars": 730,
+            "table_count": 1,
+            "numeric_cell_count": 0,
+            "unknown_token_count": 0,
+            "max_table_columns": 5,
+            "table_column_counts": [
+              5
+            ]
+          },
+          "coordinate_quality": {
+            "ok": true,
+            "reasons": [],
+            "rows": 26,
+            "columns": 17,
+            "span_count": 91,
+            "span_coverage": 0.989,
+            "spans_per_row": 3.5,
+            "span_per_row_limit": 51.0,
+            "max_cell_chars": 26,
+            "max_to_median_cell_char_ratio": 6.5,
+            "max_long_text_row_ratio": 0.0
+          },
+          "coordinate_diagnostics_summary": {
+            "status": "ok",
+            "rows": 26,
+            "columns": 17,
+            "span_count": 91,
+            "span_coverage": 0.989,
+            "table_area_ratio": 0.8157
+          }
+        },
+        "fallback": {
+          "attempted": false,
+          "enabled": false,
+          "reason": "no_coordinate_vlm_fallback_trigger"
+        },
+        "final_report": {
+          "needs_fallback": true,
+          "quality_score": 10.0,
+          "coordinate_evidence_strength": "strong",
+          "coordinate_numeric_evidence_weak": false,
+          "coordinate_absence_is_evidence": true,
+          "coordinate_presence_is_evidence": true,
+          "vlm_only_values": {},
+          "coordinate_only_values": {},
+          "unsupported_value_count": 0,
+          "missing_value_count": 0,
+          "actionable_unsupported_value_count": 0,
+          "actionable_missing_value_count": 0,
+          "actionable_structure_mismatch_count": 1,
+          "structure_mismatches": [
+            "column_count_mismatch"
+          ],
+          "coordinate_metrics": {
+            "chars": 6943,
+            "table_count": 1,
+            "numeric_cell_count": 1,
+            "unknown_token_count": 0,
+            "max_table_columns": 18,
+            "table_column_counts": [
+              18
+            ]
+          },
+          "vlm_metrics": {
+            "chars": 708,
+            "table_count": 1,
+            "numeric_cell_count": 0,
+            "unknown_token_count": 2,
+            "max_table_columns": 5,
+            "table_column_counts": [
+              5
+            ]
+          },
+          "coordinate_quality": {
+            "ok": true,
+            "reasons": [],
+            "rows": 26,
+            "columns": 17,
+            "span_count": 91,
+            "span_coverage": 0.989,
+            "spans_per_row": 3.5,
+            "span_per_row_limit": 51.0,
+            "max_cell_chars": 26,
+            "max_to_median_cell_char_ratio": 6.5,
+            "max_long_text_row_ratio": 0.0
+          },
+          "coordinate_diagnostics_summary": {
+            "status": "ok",
+            "rows": 26,
+            "columns": 17,
+            "span_count": 91,
+            "span_coverage": 0.989,
+            "table_area_ratio": 0.8157
+          }
+        }
+      },
+      "input_pages": {
+        "pdf": "source_pdf",
+        "start_page": 1,
+        "end_page": 1
+      }
+    }
+  }
+]

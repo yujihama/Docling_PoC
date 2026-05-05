@@ -1,0 +1,98 @@
+[
+  {
+    "page": 1,
+    "width": 595.28,
+    "height": 841.89,
+    "text_chars": 1110,
+    "text_density": 0.002215,
+    "text_quality_score": 0.8,
+    "image_area_ratio": 0.0,
+    "line_count": 30,
+    "rect_count": 34,
+    "table_score": 0.975,
+    "complex_table_score": 0.5958,
+    "image_read_risk_score": 0.265,
+    "mode": "TEXT_TABLE_FAST",
+    "reasons": [
+      "good_text_layer",
+      "simple_table_signal"
+    ],
+    "elapsed_seconds": 0.0084,
+    "extra_actions": [],
+    "embedded_visual_region_count": 0,
+    "embedded_visual_regions": [],
+    "visual_reference_count": 0
+  },
+  {
+    "page": 2,
+    "width": 595.28,
+    "height": 841.89,
+    "text_chars": 1111,
+    "text_density": 0.002217,
+    "text_quality_score": 0.8,
+    "image_area_ratio": 0.0,
+    "line_count": 30,
+    "rect_count": 34,
+    "table_score": 0.975,
+    "complex_table_score": 0.5958,
+    "image_read_risk_score": 0.265,
+    "mode": "TEXT_TABLE_FAST",
+    "reasons": [
+      "good_text_layer",
+      "simple_table_signal"
+    ],
+    "elapsed_seconds": 0.0027,
+    "extra_actions": [],
+    "embedded_visual_region_count": 0,
+    "embedded_visual_regions": [],
+    "visual_reference_count": 0
+  },
+  {
+    "page": 3,
+    "width": 595.28,
+    "height": 841.89,
+    "text_chars": 1112,
+    "text_density": 0.002219,
+    "text_quality_score": 0.8,
+    "image_area_ratio": 0.0,
+    "line_count": 30,
+    "rect_count": 34,
+    "table_score": 0.975,
+    "complex_table_score": 0.5958,
+    "image_read_risk_score": 0.265,
+    "mode": "TEXT_TABLE_FAST",
+    "reasons": [
+      "good_text_layer",
+      "simple_table_signal"
+    ],
+    "elapsed_seconds": 0.0026,
+    "extra_actions": [],
+    "embedded_visual_region_count": 0,
+    "embedded_visual_regions": [],
+    "visual_reference_count": 0
+  },
+  {
+    "page": 4,
+    "width": 595.28,
+    "height": 841.89,
+    "text_chars": 1109,
+    "text_density": 0.002213,
+    "text_quality_score": 0.8,
+    "image_area_ratio": 0.0,
+    "line_count": 30,
+    "rect_count": 34,
+    "table_score": 0.975,
+    "complex_table_score": 0.5958,
+    "image_read_risk_score": 0.265,
+    "mode": "TEXT_TABLE_FAST",
+    "reasons": [
+      "good_text_layer",
+      "simple_table_signal"
+    ],
+    "elapsed_seconds": 0.0028,
+    "extra_actions": [],
+    "embedded_visual_region_count": 0,
+    "embedded_visual_regions": [],
+    "visual_reference_count": 0
+  }
+]

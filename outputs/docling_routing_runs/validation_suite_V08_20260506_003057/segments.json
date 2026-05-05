@@ -1,0 +1,488 @@
+[
+  {
+    "mode": "TEXT_TABLE_VLM",
+    "start_page": 1,
+    "end_page": 1,
+    "markdown": "V08 | Email thread export\n\nPage 1 of 2\n\n# Subject: Month-end exception review THREAD-V08-7788-P01\n\nFrom: controller@example.test To: ops@example.test Sent: 2026-05-01 08:14\n\nPlease confirm the three exceptions below. Control token V08-EMAIL-OPEN-P01.\n\nPrior message: the attached spreadsheet totals did not match the GL export.\n\nQuoted anchor V08-QUOTE-P01-DEPTH2 must remain visible.\n\nCode-like snippet: if variance &gt; threshold: escalate(row\\_id)\n\n| Exception       | Owner              |   Amount | Resolution   |\n|-----------------|--------------------|----------|--------------|\n| EXC-V08-P01-R01 | user1@example.test |   811.07 | pending      |\n| EXC-V08-P01-R02 | user2@example.test |  1622.07 | cleared      |\n| EXC-V08-P01-R03 | user3@example.test |  2433.07 | pending      |\n| EXC-V08-P01-R04 | user4@example.test |  3244.07 | cleared      |\n| EXC-V08-P01-R05 | user5@example.test |  4055.07 | pending      |\n\nPDF validation suite for routed PDF extraction.\n\nV08-FOOTER-P01",
+    "safe_markdown": "V08 | Email thread export\n\nPage 1 of 2\n\n# Subject: Month-end exception review THREAD-V08-7788-P01\n\nFrom: controller@example.test To: ops@example.test Sent: 2026-05-01 08:14\n\nPlease confirm the three exceptions below. Control token V08-EMAIL-OPEN-P01.\n\nPrior message: the attached spreadsheet totals did not match the GL export.\n\nQuoted anchor V08-QUOTE-P01-DEPTH2 must remain visible.\n\nCode-like snippet: if variance &gt; threshold: escalate(row\\_id)\n\n| Exception       | Owner              |   Amount | Resolution   |\n|-----------------|--------------------|----------|--------------|\n| EXC-V08-P01-R01 | user1@example.test |   811.07 | pending      |\n| EXC-V08-P01-R02 | user2@example.test |  1622.07 | cleared      |\n| EXC-V08-P01-R03 | user3@example.test |  2433.07 | pending      |\n| EXC-V08-P01-R04 | user4@example.test |  3244.07 | cleared      |\n| EXC-V08-P01-R05 | user5@example.test |  4055.07 | pending      |\n\nPDF validation suite for routed PDF extraction.\n\nV08-FOOTER-P01",
+    "raw_ocr_markdown": "",
+    "raw_vlm_markdown": "V08 | Email thread export\n\nPage 1 of 2\n\n# Subject: Month-end exception review THREAD-V08-7788-P01\n\nFrom: controller@example.test To: ops@example.test Sent: 2026-05-01 08:14\n\nPlease confirm the three exceptions below. Control token V08-EMAIL-OPEN-P01.\n\nPrior message: the attached spreadsheet totals did not match the GL export.\n\nQuoted anchor V08-QUOTE-P01-DEPTH2 must remain visible.\n\nCode-like snippet: if variance &gt; threshold: escalate(row\\_id)\n\n| Exception       | Owner              |   Amount | Resolution   |\n|-----------------|--------------------|----------|--------------|\n| EXC-V08-P01-R01 | user1@example.test |   811.07 | pending      |\n| EXC-V08-P01-R02 | user2@example.test |  1622.07 | cleared      |\n| EXC-V08-P01-R03 | user3@example.test |  2433.07 | pending      |\n| EXC-V08-P01-R04 | user4@example.test |  3244.07 | cleared      |\n| EXC-V08-P01-R05 | user5@example.test |  4055.07 | pending      |\n\nPDF validation suite for routed PDF extraction.\n\nV08-FOOTER-P01",
+    "tables": [
+      {
+        "index": 1,
+        "rows": 5,
+        "columns": 4,
+        "headers": [
+          "Exception",
+          "Owner",
+          "Amount",
+          "Resolution"
+        ],
+        "csv": "Exception,Owner,Amount,Resolution\r\nEXC-V08-P01-R01,user1@example.test,811.07,pending\r\nEXC-V08-P01-R02,user2@example.test,1622.07,cleared\r\nEXC-V08-P01-R03,user3@example.test,2433.07,pending\r\nEXC-V08-P01-R04,user4@example.test,3244.07,cleared\r\nEXC-V08-P01-R05,user5@example.test,4055.07,pending\r\n",
+        "html": "<table><tbody><tr><th>Exception</th><th>Owner</th><th>Amount</th><th>Resolution</th></tr><tr><td>EXC-V08-P01-R01</td><td>user1@example.test</td><td>811.07</td><td>pending</td></tr><tr><td>EXC-V08-P01-R02</td><td>user2@example.test</td><td>1622.07</td><td>cleared</td></tr><tr><td>EXC-V08-P01-R03</td><td>user3@example.test</td><td>2433.07</td><td>pending</td></tr><tr><td>EXC-V08-P01-R04</td><td>user4@example.test</td><td>3244.07</td><td>cleared</td></tr><tr><td>EXC-V08-P01-R05</td><td>user5@example.test</td><td>4055.07</td><td>pending</td></tr></tbody></table>",
+        "page": 1,
+        "repair": {
+          "enabled": false
+        }
+      }
+    ],
+    "elapsed_seconds": 4.718,
+    "candidate_timings_seconds": {
+      "extract_page_pdf": 0.005,
+      "table_vlm:gpt-5.4": 4.679
+    },
+    "diagnostics": {
+      "routing_source_mode": "TEXT_TABLE_FAST",
+      "coordinate_table_reconstruction": true,
+      "coordinate_quality": {
+        "ok": false,
+        "reasons": [
+          "low_span_coverage"
+        ],
+        "rows": 14,
+        "columns": 16,
+        "span_count": 89,
+        "span_coverage": 0.9438,
+        "spans_per_row": 6.3571,
+        "span_per_row_limit": 48.0,
+        "max_cell_chars": 23,
+        "max_to_median_cell_char_ratio": 2.5556,
+        "max_long_text_row_ratio": 0.0
+      },
+      "coordinate_diagnostics": {
+        "method": "pdf_text_alignment",
+        "page": 1,
+        "status": "ok",
+        "bbox": [
+          39.69,
+          29.57,
+          555.17,
+          810.79
+        ],
+        "table_area_ratio": 0.8035,
+        "horizontal_line_count": 1,
+        "vertical_line_count": 0,
+        "line_count": 14,
+        "table_line_count": 14,
+        "raw_rows": 14,
+        "raw_columns": 16,
+        "trimmed_rows": 14,
+        "trimmed_columns": 16,
+        "span_count": 89,
+        "assigned_span_count": 84,
+        "span_coverage": 0.9438,
+        "spans_per_trimmed_row": 6.3571,
+        "max_cell_chars": 23,
+        "median_cell_chars": 9.0,
+        "max_to_median_cell_char_ratio": 2.5556,
+        "max_long_text_row_ratio": 0.0,
+        "header_mode": "none",
+        "header_inference_enabled": false,
+        "header_row_count": 0,
+        "measure_start_column": null,
+        "filled_row_header_count": 0,
+        "pdf_grid_rows_preserved": true,
+        "headers": [
+          "col_001",
+          "col_002",
+          "col_003",
+          "col_004",
+          "col_005",
+          "col_006",
+          "col_007",
+          "col_008",
+          "col_009",
+          "col_010",
+          "col_011",
+          "col_012",
+          "col_013",
+          "col_014",
+          "col_015",
+          "col_016"
+        ],
+        "non_table_text_line_count": 0,
+        "non_table_text_chars": 0
+      },
+      "coordinate_markdown": "| col_001         | col_002                 | col_003              | col_004     | col_005          | col_006            | col_007  | col_008    | col_009             | col_010 | col_011 | col_012             | col_013    | col_014        | col_015 | col_016 |\n| --------------- | ----------------------- | -------------------- | ----------- | ---------------- | ------------------ | -------- | ---------- | ------------------- | ------- | ------- | ------------------- | ---------- | -------------- | ------- | ------- |\n| V08 |           | thread                  | export               |             |                  |                    |          |            |                     |         |         |                     |            | Page           | 1       | of 2    |\n| Subject:        |                         | Month-end            |             |                  | exception          |          |            |                     | review  |         | THREAD-V08-7788-P01 |            |                |         |         |\n| From:           | controller@example.test | To:                  |             | ops@example.test |                    | Sent:    | 2026-05-01 |                     | 08:14   |         |                     |            |                |         |         |\n| Please confirm  | the three               | exceptions           |             | below.           | Control token      |          |            | V08-EMAIL-OPEN-P01. |         |         |                     |            |                |         |         |\n| Prior message:  | the attached            |                      | spreadsheet |                  | totals did not     | match    | the        | GL                  | export. |         |                     |            |                |         |         |\n| Quoted          |                         | V08-QUOTE-P01-DEPTH2 |             |                  | must remain        | visible. |            |                     |         |         |                     |            |                |         |         |\n| Code-like       | if variance             | >                    | threshold:  |                  | escalate(row_id)   |          |            |                     |         |         |                     |            |                |         |         |\n| Exception       |                         |                      |             |                  | Owner              |          |            |                     |         | Amount  |                     | Resolution |                |         |         |\n| EXC-V08-P01-R01 |                         |                      |             |                  | user1@example.test |          |            |                     |         | 811.07  |                     | pending    |                |         |         |\n| EXC-V08-P01-R02 |                         |                      |             |                  | user2@example.test |          |            |                     |         | 1622.07 |                     | cleared    |                |         |         |\n| EXC-V08-P01-R03 |                         |                      |             |                  | user3@example.test |          |            |                     |         | 2433.07 |                     | pending    |                |         |         |\n| EXC-V08-P01-R04 |                         |                      |             |                  | user4@example.test |          |            |                     |         | 3244.07 |                     | cleared    |                |         |         |\n| EXC-V08-P01-R05 |                         |                      |             |                  | user5@example.test |          |            |                     |         | 4055.07 |                     | pending    |                |         |         |\n| PDF validation  | suite for               | routed PDF           |             | extraction.      |                    |          |            |                     |         |         |                     |            | V08-FOOTER-P01 |         |         |",
+      "table_vlm_model": "gpt-5.4",
+      "table_vlm_model_selection_reasons": [
+        "many_columns"
+      ],
+      "table_vlm_prompt_variant": "table_first",
+      "table_vlm_reasoning_effort": "none",
+      "coordinate_vlm_quality": {
+        "enabled": true,
+        "initial_report": {
+          "needs_fallback": false,
+          "quality_score": 0.0,
+          "coordinate_evidence_strength": "weak",
+          "coordinate_numeric_evidence_weak": false,
+          "coordinate_absence_is_evidence": false,
+          "coordinate_presence_is_evidence": false,
+          "vlm_only_values": {},
+          "coordinate_only_values": {},
+          "unsupported_value_count": 0,
+          "missing_value_count": 0,
+          "actionable_unsupported_value_count": 0,
+          "actionable_missing_value_count": 0,
+          "actionable_structure_mismatch_count": 0,
+          "structure_mismatches": [
+            "column_count_mismatch"
+          ],
+          "coordinate_metrics": {
+            "chars": 4175,
+            "table_count": 1,
+            "numeric_cell_count": 6,
+            "unknown_token_count": 0,
+            "max_table_columns": 17,
+            "table_column_counts": [
+              17
+            ]
+          },
+          "vlm_metrics": {
+            "chars": 985,
+            "table_count": 1,
+            "numeric_cell_count": 5,
+            "unknown_token_count": 0,
+            "max_table_columns": 4,
+            "table_column_counts": [
+              4
+            ]
+          },
+          "coordinate_quality": {
+            "ok": false,
+            "reasons": [
+              "low_span_coverage"
+            ],
+            "rows": 14,
+            "columns": 16,
+            "span_count": 89,
+            "span_coverage": 0.9438,
+            "spans_per_row": 6.3571,
+            "span_per_row_limit": 48.0,
+            "max_cell_chars": 23,
+            "max_to_median_cell_char_ratio": 2.5556,
+            "max_long_text_row_ratio": 0.0
+          },
+          "coordinate_diagnostics_summary": {
+            "status": "ok",
+            "rows": 14,
+            "columns": 16,
+            "span_count": 89,
+            "span_coverage": 0.9438,
+            "table_area_ratio": 0.8035
+          }
+        },
+        "fallback": {
+          "attempted": false,
+          "enabled": true,
+          "reason": "no_coordinate_vlm_fallback_trigger"
+        },
+        "final_report": {
+          "needs_fallback": false,
+          "quality_score": 0.0,
+          "coordinate_evidence_strength": "weak",
+          "coordinate_numeric_evidence_weak": false,
+          "coordinate_absence_is_evidence": false,
+          "coordinate_presence_is_evidence": false,
+          "vlm_only_values": {},
+          "coordinate_only_values": {},
+          "unsupported_value_count": 0,
+          "missing_value_count": 0,
+          "actionable_unsupported_value_count": 0,
+          "actionable_missing_value_count": 0,
+          "actionable_structure_mismatch_count": 0,
+          "structure_mismatches": [
+            "column_count_mismatch"
+          ],
+          "coordinate_metrics": {
+            "chars": 4175,
+            "table_count": 1,
+            "numeric_cell_count": 6,
+            "unknown_token_count": 0,
+            "max_table_columns": 17,
+            "table_column_counts": [
+              17
+            ]
+          },
+          "vlm_metrics": {
+            "chars": 985,
+            "table_count": 1,
+            "numeric_cell_count": 5,
+            "unknown_token_count": 0,
+            "max_table_columns": 4,
+            "table_column_counts": [
+              4
+            ]
+          },
+          "coordinate_quality": {
+            "ok": false,
+            "reasons": [
+              "low_span_coverage"
+            ],
+            "rows": 14,
+            "columns": 16,
+            "span_count": 89,
+            "span_coverage": 0.9438,
+            "spans_per_row": 6.3571,
+            "span_per_row_limit": 48.0,
+            "max_cell_chars": 23,
+            "max_to_median_cell_char_ratio": 2.5556,
+            "max_long_text_row_ratio": 0.0
+          },
+          "coordinate_diagnostics_summary": {
+            "status": "ok",
+            "rows": 14,
+            "columns": 16,
+            "span_count": 89,
+            "span_coverage": 0.9438,
+            "table_area_ratio": 0.8035
+          }
+        }
+      }
+    }
+  },
+  {
+    "mode": "TEXT_TABLE_VLM",
+    "start_page": 2,
+    "end_page": 2,
+    "markdown": "V08 | Email thread export\n\nPage 2 of 2\n\n# Subject: Month-end exception review THREAD-V08-7788-P02\n\nFrom: controller@example.test To: ops@example.test Sent: 2026-05-02 08:14\n\nPlease confirm the three exceptions below. Control token V08-EMAIL-OPEN-P02.\n\nPrior message: the attached spreadsheet totals did not match the GL export.\n\nQuoted anchor V08-QUOTE-P02-DEPTH2 must remain visible.\n\nCode-like snippet: if variance &gt; threshold: escalate(row\\_id)\n\n| Exception       | Owner              |   Amount | Resolution   |\n|-----------------|--------------------|----------|--------------|\n| EXC-V08-P02-R01 | user1@example.test |   811.07 | pending      |\n| EXC-V08-P02-R02 | user2@example.test |  1622.07 | cleared      |\n| EXC-V08-P02-R03 | user3@example.test |  2433.07 | pending      |\n| EXC-V08-P02-R04 | user4@example.test |  3244.07 | cleared      |\n| EXC-V08-P02-R05 | user5@example.test |  4055.07 | pending      |\n\nPDF validation suite for routed PDF extraction.\n\nV08-FOOTER-P02",
+    "safe_markdown": "V08 | Email thread export\n\nPage 2 of 2\n\n# Subject: Month-end exception review THREAD-V08-7788-P02\n\nFrom: controller@example.test To: ops@example.test Sent: 2026-05-02 08:14\n\nPlease confirm the three exceptions below. Control token V08-EMAIL-OPEN-P02.\n\nPrior message: the attached spreadsheet totals did not match the GL export.\n\nQuoted anchor V08-QUOTE-P02-DEPTH2 must remain visible.\n\nCode-like snippet: if variance &gt; threshold: escalate(row\\_id)\n\n| Exception       | Owner              |   Amount | Resolution   |\n|-----------------|--------------------|----------|--------------|\n| EXC-V08-P02-R01 | user1@example.test |   811.07 | pending      |\n| EXC-V08-P02-R02 | user2@example.test |  1622.07 | cleared      |\n| EXC-V08-P02-R03 | user3@example.test |  2433.07 | pending      |\n| EXC-V08-P02-R04 | user4@example.test |  3244.07 | cleared      |\n| EXC-V08-P02-R05 | user5@example.test |  4055.07 | pending      |\n\nPDF validation suite for routed PDF extraction.\n\nV08-FOOTER-P02",
+    "raw_ocr_markdown": "",
+    "raw_vlm_markdown": "V08 | Email thread export\n\nPage 2 of 2\n\n# Subject: Month-end exception review THREAD-V08-7788-P02\n\nFrom: controller@example.test To: ops@example.test Sent: 2026-05-02 08:14\n\nPlease confirm the three exceptions below. Control token V08-EMAIL-OPEN-P02.\n\nPrior message: the attached spreadsheet totals did not match the GL export.\n\nQuoted anchor V08-QUOTE-P02-DEPTH2 must remain visible.\n\nCode-like snippet: if variance &gt; threshold: escalate(row\\_id)\n\n| Exception       | Owner              |   Amount | Resolution   |\n|-----------------|--------------------|----------|--------------|\n| EXC-V08-P02-R01 | user1@example.test |   811.07 | pending      |\n| EXC-V08-P02-R02 | user2@example.test |  1622.07 | cleared      |\n| EXC-V08-P02-R03 | user3@example.test |  2433.07 | pending      |\n| EXC-V08-P02-R04 | user4@example.test |  3244.07 | cleared      |\n| EXC-V08-P02-R05 | user5@example.test |  4055.07 | pending      |\n\nPDF validation suite for routed PDF extraction.\n\nV08-FOOTER-P02",
+    "tables": [
+      {
+        "index": 1,
+        "rows": 5,
+        "columns": 4,
+        "headers": [
+          "Exception",
+          "Owner",
+          "Amount",
+          "Resolution"
+        ],
+        "csv": "Exception,Owner,Amount,Resolution\r\nEXC-V08-P02-R01,user1@example.test,811.07,pending\r\nEXC-V08-P02-R02,user2@example.test,1622.07,cleared\r\nEXC-V08-P02-R03,user3@example.test,2433.07,pending\r\nEXC-V08-P02-R04,user4@example.test,3244.07,cleared\r\nEXC-V08-P02-R05,user5@example.test,4055.07,pending\r\n",
+        "html": "<table><tbody><tr><th>Exception</th><th>Owner</th><th>Amount</th><th>Resolution</th></tr><tr><td>EXC-V08-P02-R01</td><td>user1@example.test</td><td>811.07</td><td>pending</td></tr><tr><td>EXC-V08-P02-R02</td><td>user2@example.test</td><td>1622.07</td><td>cleared</td></tr><tr><td>EXC-V08-P02-R03</td><td>user3@example.test</td><td>2433.07</td><td>pending</td></tr><tr><td>EXC-V08-P02-R04</td><td>user4@example.test</td><td>3244.07</td><td>cleared</td></tr><tr><td>EXC-V08-P02-R05</td><td>user5@example.test</td><td>4055.07</td><td>pending</td></tr></tbody></table>",
+        "page": 1,
+        "repair": {
+          "enabled": false
+        }
+      }
+    ],
+    "elapsed_seconds": 4.714,
+    "candidate_timings_seconds": {
+      "extract_page_pdf": 0.001,
+      "table_vlm:gpt-5.4": 4.701
+    },
+    "diagnostics": {
+      "routing_source_mode": "TEXT_TABLE_FAST",
+      "coordinate_table_reconstruction": true,
+      "coordinate_quality": {
+        "ok": false,
+        "reasons": [
+          "low_span_coverage"
+        ],
+        "rows": 14,
+        "columns": 16,
+        "span_count": 89,
+        "span_coverage": 0.9438,
+        "spans_per_row": 6.3571,
+        "span_per_row_limit": 48.0,
+        "max_cell_chars": 23,
+        "max_to_median_cell_char_ratio": 2.5556,
+        "max_long_text_row_ratio": 0.0
+      },
+      "coordinate_diagnostics": {
+        "method": "pdf_text_alignment",
+        "page": 2,
+        "status": "ok",
+        "bbox": [
+          39.69,
+          29.57,
+          555.22,
+          810.79
+        ],
+        "table_area_ratio": 0.8036,
+        "horizontal_line_count": 1,
+        "vertical_line_count": 0,
+        "line_count": 14,
+        "table_line_count": 14,
+        "raw_rows": 14,
+        "raw_columns": 16,
+        "trimmed_rows": 14,
+        "trimmed_columns": 16,
+        "span_count": 89,
+        "assigned_span_count": 84,
+        "span_coverage": 0.9438,
+        "spans_per_trimmed_row": 6.3571,
+        "max_cell_chars": 23,
+        "median_cell_chars": 9.0,
+        "max_to_median_cell_char_ratio": 2.5556,
+        "max_long_text_row_ratio": 0.0,
+        "header_mode": "none",
+        "header_inference_enabled": false,
+        "header_row_count": 0,
+        "measure_start_column": null,
+        "filled_row_header_count": 0,
+        "pdf_grid_rows_preserved": true,
+        "headers": [
+          "col_001",
+          "col_002",
+          "col_003",
+          "col_004",
+          "col_005",
+          "col_006",
+          "col_007",
+          "col_008",
+          "col_009",
+          "col_010",
+          "col_011",
+          "col_012",
+          "col_013",
+          "col_014",
+          "col_015",
+          "col_016"
+        ],
+        "non_table_text_line_count": 0,
+        "non_table_text_chars": 0
+      },
+      "coordinate_markdown": "| col_001         | col_002                 | col_003              | col_004     | col_005          | col_006            | col_007  | col_008    | col_009             | col_010 | col_011 | col_012             | col_013    | col_014        | col_015 | col_016 |\n| --------------- | ----------------------- | -------------------- | ----------- | ---------------- | ------------------ | -------- | ---------- | ------------------- | ------- | ------- | ------------------- | ---------- | -------------- | ------- | ------- |\n| V08 |           | thread                  | export               |             |                  |                    |          |            |                     |         |         |                     |            | Page           | 2       | of 2    |\n| Subject:        |                         | Month-end            |             |                  | exception          |          |            |                     | review  |         | THREAD-V08-7788-P02 |            |                |         |         |\n| From:           | controller@example.test | To:                  |             | ops@example.test |                    | Sent:    | 2026-05-02 |                     | 08:14   |         |                     |            |                |         |         |\n| Please confirm  | the three               | exceptions           |             | below.           | Control token      |          |            | V08-EMAIL-OPEN-P02. |         |         |                     |            |                |         |         |\n| Prior message:  | the attached            |                      | spreadsheet |                  | totals did not     | match    | the        | GL                  | export. |         |                     |            |                |         |         |\n| Quoted          |                         | V08-QUOTE-P02-DEPTH2 |             |                  | must remain        | visible. |            |                     |         |         |                     |            |                |         |         |\n| Code-like       | if variance             | >                    | threshold:  |                  | escalate(row_id)   |          |            |                     |         |         |                     |            |                |         |         |\n| Exception       |                         |                      |             |                  | Owner              |          |            |                     |         | Amount  |                     | Resolution |                |         |         |\n| EXC-V08-P02-R01 |                         |                      |             |                  | user1@example.test |          |            |                     |         | 811.07  |                     | pending    |                |         |         |\n| EXC-V08-P02-R02 |                         |                      |             |                  | user2@example.test |          |            |                     |         | 1622.07 |                     | cleared    |                |         |         |\n| EXC-V08-P02-R03 |                         |                      |             |                  | user3@example.test |          |            |                     |         | 2433.07 |                     | pending    |                |         |         |\n| EXC-V08-P02-R04 |                         |                      |             |                  | user4@example.test |          |            |                     |         | 3244.07 |                     | cleared    |                |         |         |\n| EXC-V08-P02-R05 |                         |                      |             |                  | user5@example.test |          |            |                     |         | 4055.07 |                     | pending    |                |         |         |\n| PDF validation  | suite for               | routed PDF           |             | extraction.      |                    |          |            |                     |         |         |                     |            | V08-FOOTER-P02 |         |         |",
+      "table_vlm_model": "gpt-5.4",
+      "table_vlm_model_selection_reasons": [
+        "many_columns"
+      ],
+      "table_vlm_prompt_variant": "table_first",
+      "table_vlm_reasoning_effort": "none",
+      "coordinate_vlm_quality": {
+        "enabled": true,
+        "initial_report": {
+          "needs_fallback": false,
+          "quality_score": 0.0,
+          "coordinate_evidence_strength": "weak",
+          "coordinate_numeric_evidence_weak": false,
+          "coordinate_absence_is_evidence": false,
+          "coordinate_presence_is_evidence": false,
+          "vlm_only_values": {},
+          "coordinate_only_values": {},
+          "unsupported_value_count": 0,
+          "missing_value_count": 0,
+          "actionable_unsupported_value_count": 0,
+          "actionable_missing_value_count": 0,
+          "actionable_structure_mismatch_count": 0,
+          "structure_mismatches": [
+            "column_count_mismatch"
+          ],
+          "coordinate_metrics": {
+            "chars": 4175,
+            "table_count": 1,
+            "numeric_cell_count": 6,
+            "unknown_token_count": 0,
+            "max_table_columns": 17,
+            "table_column_counts": [
+              17
+            ]
+          },
+          "vlm_metrics": {
+            "chars": 985,
+            "table_count": 1,
+            "numeric_cell_count": 5,
+            "unknown_token_count": 0,
+            "max_table_columns": 4,
+            "table_column_counts": [
+              4
+            ]
+          },
+          "coordinate_quality": {
+            "ok": false,
+            "reasons": [
+              "low_span_coverage"
+            ],
+            "rows": 14,
+            "columns": 16,
+            "span_count": 89,
+            "span_coverage": 0.9438,
+            "spans_per_row": 6.3571,
+            "span_per_row_limit": 48.0,
+            "max_cell_chars": 23,
+            "max_to_median_cell_char_ratio": 2.5556,
+            "max_long_text_row_ratio": 0.0
+          },
+          "coordinate_diagnostics_summary": {
+            "status": "ok",
+            "rows": 14,
+            "columns": 16,
+            "span_count": 89,
+            "span_coverage": 0.9438,
+            "table_area_ratio": 0.8036
+          }
+        },
+        "fallback": {
+          "attempted": false,
+          "enabled": true,
+          "reason": "no_coordinate_vlm_fallback_trigger"
+        },
+        "final_report": {
+          "needs_fallback": false,
+          "quality_score": 0.0,
+          "coordinate_evidence_strength": "weak",
+          "coordinate_numeric_evidence_weak": false,
+          "coordinate_absence_is_evidence": false,
+          "coordinate_presence_is_evidence": false,
+          "vlm_only_values": {},
+          "coordinate_only_values": {},
+          "unsupported_value_count": 0,
+          "missing_value_count": 0,
+          "actionable_unsupported_value_count": 0,
+          "actionable_missing_value_count": 0,
+          "actionable_structure_mismatch_count": 0,
+          "structure_mismatches": [
+            "column_count_mismatch"
+          ],
+          "coordinate_metrics": {
+            "chars": 4175,
+            "table_count": 1,
+            "numeric_cell_count": 6,
+            "unknown_token_count": 0,
+            "max_table_columns": 17,
+            "table_column_counts": [
+              17
+            ]
+          },
+          "vlm_metrics": {
+            "chars": 985,
+            "table_count": 1,
+            "numeric_cell_count": 5,
+            "unknown_token_count": 0,
+            "max_table_columns": 4,
+            "table_column_counts": [
+              4
+            ]
+          },
+          "coordinate_quality": {
+            "ok": false,
+            "reasons": [
+              "low_span_coverage"
+            ],
+            "rows": 14,
+            "columns": 16,
+            "span_count": 89,
+            "span_coverage": 0.9438,
+            "spans_per_row": 6.3571,
+            "span_per_row_limit": 48.0,
+            "max_cell_chars": 23,
+            "max_to_median_cell_char_ratio": 2.5556,
+            "max_long_text_row_ratio": 0.0
+          },
+          "coordinate_diagnostics_summary": {
+            "status": "ok",
+            "rows": 14,
+            "columns": 16,
+            "span_count": 89,
+            "span_coverage": 0.9438,
+            "table_area_ratio": 0.8036
+          }
+        }
+      }
+    }
+  }
+]

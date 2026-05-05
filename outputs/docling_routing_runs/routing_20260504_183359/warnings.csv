@@ -1,0 +1,2 @@
+page,mode,level,code,score,message,suggested_action,target,evidence
+4,IMAGE_RECONCILE,warning,OCR_VLM_DISAGREEMENT,0.55,表内テキストにOCR/VLMの表記ゆれがあります。safe出力ではVLM側の表記を採用しました。,必要に応じてraw_outputのOCR/VLM候補値を確認してください。,,"{""text_cell_disagreement_count"": 13}"

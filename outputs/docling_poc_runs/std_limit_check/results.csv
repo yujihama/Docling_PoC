@@ -1,0 +1,11 @@
+run_id,phase,pipeline,config_id,case_id,filename,status,expected_pages,detected_pages,expected_tables,detected_tables,text_anchor_recall,table_cell_recall,table_detection_ratio,table_detection_precision,table_detection_f1,case_confidence_score,low_confidence,overall_score,convert_seconds,total_seconds,seconds_per_page,markdown_chars,request_count,prompt_tokens,completion_tokens,total_tokens,estimated_cost_usd,error
+std_limit_check,full,standard,std_baseline_accurate,C01,case01_clean_financial_2p.pdf,ok,2,2,2,2,0.75,1.0,1.0,1.0,1.0,0.9344,False,0.9125,5.094,5.127,2.563,2830,0,0,0,0,0.0,
+std_limit_check,full,standard,std_no_table_structure,C01,case01_clean_financial_2p.pdf,ok,2,2,2,2,0.75,1.0,1.0,1.0,1.0,0.9344,False,0.9125,1.725,1.751,0.876,4152,0,0,0,0,0.0,
+std_limit_check,full,standard,std_table_fast,C01,case01_clean_financial_2p.pdf,ok,2,2,2,2,0.75,1.0,1.0,1.0,1.0,0.9344,False,0.9125,3.102,3.113,1.556,2830,0,0,0,0,0.0,
+std_limit_check,full,standard,std_table_no_cell_match,C01,case01_clean_financial_2p.pdf,ok,2,2,2,2,0.75,1.0,1.0,1.0,1.0,0.9344,False,0.9125,4.592,4.599,2.3,2830,0,0,0,0,0.0,
+std_limit_check,full,standard,std_no_ocr,C01,case01_clean_financial_2p.pdf,ok,2,2,2,2,0.75,1.0,1.0,1.0,1.0,0.9344,False,0.9125,4.294,4.301,2.151,2830,0,0,0,0,0.0,
+std_limit_check,full,standard,std_force_full_page_ocr,C01,case01_clean_financial_2p.pdf,ok,2,2,2,2,0.5,1.0,1.0,1.0,1.0,0.8688,False,0.825,60.212,60.226,30.113,2784,0,0,0,0,0.0,
+std_limit_check,full,standard,std_force_backend_text,C01,case01_clean_financial_2p.pdf,ok,2,2,2,2,0.75,1.0,1.0,1.0,1.0,0.9344,False,0.9125,13.367,13.381,6.691,2830,0,0,0,0,0.0,
+std_limit_check,full,standard,std_page_images_scale_2,C01,case01_clean_financial_2p.pdf,ok,2,2,2,2,0.75,1.0,1.0,1.0,1.0,0.9344,False,0.9125,13.497,13.511,6.756,2830,0,0,0,0,0.0,
+std_limit_check,full,standard,std_batch_small,C01,case01_clean_financial_2p.pdf,ok,2,2,2,2,0.75,1.0,1.0,1.0,1.0,0.9344,False,0.9125,13.355,13.369,6.684,2830,0,0,0,0,0.0,
+std_limit_check,full,standard,std_batch_large,C01,case01_clean_financial_2p.pdf,ok,2,2,2,2,0.75,1.0,1.0,1.0,1.0,0.9344,False,0.9125,13.422,13.436,6.718,2830,0,0,0,0,0.0,

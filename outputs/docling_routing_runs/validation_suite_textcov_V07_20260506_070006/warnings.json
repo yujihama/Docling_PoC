@@ -1,0 +1,132 @@
+[
+  {
+    "page": 1,
+    "mode": "TEXT_TABLE_COORD",
+    "level": "info",
+    "code": "COORDINATE_TEXT_LAYER_SUPPLEMENTED",
+    "score": 0.7,
+    "message": "Coordinate table output was supplemented with PDF text-layer lines that were not represented in the reconstructed table.",
+    "suggested_action": "Review supplemented lines if this page is business-critical.",
+    "evidence": {
+      "raw_line_count": 13,
+      "supplemented_line_count": 2,
+      "supplemented_lines": [
+        {
+          "text": "Patient: Jane Validation / DOB: 1980-02-03 MRN-V07-REDACTED-BAR",
+          "missing_tokens": [
+            "jane"
+          ]
+        },
+        {
+          "text": "NOTE-V07-DELTA-CHECK: compare against 2026-04 specimen.",
+          "missing_tokens": [
+            "note-v07-delta-check"
+          ]
+        }
+      ],
+      "table_index_in_segment": 1
+    },
+    "target": null
+  },
+  {
+    "page": 1,
+    "mode": "TEXT_TABLE_COORD",
+    "level": "info",
+    "code": "COORDINATE_TABLE_ACCEPTED_WITH_WARNINGS",
+    "score": 0.55,
+    "message": "Coordinate table reconstruction was accepted because the PDF has a text layer and coordinate evidence is usable.",
+    "suggested_action": "Review the coordinate diagnostics if this table is business-critical.",
+    "evidence": {
+      "routing_source_mode": "TEXT_TABLE_FAST",
+      "coordinate_evidence_strength": "medium",
+      "coordinate_quality": {
+        "ok": false,
+        "reasons": [
+          "low_span_coverage"
+        ],
+        "rows": 13,
+        "columns": 16,
+        "span_count": 77,
+        "span_coverage": 0.961,
+        "spans_per_row": 5.9231,
+        "span_per_row_limit": 48.0,
+        "max_cell_chars": 20,
+        "max_to_median_cell_char_ratio": 4.0,
+        "max_long_text_row_ratio": 0.0
+      },
+      "coordinate_diagnostics": {
+        "method": "pdf_text_alignment",
+        "page": 1,
+        "status": "ok",
+        "bbox": [
+          39.69,
+          29.57,
+          554.31,
+          810.79
+        ],
+        "table_area_ratio": 0.8022,
+        "horizontal_line_count": 1,
+        "vertical_line_count": 0,
+        "line_count": 13,
+        "table_line_count": 13,
+        "raw_rows": 13,
+        "raw_columns": 16,
+        "trimmed_rows": 13,
+        "trimmed_columns": 16,
+        "span_count": 77,
+        "assigned_span_count": 74,
+        "span_coverage": 0.961,
+        "spans_per_trimmed_row": 5.9231,
+        "max_cell_chars": 20,
+        "median_cell_chars": 5.0,
+        "max_to_median_cell_char_ratio": 4.0,
+        "max_long_text_row_ratio": 0.0,
+        "header_mode": "none",
+        "header_inference_enabled": false,
+        "header_row_count": 0,
+        "measure_start_column": null,
+        "filled_row_header_count": 0,
+        "pdf_grid_rows_preserved": true,
+        "headers": [
+          "col_001",
+          "col_002",
+          "col_003",
+          "col_004",
+          "col_005",
+          "col_006",
+          "col_007",
+          "col_008",
+          "col_009",
+          "col_010",
+          "col_011",
+          "col_012",
+          "col_013",
+          "col_014",
+          "col_015",
+          "col_016"
+        ],
+        "non_table_text_line_count": 0,
+        "non_table_text_chars": 0,
+        "text_layer_coverage": {
+          "raw_line_count": 13,
+          "supplemented_line_count": 2,
+          "supplemented_lines": [
+            {
+              "text": "Patient: Jane Validation / DOB: 1980-02-03 MRN-V07-REDACTED-BAR",
+              "missing_tokens": [
+                "jane"
+              ]
+            },
+            {
+              "text": "NOTE-V07-DELTA-CHECK: compare against 2026-04 specimen.",
+              "missing_tokens": [
+                "note-v07-delta-check"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "target": null
+  }
+]

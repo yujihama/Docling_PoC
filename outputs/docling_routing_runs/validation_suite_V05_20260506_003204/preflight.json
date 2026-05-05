@@ -1,0 +1,50 @@
+[
+  {
+    "page": 1,
+    "width": 595.28,
+    "height": 841.89,
+    "text_chars": 0,
+    "text_density": 0.0,
+    "text_quality_score": 0.0,
+    "image_area_ratio": 0.7688,
+    "line_count": 0,
+    "rect_count": 0,
+    "table_score": 0.0,
+    "complex_table_score": 0.0,
+    "image_read_risk_score": 0.696,
+    "mode": "IMAGE_RECONCILE",
+    "reasons": [
+      "weak_text_layer",
+      "image_page"
+    ],
+    "elapsed_seconds": 0.0056,
+    "extra_actions": [],
+    "embedded_visual_region_count": 0,
+    "embedded_visual_regions": [],
+    "visual_reference_count": 0
+  },
+  {
+    "page": 2,
+    "width": 595.28,
+    "height": 841.89,
+    "text_chars": 0,
+    "text_density": 0.0,
+    "text_quality_score": 0.0,
+    "image_area_ratio": 0.7654,
+    "line_count": 0,
+    "rect_count": 0,
+    "table_score": 0.0,
+    "complex_table_score": 0.0,
+    "image_read_risk_score": 0.6944,
+    "mode": "IMAGE_RECONCILE",
+    "reasons": [
+      "weak_text_layer",
+      "image_page"
+    ],
+    "elapsed_seconds": 0.0001,
+    "extra_actions": [],
+    "embedded_visual_region_count": 0,
+    "embedded_visual_regions": [],
+    "visual_reference_count": 0
+  }
+]

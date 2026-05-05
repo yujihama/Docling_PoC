@@ -1,0 +1,2 @@
+case_id,filename,tags,best_accuracy_config,best_accuracy_pipeline,best_accuracy_overall,best_accuracy_seconds_per_page,fastest_config,fastest_pipeline,fastest_overall,fastest_seconds_per_page
+C01,case01_clean_financial_2p.pdf,"clean, vector, short",std_baseline_accurate,standard,0.9125,2.563,std_no_table_structure,standard,0.9125,0.876

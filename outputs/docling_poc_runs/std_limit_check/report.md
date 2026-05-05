@@ -1,0 +1,68 @@
+# Docling/OpenAI VLM PoC Report
+
+## Summary
+
+- Run ID: `std_limit_check`
+- Matrix: `standard` / phase `full`
+- Rows: 10 (10 successful)
+- Successful pages measured: 20
+- Total measured time: 132.814 sec
+- Estimated OpenAI cost from measured rows: $0.0000
+- Fixed VLM max completion tokens: 12000
+
+## Budget Gate
+
+- Budget: $30.0
+- Estimate status: `not_available`
+- Estimated full VLM cost: $0.0
+- Estimated additional VLM cost: $0.0
+- Full phase recommendation: `not_available`
+
+## Best Configurations
+
+| pipeline | config_id | success | mean_overall | mean_table_recall | mean_detection_f1 | seconds_per_page | estimated_cost_usd |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| standard | std_no_table_structure | 1 | 0.9125 | 1.0 | 1.0 | 0.875 | 0.0 |
+| standard | std_table_fast | 1 | 0.9125 | 1.0 | 1.0 | 1.556 | 0.0 |
+| standard | std_no_ocr | 1 | 0.9125 | 1.0 | 1.0 | 2.151 | 0.0 |
+| standard | std_table_no_cell_match | 1 | 0.9125 | 1.0 | 1.0 | 2.3 | 0.0 |
+| standard | std_baseline_accurate | 1 | 0.9125 | 1.0 | 1.0 | 2.563 | 0.0 |
+| standard | std_batch_small | 1 | 0.9125 | 1.0 | 1.0 | 6.684 | 0.0 |
+| standard | std_force_backend_text | 1 | 0.9125 | 1.0 | 1.0 | 6.691 | 0.0 |
+| standard | std_batch_large | 1 | 0.9125 | 1.0 | 1.0 | 6.718 | 0.0 |
+| standard | std_page_images_scale_2 | 1 | 0.9125 | 1.0 | 1.0 | 6.755 | 0.0 |
+| standard | std_force_full_page_ocr | 1 | 0.825 | 1.0 | 1.0 | 30.113 | 0.0 |
+
+## VLM Setting Summary
+
+_No data._
+
+## Case-Level Fit
+
+| case_id | tags | best_accuracy_pipeline | best_accuracy_config | best_accuracy_overall | best_accuracy_seconds_per_page | fastest_pipeline | fastest_config | fastest_seconds_per_page |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| C01 | clean, vector, short | standard | std_baseline_accurate | 0.9125 | 2.563 | standard | std_no_table_structure | 0.876 |
+
+## Tag-Level Tendencies
+
+| tag | pipeline | runs | mean_overall | seconds_per_page |
+| --- | --- | --- | --- | --- |
+| clean | standard | 10 | 0.9037 | 6.641 |
+| short | standard | 10 | 0.9037 | 6.641 |
+| vector | standard | 10 | 0.9037 | 6.641 |
+
+## Hybrid Selection
+
+- Cases selected: 1
+- Mean overall: 0.9125
+- Mean seconds/page: 2.563
+- VLM selected cases: none
+
+## Output Files
+
+- `results.json` / `results.csv`: raw run rows
+- `summary_by_config.csv`: pipeline/config aggregate
+- `summary_by_vlm_setting.csv`: VLM parameter aggregate
+- `summary_by_case.csv`: best and fastest setting by case
+- `summary_by_tag.csv`: tag-level tendency summary
+- `hybrid_summary.json`: case-level hybrid selection

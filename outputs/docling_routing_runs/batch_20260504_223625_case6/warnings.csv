@@ -1,0 +1,3 @@
+code,evidence,level,message,mode,page,score,suggested_action,target
+TABLE_MISSED,"{""table_score"": 0.65, ""complex_table_score"": 0.4688}",warning,テーブル信号がありましたが、構造化テーブルが抽出されませんでした。,TEXT_TABLE_FAST,1,0.7,必要ならTEXT_TABLE_ACCURATEで再投入してください。,
+TABLE_MISSED,"{""table_score"": 0.65, ""complex_table_score"": 0.5}",warning,テーブル信号がありましたが、構造化テーブルが抽出されませんでした。,TEXT_TABLE_FAST,3,0.7,必要ならTEXT_TABLE_ACCURATEで再投入してください。,

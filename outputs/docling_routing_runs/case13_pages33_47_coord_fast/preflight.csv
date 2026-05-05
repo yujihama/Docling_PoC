@@ -1,0 +1,16 @@
+complex_table_score,elapsed_seconds,embedded_visual_region_count,embedded_visual_regions,extra_actions,height,image_area_ratio,image_read_risk_score,line_count,mode,page,reasons,rect_count,table_score,text_chars,text_density,text_quality_score,visual_reference_count,width
+0.1792,0.0118,0,[],[],595.28,0.0,0.177,17,TEXT_TABLE_FAST,1,"good_text_layer,simple_table_signal",17,0.535,3199,0.01281,0.8,0,419.53
+0.2625,0.0068,0,[],[],595.28,0.0,0.185,32,TEXT_TABLE_FAST,2,"good_text_layer,simple_table_signal",32,0.575,3215,0.012874,0.8,0,419.53
+0.3042,0.0078,0,[],[],595.28,0.0,0.195,32,TEXT_TABLE_FAST,3,"good_text_layer,simple_table_signal",32,0.625,3907,0.015645,0.8,0,419.53
+0.35,0.0087,0,[],[],595.28,0.0,0.1819,26,TEXT_TABLE_FAST,4,"good_text_layer,simple_table_signal",26,0.725,2414,0.009666,0.8946,0,419.53
+0.4188,0.0063,0,[],[],595.28,0.0,0.2245,12,TEXT_TABLE_FAST,5,"good_text_layer,simple_table_signal",12,0.7725,2462,0.009858,0.8,0,419.53
+0.3104,0.0072,0,[],[],595.28,0.0,0.1604,13,TEXT_TABLE_FAST,6,"good_text_layer,simple_table_signal",13,0.6525,2734,0.010948,0.9145,0,419.53
+0.5625,0.0159,0,[],[],595.28,0.0,0.1864,10,TEXT_TABLE_FAST,7,"good_text_layer,simple_table_signal",10,0.825,2491,0.009975,0.9388,0,419.53
+0.6125,0.0178,0,[],[],595.28,0.0,0.2157,18,TEXT_TABLE_ACCURATE,8,"good_text_layer,complex_table_signal",18,0.965,2603,0.010423,0.9351,0,419.53
+0.5625,0.0166,0,[],[],595.28,0.0,0.1883,10,TEXT_TABLE_FAST,9,"good_text_layer,simple_table_signal",10,0.825,2456,0.009834,0.9335,0,419.53
+0.6125,0.0157,0,[],[],595.28,0.0,0.2152,18,TEXT_TABLE_ACCURATE,10,"good_text_layer,complex_table_signal",18,0.965,2471,0.009894,0.9367,0,419.53
+0.6125,0.0143,0,[],[],595.28,0.0,0.2168,18,TEXT_TABLE_ACCURATE,11,"good_text_layer,complex_table_signal",18,0.965,2228,0.008921,0.9319,0,419.53
+0.6625,0.0076,0,[],[],595.28,0.0,0.207,26,TEXT_TABLE_ACCURATE,12,"good_text_layer,complex_table_signal",26,1.0,1847,0.007396,0.9799,0,419.53
+0.4375,0.0068,0,[],[],595.28,0.0,0.1956,25,TEXT_TABLE_FAST,13,"good_text_layer,simple_table_signal",25,0.8375,3002,0.012021,0.9197,0,419.53
+0.1604,0.0042,0,[],[],595.28,0.0,0.0932,9,TEXT_TABLE_FAST,14,"good_text_layer,simple_table_signal",9,0.4325,1490,0.005966,0.981,0,419.53
+0.3146,0.0039,0,[],[],595.28,0.0,0.1794,17,TEXT_TABLE_FAST,15,"good_text_layer,simple_table_signal",17,0.6975,1436,0.00575,0.8859,0,419.53

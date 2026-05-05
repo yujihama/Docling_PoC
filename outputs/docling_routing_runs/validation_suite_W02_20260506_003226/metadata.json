@@ -1,0 +1,437 @@
+{
+  "run_id": "validation_suite_W02_20260506_003226",
+  "pdf_path": "C:\\Users\\nyham\\work\\docling_poc\\outputs\\pdf_validation_suite\\pdfs\\w02_sec_form_10k.pdf",
+  "filename": "w02_sec_form_10k.pdf",
+  "created_at": "2026-05-06T00:34:25",
+  "page_count": 19,
+  "groups": [
+    {
+      "mode": "TEXT_TABLE_FAST",
+      "start_page": 1,
+      "end_page": 1,
+      "pages": [
+        1
+      ]
+    },
+    {
+      "mode": "TEXT_LIGHT",
+      "start_page": 2,
+      "end_page": 3,
+      "pages": [
+        2,
+        3
+      ]
+    },
+    {
+      "mode": "IMAGE_RECONCILE",
+      "start_page": 4,
+      "end_page": 4,
+      "pages": [
+        4
+      ]
+    },
+    {
+      "mode": "TEXT_LIGHT",
+      "start_page": 5,
+      "end_page": 5,
+      "pages": [
+        5
+      ]
+    },
+    {
+      "mode": "TEXT_TABLE_FAST",
+      "start_page": 6,
+      "end_page": 6,
+      "pages": [
+        6
+      ]
+    },
+    {
+      "mode": "TEXT_LIGHT",
+      "start_page": 7,
+      "end_page": 7,
+      "pages": [
+        7
+      ]
+    },
+    {
+      "mode": "TEXT_TABLE_FAST",
+      "start_page": 8,
+      "end_page": 8,
+      "pages": [
+        8
+      ]
+    },
+    {
+      "mode": "TEXT_LIGHT",
+      "start_page": 9,
+      "end_page": 9,
+      "pages": [
+        9
+      ]
+    },
+    {
+      "mode": "IMAGE_RECONCILE",
+      "start_page": 10,
+      "end_page": 10,
+      "pages": [
+        10
+      ]
+    },
+    {
+      "mode": "TEXT_TABLE_FAST",
+      "start_page": 11,
+      "end_page": 11,
+      "pages": [
+        11
+      ]
+    },
+    {
+      "mode": "TEXT_LIGHT",
+      "start_page": 12,
+      "end_page": 14,
+      "pages": [
+        12,
+        13,
+        14
+      ]
+    },
+    {
+      "mode": "TEXT_TABLE_FAST",
+      "start_page": 15,
+      "end_page": 15,
+      "pages": [
+        15
+      ]
+    },
+    {
+      "mode": "TEXT_LIGHT",
+      "start_page": 16,
+      "end_page": 19,
+      "pages": [
+        16,
+        17,
+        18,
+        19
+      ]
+    }
+  ],
+  "options": {
+    "model": "gpt-5.4-mini",
+    "reconcile_compare_mode": "vlm_vlm",
+    "secondary_model": "gpt-5.4-mini",
+    "max_completion_tokens": 12000,
+    "reasoning_effort": "none",
+    "timeout_seconds": 180.0,
+    "vlm_scale": 2.0,
+    "response_format": "markdown",
+    "prompt_variant": "strict_preserve",
+    "text_chars_threshold": 200,
+    "text_quality_threshold": 0.8,
+    "table_text_quality_threshold": 0.7,
+    "table_score_threshold": 0.4,
+    "complex_table_score_threshold": 0.6,
+    "image_area_threshold": 0.4,
+    "enable_embedded_visual_append": true,
+    "embedded_visual_min_area_ratio": 0.08,
+    "embedded_visual_min_width_ratio": 0.3,
+    "embedded_visual_min_height_ratio": 0.06,
+    "embedded_visual_text_overlap_threshold": 0.05,
+    "embedded_visual_complexity_threshold": 0.35,
+    "embedded_visual_force_area_ratio": 0.25,
+    "embedded_visual_crop_margin_points": 8.0,
+    "parallel_reconcile_candidates": false,
+    "max_parallel_table_groups": 1,
+    "use_coordinate_table_reconstruction": true,
+    "enable_table_vlm_fallback": true,
+    "table_vlm_model": "gpt-5.4-mini",
+    "large_table_vlm_model": "gpt-5.4",
+    "table_vlm_prompt_variant": "table_first",
+    "table_vlm_reasoning_effort": "none",
+    "enable_reconcile_table_fallback": true,
+    "reconcile_table_fallback_model": "gpt-5.4",
+    "reconcile_table_fallback_prompt_variant": "table_first",
+    "reconcile_table_fallback_reasoning_effort": "none",
+    "enable_vlm_coordinate_quality_check": true,
+    "enable_vlm_coordinate_auto_correct": true,
+    "coordinate_min_span_coverage": 0.98,
+    "coordinate_max_cell_chars": 160,
+    "coordinate_max_cell_char_ratio": 8.0,
+    "table_vlm_large_min_columns": 12,
+    "table_vlm_large_min_area_ratio": 0.6,
+    "force_reconcile_pages": [],
+    "save_outputs": true
+  },
+  "comparison": {
+    "mode": "vlm_vlm",
+    "source_a_label": "vlm_primary:gpt-5.4-mini",
+    "source_b_label": "vlm_secondary:gpt-5.4-mini",
+    "primary_model": "gpt-5.4-mini",
+    "secondary_model": "gpt-5.4-mini"
+  },
+  "preflight_seconds": 0.099,
+  "total_seconds": 62.359,
+  "seconds_per_page": 3.282,
+  "segment_timing_seconds_by_mode": {
+    "TEXT_TABLE_VLM": 26.021,
+    "TEXT_LIGHT": 7.55,
+    "IMAGE_RECONCILE": 23.426
+  },
+  "candidate_timing_seconds": {
+    "extract_page_pdf": 0.031,
+    "table_vlm:gpt-5.4-mini": 20.603,
+    "vlm_primary": 12.417,
+    "vlm_secondary": 11.004,
+    "table_vlm:gpt-5.4": 5.255
+  },
+  "page_timing_estimates": [
+    {
+      "page": 1,
+      "estimated_seconds": 5.58,
+      "segments": [
+        {
+          "mode": "TEXT_TABLE_VLM",
+          "estimated_seconds": 5.58,
+          "candidate_timings_seconds": {
+            "extract_page_pdf": 0.012,
+            "table_vlm:gpt-5.4-mini": 5.52
+          }
+        }
+      ]
+    },
+    {
+      "page": 2,
+      "estimated_seconds": 0.96,
+      "segments": [
+        {
+          "mode": "TEXT_LIGHT",
+          "estimated_seconds": 0.96,
+          "candidate_timings_seconds": {}
+        }
+      ]
+    },
+    {
+      "page": 3,
+      "estimated_seconds": 0.96,
+      "segments": [
+        {
+          "mode": "TEXT_LIGHT",
+          "estimated_seconds": 0.96,
+          "candidate_timings_seconds": {}
+        }
+      ]
+    },
+    {
+      "page": 4,
+      "estimated_seconds": 12.147,
+      "segments": [
+        {
+          "mode": "IMAGE_RECONCILE",
+          "estimated_seconds": 12.147,
+          "candidate_timings_seconds": {
+            "vlm_primary": 6.466,
+            "vlm_secondary": 5.677
+          }
+        }
+      ]
+    },
+    {
+      "page": 5,
+      "estimated_seconds": 0.569,
+      "segments": [
+        {
+          "mode": "TEXT_LIGHT",
+          "estimated_seconds": 0.569,
+          "candidate_timings_seconds": {}
+        }
+      ]
+    },
+    {
+      "page": 6,
+      "estimated_seconds": 5.276,
+      "segments": [
+        {
+          "mode": "TEXT_TABLE_VLM",
+          "estimated_seconds": 5.276,
+          "candidate_timings_seconds": {
+            "extract_page_pdf": 0.005,
+            "table_vlm:gpt-5.4-mini": 5.253
+          }
+        }
+      ]
+    },
+    {
+      "page": 7,
+      "estimated_seconds": 0.553,
+      "segments": [
+        {
+          "mode": "TEXT_LIGHT",
+          "estimated_seconds": 0.553,
+          "candidate_timings_seconds": {}
+        }
+      ]
+    },
+    {
+      "page": 8,
+      "estimated_seconds": 5.289,
+      "segments": [
+        {
+          "mode": "TEXT_TABLE_VLM",
+          "estimated_seconds": 5.289,
+          "candidate_timings_seconds": {
+            "extract_page_pdf": 0.004,
+            "table_vlm:gpt-5.4": 5.255
+          }
+        }
+      ]
+    },
+    {
+      "page": 9,
+      "estimated_seconds": 0.574,
+      "segments": [
+        {
+          "mode": "TEXT_LIGHT",
+          "estimated_seconds": 0.574,
+          "candidate_timings_seconds": {}
+        }
+      ]
+    },
+    {
+      "page": 10,
+      "estimated_seconds": 11.279,
+      "segments": [
+        {
+          "mode": "IMAGE_RECONCILE",
+          "estimated_seconds": 11.279,
+          "candidate_timings_seconds": {
+            "vlm_primary": 5.951,
+            "vlm_secondary": 5.327
+          }
+        }
+      ]
+    },
+    {
+      "page": 11,
+      "estimated_seconds": 4.831,
+      "segments": [
+        {
+          "mode": "TEXT_TABLE_VLM",
+          "estimated_seconds": 4.831,
+          "candidate_timings_seconds": {
+            "extract_page_pdf": 0.005,
+            "table_vlm:gpt-5.4-mini": 4.809
+          }
+        }
+      ]
+    },
+    {
+      "page": 12,
+      "estimated_seconds": 0.587,
+      "segments": [
+        {
+          "mode": "TEXT_LIGHT",
+          "estimated_seconds": 0.587,
+          "candidate_timings_seconds": {}
+        }
+      ]
+    },
+    {
+      "page": 13,
+      "estimated_seconds": 0.587,
+      "segments": [
+        {
+          "mode": "TEXT_LIGHT",
+          "estimated_seconds": 0.587,
+          "candidate_timings_seconds": {}
+        }
+      ]
+    },
+    {
+      "page": 14,
+      "estimated_seconds": 0.587,
+      "segments": [
+        {
+          "mode": "TEXT_LIGHT",
+          "estimated_seconds": 0.587,
+          "candidate_timings_seconds": {}
+        }
+      ]
+    },
+    {
+      "page": 15,
+      "estimated_seconds": 5.045,
+      "segments": [
+        {
+          "mode": "TEXT_TABLE_VLM",
+          "estimated_seconds": 5.045,
+          "candidate_timings_seconds": {
+            "extract_page_pdf": 0.005,
+            "table_vlm:gpt-5.4-mini": 5.021
+          }
+        }
+      ]
+    },
+    {
+      "page": 16,
+      "estimated_seconds": 0.543,
+      "segments": [
+        {
+          "mode": "TEXT_LIGHT",
+          "estimated_seconds": 0.543,
+          "candidate_timings_seconds": {}
+        }
+      ]
+    },
+    {
+      "page": 17,
+      "estimated_seconds": 0.543,
+      "segments": [
+        {
+          "mode": "TEXT_LIGHT",
+          "estimated_seconds": 0.543,
+          "candidate_timings_seconds": {}
+        }
+      ]
+    },
+    {
+      "page": 18,
+      "estimated_seconds": 0.543,
+      "segments": [
+        {
+          "mode": "TEXT_LIGHT",
+          "estimated_seconds": 0.543,
+          "candidate_timings_seconds": {}
+        }
+      ]
+    },
+    {
+      "page": 19,
+      "estimated_seconds": 0.543,
+      "segments": [
+        {
+          "mode": "TEXT_LIGHT",
+          "estimated_seconds": 0.543,
+          "candidate_timings_seconds": {}
+        }
+      ]
+    }
+  ],
+  "mode_page_counts": {
+    "TEXT_TABLE_FAST": 5,
+    "TEXT_LIGHT": 12,
+    "IMAGE_RECONCILE": 2
+  },
+  "extra_action_counts": {},
+  "embedded_visual_page_count": 0,
+  "warning_counts": {
+    "COORDINATE_TABLE_FALLBACK_TO_VLM": 5,
+    "VLM_COORD_WEAK_EVIDENCE": 5
+  },
+  "warning_level_counts": {
+    "info": 10
+  },
+  "safe_mask_count": 0,
+  "safe_unknown_token_count": 0,
+  "reconcile_table_fallback_applied_count": 0,
+  "reconcile_table_fallback_skipped_count": 0
+}

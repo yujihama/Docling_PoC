@@ -1,0 +1,24 @@
+[
+  {
+    "index": 1,
+    "rows": 7,
+    "columns": 6,
+    "headers": [
+      "Test",
+      "Result",
+      "Unit",
+      "Reference Range",
+      "Flag",
+      "Code"
+    ],
+    "csv": "Test,Result,Unit,Reference Range,Flag,Code\r\nGlucose,102,mg/dL,70-99,H,LABCODE-V07-01\r\nCreatinine,0.82,mg/dL,0.60-1.10,,LABCODE-V07-02\r\neGFR,>90,mL/min/1.73m2,>=60,,LABCODE-V07-03\r\nHbA1c,5.8,%,4.0-5.6,H,LABCODE-V07-04\r\nTSH,1.72,uIU/mL,0.40-4.00,,LABCODE-V07-05\r\nCRP,<0.3,mg/dL,<0.5,,LABCODE-V07-06\r\nVitamin D,24.1,ng/mL,30-100,L,LABCODE-V07-07\r\n",
+    "html": "<table><tbody><tr><th>Test</th><th>Result</th><th>Unit</th><th>Reference Range</th><th>Flag</th><th>Code</th></tr><tr><td>Glucose</td><td>102</td><td>mg/dL</td><td>70-99</td><td>H</td><td>LABCODE-V07-01</td></tr><tr><td>Creatinine</td><td>0.82</td><td>mg/dL</td><td>0.60-1.10</td><td></td><td>LABCODE-V07-02</td></tr><tr><td>eGFR</td><td>&gt;90</td><td>mL/min/1.73m2</td><td>&gt;=60</td><td></td><td>LABCODE-V07-03</td></tr><tr><td>HbA1c</td><td>5.8</td><td>%</td><td>4.0-5.6</td><td>H</td><td>LABCODE-V07-04</td></tr><tr><td>TSH</td><td>1.72</td><td>uIU/mL</td><td>0.40-4.00</td><td></td><td>LABCODE-V07-05</td></tr><tr><td>CRP</td><td>&lt;0.3</td><td>mg/dL</td><td>&lt;0.5</td><td></td><td>LABCODE-V07-06</td></tr><tr><td>Vitamin D</td><td>24.1</td><td>ng/mL</td><td>30-100</td><td>L</td><td>LABCODE-V07-07</td></tr></tbody></table>",
+    "page": 1,
+    "repair": {
+      "enabled": false
+    },
+    "source_start_page": 1,
+    "source_end_page": 1,
+    "mode": "IMAGE_RECONCILE"
+  }
+]

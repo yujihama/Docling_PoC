@@ -1,0 +1,101 @@
+{
+  "run_id": "validation_suite_smoke_v06_20260506",
+  "pdf_path": "C:\\Users\\nyham\\work\\docling_poc\\outputs\\pdf_validation_suite\\pdfs\\v06_landscape_technical_drawing_1p.pdf",
+  "filename": "v06_landscape_technical_drawing_1p.pdf",
+  "created_at": "2026-05-06T00:30:09",
+  "page_count": 1,
+  "groups": [
+    {
+      "mode": "TEXT_TABLE_FAST",
+      "start_page": 1,
+      "end_page": 1,
+      "pages": [
+        1
+      ]
+    }
+  ],
+  "options": {
+    "model": "gpt-5.4-mini",
+    "reconcile_compare_mode": "vlm_vlm",
+    "secondary_model": "gpt-5.4-mini",
+    "max_completion_tokens": 12000,
+    "reasoning_effort": "none",
+    "timeout_seconds": 180.0,
+    "vlm_scale": 2.0,
+    "response_format": "markdown",
+    "prompt_variant": "strict_preserve",
+    "text_chars_threshold": 200,
+    "text_quality_threshold": 0.8,
+    "table_text_quality_threshold": 0.7,
+    "table_score_threshold": 0.4,
+    "complex_table_score_threshold": 0.6,
+    "image_area_threshold": 0.4,
+    "enable_embedded_visual_append": true,
+    "embedded_visual_min_area_ratio": 0.08,
+    "embedded_visual_min_width_ratio": 0.3,
+    "embedded_visual_min_height_ratio": 0.06,
+    "embedded_visual_text_overlap_threshold": 0.05,
+    "embedded_visual_complexity_threshold": 0.35,
+    "embedded_visual_force_area_ratio": 0.25,
+    "embedded_visual_crop_margin_points": 8.0,
+    "parallel_reconcile_candidates": true,
+    "max_parallel_table_groups": 2,
+    "use_coordinate_table_reconstruction": true,
+    "enable_table_vlm_fallback": true,
+    "table_vlm_model": "gpt-5.4-mini",
+    "large_table_vlm_model": "gpt-5.4",
+    "table_vlm_prompt_variant": "table_first",
+    "table_vlm_reasoning_effort": "none",
+    "enable_reconcile_table_fallback": true,
+    "reconcile_table_fallback_model": "gpt-5.4",
+    "reconcile_table_fallback_prompt_variant": "table_first",
+    "reconcile_table_fallback_reasoning_effort": "none",
+    "enable_vlm_coordinate_quality_check": true,
+    "enable_vlm_coordinate_auto_correct": true,
+    "coordinate_min_span_coverage": 0.98,
+    "coordinate_max_cell_chars": 160,
+    "coordinate_max_cell_char_ratio": 8.0,
+    "table_vlm_large_min_columns": 12,
+    "table_vlm_large_min_area_ratio": 0.6,
+    "force_reconcile_pages": [],
+    "save_outputs": true
+  },
+  "comparison": {
+    "mode": "vlm_vlm",
+    "source_a_label": "vlm_primary:gpt-5.4-mini",
+    "source_b_label": "vlm_secondary:gpt-5.4-mini",
+    "primary_model": "gpt-5.4-mini",
+    "secondary_model": "gpt-5.4-mini"
+  },
+  "preflight_seconds": 0.009,
+  "total_seconds": 1.966,
+  "seconds_per_page": 1.966,
+  "segment_timing_seconds_by_mode": {
+    "TEXT_TABLE_COORD": 0.021
+  },
+  "candidate_timing_seconds": {},
+  "page_timing_estimates": [
+    {
+      "page": 1,
+      "estimated_seconds": 0.021,
+      "segments": [
+        {
+          "mode": "TEXT_TABLE_COORD",
+          "estimated_seconds": 0.021,
+          "candidate_timings_seconds": {}
+        }
+      ]
+    }
+  ],
+  "mode_page_counts": {
+    "TEXT_TABLE_FAST": 1
+  },
+  "extra_action_counts": {},
+  "embedded_visual_page_count": 0,
+  "warning_counts": {},
+  "warning_level_counts": {},
+  "safe_mask_count": 0,
+  "safe_unknown_token_count": 0,
+  "reconcile_table_fallback_applied_count": 0,
+  "reconcile_table_fallback_skipped_count": 0
+}

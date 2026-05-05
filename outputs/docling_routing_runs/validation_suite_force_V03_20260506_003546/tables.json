@@ -1,0 +1,42 @@
+[
+  {
+    "index": 1,
+    "rows": 4,
+    "columns": 4,
+    "headers": [
+      "Approver",
+      "Role",
+      "Decision",
+      "Date"
+    ],
+    "csv": "Approver,Role,Decision,Date\r\nAPPR-V03-P01-R01,Finance,Approved,2026-05-02\r\nAPPR-V03-P01-R02,Legal,Approved,2026-05-03\r\nAPPR-V03-P01-R03,Finance,Approved,2026-05-04\r\nAPPR-V03-P01-R04,Legal,Pending,2026-05-05\r\n",
+    "html": "<table><tbody><tr><th>Approver</th><th>Role</th><th>Decision</th><th>Date</th></tr><tr><td>APPR-V03-P01-R01</td><td>Finance</td><td>Approved</td><td>2026-05-02</td></tr><tr><td>APPR-V03-P01-R02</td><td>Legal</td><td>Approved</td><td>2026-05-03</td></tr><tr><td>APPR-V03-P01-R03</td><td>Finance</td><td>Approved</td><td>2026-05-04</td></tr><tr><td>APPR-V03-P01-R04</td><td>Legal</td><td>Pending</td><td>2026-05-05</td></tr></tbody></table>",
+    "page": 1,
+    "repair": {
+      "enabled": false
+    },
+    "source_start_page": 1,
+    "source_end_page": 1,
+    "mode": "IMAGE_RECONCILE"
+  },
+  {
+    "index": 2,
+    "rows": 4,
+    "columns": 4,
+    "headers": [
+      "Approver",
+      "Role",
+      "Decision",
+      "Date"
+    ],
+    "csv": "Approver,Role,Decision,Date\r\nAPPR-V03-P02-R01,Finance,Approved,2026-05-03\r\nAPPR-V03-P02-R02,Legal,Approved,2026-05-04\r\nAPPR-V03-P02-R03,Finance,Approved,2026-05-05\r\nAPPR-V03-P02-R04,Legal,Pending,2026-05-06\r\n",
+    "html": "<table><tbody><tr><th>Approver</th><th>Role</th><th>Decision</th><th>Date</th></tr><tr><td>APPR-V03-P02-R01</td><td>Finance</td><td>Approved</td><td>2026-05-03</td></tr><tr><td>APPR-V03-P02-R02</td><td>Legal</td><td>Approved</td><td>2026-05-04</td></tr><tr><td>APPR-V03-P02-R03</td><td>Finance</td><td>Approved</td><td>2026-05-05</td></tr><tr><td>APPR-V03-P02-R04</td><td>Legal</td><td>Pending</td><td>2026-05-06</td></tr></tbody></table>",
+    "page": 1,
+    "repair": {
+      "enabled": false
+    },
+    "source_start_page": 2,
+    "source_end_page": 2,
+    "mode": "IMAGE_RECONCILE"
+  }
+]

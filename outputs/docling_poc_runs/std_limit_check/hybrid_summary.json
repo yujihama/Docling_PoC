@@ -1,0 +1,16 @@
+{
+  "selected": [
+    {
+      "case_id": "C01",
+      "selected_pipeline": "standard",
+      "selected_config": "std_baseline_accurate",
+      "overall_score": 0.9125,
+      "seconds_per_page": 2.563,
+      "baseline_low_confidence": false
+    }
+  ],
+  "case_count": 1,
+  "mean_overall": 0.9125,
+  "mean_seconds_per_page": 2.563,
+  "vlm_selected_cases": []
+}

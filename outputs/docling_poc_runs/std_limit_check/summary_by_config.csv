@@ -1,0 +1,11 @@
+pipeline,config_id,runs,success,pages,mean_overall,mean_text_recall,mean_table_recall,mean_detection_f1,total_seconds,seconds_per_page,estimated_cost_usd
+standard,std_no_table_structure,1,1,2,0.9125,0.75,1.0,1.0,1.751,0.875,0.0
+standard,std_table_fast,1,1,2,0.9125,0.75,1.0,1.0,3.113,1.556,0.0
+standard,std_no_ocr,1,1,2,0.9125,0.75,1.0,1.0,4.301,2.151,0.0
+standard,std_table_no_cell_match,1,1,2,0.9125,0.75,1.0,1.0,4.599,2.3,0.0
+standard,std_baseline_accurate,1,1,2,0.9125,0.75,1.0,1.0,5.127,2.563,0.0
+standard,std_batch_small,1,1,2,0.9125,0.75,1.0,1.0,13.369,6.684,0.0
+standard,std_force_backend_text,1,1,2,0.9125,0.75,1.0,1.0,13.381,6.691,0.0
+standard,std_batch_large,1,1,2,0.9125,0.75,1.0,1.0,13.436,6.718,0.0
+standard,std_page_images_scale_2,1,1,2,0.9125,0.75,1.0,1.0,13.511,6.755,0.0
+standard,std_force_full_page_ocr,1,1,2,0.825,0.5,1.0,1.0,60.226,30.113,0.0

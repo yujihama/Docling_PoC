@@ -1,0 +1,251 @@
+{
+  "run_id": "routing_20260504_214249",
+  "pdf_path": "C:\\Users\\nyham\\AppData\\Local\\Temp\\tmps3lqcdrh\\uploaded.pdf",
+  "filename": "uploaded.pdf",
+  "created_at": "2026-05-04T21:46:15",
+  "page_count": 9,
+  "groups": [
+    {
+      "mode": "TEXT_TABLE_FAST",
+      "start_page": 1,
+      "end_page": 1,
+      "pages": [
+        1
+      ]
+    },
+    {
+      "mode": "TEXT_TABLE_ACCURATE",
+      "start_page": 2,
+      "end_page": 3,
+      "pages": [
+        2,
+        3
+      ]
+    },
+    {
+      "mode": "IMAGE_RECONCILE",
+      "start_page": 4,
+      "end_page": 4,
+      "pages": [
+        4
+      ]
+    },
+    {
+      "mode": "TEXT_LIGHT",
+      "start_page": 5,
+      "end_page": 5,
+      "pages": [
+        5
+      ]
+    },
+    {
+      "mode": "TEXT_TABLE_ACCURATE",
+      "start_page": 6,
+      "end_page": 6,
+      "pages": [
+        6
+      ]
+    },
+    {
+      "mode": "TEXT_TABLE_ACCURATE",
+      "start_page": 7,
+      "end_page": 9,
+      "pages": [
+        7,
+        8,
+        9
+      ]
+    }
+  ],
+  "options": {
+    "model": "gpt-5.4-mini",
+    "reconcile_compare_mode": "vlm_vlm",
+    "secondary_model": "gpt-5.4-mini",
+    "max_completion_tokens": 12000,
+    "reasoning_effort": "none",
+    "timeout_seconds": 180.0,
+    "vlm_scale": 2.0,
+    "response_format": "markdown",
+    "prompt_variant": "strict_preserve",
+    "text_chars_threshold": 200,
+    "text_quality_threshold": 0.8,
+    "table_score_threshold": 0.4,
+    "complex_table_score_threshold": 0.6,
+    "image_area_threshold": 0.4,
+    "enable_embedded_visual_append": true,
+    "embedded_visual_min_area_ratio": 0.08,
+    "embedded_visual_min_width_ratio": 0.3,
+    "embedded_visual_min_height_ratio": 0.06,
+    "embedded_visual_text_overlap_threshold": 0.05,
+    "embedded_visual_complexity_threshold": 0.35,
+    "embedded_visual_force_area_ratio": 0.25,
+    "embedded_visual_crop_margin_points": 8.0,
+    "parallel_reconcile_candidates": true,
+    "max_parallel_table_groups": 2,
+    "force_reconcile_pages": [],
+    "save_outputs": true
+  },
+  "comparison": {
+    "mode": "vlm_vlm",
+    "source_a_label": "vlm_primary:gpt-5.4-mini",
+    "source_b_label": "vlm_secondary:gpt-5.4-mini",
+    "primary_model": "gpt-5.4-mini",
+    "secondary_model": "gpt-5.4-mini"
+  },
+  "preflight_seconds": 0.572,
+  "total_seconds": 206.007,
+  "seconds_per_page": 22.89,
+  "segment_timing_seconds_by_mode": {
+    "TEXT_TABLE_FAST": 8.418,
+    "TEXT_TABLE_ACCURATE": 317.426,
+    "IMAGE_RECONCILE": 8.972,
+    "TEXT_LIGHT": 3.704,
+    "IMAGE_RECONCILE_APPEND": 16.227
+  },
+  "candidate_timing_seconds": {
+    "vlm_primary": 23.418,
+    "vlm_secondary": 23.495,
+    "crop_pdf": 0.129
+  },
+  "page_timing_estimates": [
+    {
+      "page": 1,
+      "estimated_seconds": 8.418,
+      "segments": [
+        {
+          "mode": "TEXT_TABLE_FAST",
+          "estimated_seconds": 8.418,
+          "candidate_timings_seconds": {}
+        }
+      ]
+    },
+    {
+      "page": 2,
+      "estimated_seconds": 89.012,
+      "segments": [
+        {
+          "mode": "TEXT_TABLE_ACCURATE",
+          "estimated_seconds": 89.012,
+          "candidate_timings_seconds": {}
+        }
+      ]
+    },
+    {
+      "page": 3,
+      "estimated_seconds": 89.012,
+      "segments": [
+        {
+          "mode": "TEXT_TABLE_ACCURATE",
+          "estimated_seconds": 89.012,
+          "candidate_timings_seconds": {}
+        }
+      ]
+    },
+    {
+      "page": 4,
+      "estimated_seconds": 8.972,
+      "segments": [
+        {
+          "mode": "IMAGE_RECONCILE",
+          "estimated_seconds": 8.972,
+          "candidate_timings_seconds": {
+            "vlm_primary": 8.945,
+            "vlm_secondary": 8.905
+          }
+        }
+      ]
+    },
+    {
+      "page": 5,
+      "estimated_seconds": 14.236,
+      "segments": [
+        {
+          "mode": "TEXT_LIGHT",
+          "estimated_seconds": 3.704,
+          "candidate_timings_seconds": {}
+        },
+        {
+          "mode": "IMAGE_RECONCILE_APPEND",
+          "estimated_seconds": 10.532,
+          "candidate_timings_seconds": {
+            "crop_pdf": 0.08,
+            "vlm_primary": 10.417,
+            "vlm_secondary": 8.967
+          }
+        }
+      ]
+    },
+    {
+      "page": 6,
+      "estimated_seconds": 51.565,
+      "segments": [
+        {
+          "mode": "TEXT_TABLE_ACCURATE",
+          "estimated_seconds": 45.87,
+          "candidate_timings_seconds": {}
+        },
+        {
+          "mode": "IMAGE_RECONCILE_APPEND",
+          "estimated_seconds": 5.695,
+          "candidate_timings_seconds": {
+            "crop_pdf": 0.049,
+            "vlm_primary": 4.056,
+            "vlm_secondary": 5.623
+          }
+        }
+      ]
+    },
+    {
+      "page": 7,
+      "estimated_seconds": 31.177,
+      "segments": [
+        {
+          "mode": "TEXT_TABLE_ACCURATE",
+          "estimated_seconds": 31.177,
+          "candidate_timings_seconds": {}
+        }
+      ]
+    },
+    {
+      "page": 8,
+      "estimated_seconds": 31.177,
+      "segments": [
+        {
+          "mode": "TEXT_TABLE_ACCURATE",
+          "estimated_seconds": 31.177,
+          "candidate_timings_seconds": {}
+        }
+      ]
+    },
+    {
+      "page": 9,
+      "estimated_seconds": 31.177,
+      "segments": [
+        {
+          "mode": "TEXT_TABLE_ACCURATE",
+          "estimated_seconds": 31.177,
+          "candidate_timings_seconds": {}
+        }
+      ]
+    }
+  ],
+  "mode_page_counts": {
+    "TEXT_TABLE_FAST": 1,
+    "TEXT_TABLE_ACCURATE": 6,
+    "IMAGE_RECONCILE": 1,
+    "TEXT_LIGHT": 1
+  },
+  "extra_action_counts": {
+    "IMAGE_RECONCILE_APPEND": 2
+  },
+  "embedded_visual_page_count": 2,
+  "warning_counts": {
+    "EMBEDDED_VISUAL_REGION_CANDIDATE": 2,
+    "ROW_HEADER_SPAN_MISSED": 1
+  },
+  "warning_level_counts": {
+    "info": 2,
+    "warning": 1
+  },
+  "safe_mask_count": 0
+}

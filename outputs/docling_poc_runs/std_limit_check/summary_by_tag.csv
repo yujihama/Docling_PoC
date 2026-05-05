@@ -1,0 +1,4 @@
+tag,pipeline,runs,pages,mean_overall,seconds_per_page
+clean,standard,10,20,0.9037,6.641
+short,standard,10,20,0.9037,6.641
+vector,standard,10,20,0.9037,6.641

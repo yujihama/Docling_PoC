@@ -1,0 +1,498 @@
+[
+  {
+    "mode": "IMAGE_RECONCILE",
+    "start_page": 1,
+    "end_page": 1,
+    "markdown": "V03 | Application form with fields\n\nPage 1 of 2\n\nSupplier onboarding FORM-V03-APPL-01\n\nLegal name Northbridge Test LLC V03-LEGAL-P01\n\nTax ID TIN-V03-188-4420\n\nContact ops+v03p1@example.test\n\nAddress Suite 100, Validation Ave, Osaka\n\n- [x] Domestic entity V03-CHECK-P01-01-1\n- [ ] Foreign entity V03-CHECK-P01-02-0\n- [x] Requires NDA V03-CHECK-P01-03-1\n- [ ] Expedited payment V03-CHECK-P01-04-0\n\n| Approver         | Role    | Decision   | Date       |\n|------------------|---------|------------|------------|\n| APPR-V03-P01-R01 | Finance | Approved   | 2026-05-02 |\n| APPR-V03-P01-R02 | Legal   | Approved   | 2026-05-03 |\n| APPR-V03-P01-R03 | Finance | Approved   | 2026-05-04 |\n| APPR-V03-P01-R04 | Legal   | Pending    | 2026-05-05 |\n\nV03-REDACTED-FIELD-P01\n\nPDF validation suite for routed PDF extraction. V03-FOOTER-P01",
+    "safe_markdown": "V03 | Application form with fields\n\nPage 1 of 2\n\nSupplier onboarding [[読み取り不明]]\n\nLegal name Northbridge Test LLC V03-LEGAL-P01\n\nTax ID TIN-V03-188-4420\n\nContact ops+v03p1@example.test\n\nAddress Suite 100, Validation Ave, Osaka\n\n- [x] Domestic entity V03-CHECK-P01-01-1\n- [ ] Foreign entity V03-CHECK-P01-02-0\n- [x] Requires NDA V03-CHECK-P01-03-1\n- [ ] Expedited payment V03-CHECK-P01-04-0\n\n| Approver         | Role    | Decision   | Date       |\n|------------------|---------|------------|------------|\n| APPR-V03-P01-R01 | Finance | Approved   | 2026-05-02 |\n| APPR-V03-P01-R02 | Legal   | Approved   | 2026-05-03 |\n| APPR-V03-P01-R03 | Finance | Approved   | 2026-05-04 |\n| APPR-V03-P01-R04 | Legal   | Pending    | 2026-05-05 |\n\nV03-REDACTED-FIELD-P01\n\nPDF validation suite for routed PDF extraction. V03-FOOTER-P01",
+    "raw_ocr_markdown": "V03 | Application form with fields\n\nPage 1 of 2\n\nSupplier onboarding FORM-V03-APPL-01\n\nLegal name Northbridge Test LLC V03-LEGAL-P01\n\nTax ID TIN-V03-188-4420\n\nContact ops+v03p1@example.test\n\nAddress Suite 100, Validation Ave, Osaka\n\n- [x] Domestic entity V03-CHECK-P01-01-1\n- [ ] Foreign entity V03-CHECK-P01-02-0\n- [x] Requires NDA V03-CHECK-P01-03-1\n- [ ] Expedited payment V03-CHECK-P01-04-0\n\n| Approver         | Role    | Decision   | Date       |\n|------------------|---------|------------|------------|\n| APPR-V03-P01-R01 | Finance | Approved   | 2026-05-02 |\n| APPR-V03-P01-R02 | Legal   | Approved   | 2026-05-03 |\n| APPR-V03-P01-R03 | Finance | Approved   | 2026-05-04 |\n| APPR-V03-P01-R04 | Legal   | Pending    | 2026-05-05 |\n\nV03-REDACTED-FIELD-P01\n\nPDF validation suite for routed PDF extraction. V03-FOOTER-P01",
+    "raw_vlm_markdown": "V03 | Application form with fields\n\nPage 1 of 2\n\n# Supplier onboarding FORM-V03-APPL-01\n\nLegal name Northbridge Test LLC V03-LEGAL-P01\n\nTax ID TIN-V03-188-4420\n\nContact ops+v03p1@example.test\n\nAddress Suite 100, Validation Ave, Osaka\n\n☑ Domestic entity V03-CHECK-P01-01-1    ☐ Foreign entity V03-CHECK-P01-02-0\n\n☑ Requires NDA V03-CHECK-P01-03-1    ☐ Expedited payment V03-CHECK-P01-04-0\n\n| Approver         | Role    | Decision   | Date       |\n|------------------|---------|------------|------------|\n| APPR-V03-P01-R01 | Finance | Approved   | 2026-05-02 |\n| APPR-V03-P01-R02 | Legal   | Approved   | 2026-05-03 |\n| APPR-V03-P01-R03 | Finance | Approved   | 2026-05-04 |\n| APPR-V03-P01-R04 | Legal   | Pending    | 2026-05-05 |\n\nV03-REDACTED-FIELD-P01\n\nPDF validation suite for routed PDF extraction. V03-FOOTER-P01",
+    "tables": [
+      {
+        "index": 1,
+        "rows": 4,
+        "columns": 4,
+        "headers": [
+          "Approver",
+          "Role",
+          "Decision",
+          "Date"
+        ],
+        "csv": "Approver,Role,Decision,Date\r\nAPPR-V03-P01-R01,Finance,Approved,2026-05-02\r\nAPPR-V03-P01-R02,Legal,Approved,2026-05-03\r\nAPPR-V03-P01-R03,Finance,Approved,2026-05-04\r\nAPPR-V03-P01-R04,Legal,Pending,2026-05-05\r\n",
+        "html": "<table><tbody><tr><th>Approver</th><th>Role</th><th>Decision</th><th>Date</th></tr><tr><td>APPR-V03-P01-R01</td><td>Finance</td><td>Approved</td><td>2026-05-02</td></tr><tr><td>APPR-V03-P01-R02</td><td>Legal</td><td>Approved</td><td>2026-05-03</td></tr><tr><td>APPR-V03-P01-R03</td><td>Finance</td><td>Approved</td><td>2026-05-04</td></tr><tr><td>APPR-V03-P01-R04</td><td>Legal</td><td>Pending</td><td>2026-05-05</td></tr></tbody></table>",
+        "page": 1,
+        "repair": {
+          "enabled": false
+        }
+      }
+    ],
+    "elapsed_seconds": 8.649,
+    "candidate_timings_seconds": {
+      "vlm_primary": 3.405,
+      "vlm_secondary": 3.405,
+      "coordinate_vlm_fallback:gpt-5.4": 5.236
+    },
+    "diagnostics": {
+      "compare_mode": "vlm_vlm",
+      "parallel_reconcile_candidates": true,
+      "reconcile_table_fallback": {
+        "attempted": false,
+        "enabled": true,
+        "triggers": []
+      },
+      "coordinate_vlm_quality": {
+        "enabled": true,
+        "applicable": true,
+        "source": "vlm_vlm_safe_output",
+        "initial_report": {
+          "needs_fallback": true,
+          "quality_score": 7.0,
+          "coordinate_evidence_strength": "strong",
+          "coordinate_numeric_evidence_weak": false,
+          "coordinate_absence_is_evidence": true,
+          "coordinate_presence_is_evidence": true,
+          "vlm_only_values": {
+            "id": [
+              "FORM-V03-APPL-01"
+            ]
+          },
+          "coordinate_only_values": {},
+          "unsupported_value_count": 1,
+          "missing_value_count": 0,
+          "actionable_unsupported_value_count": 1,
+          "actionable_missing_value_count": 0,
+          "actionable_structure_mismatch_count": 1,
+          "structure_mismatches": [
+            "column_count_mismatch"
+          ],
+          "coordinate_metrics": {
+            "chars": 4844,
+            "table_count": 1,
+            "numeric_cell_count": 2,
+            "unknown_token_count": 0,
+            "max_table_columns": 21,
+            "table_column_counts": [
+              21
+            ]
+          },
+          "vlm_metrics": {
+            "chars": 825,
+            "table_count": 1,
+            "numeric_cell_count": 0,
+            "unknown_token_count": 0,
+            "max_table_columns": 4,
+            "table_column_counts": [
+              4
+            ]
+          },
+          "coordinate_quality": {
+            "ok": true,
+            "reasons": [],
+            "rows": 15,
+            "columns": 20,
+            "span_count": 71,
+            "span_coverage": 0.9859,
+            "spans_per_row": 4.7333,
+            "span_per_row_limit": 60.0,
+            "max_cell_chars": 22,
+            "max_to_median_cell_char_ratio": 2.75,
+            "max_long_text_row_ratio": 0.0
+          },
+          "coordinate_diagnostics_summary": {
+            "status": "ok",
+            "rows": 15,
+            "columns": 20,
+            "span_count": 71,
+            "span_coverage": 0.9859,
+            "table_area_ratio": 0.8036
+          }
+        },
+        "fallback": {
+          "attempted": true,
+          "accepted": false,
+          "reason": "coordinate_vlm_fallback_not_better",
+          "model": "gpt-5.4",
+          "elapsed_seconds": 5.236,
+          "report": {
+            "needs_fallback": true,
+            "quality_score": 7.0,
+            "coordinate_evidence_strength": "strong",
+            "coordinate_numeric_evidence_weak": false,
+            "coordinate_absence_is_evidence": true,
+            "coordinate_presence_is_evidence": true,
+            "vlm_only_values": {
+              "id": [
+                "FORM-V03-APPL-01"
+              ]
+            },
+            "coordinate_only_values": {},
+            "unsupported_value_count": 1,
+            "missing_value_count": 0,
+            "actionable_unsupported_value_count": 1,
+            "actionable_missing_value_count": 0,
+            "actionable_structure_mismatch_count": 1,
+            "structure_mismatches": [
+              "column_count_mismatch"
+            ],
+            "coordinate_metrics": {
+              "chars": 4844,
+              "table_count": 1,
+              "numeric_cell_count": 2,
+              "unknown_token_count": 0,
+              "max_table_columns": 21,
+              "table_column_counts": [
+                21
+              ]
+            },
+            "vlm_metrics": {
+              "chars": 813,
+              "table_count": 1,
+              "numeric_cell_count": 0,
+              "unknown_token_count": 0,
+              "max_table_columns": 4,
+              "table_column_counts": [
+                4
+              ]
+            },
+            "coordinate_quality": {
+              "ok": true,
+              "reasons": [],
+              "rows": 15,
+              "columns": 20,
+              "span_count": 71,
+              "span_coverage": 0.9859,
+              "spans_per_row": 4.7333,
+              "span_per_row_limit": 60.0,
+              "max_cell_chars": 22,
+              "max_to_median_cell_char_ratio": 2.75,
+              "max_long_text_row_ratio": 0.0
+            },
+            "coordinate_diagnostics_summary": {
+              "status": "ok",
+              "rows": 15,
+              "columns": 20,
+              "span_count": 71,
+              "span_coverage": 0.9859,
+              "table_area_ratio": 0.8036
+            }
+          },
+          "auto_corrections": [],
+          "usage_events": []
+        },
+        "final_report": {
+          "needs_fallback": true,
+          "quality_score": 7.0,
+          "coordinate_evidence_strength": "strong",
+          "coordinate_numeric_evidence_weak": false,
+          "coordinate_absence_is_evidence": true,
+          "coordinate_presence_is_evidence": true,
+          "vlm_only_values": {},
+          "coordinate_only_values": {},
+          "unsupported_value_count": 0,
+          "missing_value_count": 0,
+          "actionable_unsupported_value_count": 0,
+          "actionable_missing_value_count": 0,
+          "actionable_structure_mismatch_count": 1,
+          "structure_mismatches": [
+            "column_count_mismatch"
+          ],
+          "coordinate_metrics": {
+            "chars": 4844,
+            "table_count": 1,
+            "numeric_cell_count": 2,
+            "unknown_token_count": 0,
+            "max_table_columns": 21,
+            "table_column_counts": [
+              21
+            ]
+          },
+          "vlm_metrics": {
+            "chars": 819,
+            "table_count": 1,
+            "numeric_cell_count": 0,
+            "unknown_token_count": 1,
+            "max_table_columns": 4,
+            "table_column_counts": [
+              4
+            ]
+          },
+          "coordinate_quality": {
+            "ok": true,
+            "reasons": [],
+            "rows": 15,
+            "columns": 20,
+            "span_count": 71,
+            "span_coverage": 0.9859,
+            "spans_per_row": 4.7333,
+            "span_per_row_limit": 60.0,
+            "max_cell_chars": 22,
+            "max_to_median_cell_char_ratio": 2.75,
+            "max_long_text_row_ratio": 0.0
+          },
+          "coordinate_diagnostics_summary": {
+            "status": "ok",
+            "rows": 15,
+            "columns": 20,
+            "span_count": 71,
+            "span_coverage": 0.9859,
+            "table_area_ratio": 0.8036
+          }
+        }
+      },
+      "input_pages": {
+        "pdf": "source_pdf",
+        "start_page": 1,
+        "end_page": 1
+      }
+    }
+  },
+  {
+    "mode": "IMAGE_RECONCILE",
+    "start_page": 2,
+    "end_page": 2,
+    "markdown": "V03 | Application form with fields Page 2 of 2\n\n# Supplier onboarding FORM-V03-APPL-02\n\n|            |                                    |\n|------------|------------------------------------|\n| Legal name | Northbridge Test LLC V03-LEGAL-P02 |\n| Tax ID     | TIN-V03-288-4420                   |\n| Contact    | ops+v03p2@example.test             |\n| Address    | Suite 200, Validation Ave, Osaka   |\n\n- [x] Domestic entity V03-CHECK-P02-01-1\n- [ ] Foreign entity V03-CHECK-P02-02-0\n- [x] Requires NDA V03-CHECK-P02-03-1\n- [ ] Expedited payment V03-CHECK-P02-04-0\n\n| Approver         | Role    | Decision   | Date       |\n|------------------|---------|------------|------------|\n| APPR-V03-P02-R01 | Finance | Approved   | 2026-05-03 |\n| APPR-V03-P02-R02 | Legal   | Approved   | 2026-05-04 |\n| APPR-V03-P02-R03 | Finance | Approved   | 2026-05-05 |\n| APPR-V03-P02-R04 | Legal   | Pending    | 2026-05-06 |\n\nV03-REDACTED-FIELD-P02\n\nPDF validation suite for routed PDF extraction. V03-FOOTER-P02",
+    "safe_markdown": "V03 | Application form with fields\n\nPage 2 of 2\n\n# Supplier onboarding [[読み取り不明]]\n\nLegal name Northbridge Test LLC V03-LEGAL-P02\n\nTax ID TIN-V03-288-4420\n\nContact ops+v03p2@example.test\n\nAddress Suite 200, Validation Ave, Osaka\n\n☑ Domestic entity V03-CHECK-P02-01-1 ☐ Foreign entity V03-CHECK-P02-02-0\n\n☑ Requires NDA V03-CHECK-P02-03-1 ☐ Expedited payment V03-CHECK-P02-04-0\n\n| Approver         | Role    | Decision   | Date       |\n|------------------|---------|------------|------------|\n| APPR-V03-P02-R01 | Finance | Approved   | 2026-05-03 |\n| APPR-V03-P02-R02 | Legal   | Approved   | 2026-05-04 |\n| APPR-V03-P02-R03 | Finance | Approved   | 2026-05-05 |\n| APPR-V03-P02-R04 | Legal   | Pending    | 2026-05-06 |\n\nV03-REDACTED-FIELD-P02\n\nPDF validation suite for routed PDF extraction.\n\nV03-FOOTER-P02",
+    "raw_ocr_markdown": "V03 | Application form with fields Page 2 of 2\n\n# Supplier onboarding FORM-V03-APPL-02\n\n|            |                                    |\n|------------|------------------------------------|\n| Legal name | Northbridge Test LLC V03-LEGAL-P02 |\n| Tax ID     | TIN-V03-288-4420                   |\n| Contact    | ops+v03p2@example.test             |\n| Address    | Suite 200, Validation Ave, Osaka   |\n\n- [x] Domestic entity V03-CHECK-P02-01-1\n- [ ] Foreign entity V03-CHECK-P02-02-0\n- [x] Requires NDA V03-CHECK-P02-03-1\n- [ ] Expedited payment V03-CHECK-P02-04-0\n\n| Approver         | Role    | Decision   | Date       |\n|------------------|---------|------------|------------|\n| APPR-V03-P02-R01 | Finance | Approved   | 2026-05-03 |\n| APPR-V03-P02-R02 | Legal   | Approved   | 2026-05-04 |\n| APPR-V03-P02-R03 | Finance | Approved   | 2026-05-05 |\n| APPR-V03-P02-R04 | Legal   | Pending    | 2026-05-06 |\n\nV03-REDACTED-FIELD-P02\n\nPDF validation suite for routed PDF extraction. V03-FOOTER-P02",
+    "raw_vlm_markdown": "V03 | Application form with fields\n\nPage 2 of 2\n\n# Supplier onboarding FORM-V03-APPL-02\n\n|            |                                    |\n|------------|------------------------------------|\n| Legal name | Northbridge Test LLC V03-LEGAL-P02 |\n| Tax ID     | TIN-V03-288-4420                   |\n| Contact    | ops+v03p2@example.test             |\n| Address    | Suite 200, Validation Ave, Osaka   |\n\n- [x] Domestic entity V03-CHECK-P02-01-1\n- [ ] Foreign entity V03-CHECK-P02-02-0\n- [x] Requires NDA V03-CHECK-P02-03-1\n- [ ] Expedited payment V03-CHECK-P02-04-0\n\n| Approver         | Role    | Decision   | Date       |\n|------------------|---------|------------|------------|\n| APPR-V03-P02-R01 | Finance | Approved   | 2026-05-03 |\n| APPR-V03-P02-R02 | Legal   | Approved   | 2026-05-04 |\n| APPR-V03-P02-R03 | Finance | Approved   | 2026-05-05 |\n| APPR-V03-P02-R04 | Legal   | Pending    | 2026-05-06 |\n\nV03-REDACTED-FIELD-P02\n\nPDF validation suite for routed PDF extraction. V03-FOOTER-P02",
+    "tables": [
+      {
+        "index": 1,
+        "rows": 4,
+        "columns": 4,
+        "headers": [
+          "Approver",
+          "Role",
+          "Decision",
+          "Date"
+        ],
+        "csv": "Approver,Role,Decision,Date\r\nAPPR-V03-P02-R01,Finance,Approved,2026-05-03\r\nAPPR-V03-P02-R02,Legal,Approved,2026-05-04\r\nAPPR-V03-P02-R03,Finance,Approved,2026-05-05\r\nAPPR-V03-P02-R04,Legal,Pending,2026-05-06\r\n",
+        "html": "<table><tbody><tr><th>Approver</th><th>Role</th><th>Decision</th><th>Date</th></tr><tr><td>APPR-V03-P02-R01</td><td>Finance</td><td>Approved</td><td>2026-05-03</td></tr><tr><td>APPR-V03-P02-R02</td><td>Legal</td><td>Approved</td><td>2026-05-04</td></tr><tr><td>APPR-V03-P02-R03</td><td>Finance</td><td>Approved</td><td>2026-05-05</td></tr><tr><td>APPR-V03-P02-R04</td><td>Legal</td><td>Pending</td><td>2026-05-06</td></tr></tbody></table>",
+        "page": 1,
+        "repair": {
+          "enabled": false
+        }
+      }
+    ],
+    "elapsed_seconds": 8.384,
+    "candidate_timings_seconds": {
+      "vlm_primary": 3.407,
+      "vlm_secondary": 3.367,
+      "coordinate_vlm_fallback:gpt-5.4": 4.97
+    },
+    "diagnostics": {
+      "compare_mode": "vlm_vlm",
+      "parallel_reconcile_candidates": true,
+      "reconcile_table_fallback": {
+        "attempted": false,
+        "enabled": true,
+        "triggers": []
+      },
+      "coordinate_vlm_quality": {
+        "enabled": true,
+        "applicable": true,
+        "source": "vlm_vlm_safe_output",
+        "initial_report": {
+          "needs_fallback": true,
+          "quality_score": 11.0,
+          "coordinate_evidence_strength": "strong",
+          "coordinate_numeric_evidence_weak": false,
+          "coordinate_absence_is_evidence": true,
+          "coordinate_presence_is_evidence": true,
+          "vlm_only_values": {
+            "id": [
+              "FORM-V03-APPL-02"
+            ]
+          },
+          "coordinate_only_values": {},
+          "unsupported_value_count": 1,
+          "missing_value_count": 0,
+          "actionable_unsupported_value_count": 1,
+          "actionable_missing_value_count": 0,
+          "actionable_structure_mismatch_count": 2,
+          "structure_mismatches": [
+            "table_count_mismatch",
+            "column_count_mismatch"
+          ],
+          "coordinate_metrics": {
+            "chars": 4844,
+            "table_count": 1,
+            "numeric_cell_count": 2,
+            "unknown_token_count": 0,
+            "max_table_columns": 21,
+            "table_column_counts": [
+              21
+            ]
+          },
+          "vlm_metrics": {
+            "chars": 993,
+            "table_count": 2,
+            "numeric_cell_count": 0,
+            "unknown_token_count": 0,
+            "max_table_columns": 4,
+            "table_column_counts": [
+              2,
+              4
+            ]
+          },
+          "coordinate_quality": {
+            "ok": true,
+            "reasons": [],
+            "rows": 15,
+            "columns": 20,
+            "span_count": 71,
+            "span_coverage": 0.9859,
+            "spans_per_row": 4.7333,
+            "span_per_row_limit": 60.0,
+            "max_cell_chars": 22,
+            "max_to_median_cell_char_ratio": 2.75,
+            "max_long_text_row_ratio": 0.0
+          },
+          "coordinate_diagnostics_summary": {
+            "status": "ok",
+            "rows": 15,
+            "columns": 20,
+            "span_count": 71,
+            "span_coverage": 0.9859,
+            "table_area_ratio": 0.8036
+          }
+        },
+        "fallback": {
+          "attempted": true,
+          "accepted": true,
+          "reason": "coordinate_vlm_quality_score_improved",
+          "model": "gpt-5.4",
+          "elapsed_seconds": 4.97,
+          "report": {
+            "needs_fallback": true,
+            "quality_score": 7.0,
+            "coordinate_evidence_strength": "strong",
+            "coordinate_numeric_evidence_weak": false,
+            "coordinate_absence_is_evidence": true,
+            "coordinate_presence_is_evidence": true,
+            "vlm_only_values": {
+              "id": [
+                "FORM-V03-APPL-02"
+              ]
+            },
+            "coordinate_only_values": {},
+            "unsupported_value_count": 1,
+            "missing_value_count": 0,
+            "actionable_unsupported_value_count": 1,
+            "actionable_missing_value_count": 0,
+            "actionable_structure_mismatch_count": 1,
+            "structure_mismatches": [
+              "column_count_mismatch"
+            ],
+            "coordinate_metrics": {
+              "chars": 4844,
+              "table_count": 1,
+              "numeric_cell_count": 2,
+              "unknown_token_count": 0,
+              "max_table_columns": 21,
+              "table_column_counts": [
+                21
+              ]
+            },
+            "vlm_metrics": {
+              "chars": 813,
+              "table_count": 1,
+              "numeric_cell_count": 0,
+              "unknown_token_count": 0,
+              "max_table_columns": 4,
+              "table_column_counts": [
+                4
+              ]
+            },
+            "coordinate_quality": {
+              "ok": true,
+              "reasons": [],
+              "rows": 15,
+              "columns": 20,
+              "span_count": 71,
+              "span_coverage": 0.9859,
+              "spans_per_row": 4.7333,
+              "span_per_row_limit": 60.0,
+              "max_cell_chars": 22,
+              "max_to_median_cell_char_ratio": 2.75,
+              "max_long_text_row_ratio": 0.0
+            },
+            "coordinate_diagnostics_summary": {
+              "status": "ok",
+              "rows": 15,
+              "columns": 20,
+              "span_count": 71,
+              "span_coverage": 0.9859,
+              "table_area_ratio": 0.8036
+            }
+          },
+          "auto_corrections": [],
+          "usage_events": []
+        },
+        "final_report": {
+          "needs_fallback": true,
+          "quality_score": 7.0,
+          "coordinate_evidence_strength": "strong",
+          "coordinate_numeric_evidence_weak": false,
+          "coordinate_absence_is_evidence": true,
+          "coordinate_presence_is_evidence": true,
+          "vlm_only_values": {},
+          "coordinate_only_values": {},
+          "unsupported_value_count": 0,
+          "missing_value_count": 0,
+          "actionable_unsupported_value_count": 0,
+          "actionable_missing_value_count": 0,
+          "actionable_structure_mismatch_count": 1,
+          "structure_mismatches": [
+            "column_count_mismatch"
+          ],
+          "coordinate_metrics": {
+            "chars": 4844,
+            "table_count": 1,
+            "numeric_cell_count": 2,
+            "unknown_token_count": 0,
+            "max_table_columns": 21,
+            "table_column_counts": [
+              21
+            ]
+          },
+          "vlm_metrics": {
+            "chars": 807,
+            "table_count": 1,
+            "numeric_cell_count": 0,
+            "unknown_token_count": 1,
+            "max_table_columns": 4,
+            "table_column_counts": [
+              4
+            ]
+          },
+          "coordinate_quality": {
+            "ok": true,
+            "reasons": [],
+            "rows": 15,
+            "columns": 20,
+            "span_count": 71,
+            "span_coverage": 0.9859,
+            "spans_per_row": 4.7333,
+            "span_per_row_limit": 60.0,
+            "max_cell_chars": 22,
+            "max_to_median_cell_char_ratio": 2.75,
+            "max_long_text_row_ratio": 0.0
+          },
+          "coordinate_diagnostics_summary": {
+            "status": "ok",
+            "rows": 15,
+            "columns": 20,
+            "span_count": 71,
+            "span_coverage": 0.9859,
+            "table_area_ratio": 0.8036
+          }
+        }
+      },
+      "input_pages": {
+        "pdf": "source_pdf",
+        "start_page": 2,
+        "end_page": 2
+      }
+    }
+  }
+]

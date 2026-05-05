@@ -1,0 +1,461 @@
+[
+  {
+    "page": 1,
+    "mode": "TEXT_TABLE_VLM",
+    "level": "info",
+    "code": "COORDINATE_TABLE_FALLBACK_TO_VLM",
+    "score": 0.65,
+    "message": "PDF座標ベースの表復元が低信頼のため、表抽出をVLMへフォールバックしました。",
+    "suggested_action": "出力表とPDF原本を確認してください。重要ページではVLM突合を検討してください。",
+    "evidence": {
+      "routing_source_mode": "TEXT_TABLE_ACCURATE",
+      "coordinate_quality": {
+        "ok": false,
+        "reasons": [
+          "low_span_coverage",
+          "row_collapse_risk",
+          "giant_cell_risk",
+          "cell_size_skew",
+          "prose_row_risk"
+        ],
+        "rows": 5,
+        "columns": 5,
+        "span_count": 355,
+        "span_coverage": 0.5859,
+        "spans_per_row": 71.0,
+        "span_per_row_limit": 15.0,
+        "max_cell_chars": 248,
+        "max_to_median_cell_char_ratio": 11.5349,
+        "max_long_text_row_ratio": 0.8
+      },
+      "coordinate_diagnostics": {
+        "method": "pdf_coordinate_grid",
+        "page": 1,
+        "status": "ok",
+        "bbox": [
+          23.21,
+          64.6,
+          382.17,
+          536.85
+        ],
+        "table_area_ratio": 0.6788,
+        "x_line_count": 8,
+        "y_line_count": 7,
+        "raw_rows": 6,
+        "raw_columns": 7,
+        "trimmed_rows": 5,
+        "trimmed_columns": 5,
+        "span_count": 355,
+        "assigned_span_count": 208,
+        "span_coverage": 0.5859,
+        "spans_per_trimmed_row": 71.0,
+        "max_cell_chars": 248,
+        "median_cell_chars": 21.5,
+        "max_to_median_cell_char_ratio": 11.5349,
+        "max_long_text_row_ratio": 0.8,
+        "header_mode": "none",
+        "header_inference_enabled": false,
+        "header_row_count": 0,
+        "measure_start_column": null,
+        "filled_row_header_count": 0,
+        "pdf_grid_rows_preserved": true,
+        "headers": [
+          "col_001",
+          "col_002",
+          "col_003",
+          "col_004",
+          "col_005"
+        ],
+        "non_table_text_line_count": 7,
+        "non_table_text_chars": 165
+      },
+      "selected_model": "gpt-5.4",
+      "model_selection_reasons": [
+        "large_dense_table_area",
+        "high_text_density",
+        "giant_cell",
+        "coordinate_collapse_risk"
+      ]
+    },
+    "target": null
+  },
+  {
+    "page": 1,
+    "mode": "TEXT_TABLE_VLM",
+    "level": "info",
+    "code": "VLM_COORD_WEAK_EVIDENCE",
+    "score": 0.45,
+    "message": "Coordinate extraction was too weak to validate VLM values authoritatively.",
+    "suggested_action": "Use VLM output as primary for this page, and review manually if values are business-critical.",
+    "evidence": {
+      "source": "initial",
+      "model": "gpt-5.4",
+      "coordinate_evidence_strength": "weak",
+      "vlm_only_values": {
+        "amount": [
+          "6,707.79",
+          "7,114.44",
+          "8,478.16",
+          "6,112.92",
+          "4,146.96",
+          "1,876.83",
+          "5,675.87",
+          "7,102.28",
+          "4,987.66",
+          "2,440.64",
+          "4,131.21",
+          "7,409.13",
+          "6,340.71",
+          "7,734.16",
+          "9,186.21",
+          "2,282.11",
+          "1,479",
+          "1,256"
+        ],
+        "date": [
+          "令和7年7月1日"
+        ]
+      },
+      "coordinate_only_values": {},
+      "structure_mismatches": [
+        "table_count_mismatch",
+        "column_count_mismatch"
+      ],
+      "coordinate_quality": {
+        "ok": false,
+        "reasons": [
+          "low_span_coverage",
+          "row_collapse_risk",
+          "giant_cell_risk",
+          "cell_size_skew",
+          "prose_row_risk"
+        ],
+        "rows": 5,
+        "columns": 5,
+        "span_count": 355,
+        "span_coverage": 0.5859,
+        "spans_per_row": 71.0,
+        "span_per_row_limit": 15.0,
+        "max_cell_chars": 248,
+        "max_to_median_cell_char_ratio": 11.5349,
+        "max_long_text_row_ratio": 0.8
+      },
+      "coordinate_metrics": {
+        "chars": 5248,
+        "table_count": 1,
+        "numeric_cell_count": 0,
+        "unknown_token_count": 0,
+        "max_table_columns": 5,
+        "table_column_counts": [
+          5
+        ]
+      },
+      "vlm_metrics": {
+        "chars": 4275,
+        "table_count": 2,
+        "numeric_cell_count": 146,
+        "unknown_token_count": 0,
+        "max_table_columns": 9,
+        "table_column_counts": [
+          9,
+          6
+        ]
+      }
+    },
+    "target": null
+  },
+  {
+    "page": 2,
+    "mode": "TEXT_TABLE_VLM",
+    "level": "info",
+    "code": "COORDINATE_TABLE_FALLBACK_TO_VLM",
+    "score": 0.65,
+    "message": "PDF座標ベースの表復元が低信頼のため、表抽出をVLMへフォールバックしました。",
+    "suggested_action": "出力表とPDF原本を確認してください。重要ページではVLM突合を検討してください。",
+    "evidence": {
+      "routing_source_mode": "TEXT_TABLE_ACCURATE",
+      "coordinate_quality": {
+        "ok": false,
+        "reasons": [
+          "low_span_coverage",
+          "row_collapse_risk",
+          "cell_size_skew",
+          "prose_row_risk"
+        ],
+        "rows": 8,
+        "columns": 10,
+        "span_count": 283,
+        "span_coverage": 0.788,
+        "spans_per_row": 35.375,
+        "span_per_row_limit": 30.0,
+        "max_cell_chars": 124,
+        "max_to_median_cell_char_ratio": 15.5,
+        "max_long_text_row_ratio": 0.6
+      },
+      "coordinate_diagnostics": {
+        "method": "pdf_coordinate_grid",
+        "page": 2,
+        "status": "ok",
+        "bbox": [
+          36.88,
+          44.73,
+          397.01,
+          548.88
+        ],
+        "table_area_ratio": 0.727,
+        "x_line_count": 14,
+        "y_line_count": 9,
+        "raw_rows": 8,
+        "raw_columns": 13,
+        "trimmed_rows": 8,
+        "trimmed_columns": 10,
+        "span_count": 283,
+        "assigned_span_count": 223,
+        "span_coverage": 0.788,
+        "spans_per_trimmed_row": 35.375,
+        "max_cell_chars": 124,
+        "median_cell_chars": 8.0,
+        "max_to_median_cell_char_ratio": 15.5,
+        "max_long_text_row_ratio": 0.6,
+        "header_mode": "none",
+        "header_inference_enabled": false,
+        "header_row_count": 0,
+        "measure_start_column": null,
+        "filled_row_header_count": 0,
+        "pdf_grid_rows_preserved": true,
+        "headers": [
+          "col_001",
+          "col_002",
+          "col_003",
+          "col_004",
+          "col_005",
+          "col_006",
+          "col_007",
+          "col_008",
+          "col_009",
+          "col_010"
+        ],
+        "non_table_text_line_count": 10,
+        "non_table_text_chars": 78
+      },
+      "selected_model": "gpt-5.4-mini",
+      "model_selection_reasons": []
+    },
+    "target": null
+  },
+  {
+    "page": 2,
+    "mode": "TEXT_TABLE_VLM",
+    "level": "info",
+    "code": "VLM_COORD_WEAK_EVIDENCE",
+    "score": 0.45,
+    "message": "Coordinate extraction was too weak to validate VLM values authoritatively.",
+    "suggested_action": "Use VLM output as primary for this page, and review manually if values are business-critical.",
+    "evidence": {
+      "source": "initial",
+      "model": "gpt-5.4-mini",
+      "coordinate_evidence_strength": "weak",
+      "vlm_only_values": {},
+      "coordinate_only_values": {},
+      "structure_mismatches": [
+        "table_count_mismatch",
+        "numeric_cell_count_mismatch"
+      ],
+      "coordinate_quality": {
+        "ok": false,
+        "reasons": [
+          "low_span_coverage",
+          "row_collapse_risk",
+          "cell_size_skew",
+          "prose_row_risk"
+        ],
+        "rows": 8,
+        "columns": 10,
+        "span_count": 283,
+        "span_coverage": 0.788,
+        "spans_per_row": 35.375,
+        "span_per_row_limit": 30.0,
+        "max_cell_chars": 124,
+        "max_to_median_cell_char_ratio": 15.5,
+        "max_long_text_row_ratio": 0.6
+      },
+      "coordinate_metrics": {
+        "chars": 7429,
+        "table_count": 1,
+        "numeric_cell_count": 7,
+        "unknown_token_count": 0,
+        "max_table_columns": 10,
+        "table_column_counts": [
+          10
+        ]
+      },
+      "vlm_metrics": {
+        "chars": 3265,
+        "table_count": 3,
+        "numeric_cell_count": 69,
+        "unknown_token_count": 0,
+        "max_table_columns": 9,
+        "table_column_counts": [
+          8,
+          9,
+          8
+        ]
+      }
+    },
+    "target": null
+  },
+  {
+    "page": 3,
+    "mode": "TEXT_TABLE_VLM",
+    "level": "info",
+    "code": "COORDINATE_TABLE_FALLBACK_TO_VLM",
+    "score": 0.65,
+    "message": "PDF座標ベースの表復元が低信頼のため、表抽出をVLMへフォールバックしました。",
+    "suggested_action": "出力表とPDF原本を確認してください。重要ページではVLM突合を検討してください。",
+    "evidence": {
+      "routing_source_mode": "TEXT_TABLE_ACCURATE",
+      "coordinate_quality": {
+        "ok": false,
+        "reasons": [
+          "low_span_coverage",
+          "row_collapse_risk",
+          "giant_cell_risk",
+          "cell_size_skew",
+          "prose_row_risk"
+        ],
+        "rows": 5,
+        "columns": 7,
+        "span_count": 322,
+        "span_coverage": 0.6398,
+        "spans_per_row": 64.4,
+        "span_per_row_limit": 21.0,
+        "max_cell_chars": 218,
+        "max_to_median_cell_char_ratio": 18.1667,
+        "max_long_text_row_ratio": 0.5714
+      },
+      "coordinate_diagnostics": {
+        "method": "pdf_coordinate_grid",
+        "page": 3,
+        "status": "ok",
+        "bbox": [
+          22.92,
+          45.3,
+          382.14,
+          520.52
+        ],
+        "table_area_ratio": 0.6835,
+        "x_line_count": 10,
+        "y_line_count": 6,
+        "raw_rows": 5,
+        "raw_columns": 9,
+        "trimmed_rows": 5,
+        "trimmed_columns": 7,
+        "span_count": 322,
+        "assigned_span_count": 206,
+        "span_coverage": 0.6398,
+        "spans_per_trimmed_row": 64.4,
+        "max_cell_chars": 218,
+        "median_cell_chars": 12.0,
+        "max_to_median_cell_char_ratio": 18.1667,
+        "max_long_text_row_ratio": 0.5714,
+        "header_mode": "none",
+        "header_inference_enabled": false,
+        "header_row_count": 0,
+        "measure_start_column": null,
+        "filled_row_header_count": 0,
+        "pdf_grid_rows_preserved": true,
+        "headers": [
+          "col_001",
+          "col_002",
+          "col_003",
+          "col_004",
+          "col_005",
+          "col_006",
+          "col_007"
+        ],
+        "non_table_text_line_count": 5,
+        "non_table_text_chars": 106
+      },
+      "selected_model": "gpt-5.4",
+      "model_selection_reasons": [
+        "large_dense_table_area",
+        "high_text_density",
+        "giant_cell",
+        "coordinate_collapse_risk"
+      ]
+    },
+    "target": null
+  },
+  {
+    "page": 3,
+    "mode": "TEXT_TABLE_VLM",
+    "level": "info",
+    "code": "VLM_COORD_WEAK_EVIDENCE",
+    "score": 0.45,
+    "message": "Coordinate extraction was too weak to validate VLM values authoritatively.",
+    "suggested_action": "Use VLM output as primary for this page, and review manually if values are business-critical.",
+    "evidence": {
+      "source": "initial",
+      "model": "gpt-5.4",
+      "coordinate_evidence_strength": "weak",
+      "vlm_only_values": {},
+      "coordinate_only_values": {
+        "amount": [
+          "3,180",
+          "3,110"
+        ]
+      },
+      "structure_mismatches": [
+        "table_count_mismatch",
+        "numeric_cell_count_mismatch"
+      ],
+      "coordinate_quality": {
+        "ok": false,
+        "reasons": [
+          "low_span_coverage",
+          "row_collapse_risk",
+          "giant_cell_risk",
+          "cell_size_skew",
+          "prose_row_risk"
+        ],
+        "rows": 5,
+        "columns": 7,
+        "span_count": 322,
+        "span_coverage": 0.6398,
+        "spans_per_row": 64.4,
+        "span_per_row_limit": 21.0,
+        "max_cell_chars": 218,
+        "max_to_median_cell_char_ratio": 18.1667,
+        "max_long_text_row_ratio": 0.5714
+      },
+      "coordinate_metrics": {
+        "chars": 5558,
+        "table_count": 1,
+        "numeric_cell_count": 6,
+        "unknown_token_count": 0,
+        "max_table_columns": 7,
+        "table_column_counts": [
+          7
+        ]
+      },
+      "vlm_metrics": {
+        "chars": 3662,
+        "table_count": 8,
+        "numeric_cell_count": 95,
+        "unknown_token_count": 0,
+        "max_table_columns": 6,
+        "table_column_counts": [
+          6,
+          3,
+          6,
+          6,
+          3,
+          3,
+          6,
+          6
+        ]
+      }
+    },
+    "target": null
+  }
+]

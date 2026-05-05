@@ -1,0 +1,125 @@
+[
+  {
+    "index": 1,
+    "rows": 6,
+    "columns": 5,
+    "headers": [
+      "No.",
+      "Item",
+      "Qty",
+      "Owner",
+      "Control"
+    ],
+    "csv": "No.,Item,Qty,Owner,Control\r\n1,Repair kit 1 TXT-V09-P01-R01,3,Facilities,CTRL-V09-101\r\n2,Repair kit 2 TXT-V09-P01-R02,4,Facilities,CTRL-V09-102\r\n3,Repair kit 3 TXT-V09-P01-R03,5,Facilities,CTRL-V09-103\r\n4,Repair kit 4 TXT-V09-P01-R04,6,Facilities,CTRL-V09-104\r\n5,Repair kit 5 TXT-V09-P01-R05,7,Facilities,CTRL-V09-105\r\n6,Repair kit 6 TXT-V09-P01-R06,8,Facilities,CTRL-V09-106\r\n",
+    "html": "<table><tbody><tr><th>No.</th><th>Item</th><th>Qty</th><th>Owner</th><th>Control</th></tr><tr><td>1</td><td>Repair kit 1 TXT-V09-P01-R01</td><td>3</td><td>Facilities</td><td>CTRL-V09-101</td></tr><tr><td>2</td><td>Repair kit 2 TXT-V09-P01-R02</td><td>4</td><td>Facilities</td><td>CTRL-V09-102</td></tr><tr><td>3</td><td>Repair kit 3 TXT-V09-P01-R03</td><td>5</td><td>Facilities</td><td>CTRL-V09-103</td></tr><tr><td>4</td><td>Repair kit 4 TXT-V09-P01-R04</td><td>6</td><td>Facilities</td><td>CTRL-V09-104</td></tr><tr><td>5</td><td>Repair kit 5 TXT-V09-P01-R05</td><td>7</td><td>Facilities</td><td>CTRL-V09-105</td></tr><tr><td>6</td><td>Repair kit 6 TXT-V09-P01-R06</td><td>8</td><td>Facilities</td><td>CTRL-V09-106</td></tr></tbody></table>",
+    "page": 1,
+    "repair": {
+      "enabled": false
+    },
+    "source_start_page": 1,
+    "source_end_page": 1,
+    "mode": "TEXT_TABLE_VLM"
+  },
+  {
+    "index": 2,
+    "rows": 15,
+    "columns": 18,
+    "headers": [
+      "col_001",
+      "col_002",
+      "col_003",
+      "col_004",
+      "col_005",
+      "col_006",
+      "col_007",
+      "col_008",
+      "col_009",
+      "col_010",
+      "col_011",
+      "col_012",
+      "col_013",
+      "col_014",
+      "col_015",
+      "col_016",
+      "col_017",
+      "col_018"
+    ],
+    "csv": "col_001,col_002,col_003,col_004,col_005,col_006,col_007,col_008,col_009,col_010,col_011,col_012,col_013,col_014,col_015,col_016,col_017,col_018\r\nV09,|,Delivery,with,,overlapping,,image,,stamps,,,,,,,Page,2 of 2\r\n,Delivery,,acceptance,,,,,,,,DELIV-V09-IMAGE-STAMP-P02,,,,,,\r\nFigure,2,Received and,checked,stamps,are,embedded,,image,objects.,,,,,,,,\r\nNo.,,Item,,,,,,,Qty,,,,Owner,Control,,,\r\n1,,Line item 1,TXT-V09-P02-R01,,,,,,2,,,,Warehouse,,CTRL-V09-201,,\r\n2,,Line item 2,TXT-V09-P02-R02,,,,,,3,,,,Warehouse,,CTRL-V09-202,,\r\n3,,Line item 3,TXT-V09-P02-R03,,,,,,4,,,,Warehouse,,CTRL-V09-203,,\r\n4,,Line item 4,TXT-V09-P02-R04,,,,,,5,,,,Warehouse,,CTRL-V09-204,,\r\n5,,Line item 5,TXT-V09-P02-R05,,,,,,6,,,,Warehouse,,CTRL-V09-205,,\r\n6,,Line item 6,TXT-V09-P02-R06,,,,,,7,,,,Warehouse,,CTRL-V09-206,,\r\n7,,Line item 7,TXT-V09-P02-R07,,,,,,8,,,,Warehouse,,CTRL-V09-207,,\r\n8,,Line item 8,TXT-V09-P02-R08,,,,,,9,,,,Warehouse,,CTRL-V09-208,,\r\n9,,Line item 9,TXT-V09-P02-R09,,,,,,10,,,,Warehouse,,CTRL-V09-209,,\r\n,,TEXT-V09-P02-FOOTER-CONTROL:,,image,stamps,above,are,not part,of the,PDF,text,layer.,,,,,\r\nPDF,validation,suite for,routed PDF,extraction.,,,,,,,,,,,,V09-FOOTER-P02,\r\n",
+    "html": "<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th>col_001</th>\n      <th>col_002</th>\n      <th>col_003</th>\n      <th>col_004</th>\n      <th>col_005</th>\n      <th>col_006</th>\n      <th>col_007</th>\n      <th>col_008</th>\n      <th>col_009</th>\n      <th>col_010</th>\n      <th>col_011</th>\n      <th>col_012</th>\n      <th>col_013</th>\n      <th>col_014</th>\n      <th>col_015</th>\n      <th>col_016</th>\n      <th>col_017</th>\n      <th>col_018</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>V09</td>\n      <td>|</td>\n      <td>Delivery</td>\n      <td>with</td>\n      <td></td>\n      <td>overlapping</td>\n      <td></td>\n      <td>image</td>\n      <td></td>\n      <td>stamps</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>Page</td>\n      <td>2 of 2</td>\n    </tr>\n    <tr>\n      <td></td>\n      <td>Delivery</td>\n      <td></td>\n      <td>acceptance</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>DELIV-V09-IMAGE-STAMP-P02</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>Figure</td>\n      <td>2</td>\n      <td>Received and</td>\n      <td>checked</td>\n      <td>stamps</td>\n      <td>are</td>\n      <td>embedded</td>\n      <td></td>\n      <td>image</td>\n      <td>objects.</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>No.</td>\n      <td></td>\n      <td>Item</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>Qty</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>Owner</td>\n      <td>Control</td>\n      <td></td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>1</td>\n      <td></td>\n      <td>Line item 1</td>\n      <td>TXT-V09-P02-R01</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>2</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>Warehouse</td>\n      <td></td>\n      <td>CTRL-V09-201</td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>2</td>\n      <td></td>\n      <td>Line item 2</td>\n      <td>TXT-V09-P02-R02</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>3</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>Warehouse</td>\n      <td></td>\n      <td>CTRL-V09-202</td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>3</td>\n      <td></td>\n      <td>Line item 3</td>\n      <td>TXT-V09-P02-R03</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>4</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>Warehouse</td>\n      <td></td>\n      <td>CTRL-V09-203</td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>4</td>\n      <td></td>\n      <td>Line item 4</td>\n      <td>TXT-V09-P02-R04</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>5</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>Warehouse</td>\n      <td></td>\n      <td>CTRL-V09-204</td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>5</td>\n      <td></td>\n      <td>Line item 5</td>\n      <td>TXT-V09-P02-R05</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>6</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>Warehouse</td>\n      <td></td>\n      <td>CTRL-V09-205</td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>6</td>\n      <td></td>\n      <td>Line item 6</td>\n      <td>TXT-V09-P02-R06</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>7</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>Warehouse</td>\n      <td></td>\n      <td>CTRL-V09-206</td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>7</td>\n      <td></td>\n      <td>Line item 7</td>\n      <td>TXT-V09-P02-R07</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>8</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>Warehouse</td>\n      <td></td>\n      <td>CTRL-V09-207</td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>8</td>\n      <td></td>\n      <td>Line item 8</td>\n      <td>TXT-V09-P02-R08</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>9</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>Warehouse</td>\n      <td></td>\n      <td>CTRL-V09-208</td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>9</td>\n      <td></td>\n      <td>Line item 9</td>\n      <td>TXT-V09-P02-R09</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>10</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>Warehouse</td>\n      <td></td>\n      <td>CTRL-V09-209</td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td></td>\n      <td></td>\n      <td>TEXT-V09-P02-FOOTER-CONTROL:</td>\n      <td></td>\n      <td>image</td>\n      <td>stamps</td>\n      <td>above</td>\n      <td>are</td>\n      <td>not part</td>\n      <td>of the</td>\n      <td>PDF</td>\n      <td>text</td>\n      <td>layer.</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>PDF</td>\n      <td>validation</td>\n      <td>suite for</td>\n      <td>routed PDF</td>\n      <td>extraction.</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>V09-FOOTER-P02</td>\n      <td></td>\n    </tr>\n  </tbody>\n</table>",
+    "page": 2,
+    "repair": {
+      "enabled": false,
+      "coordinate_reconstruction": {
+        "method": "pdf_text_alignment",
+        "page": 2,
+        "status": "ok",
+        "bbox": [
+          39.69,
+          29.57,
+          555.25,
+          810.83
+        ],
+        "table_area_ratio": 0.8037,
+        "horizontal_line_count": 1,
+        "vertical_line_count": 0,
+        "line_count": 15,
+        "table_line_count": 15,
+        "raw_rows": 15,
+        "raw_columns": 18,
+        "trimmed_rows": 15,
+        "trimmed_columns": 18,
+        "span_count": 122,
+        "assigned_span_count": 121,
+        "span_coverage": 0.9918,
+        "spans_per_trimmed_row": 8.1333,
+        "max_cell_chars": 28,
+        "median_cell_chars": 8.0,
+        "max_to_median_cell_char_ratio": 3.5,
+        "max_long_text_row_ratio": 0.0,
+        "header_mode": "none",
+        "header_inference_enabled": false,
+        "header_row_count": 0,
+        "measure_start_column": null,
+        "filled_row_header_count": 0,
+        "pdf_grid_rows_preserved": true,
+        "headers": [
+          "col_001",
+          "col_002",
+          "col_003",
+          "col_004",
+          "col_005",
+          "col_006",
+          "col_007",
+          "col_008",
+          "col_009",
+          "col_010",
+          "col_011",
+          "col_012",
+          "col_013",
+          "col_014",
+          "col_015",
+          "col_016",
+          "col_017",
+          "col_018"
+        ],
+        "non_table_text_line_count": 0,
+        "non_table_text_chars": 0,
+        "text_layer_coverage": {
+          "raw_line_count": 15,
+          "supplemented_line_count": 1,
+          "supplemented_lines": [
+            {
+              "text": "V09 | Delivery note with overlapping image stamps Page 2 of 2",
+              "missing_tokens": [
+                "note"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "source_start_page": 2,
+    "source_end_page": 2,
+    "mode": "TEXT_TABLE_COORD"
+  }
+]

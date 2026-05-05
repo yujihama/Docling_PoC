@@ -1,0 +1,44 @@
+[
+  {
+    "index": 1,
+    "rows": 10,
+    "columns": 5,
+    "headers": [
+      "SKU",
+      "QTY",
+      "PRICE",
+      "LOT",
+      "NOTE"
+    ],
+    "csv": "SKU,QTY,PRICE,LOT,NOTE\r\nSCAN-SKU-V05-101,2,13.40,LOT-119A,ok\r\nSCAN-SKU-V05-102,3,26.40,LOT-129A,ok\r\nSCAN-SKU-V05-103,4,39.40,LOT-139A,faint ink\r\nSCAN-SKU-V05-104,5,52.40,LOT-149A,ok\r\nSCAN-SKU-V05-105,6,65.40,LOT-159A,ok\r\nSCAN-SKU-V05-106,7,78.40,LOT-169A,faint ink\r\nSCAN-SKU-V05-107,8,91.40,LOT-179A,ok\r\nSCAN-SKU-V05-108,9,104.40,LOT-189A,ok\r\nSCAN-SKU-V05-109,10,117.40,LOT-199A,faint ink\r\nSCAN-SKU-V05-110,11,130.40,LOT-1109A,ok\r\n",
+    "html": "<table><tbody><tr><th>SKU</th><th>QTY</th><th>PRICE</th><th>LOT</th><th>NOTE</th></tr><tr><td>SCAN-SKU-V05-101</td><td>2</td><td>13.40</td><td>LOT-119A</td><td>ok</td></tr><tr><td>SCAN-SKU-V05-102</td><td>3</td><td>26.40</td><td>LOT-129A</td><td>ok</td></tr><tr><td>SCAN-SKU-V05-103</td><td>4</td><td>39.40</td><td>LOT-139A</td><td>faint ink</td></tr><tr><td>SCAN-SKU-V05-104</td><td>5</td><td>52.40</td><td>LOT-149A</td><td>ok</td></tr><tr><td>SCAN-SKU-V05-105</td><td>6</td><td>65.40</td><td>LOT-159A</td><td>ok</td></tr><tr><td>SCAN-SKU-V05-106</td><td>7</td><td>78.40</td><td>LOT-169A</td><td>faint ink</td></tr><tr><td>SCAN-SKU-V05-107</td><td>8</td><td>91.40</td><td>LOT-179A</td><td>ok</td></tr><tr><td>SCAN-SKU-V05-108</td><td>9</td><td>104.40</td><td>LOT-189A</td><td>ok</td></tr><tr><td>SCAN-SKU-V05-109</td><td>10</td><td>117.40</td><td>LOT-199A</td><td>faint ink</td></tr><tr><td>SCAN-SKU-V05-110</td><td>11</td><td>130.40</td><td>LOT-1109A</td><td>ok</td></tr></tbody></table>",
+    "page": 1,
+    "repair": {
+      "enabled": false
+    },
+    "source_start_page": 1,
+    "source_end_page": 1,
+    "mode": "IMAGE_RECONCILE"
+  },
+  {
+    "index": 2,
+    "rows": 10,
+    "columns": 5,
+    "headers": [
+      "SKU",
+      "QTY",
+      "PRICE",
+      "LOT",
+      "NOTE"
+    ],
+    "csv": "SKU,QTY,PRICE,LOT,NOTE\r\nSCAN-SKU-V05-201,2,13.40,LOT-219A,ok\r\nSCAN-SKU-V05-202,3,26.40,LOT-229A,ok\r\nSCAN-SKU-V05-203,4,39.40,LOT-239A,faint ink\r\nSCAN-SKU-V05-204,5,52.40,LOT-249A,ok\r\nSCAN-SKU-V05-205,6,65.40,LOT-259A,ok\r\nSCAN-SKU-V05-206,7,78.40,LOT-269A,faint ink\r\nSCAN-SKU-V05-207,8,91.40,LOT-279A,ok\r\nSCAN-SKU-V05-208,9,104.40,LOT-289A,ok\r\nSCAN-SKU-V05-209,10,117.40,LOT-299A,faint ink\r\nSCAN-SKU-V05-210,11,130.40,LOT-2109A,ok\r\n",
+    "html": "<table><tbody><tr><th>SKU</th><th>QTY</th><th>PRICE</th><th>LOT</th><th>NOTE</th></tr><tr><td>SCAN-SKU-V05-201</td><td>2</td><td>13.40</td><td>LOT-219A</td><td>ok</td></tr><tr><td>SCAN-SKU-V05-202</td><td>3</td><td>26.40</td><td>LOT-229A</td><td>ok</td></tr><tr><td>SCAN-SKU-V05-203</td><td>4</td><td>39.40</td><td>LOT-239A</td><td>faint ink</td></tr><tr><td>SCAN-SKU-V05-204</td><td>5</td><td>52.40</td><td>LOT-249A</td><td>ok</td></tr><tr><td>SCAN-SKU-V05-205</td><td>6</td><td>65.40</td><td>LOT-259A</td><td>ok</td></tr><tr><td>SCAN-SKU-V05-206</td><td>7</td><td>78.40</td><td>LOT-269A</td><td>faint ink</td></tr><tr><td>SCAN-SKU-V05-207</td><td>8</td><td>91.40</td><td>LOT-279A</td><td>ok</td></tr><tr><td>SCAN-SKU-V05-208</td><td>9</td><td>104.40</td><td>LOT-289A</td><td>ok</td></tr><tr><td>SCAN-SKU-V05-209</td><td>10</td><td>117.40</td><td>LOT-299A</td><td>faint ink</td></tr><tr><td>SCAN-SKU-V05-210</td><td>11</td><td>130.40</td><td>LOT-2109A</td><td>ok</td></tr></tbody></table>",
+    "page": 1,
+    "repair": {
+      "enabled": false
+    },
+    "source_start_page": 2,
+    "source_end_page": 2,
+    "mode": "IMAGE_RECONCILE"
+  }
+]

@@ -1,0 +1,266 @@
+{
+  "run_id": "auto_table_case12_vlm_vlm_mini_mini_fallback_probe_5",
+  "pdf_path": "C:\\Users\\nyham\\work\\docling_poc\\outputs\\docling_benchmark\\pdfs\\case12_complex_dummy.pdf",
+  "filename": "case12_complex_dummy.pdf",
+  "created_at": "2026-05-05T12:04:33",
+  "page_count": 9,
+  "groups": [
+    {
+      "mode": "TEXT_TABLE_FAST",
+      "start_page": 1,
+      "end_page": 1,
+      "pages": [
+        1
+      ]
+    },
+    {
+      "mode": "TEXT_TABLE_ACCURATE",
+      "start_page": 2,
+      "end_page": 3,
+      "pages": [
+        2,
+        3
+      ]
+    },
+    {
+      "mode": "IMAGE_RECONCILE",
+      "start_page": 4,
+      "end_page": 4,
+      "pages": [
+        4
+      ]
+    },
+    {
+      "mode": "TEXT_LIGHT",
+      "start_page": 5,
+      "end_page": 5,
+      "pages": [
+        5
+      ]
+    },
+    {
+      "mode": "TEXT_TABLE_ACCURATE",
+      "start_page": 6,
+      "end_page": 6,
+      "pages": [
+        6
+      ]
+    },
+    {
+      "mode": "TEXT_TABLE_ACCURATE",
+      "start_page": 7,
+      "end_page": 9,
+      "pages": [
+        7,
+        8,
+        9
+      ]
+    }
+  ],
+  "options": {
+    "model": "gpt-5.4-mini",
+    "reconcile_compare_mode": "vlm_vlm",
+    "secondary_model": "gpt-5.4-mini",
+    "max_completion_tokens": 12000,
+    "reasoning_effort": "none",
+    "timeout_seconds": 180.0,
+    "vlm_scale": 2.0,
+    "response_format": "markdown",
+    "prompt_variant": "strict_preserve",
+    "text_chars_threshold": 200,
+    "text_quality_threshold": 0.8,
+    "table_score_threshold": 0.4,
+    "complex_table_score_threshold": 0.6,
+    "image_area_threshold": 0.4,
+    "enable_embedded_visual_append": true,
+    "embedded_visual_min_area_ratio": 0.08,
+    "embedded_visual_min_width_ratio": 0.3,
+    "embedded_visual_min_height_ratio": 0.06,
+    "embedded_visual_text_overlap_threshold": 0.05,
+    "embedded_visual_complexity_threshold": 0.35,
+    "embedded_visual_force_area_ratio": 0.25,
+    "embedded_visual_crop_margin_points": 8.0,
+    "parallel_reconcile_candidates": true,
+    "max_parallel_table_groups": 2,
+    "use_coordinate_table_reconstruction": true,
+    "enable_table_vlm_fallback": true,
+    "table_vlm_model": "gpt-5.4-mini",
+    "large_table_vlm_model": "gpt-5.4",
+    "table_vlm_prompt_variant": "table_first",
+    "table_vlm_reasoning_effort": "none",
+    "enable_reconcile_table_fallback": true,
+    "reconcile_table_fallback_model": "gpt-5.4",
+    "reconcile_table_fallback_prompt_variant": "table_first",
+    "reconcile_table_fallback_reasoning_effort": "none",
+    "coordinate_min_span_coverage": 0.98,
+    "coordinate_max_cell_chars": 160,
+    "coordinate_max_cell_char_ratio": 8.0,
+    "table_vlm_large_min_columns": 12,
+    "table_vlm_large_min_area_ratio": 0.6,
+    "force_reconcile_pages": [],
+    "save_outputs": true
+  },
+  "comparison": {
+    "mode": "vlm_vlm",
+    "source_a_label": "vlm_primary:gpt-5.4-mini",
+    "source_b_label": "vlm_secondary:gpt-5.4-mini",
+    "primary_model": "gpt-5.4-mini",
+    "secondary_model": "gpt-5.4-mini"
+  },
+  "preflight_seconds": 0.257,
+  "total_seconds": 24.467,
+  "seconds_per_page": 2.719,
+  "segment_timing_seconds_by_mode": {
+    "TEXT_TABLE_COORD": 0.324,
+    "IMAGE_RECONCILE": 8.77,
+    "TEXT_LIGHT": 1.89,
+    "IMAGE_RECONCILE_APPEND": 13.303
+  },
+  "candidate_timing_seconds": {
+    "vlm_primary": 21.73,
+    "vlm_secondary": 21.366,
+    "crop_pdf": 0.095
+  },
+  "page_timing_estimates": [
+    {
+      "page": 1,
+      "estimated_seconds": 0.021,
+      "segments": [
+        {
+          "mode": "TEXT_TABLE_COORD",
+          "estimated_seconds": 0.021,
+          "candidate_timings_seconds": {}
+        }
+      ]
+    },
+    {
+      "page": 2,
+      "estimated_seconds": 0.14,
+      "segments": [
+        {
+          "mode": "TEXT_TABLE_COORD",
+          "estimated_seconds": 0.14,
+          "candidate_timings_seconds": {}
+        }
+      ]
+    },
+    {
+      "page": 3,
+      "estimated_seconds": 0.056,
+      "segments": [
+        {
+          "mode": "TEXT_TABLE_COORD",
+          "estimated_seconds": 0.056,
+          "candidate_timings_seconds": {}
+        }
+      ]
+    },
+    {
+      "page": 4,
+      "estimated_seconds": 8.77,
+      "segments": [
+        {
+          "mode": "IMAGE_RECONCILE",
+          "estimated_seconds": 8.77,
+          "candidate_timings_seconds": {
+            "vlm_primary": 8.56,
+            "vlm_secondary": 8.75
+          }
+        }
+      ]
+    },
+    {
+      "page": 5,
+      "estimated_seconds": 11.298,
+      "segments": [
+        {
+          "mode": "TEXT_LIGHT",
+          "estimated_seconds": 1.89,
+          "candidate_timings_seconds": {}
+        },
+        {
+          "mode": "IMAGE_RECONCILE_APPEND",
+          "estimated_seconds": 9.408,
+          "candidate_timings_seconds": {
+            "crop_pdf": 0.066,
+            "vlm_primary": 9.314,
+            "vlm_secondary": 8.771
+          }
+        }
+      ]
+    },
+    {
+      "page": 6,
+      "estimated_seconds": 3.927,
+      "segments": [
+        {
+          "mode": "TEXT_TABLE_COORD",
+          "estimated_seconds": 0.032,
+          "candidate_timings_seconds": {}
+        },
+        {
+          "mode": "IMAGE_RECONCILE_APPEND",
+          "estimated_seconds": 3.895,
+          "candidate_timings_seconds": {
+            "crop_pdf": 0.029,
+            "vlm_primary": 3.856,
+            "vlm_secondary": 3.845
+          }
+        }
+      ]
+    },
+    {
+      "page": 7,
+      "estimated_seconds": 0.028,
+      "segments": [
+        {
+          "mode": "TEXT_TABLE_COORD",
+          "estimated_seconds": 0.028,
+          "candidate_timings_seconds": {}
+        }
+      ]
+    },
+    {
+      "page": 8,
+      "estimated_seconds": 0.031,
+      "segments": [
+        {
+          "mode": "TEXT_TABLE_COORD",
+          "estimated_seconds": 0.031,
+          "candidate_timings_seconds": {}
+        }
+      ]
+    },
+    {
+      "page": 9,
+      "estimated_seconds": 0.016,
+      "segments": [
+        {
+          "mode": "TEXT_TABLE_COORD",
+          "estimated_seconds": 0.016,
+          "candidate_timings_seconds": {}
+        }
+      ]
+    }
+  ],
+  "mode_page_counts": {
+    "TEXT_TABLE_FAST": 1,
+    "TEXT_TABLE_ACCURATE": 6,
+    "IMAGE_RECONCILE": 1,
+    "TEXT_LIGHT": 1
+  },
+  "extra_action_counts": {
+    "IMAGE_RECONCILE_APPEND": 2
+  },
+  "embedded_visual_page_count": 2,
+  "warning_counts": {
+    "EMBEDDED_VISUAL_REGION_CANDIDATE": 2
+  },
+  "warning_level_counts": {
+    "info": 2
+  },
+  "safe_mask_count": 0,
+  "safe_unknown_token_count": 0,
+  "reconcile_table_fallback_applied_count": 0,
+  "reconcile_table_fallback_skipped_count": 0
+}

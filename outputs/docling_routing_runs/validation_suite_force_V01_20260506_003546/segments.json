@@ -1,0 +1,517 @@
+[
+  {
+    "mode": "IMAGE_RECONCILE",
+    "start_page": 1,
+    "end_page": 1,
+    "markdown": "V01 | Invoice and purchase order                                                                                 Page 1 of 2\n\n# Invoice INV-2026-05-001\n\nCustomer PO: PO-VAL-001-ALPHA                                                                                     Payment terms: Net 30\n\nShip to: Sakura Components, 3-12-7 Nihonbashi, Tokyo                                                              Bank ref: BREF-7791-4420\n\n| Line   | SKU         | Description                     |   Qty |   Unit |   Amount | Tax   |\n|--------|-------------|---------------------------------|-------|--------|----------|-------|\n| L01    | SKU-V01-101 | Replacement bracket kit REV-1-1 |     3 | 141.00 | 1,648.00 | 10%   |\n| L02    | SKU-V01-102 | Replacement bracket kit REV-1-2 |     4 | 142.00 | 1,965.00 | 10%   |\n| L03    | SKU-V01-103 | Replacement bracket kit REV-1-3 |     5 | 143.00 | 2,282.00 | 10%   |\n| L04    | SKU-V01-104 | Replacement bracket kit REV-1-4 |     6 | 144.00 | 2,599.00 | 10%   |\n| L05    | SKU-V01-105 | Replacement bracket kit REV-1-5 |     7 | 145.00 | 2,916.00 | 10%   |\n| L06    | SKU-V01-106 | Replacement bracket kit REV-1-6 |     8 | 146.00 | 3,233.00 | 10%   |\n| L07    | SKU-V01-107 | Replacement bracket kit REV-1-7 |     9 | 147.00 | 3,550.00 | 10%   |\n| L08    | SKU-V01-108 | Replacement bracket kit REV-1-8 |    10 | 148.00 | 3,867.00 | 10%   |\n\nGrand total: JPY 22,060.00\n\nPDF validation suite for routed PDF extraction.\n\nV01-FOOTER-P01",
+    "safe_markdown": "V01 | Invoice and purchase order\n\nPage 1 of 2\n\n# Invoice INV-2026-05-001\n\nCustomer PO: PO-VAL-001-ALPHA\n\nShip to: Sakura Components, 3-12-7 Nihonbashi, Tokyo\n\nPayment terms: Net 30\n\nBank ref: BREF-7791-4420\n\n| Line   | SKU         | Description                     |   Qty |   Unit |   Amount | Tax   |\n|--------|-------------|---------------------------------|-------|--------|----------|-------|\n| L01    | SKU-V01-101 | Replacement bracket kit REV-1-1 |     3 | 141.00 | 1,648.00 | 10%   |\n| L02    | SKU-V01-102 | Replacement bracket kit REV-1-2 |     4 | 142.00 | 1,965.00 | 10%   |\n| L03    | SKU-V01-103 | Replacement bracket kit REV-1-3 |     5 | 143.00 | 2,282.00 | 10%   |\n| L04    | SKU-V01-104 | Replacement bracket kit REV-1-4 |     6 | 144.00 | 2,599.00 | 10%   |\n| L05    | SKU-V01-105 | Replacement bracket kit REV-1-5 |     7 | 145.00 | 2,916.00 | 10%   |\n| L06    | SKU-V01-106 | Replacement bracket kit REV-1-6 |     8 | 146.00 | 3,233.00 | 10%   |\n| L07    | SKU-V01-107 | Replacement bracket kit REV-1-7 |     9 | 147.00 | 3,550.00 | 10%   |\n| L08    | SKU-V01-108 | Replacement bracket kit REV-1-8 |    10 | 148.00 | 3,867.00 | 10%   |\n\n**Grand total: JPY 22,060.00**\n\n[[読み取り不明]]\n\nPDF validation suite for routed PDF extraction.\n\nV01-FOOTER-P01",
+    "raw_ocr_markdown": "V01 | Invoice and purchase order                                                                                 Page 1 of 2\n\n# Invoice INV-2026-05-001\n\nCustomer PO: PO-VAL-001-ALPHA                                                                                     Payment terms: Net 30\n\nShip to: Sakura Components, 3-12-7 Nihonbashi, Tokyo                                                              Bank ref: BREF-7791-4420\n\n| Line   | SKU         | Description                     |   Qty |   Unit |   Amount | Tax   |\n|--------|-------------|---------------------------------|-------|--------|----------|-------|\n| L01    | SKU-V01-101 | Replacement bracket kit REV-1-1 |     3 | 141.00 | 1,648.00 | 10%   |\n| L02    | SKU-V01-102 | Replacement bracket kit REV-1-2 |     4 | 142.00 | 1,965.00 | 10%   |\n| L03    | SKU-V01-103 | Replacement bracket kit REV-1-3 |     5 | 143.00 | 2,282.00 | 10%   |\n| L04    | SKU-V01-104 | Replacement bracket kit REV-1-4 |     6 | 144.00 | 2,599.00 | 10%   |\n| L05    | SKU-V01-105 | Replacement bracket kit REV-1-5 |     7 | 145.00 | 2,916.00 | 10%   |\n| L06    | SKU-V01-106 | Replacement bracket kit REV-1-6 |     8 | 146.00 | 3,233.00 | 10%   |\n| L07    | SKU-V01-107 | Replacement bracket kit REV-1-7 |     9 | 147.00 | 3,550.00 | 10%   |\n| L08    | SKU-V01-108 | Replacement bracket kit REV-1-8 |    10 | 148.00 | 3,867.00 | 10%   |\n\nGrand total: JPY 22,060.00\n\nPDF validation suite for routed PDF extraction.\n\nV01-FOOTER-P01",
+    "raw_vlm_markdown": "V01 | Invoice and purchase order\n\nPage 1 of 2\n\n# Invoice INV-2026-05-001\n\nCustomer PO: PO-VAL-001-ALPHA\n\nShip to: Sakura Components, 3-12-7 Nihonbashi, Tokyo\n\nPayment terms: Net 30\n\nBank ref: BREF-7791-4420\n\n| Line   | SKU         | Description                     |   Qty |   Unit |   Amount | Tax   |\n|--------|-------------|---------------------------------|-------|--------|----------|-------|\n| L01    | SKU-V01-101 | Replacement bracket kit REV-1-1 |     3 | 141.00 | 1,648.00 | 10%   |\n| L02    | SKU-V01-102 | Replacement bracket kit REV-1-2 |     4 | 142.00 | 1,965.00 | 10%   |\n| L03    | SKU-V01-103 | Replacement bracket kit REV-1-3 |     5 | 143.00 | 2,282.00 | 10%   |\n| L04    | SKU-V01-104 | Replacement bracket kit REV-1-4 |     6 | 144.00 | 2,599.00 | 10%   |\n| L05    | SKU-V01-105 | Replacement bracket kit REV-1-5 |     7 | 145.00 | 2,916.00 | 10%   |\n| L06    | SKU-V01-106 | Replacement bracket kit REV-1-6 |     8 | 146.00 | 3,233.00 | 10%   |\n| L07    | SKU-V01-107 | Replacement bracket kit REV-1-7 |     9 | 147.00 | 3,550.00 | 10%   |\n| L08    | SKU-V01-108 | Replacement bracket kit REV-1-8 |    10 | 148.00 | 3,867.00 | 10%   |\n\nGrand total: JPY 22,060.00\n\nPDF validation suite for routed PDF extraction.\n\nV01-FOOTER-P01",
+    "tables": [
+      {
+        "index": 1,
+        "rows": 8,
+        "columns": 7,
+        "headers": [
+          "Line",
+          "SKU",
+          "Description",
+          "Qty",
+          "Unit",
+          "Amount",
+          "Tax"
+        ],
+        "csv": "Line,SKU,Description,Qty,Unit,Amount,Tax\r\nL01,SKU-V01-101,Replacement bracket kit REV-1-1,3,141.00,\"1,648.00\",10%\r\nL02,SKU-V01-102,Replacement bracket kit REV-1-2,4,142.00,\"1,965.00\",10%\r\nL03,SKU-V01-103,Replacement bracket kit REV-1-3,5,143.00,\"2,282.00\",10%\r\nL04,SKU-V01-104,Replacement bracket kit REV-1-4,6,144.00,\"2,599.00\",10%\r\nL05,SKU-V01-105,Replacement bracket kit REV-1-5,7,145.00,\"2,916.00\",10%\r\nL06,SKU-V01-106,Replacement bracket kit REV-1-6,8,146.00,\"3,233.00\",10%\r\nL07,SKU-V01-107,Replacement bracket kit REV-1-7,9,147.00,\"3,550.00\",10%\r\nL08,SKU-V01-108,Replacement bracket kit REV-1-8,10,148.00,\"3,867.00\",10%\r\n",
+        "html": "<table><tbody><tr><th>Line</th><th>SKU</th><th>Description</th><th>Qty</th><th>Unit</th><th>Amount</th><th>Tax</th></tr><tr><td>L01</td><td>SKU-V01-101</td><td>Replacement bracket kit REV-1-1</td><td>3</td><td>141.00</td><td>1,648.00</td><td>10%</td></tr><tr><td>L02</td><td>SKU-V01-102</td><td>Replacement bracket kit REV-1-2</td><td>4</td><td>142.00</td><td>1,965.00</td><td>10%</td></tr><tr><td>L03</td><td>SKU-V01-103</td><td>Replacement bracket kit REV-1-3</td><td>5</td><td>143.00</td><td>2,282.00</td><td>10%</td></tr><tr><td>L04</td><td>SKU-V01-104</td><td>Replacement bracket kit REV-1-4</td><td>6</td><td>144.00</td><td>2,599.00</td><td>10%</td></tr><tr><td>L05</td><td>SKU-V01-105</td><td>Replacement bracket kit REV-1-5</td><td>7</td><td>145.00</td><td>2,916.00</td><td>10%</td></tr><tr><td>L06</td><td>SKU-V01-106</td><td>Replacement bracket kit REV-1-6</td><td>8</td><td>146.00</td><td>3,233.00</td><td>10%</td></tr><tr><td>L07</td><td>SKU-V01-107</td><td>Replacement bracket kit REV-1-7</td><td>9</td><td>147.00</td><td>3,550.00</td><td>10%</td></tr><tr><td>L08</td><td>SKU-V01-108</td><td>Replacement bracket kit REV-1-8</td><td>10</td><td>148.00</td><td>3,867.00</td><td>10%</td></tr></tbody></table>",
+        "page": 1,
+        "repair": {
+          "enabled": false
+        }
+      }
+    ],
+    "elapsed_seconds": 16.869,
+    "candidate_timings_seconds": {
+      "vlm_primary": 3.956,
+      "vlm_secondary": 3.889,
+      "reconcile_table_fallback:gpt-5.4": 6.835,
+      "coordinate_vlm_fallback:gpt-5.4": 6.052
+    },
+    "diagnostics": {
+      "compare_mode": "vlm_vlm",
+      "parallel_reconcile_candidates": true,
+      "reconcile_table_fallback": {
+        "attempted": true,
+        "accepted": false,
+        "reason": "fallback_not_better",
+        "model": "gpt-5.4",
+        "triggers": [
+          "MASKED_AS_UNKNOWN",
+          "VALUE_VALIDATION_FAILED",
+          "unknown_token"
+        ],
+        "metrics": {
+          "current": {
+            "chars": 1472,
+            "table_count": 1,
+            "numeric_cell_count": 32,
+            "unknown_token_count": 1,
+            "max_table_columns": 7,
+            "table_column_counts": [
+              7
+            ]
+          },
+          "fallback": {
+            "chars": 1290,
+            "table_count": 1,
+            "numeric_cell_count": 32,
+            "unknown_token_count": 1,
+            "max_table_columns": 7,
+            "table_column_counts": [
+              7
+            ]
+          },
+          "triggers": [
+            "MASKED_AS_UNKNOWN",
+            "VALUE_VALIDATION_FAILED",
+            "unknown_token"
+          ]
+        },
+        "usage_events": []
+      },
+      "coordinate_vlm_quality": {
+        "enabled": true,
+        "applicable": true,
+        "source": "vlm_vlm_safe_output",
+        "initial_report": {
+          "needs_fallback": true,
+          "quality_score": 11.0,
+          "coordinate_evidence_strength": "medium",
+          "coordinate_numeric_evidence_weak": false,
+          "coordinate_absence_is_evidence": true,
+          "coordinate_presence_is_evidence": true,
+          "vlm_only_values": {},
+          "coordinate_only_values": {
+            "date": [
+              "2026-05-00"
+            ],
+            "id": [
+              "INV-2026-05-001"
+            ]
+          },
+          "unsupported_value_count": 0,
+          "missing_value_count": 2,
+          "actionable_unsupported_value_count": 0,
+          "actionable_missing_value_count": 2,
+          "actionable_structure_mismatch_count": 1,
+          "structure_mismatches": [
+            "column_count_mismatch"
+          ],
+          "coordinate_metrics": {
+            "chars": 4657,
+            "table_count": 1,
+            "numeric_cell_count": 33,
+            "unknown_token_count": 0,
+            "max_table_columns": 24,
+            "table_column_counts": [
+              24
+            ]
+          },
+          "vlm_metrics": {
+            "chars": 1472,
+            "table_count": 1,
+            "numeric_cell_count": 32,
+            "unknown_token_count": 1,
+            "max_table_columns": 7,
+            "table_column_counts": [
+              7
+            ]
+          },
+          "coordinate_quality": {
+            "ok": false,
+            "reasons": [
+              "low_span_coverage"
+            ],
+            "rows": 15,
+            "columns": 23,
+            "span_count": 129,
+            "span_coverage": 0.9767,
+            "spans_per_row": 8.6,
+            "span_per_row_limit": 69.0,
+            "max_cell_chars": 16,
+            "max_to_median_cell_char_ratio": 2.6667,
+            "max_long_text_row_ratio": 0.0
+          },
+          "coordinate_diagnostics_summary": {
+            "status": "ok",
+            "rows": 15,
+            "columns": 23,
+            "span_count": 129,
+            "span_coverage": 0.9767,
+            "table_area_ratio": 0.8036
+          }
+        },
+        "fallback": {
+          "attempted": true,
+          "accepted": true,
+          "reason": "coordinate_vlm_quality_score_improved",
+          "model": "gpt-5.4",
+          "elapsed_seconds": 6.052,
+          "report": {
+            "needs_fallback": true,
+            "quality_score": 7.0,
+            "coordinate_evidence_strength": "medium",
+            "coordinate_numeric_evidence_weak": false,
+            "coordinate_absence_is_evidence": true,
+            "coordinate_presence_is_evidence": true,
+            "vlm_only_values": {
+              "id": [
+                "V01-APPROVAL-STAMP-P01"
+              ]
+            },
+            "coordinate_only_values": {},
+            "unsupported_value_count": 1,
+            "missing_value_count": 0,
+            "actionable_unsupported_value_count": 1,
+            "actionable_missing_value_count": 0,
+            "actionable_structure_mismatch_count": 1,
+            "structure_mismatches": [
+              "column_count_mismatch"
+            ],
+            "coordinate_metrics": {
+              "chars": 4657,
+              "table_count": 1,
+              "numeric_cell_count": 33,
+              "unknown_token_count": 0,
+              "max_table_columns": 24,
+              "table_column_counts": [
+                24
+              ]
+            },
+            "vlm_metrics": {
+              "chars": 1278,
+              "table_count": 1,
+              "numeric_cell_count": 32,
+              "unknown_token_count": 0,
+              "max_table_columns": 7,
+              "table_column_counts": [
+                7
+              ]
+            },
+            "coordinate_quality": {
+              "ok": false,
+              "reasons": [
+                "low_span_coverage"
+              ],
+              "rows": 15,
+              "columns": 23,
+              "span_count": 129,
+              "span_coverage": 0.9767,
+              "spans_per_row": 8.6,
+              "span_per_row_limit": 69.0,
+              "max_cell_chars": 16,
+              "max_to_median_cell_char_ratio": 2.6667,
+              "max_long_text_row_ratio": 0.0
+            },
+            "coordinate_diagnostics_summary": {
+              "status": "ok",
+              "rows": 15,
+              "columns": 23,
+              "span_count": 129,
+              "span_coverage": 0.9767,
+              "table_area_ratio": 0.8036
+            }
+          },
+          "auto_corrections": [],
+          "usage_events": []
+        },
+        "final_report": {
+          "needs_fallback": true,
+          "quality_score": 7.0,
+          "coordinate_evidence_strength": "medium",
+          "coordinate_numeric_evidence_weak": false,
+          "coordinate_absence_is_evidence": true,
+          "coordinate_presence_is_evidence": true,
+          "vlm_only_values": {},
+          "coordinate_only_values": {},
+          "unsupported_value_count": 0,
+          "missing_value_count": 0,
+          "actionable_unsupported_value_count": 0,
+          "actionable_missing_value_count": 0,
+          "actionable_structure_mismatch_count": 1,
+          "structure_mismatches": [
+            "column_count_mismatch"
+          ],
+          "coordinate_metrics": {
+            "chars": 4657,
+            "table_count": 1,
+            "numeric_cell_count": 33,
+            "unknown_token_count": 0,
+            "max_table_columns": 24,
+            "table_column_counts": [
+              24
+            ]
+          },
+          "vlm_metrics": {
+            "chars": 1266,
+            "table_count": 1,
+            "numeric_cell_count": 32,
+            "unknown_token_count": 1,
+            "max_table_columns": 7,
+            "table_column_counts": [
+              7
+            ]
+          },
+          "coordinate_quality": {
+            "ok": false,
+            "reasons": [
+              "low_span_coverage"
+            ],
+            "rows": 15,
+            "columns": 23,
+            "span_count": 129,
+            "span_coverage": 0.9767,
+            "spans_per_row": 8.6,
+            "span_per_row_limit": 69.0,
+            "max_cell_chars": 16,
+            "max_to_median_cell_char_ratio": 2.6667,
+            "max_long_text_row_ratio": 0.0
+          },
+          "coordinate_diagnostics_summary": {
+            "status": "ok",
+            "rows": 15,
+            "columns": 23,
+            "span_count": 129,
+            "span_coverage": 0.9767,
+            "table_area_ratio": 0.8036
+          }
+        }
+      },
+      "input_pages": {
+        "pdf": "source_pdf",
+        "start_page": 1,
+        "end_page": 1
+      }
+    }
+  },
+  {
+    "mode": "IMAGE_RECONCILE",
+    "start_page": 2,
+    "end_page": 2,
+    "markdown": "V01 | Invoice and purchase order\n\nPage 2 of 2\n\n# Invoice INV-2026-05-002\n\nCustomer PO: PO-VAL-002-ALPHA\n\nShip to: Sakura Components, 3-12-7 Nihonbashi, Tokyo\n\nPayment terms: Net 30\n\nBank ref: BREF-7791-4420\n\n| Line   | SKU         | Description                     |   Qty |   Unit |   Amount | Tax   |\n|--------|-------------|---------------------------------|-------|--------|----------|-------|\n| L01    | SKU-V01-201 | Replacement bracket kit REV-2-1 |     3 | 141.00 | 1,689.00 | 10%   |\n| L02    | SKU-V01-202 | Replacement bracket kit REV-2-2 |     4 | 142.00 | 2,006.00 | 10%   |\n| L03    | SKU-V01-203 | Replacement bracket kit REV-2-3 |     5 | 143.00 | 2,323.00 | 10%   |\n| L04    | SKU-V01-204 | Replacement bracket kit REV-2-4 |     6 | 144.00 | 2,640.00 | 10%   |\n| L05    | SKU-V01-205 | Replacement bracket kit REV-2-5 |     7 | 145.00 | 2,957.00 | 10%   |\n| L06    | SKU-V01-206 | Replacement bracket kit REV-2-6 |     8 | 146.00 | 3,274.00 | 10%   |\n| L07    | SKU-V01-207 | Replacement bracket kit REV-2-7 |     9 | 147.00 | 3,591.00 | 10%   |\n| L08    | SKU-V01-208 | Replacement bracket kit REV-2-8 |    10 | 148.00 | 3,908.00 | 10%   |\n\nGrand total: JPY 22,388.00\n\nV01-APPROVAL-STAMP-P02\n\nPDF validation suite for routed PDF extraction.\n\nV01-FOOTER-P02",
+    "safe_markdown": "V01 | Invoice and purchase order\n\nPage 2 of 2\n\n# Invoice INV-2026-05-002\n\nCustomer PO: PO-VAL-002-ALPHA\n\nShip to: Sakura Components, 3-12-7 Nihonbashi, Tokyo\n\nPayment terms: Net 30\n\nBank ref: BREF-7791-4420\n\n| Line   | SKU         | Description                     |   Qty |   Unit |   Amount | Tax   |\n|--------|-------------|---------------------------------|-------|--------|----------|-------|\n| L01    | SKU-V01-201 | Replacement bracket kit REV-2-1 |     3 | 141.00 | 1,689.00 | 10%   |\n| L02    | SKU-V01-202 | Replacement bracket kit REV-2-2 |     4 | 142.00 | 2,006.00 | 10%   |\n| L03    | SKU-V01-203 | Replacement bracket kit REV-2-3 |     5 | 143.00 | 2,323.00 | 10%   |\n| L04    | SKU-V01-204 | Replacement bracket kit REV-2-4 |     6 | 144.00 | 2,640.00 | 10%   |\n| L05    | SKU-V01-205 | Replacement bracket kit REV-2-5 |     7 | 145.00 | 2,957.00 | 10%   |\n| L06    | SKU-V01-206 | Replacement bracket kit REV-2-6 |     8 | 146.00 | 3,274.00 | 10%   |\n| L07    | SKU-V01-207 | Replacement bracket kit REV-2-7 |     9 | 147.00 | 3,591.00 | 10%   |\n| L08    | SKU-V01-208 | Replacement bracket kit REV-2-8 |    10 | 148.00 | 3,908.00 | 10%   |\n\nGrand total: JPY 22,388.00\n\n[[読み取り不明]]\n\nPDF validation suite for routed PDF extraction.\n\nV01-FOOTER-P02",
+    "raw_ocr_markdown": "V01 | Invoice and purchase order\n\nPage 2 of 2\n\n# Invoice INV-2026-05-002\n\nCustomer PO: PO-VAL-002-ALPHA\n\nShip to: Sakura Components, 3-12-7 Nihonbashi, Tokyo\n\nPayment terms: Net 30\n\nBank ref: BREF-7791-4420\n\n| Line   | SKU         | Description                     |   Qty |   Unit |   Amount | Tax   |\n|--------|-------------|---------------------------------|-------|--------|----------|-------|\n| L01    | SKU-V01-201 | Replacement bracket kit REV-2-1 |     3 | 141.00 | 1,689.00 | 10%   |\n| L02    | SKU-V01-202 | Replacement bracket kit REV-2-2 |     4 | 142.00 | 2,006.00 | 10%   |\n| L03    | SKU-V01-203 | Replacement bracket kit REV-2-3 |     5 | 143.00 | 2,323.00 | 10%   |\n| L04    | SKU-V01-204 | Replacement bracket kit REV-2-4 |     6 | 144.00 | 2,640.00 | 10%   |\n| L05    | SKU-V01-205 | Replacement bracket kit REV-2-5 |     7 | 145.00 | 2,957.00 | 10%   |\n| L06    | SKU-V01-206 | Replacement bracket kit REV-2-6 |     8 | 146.00 | 3,274.00 | 10%   |\n| L07    | SKU-V01-207 | Replacement bracket kit REV-2-7 |     9 | 147.00 | 3,591.00 | 10%   |\n| L08    | SKU-V01-208 | Replacement bracket kit REV-2-8 |    10 | 148.00 | 3,908.00 | 10%   |\n\nGrand total: JPY 22,388.00\n\nV01-APPROVAL-STAMP-P02\n\nPDF validation suite for routed PDF extraction.\n\nV01-FOOTER-P02",
+    "raw_vlm_markdown": "V01 | Invoice and purchase order\n\nPage 2 of 2\n\n# Invoice INV-2026-05-002\n\nCustomer PO: PO-VAL-002-ALPHA\n\nShip to: Sakura Components, 3-12-7 Nihonbashi, Tokyo\n\nPayment terms: Net 30\n\nBank ref: BREF-7791-4420\n\n| Line   | SKU         | Description                     |   Qty |   Unit |   Amount | Tax   |\n|--------|-------------|---------------------------------|-------|--------|----------|-------|\n| L01    | SKU-V01-201 | Replacement bracket kit REV-2-1 |     3 | 141.00 | 1,689.00 | 10%   |\n| L02    | SKU-V01-202 | Replacement bracket kit REV-2-2 |     4 | 142.00 | 2,006.00 | 10%   |\n| L03    | SKU-V01-203 | Replacement bracket kit REV-2-3 |     5 | 143.00 | 2,323.00 | 10%   |\n| L04    | SKU-V01-204 | Replacement bracket kit REV-2-4 |     6 | 144.00 | 2,640.00 | 10%   |\n| L05    | SKU-V01-205 | Replacement bracket kit REV-2-5 |     7 | 145.00 | 2,957.00 | 10%   |\n| L06    | SKU-V01-206 | Replacement bracket kit REV-2-6 |     8 | 146.00 | 3,274.00 | 10%   |\n| L07    | SKU-V01-207 | Replacement bracket kit REV-2-7 |     9 | 147.00 | 3,591.00 | 10%   |\n| L08    | SKU-V01-208 | Replacement bracket kit REV-2-8 |    10 | 148.00 | 3,908.00 | 10%   |\n\nGrand total: JPY 22,388.00\n\nPDF validation suite for routed PDF extraction.\n\nV01-FOOTER-P02",
+    "tables": [
+      {
+        "index": 1,
+        "rows": 8,
+        "columns": 7,
+        "headers": [
+          "Line",
+          "SKU",
+          "Description",
+          "Qty",
+          "Unit",
+          "Amount",
+          "Tax"
+        ],
+        "csv": "Line,SKU,Description,Qty,Unit,Amount,Tax\r\nL01,SKU-V01-201,Replacement bracket kit REV-2-1,3,141.00,\"1,689.00\",10%\r\nL02,SKU-V01-202,Replacement bracket kit REV-2-2,4,142.00,\"2,006.00\",10%\r\nL03,SKU-V01-203,Replacement bracket kit REV-2-3,5,143.00,\"2,323.00\",10%\r\nL04,SKU-V01-204,Replacement bracket kit REV-2-4,6,144.00,\"2,640.00\",10%\r\nL05,SKU-V01-205,Replacement bracket kit REV-2-5,7,145.00,\"2,957.00\",10%\r\nL06,SKU-V01-206,Replacement bracket kit REV-2-6,8,146.00,\"3,274.00\",10%\r\nL07,SKU-V01-207,Replacement bracket kit REV-2-7,9,147.00,\"3,591.00\",10%\r\nL08,SKU-V01-208,Replacement bracket kit REV-2-8,10,148.00,\"3,908.00\",10%\r\n",
+        "html": "<table><tbody><tr><th>Line</th><th>SKU</th><th>Description</th><th>Qty</th><th>Unit</th><th>Amount</th><th>Tax</th></tr><tr><td>L01</td><td>SKU-V01-201</td><td>Replacement bracket kit REV-2-1</td><td>3</td><td>141.00</td><td>1,689.00</td><td>10%</td></tr><tr><td>L02</td><td>SKU-V01-202</td><td>Replacement bracket kit REV-2-2</td><td>4</td><td>142.00</td><td>2,006.00</td><td>10%</td></tr><tr><td>L03</td><td>SKU-V01-203</td><td>Replacement bracket kit REV-2-3</td><td>5</td><td>143.00</td><td>2,323.00</td><td>10%</td></tr><tr><td>L04</td><td>SKU-V01-204</td><td>Replacement bracket kit REV-2-4</td><td>6</td><td>144.00</td><td>2,640.00</td><td>10%</td></tr><tr><td>L05</td><td>SKU-V01-205</td><td>Replacement bracket kit REV-2-5</td><td>7</td><td>145.00</td><td>2,957.00</td><td>10%</td></tr><tr><td>L06</td><td>SKU-V01-206</td><td>Replacement bracket kit REV-2-6</td><td>8</td><td>146.00</td><td>3,274.00</td><td>10%</td></tr><tr><td>L07</td><td>SKU-V01-207</td><td>Replacement bracket kit REV-2-7</td><td>9</td><td>147.00</td><td>3,591.00</td><td>10%</td></tr><tr><td>L08</td><td>SKU-V01-208</td><td>Replacement bracket kit REV-2-8</td><td>10</td><td>148.00</td><td>3,908.00</td><td>10%</td></tr></tbody></table>",
+        "page": 1,
+        "repair": {
+          "enabled": false
+        }
+      }
+    ],
+    "elapsed_seconds": 10.447,
+    "candidate_timings_seconds": {
+      "vlm_primary": 4.023,
+      "vlm_secondary": 4.019,
+      "reconcile_table_fallback:gpt-5.4": 6.407
+    },
+    "diagnostics": {
+      "compare_mode": "vlm_vlm",
+      "parallel_reconcile_candidates": true,
+      "reconcile_table_fallback": {
+        "attempted": true,
+        "accepted": true,
+        "reason": "unknown_count_reduced",
+        "model": "gpt-5.4",
+        "triggers": [
+          "MASKED_AS_UNKNOWN",
+          "VALUE_VALIDATION_FAILED",
+          "unknown_token"
+        ],
+        "metrics": {
+          "current": {
+            "chars": 1262,
+            "table_count": 1,
+            "numeric_cell_count": 32,
+            "unknown_token_count": 2,
+            "max_table_columns": 7,
+            "table_column_counts": [
+              7
+            ]
+          },
+          "fallback": {
+            "chars": 1274,
+            "table_count": 1,
+            "numeric_cell_count": 32,
+            "unknown_token_count": 0,
+            "max_table_columns": 7,
+            "table_column_counts": [
+              7
+            ]
+          },
+          "triggers": [
+            "MASKED_AS_UNKNOWN",
+            "VALUE_VALIDATION_FAILED",
+            "unknown_token"
+          ]
+        },
+        "usage_events": []
+      },
+      "coordinate_vlm_quality": {
+        "enabled": true,
+        "applicable": true,
+        "source": "vlm_vlm_safe_output",
+        "initial_report": {
+          "needs_fallback": true,
+          "quality_score": 7.0,
+          "coordinate_evidence_strength": "medium",
+          "coordinate_numeric_evidence_weak": false,
+          "coordinate_absence_is_evidence": true,
+          "coordinate_presence_is_evidence": true,
+          "vlm_only_values": {
+            "id": [
+              "V01-APPROVAL-STAMP-P02"
+            ]
+          },
+          "coordinate_only_values": {},
+          "unsupported_value_count": 1,
+          "missing_value_count": 0,
+          "actionable_unsupported_value_count": 1,
+          "actionable_missing_value_count": 0,
+          "actionable_structure_mismatch_count": 1,
+          "structure_mismatches": [
+            "column_count_mismatch"
+          ],
+          "coordinate_metrics": {
+            "chars": 4657,
+            "table_count": 1,
+            "numeric_cell_count": 33,
+            "unknown_token_count": 0,
+            "max_table_columns": 24,
+            "table_column_counts": [
+              24
+            ]
+          },
+          "vlm_metrics": {
+            "chars": 1274,
+            "table_count": 1,
+            "numeric_cell_count": 32,
+            "unknown_token_count": 0,
+            "max_table_columns": 7,
+            "table_column_counts": [
+              7
+            ]
+          },
+          "coordinate_quality": {
+            "ok": false,
+            "reasons": [
+              "low_span_coverage"
+            ],
+            "rows": 15,
+            "columns": 23,
+            "span_count": 129,
+            "span_coverage": 0.9767,
+            "spans_per_row": 8.6,
+            "span_per_row_limit": 69.0,
+            "max_cell_chars": 16,
+            "max_to_median_cell_char_ratio": 2.6667,
+            "max_long_text_row_ratio": 0.0
+          },
+          "coordinate_diagnostics_summary": {
+            "status": "ok",
+            "rows": 15,
+            "columns": 23,
+            "span_count": 129,
+            "span_coverage": 0.9767,
+            "table_area_ratio": 0.8036
+          }
+        },
+        "fallback": {
+          "attempted": false,
+          "enabled": false,
+          "reason": "no_coordinate_vlm_fallback_trigger"
+        },
+        "final_report": {
+          "needs_fallback": true,
+          "quality_score": 7.0,
+          "coordinate_evidence_strength": "medium",
+          "coordinate_numeric_evidence_weak": false,
+          "coordinate_absence_is_evidence": true,
+          "coordinate_presence_is_evidence": true,
+          "vlm_only_values": {},
+          "coordinate_only_values": {},
+          "unsupported_value_count": 0,
+          "missing_value_count": 0,
+          "actionable_unsupported_value_count": 0,
+          "actionable_missing_value_count": 0,
+          "actionable_structure_mismatch_count": 1,
+          "structure_mismatches": [
+            "column_count_mismatch"
+          ],
+          "coordinate_metrics": {
+            "chars": 4657,
+            "table_count": 1,
+            "numeric_cell_count": 33,
+            "unknown_token_count": 0,
+            "max_table_columns": 24,
+            "table_column_counts": [
+              24
+            ]
+          },
+          "vlm_metrics": {
+            "chars": 1262,
+            "table_count": 1,
+            "numeric_cell_count": 32,
+            "unknown_token_count": 1,
+            "max_table_columns": 7,
+            "table_column_counts": [
+              7
+            ]
+          },
+          "coordinate_quality": {
+            "ok": false,
+            "reasons": [
+              "low_span_coverage"
+            ],
+            "rows": 15,
+            "columns": 23,
+            "span_count": 129,
+            "span_coverage": 0.9767,
+            "spans_per_row": 8.6,
+            "span_per_row_limit": 69.0,
+            "max_cell_chars": 16,
+            "max_to_median_cell_char_ratio": 2.6667,
+            "max_long_text_row_ratio": 0.0
+          },
+          "coordinate_diagnostics_summary": {
+            "status": "ok",
+            "rows": 15,
+            "columns": 23,
+            "span_count": 129,
+            "span_coverage": 0.9767,
+            "table_area_ratio": 0.8036
+          }
+        }
+      },
+      "input_pages": {
+        "pdf": "source_pdf",
+        "start_page": 2,
+        "end_page": 2
+      }
+    }
+  }
+]

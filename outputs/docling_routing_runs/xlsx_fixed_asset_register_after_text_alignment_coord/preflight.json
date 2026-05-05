@@ -1,0 +1,26 @@
+[
+  {
+    "page": 1,
+    "width": 1190.52,
+    "height": 841.92,
+    "text_chars": 30211,
+    "text_density": 0.030141,
+    "text_quality_score": 0.8,
+    "image_area_ratio": 0.0,
+    "line_count": 273,
+    "rect_count": 344,
+    "table_score": 1.0,
+    "complex_table_score": 1.0,
+    "image_read_risk_score": 0.27,
+    "mode": "TEXT_TABLE_ACCURATE",
+    "reasons": [
+      "good_text_layer",
+      "complex_table_signal"
+    ],
+    "elapsed_seconds": 0.3291,
+    "extra_actions": [],
+    "embedded_visual_region_count": 0,
+    "embedded_visual_regions": [],
+    "visual_reference_count": 0
+  }
+]

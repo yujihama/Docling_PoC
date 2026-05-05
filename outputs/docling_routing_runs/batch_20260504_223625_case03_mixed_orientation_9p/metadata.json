@@ -1,0 +1,200 @@
+{
+  "run_id": "batch_20260504_223625_case03_mixed_orientation_9p",
+  "pdf_path": "C:\\Users\\nyham\\work\\docling_poc\\outputs\\docling_benchmark\\pdfs\\case03_mixed_orientation_9p.pdf",
+  "filename": "case03_mixed_orientation_9p.pdf",
+  "created_at": "2026-05-04T22:36:50",
+  "page_count": 9,
+  "groups": [
+    {
+      "mode": "TEXT_TABLE_FAST",
+      "start_page": 1,
+      "end_page": 5,
+      "pages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "mode": "TEXT_TABLE_ACCURATE",
+      "start_page": 6,
+      "end_page": 6,
+      "pages": [
+        6
+      ]
+    },
+    {
+      "mode": "TEXT_TABLE_FAST",
+      "start_page": 7,
+      "end_page": 8,
+      "pages": [
+        7,
+        8
+      ]
+    },
+    {
+      "mode": "TEXT_TABLE_ACCURATE",
+      "start_page": 9,
+      "end_page": 9,
+      "pages": [
+        9
+      ]
+    }
+  ],
+  "options": {
+    "model": "gpt-5.2",
+    "reconcile_compare_mode": "ocr_vlm",
+    "secondary_model": "gpt-5.4-mini",
+    "max_completion_tokens": 12000,
+    "reasoning_effort": "none",
+    "timeout_seconds": 180.0,
+    "vlm_scale": 2.0,
+    "response_format": "markdown",
+    "prompt_variant": "strict_preserve",
+    "text_chars_threshold": 200,
+    "text_quality_threshold": 0.8,
+    "table_score_threshold": 0.4,
+    "complex_table_score_threshold": 0.6,
+    "image_area_threshold": 0.4,
+    "enable_embedded_visual_append": true,
+    "embedded_visual_min_area_ratio": 0.08,
+    "embedded_visual_min_width_ratio": 0.3,
+    "embedded_visual_min_height_ratio": 0.06,
+    "embedded_visual_text_overlap_threshold": 0.05,
+    "embedded_visual_complexity_threshold": 0.35,
+    "embedded_visual_force_area_ratio": 0.25,
+    "embedded_visual_crop_margin_points": 8.0,
+    "parallel_reconcile_candidates": true,
+    "max_parallel_table_groups": 2,
+    "use_coordinate_table_reconstruction": true,
+    "force_reconcile_pages": [],
+    "save_outputs": true
+  },
+  "comparison": {
+    "mode": "ocr_vlm",
+    "source_a_label": "ocr",
+    "source_b_label": "vlm:gpt-5.2",
+    "primary_model": "gpt-5.2",
+    "secondary_model": null
+  },
+  "preflight_seconds": 0.039,
+  "total_seconds": 7.517,
+  "seconds_per_page": 0.835,
+  "segment_timing_seconds_by_mode": {
+    "TEXT_TABLE_FAST": 12.497,
+    "TEXT_TABLE_ACCURATE": 0.057
+  },
+  "candidate_timing_seconds": {},
+  "page_timing_estimates": [
+    {
+      "page": 1,
+      "estimated_seconds": 1.495,
+      "segments": [
+        {
+          "mode": "TEXT_TABLE_FAST",
+          "estimated_seconds": 1.495,
+          "candidate_timings_seconds": {}
+        }
+      ]
+    },
+    {
+      "page": 2,
+      "estimated_seconds": 1.495,
+      "segments": [
+        {
+          "mode": "TEXT_TABLE_FAST",
+          "estimated_seconds": 1.495,
+          "candidate_timings_seconds": {}
+        }
+      ]
+    },
+    {
+      "page": 3,
+      "estimated_seconds": 1.495,
+      "segments": [
+        {
+          "mode": "TEXT_TABLE_FAST",
+          "estimated_seconds": 1.495,
+          "candidate_timings_seconds": {}
+        }
+      ]
+    },
+    {
+      "page": 4,
+      "estimated_seconds": 1.495,
+      "segments": [
+        {
+          "mode": "TEXT_TABLE_FAST",
+          "estimated_seconds": 1.495,
+          "candidate_timings_seconds": {}
+        }
+      ]
+    },
+    {
+      "page": 5,
+      "estimated_seconds": 1.495,
+      "segments": [
+        {
+          "mode": "TEXT_TABLE_FAST",
+          "estimated_seconds": 1.495,
+          "candidate_timings_seconds": {}
+        }
+      ]
+    },
+    {
+      "page": 6,
+      "estimated_seconds": 0.036,
+      "segments": [
+        {
+          "mode": "TEXT_TABLE_ACCURATE",
+          "estimated_seconds": 0.036,
+          "candidate_timings_seconds": {}
+        }
+      ]
+    },
+    {
+      "page": 7,
+      "estimated_seconds": 2.51,
+      "segments": [
+        {
+          "mode": "TEXT_TABLE_FAST",
+          "estimated_seconds": 2.51,
+          "candidate_timings_seconds": {}
+        }
+      ]
+    },
+    {
+      "page": 8,
+      "estimated_seconds": 2.51,
+      "segments": [
+        {
+          "mode": "TEXT_TABLE_FAST",
+          "estimated_seconds": 2.51,
+          "candidate_timings_seconds": {}
+        }
+      ]
+    },
+    {
+      "page": 9,
+      "estimated_seconds": 0.021,
+      "segments": [
+        {
+          "mode": "TEXT_TABLE_ACCURATE",
+          "estimated_seconds": 0.021,
+          "candidate_timings_seconds": {}
+        }
+      ]
+    }
+  ],
+  "mode_page_counts": {
+    "TEXT_TABLE_FAST": 7,
+    "TEXT_TABLE_ACCURATE": 2
+  },
+  "extra_action_counts": {},
+  "embedded_visual_page_count": 0,
+  "warning_counts": {},
+  "warning_level_counts": {},
+  "safe_mask_count": 0
+}

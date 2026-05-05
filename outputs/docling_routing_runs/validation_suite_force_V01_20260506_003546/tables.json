@@ -1,0 +1,48 @@
+[
+  {
+    "index": 1,
+    "rows": 8,
+    "columns": 7,
+    "headers": [
+      "Line",
+      "SKU",
+      "Description",
+      "Qty",
+      "Unit",
+      "Amount",
+      "Tax"
+    ],
+    "csv": "Line,SKU,Description,Qty,Unit,Amount,Tax\r\nL01,SKU-V01-101,Replacement bracket kit REV-1-1,3,141.00,\"1,648.00\",10%\r\nL02,SKU-V01-102,Replacement bracket kit REV-1-2,4,142.00,\"1,965.00\",10%\r\nL03,SKU-V01-103,Replacement bracket kit REV-1-3,5,143.00,\"2,282.00\",10%\r\nL04,SKU-V01-104,Replacement bracket kit REV-1-4,6,144.00,\"2,599.00\",10%\r\nL05,SKU-V01-105,Replacement bracket kit REV-1-5,7,145.00,\"2,916.00\",10%\r\nL06,SKU-V01-106,Replacement bracket kit REV-1-6,8,146.00,\"3,233.00\",10%\r\nL07,SKU-V01-107,Replacement bracket kit REV-1-7,9,147.00,\"3,550.00\",10%\r\nL08,SKU-V01-108,Replacement bracket kit REV-1-8,10,148.00,\"3,867.00\",10%\r\n",
+    "html": "<table><tbody><tr><th>Line</th><th>SKU</th><th>Description</th><th>Qty</th><th>Unit</th><th>Amount</th><th>Tax</th></tr><tr><td>L01</td><td>SKU-V01-101</td><td>Replacement bracket kit REV-1-1</td><td>3</td><td>141.00</td><td>1,648.00</td><td>10%</td></tr><tr><td>L02</td><td>SKU-V01-102</td><td>Replacement bracket kit REV-1-2</td><td>4</td><td>142.00</td><td>1,965.00</td><td>10%</td></tr><tr><td>L03</td><td>SKU-V01-103</td><td>Replacement bracket kit REV-1-3</td><td>5</td><td>143.00</td><td>2,282.00</td><td>10%</td></tr><tr><td>L04</td><td>SKU-V01-104</td><td>Replacement bracket kit REV-1-4</td><td>6</td><td>144.00</td><td>2,599.00</td><td>10%</td></tr><tr><td>L05</td><td>SKU-V01-105</td><td>Replacement bracket kit REV-1-5</td><td>7</td><td>145.00</td><td>2,916.00</td><td>10%</td></tr><tr><td>L06</td><td>SKU-V01-106</td><td>Replacement bracket kit REV-1-6</td><td>8</td><td>146.00</td><td>3,233.00</td><td>10%</td></tr><tr><td>L07</td><td>SKU-V01-107</td><td>Replacement bracket kit REV-1-7</td><td>9</td><td>147.00</td><td>3,550.00</td><td>10%</td></tr><tr><td>L08</td><td>SKU-V01-108</td><td>Replacement bracket kit REV-1-8</td><td>10</td><td>148.00</td><td>3,867.00</td><td>10%</td></tr></tbody></table>",
+    "page": 1,
+    "repair": {
+      "enabled": false
+    },
+    "source_start_page": 1,
+    "source_end_page": 1,
+    "mode": "IMAGE_RECONCILE"
+  },
+  {
+    "index": 2,
+    "rows": 8,
+    "columns": 7,
+    "headers": [
+      "Line",
+      "SKU",
+      "Description",
+      "Qty",
+      "Unit",
+      "Amount",
+      "Tax"
+    ],
+    "csv": "Line,SKU,Description,Qty,Unit,Amount,Tax\r\nL01,SKU-V01-201,Replacement bracket kit REV-2-1,3,141.00,\"1,689.00\",10%\r\nL02,SKU-V01-202,Replacement bracket kit REV-2-2,4,142.00,\"2,006.00\",10%\r\nL03,SKU-V01-203,Replacement bracket kit REV-2-3,5,143.00,\"2,323.00\",10%\r\nL04,SKU-V01-204,Replacement bracket kit REV-2-4,6,144.00,\"2,640.00\",10%\r\nL05,SKU-V01-205,Replacement bracket kit REV-2-5,7,145.00,\"2,957.00\",10%\r\nL06,SKU-V01-206,Replacement bracket kit REV-2-6,8,146.00,\"3,274.00\",10%\r\nL07,SKU-V01-207,Replacement bracket kit REV-2-7,9,147.00,\"3,591.00\",10%\r\nL08,SKU-V01-208,Replacement bracket kit REV-2-8,10,148.00,\"3,908.00\",10%\r\n",
+    "html": "<table><tbody><tr><th>Line</th><th>SKU</th><th>Description</th><th>Qty</th><th>Unit</th><th>Amount</th><th>Tax</th></tr><tr><td>L01</td><td>SKU-V01-201</td><td>Replacement bracket kit REV-2-1</td><td>3</td><td>141.00</td><td>1,689.00</td><td>10%</td></tr><tr><td>L02</td><td>SKU-V01-202</td><td>Replacement bracket kit REV-2-2</td><td>4</td><td>142.00</td><td>2,006.00</td><td>10%</td></tr><tr><td>L03</td><td>SKU-V01-203</td><td>Replacement bracket kit REV-2-3</td><td>5</td><td>143.00</td><td>2,323.00</td><td>10%</td></tr><tr><td>L04</td><td>SKU-V01-204</td><td>Replacement bracket kit REV-2-4</td><td>6</td><td>144.00</td><td>2,640.00</td><td>10%</td></tr><tr><td>L05</td><td>SKU-V01-205</td><td>Replacement bracket kit REV-2-5</td><td>7</td><td>145.00</td><td>2,957.00</td><td>10%</td></tr><tr><td>L06</td><td>SKU-V01-206</td><td>Replacement bracket kit REV-2-6</td><td>8</td><td>146.00</td><td>3,274.00</td><td>10%</td></tr><tr><td>L07</td><td>SKU-V01-207</td><td>Replacement bracket kit REV-2-7</td><td>9</td><td>147.00</td><td>3,591.00</td><td>10%</td></tr><tr><td>L08</td><td>SKU-V01-208</td><td>Replacement bracket kit REV-2-8</td><td>10</td><td>148.00</td><td>3,908.00</td><td>10%</td></tr></tbody></table>",
+    "page": 1,
+    "repair": {
+      "enabled": false
+    },
+    "source_start_page": 2,
+    "source_end_page": 2,
+    "mode": "IMAGE_RECONCILE"
+  }
+]

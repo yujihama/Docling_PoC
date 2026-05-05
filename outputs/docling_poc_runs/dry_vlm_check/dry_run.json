@@ -1,0 +1,198 @@
+{
+  "run_id": "dry_vlm_check",
+  "phase": "pilot",
+  "matrix": "vlm",
+  "cases": [
+    {
+      "case_id": "C01",
+      "filename": "case01_clean_financial_2p.pdf",
+      "pages": 2,
+      "tags": [
+        "clean",
+        "vector",
+        "short"
+      ]
+    },
+    {
+      "case_id": "C03",
+      "filename": "case03_mixed_orientation_9p.pdf",
+      "pages": 9,
+      "tags": [
+        "mixed-orientation",
+        "charts",
+        "sidebars"
+      ]
+    },
+    {
+      "case_id": "C05",
+      "filename": "case05_scanned_image_4p.pdf",
+      "pages": 4,
+      "tags": [
+        "scanned",
+        "image-only",
+        "ocr"
+      ]
+    },
+    {
+      "case_id": "C06",
+      "filename": "case6.pdf",
+      "pages": 3,
+      "tags": [
+        "real",
+        "japanese",
+        "financial-disclosure",
+        "tables"
+      ]
+    },
+    {
+      "case_id": "C09",
+      "filename": "case09_low_quality_skewed_scan_3p.pdf",
+      "pages": 3,
+      "tags": [
+        "scanned",
+        "low-quality",
+        "skewed",
+        "ocr"
+      ]
+    }
+  ],
+  "case_count": 5,
+  "case_pages": 21,
+  "standard_config_count": 0,
+  "vlm_config_count": 10,
+  "full_vlm_config_count": 144,
+  "estimated_vlm_requests_for_selected_phase": 210,
+  "estimated_vlm_requests_for_full": 7920,
+  "configs": [
+    {
+      "pipeline": "vlm",
+      "config_id": "vlm_gpt_5_5_markdown_s2_0_rnone_strict_preserve",
+      "settings": {
+        "model": "gpt-5.5",
+        "response_format": "markdown",
+        "scale": 2.0,
+        "reasoning_effort": "none",
+        "prompt_variant": "strict_preserve",
+        "max_completion_tokens": 12000,
+        "timeout_seconds": 180.0
+      }
+    },
+    {
+      "pipeline": "vlm",
+      "config_id": "vlm_gpt_5_4_markdown_s2_0_rnone_strict_preserve",
+      "settings": {
+        "model": "gpt-5.4",
+        "response_format": "markdown",
+        "scale": 2.0,
+        "reasoning_effort": "none",
+        "prompt_variant": "strict_preserve",
+        "max_completion_tokens": 12000,
+        "timeout_seconds": 180.0
+      }
+    },
+    {
+      "pipeline": "vlm",
+      "config_id": "vlm_gpt_5_4_mini_markdown_s2_0_rnone_strict_preserve",
+      "settings": {
+        "model": "gpt-5.4-mini",
+        "response_format": "markdown",
+        "scale": 2.0,
+        "reasoning_effort": "none",
+        "prompt_variant": "strict_preserve",
+        "max_completion_tokens": 12000,
+        "timeout_seconds": 180.0
+      }
+    },
+    {
+      "pipeline": "vlm",
+      "config_id": "vlm_gpt_5_2_markdown_s2_0_rnone_strict_preserve",
+      "settings": {
+        "model": "gpt-5.2",
+        "response_format": "markdown",
+        "scale": 2.0,
+        "reasoning_effort": "none",
+        "prompt_variant": "strict_preserve",
+        "max_completion_tokens": 12000,
+        "timeout_seconds": 180.0
+      }
+    },
+    {
+      "pipeline": "vlm",
+      "config_id": "vlm_gpt_5_4_mini_markdown_s1_0_rnone_strict_preserve",
+      "settings": {
+        "model": "gpt-5.4-mini",
+        "response_format": "markdown",
+        "scale": 1.0,
+        "reasoning_effort": "none",
+        "prompt_variant": "strict_preserve",
+        "max_completion_tokens": 12000,
+        "timeout_seconds": 180.0
+      }
+    },
+    {
+      "pipeline": "vlm",
+      "config_id": "vlm_gpt_5_4_mini_markdown_s2_0_rnone_table_first",
+      "settings": {
+        "model": "gpt-5.4-mini",
+        "response_format": "markdown",
+        "scale": 2.0,
+        "reasoning_effort": "none",
+        "prompt_variant": "table_first",
+        "max_completion_tokens": 12000,
+        "timeout_seconds": 180.0
+      }
+    },
+    {
+      "pipeline": "vlm",
+      "config_id": "vlm_gpt_5_4_mini_markdown_s2_0_rlow_strict_preserve",
+      "settings": {
+        "model": "gpt-5.4-mini",
+        "response_format": "markdown",
+        "scale": 2.0,
+        "reasoning_effort": "low",
+        "prompt_variant": "strict_preserve",
+        "max_completion_tokens": 12000,
+        "timeout_seconds": 180.0
+      }
+    },
+    {
+      "pipeline": "vlm",
+      "config_id": "vlm_gpt_5_4_mini_markdown_s2_0_rmedium_strict_preserve",
+      "settings": {
+        "model": "gpt-5.4-mini",
+        "response_format": "markdown",
+        "scale": 2.0,
+        "reasoning_effort": "medium",
+        "prompt_variant": "strict_preserve",
+        "max_completion_tokens": 12000,
+        "timeout_seconds": 180.0
+      }
+    },
+    {
+      "pipeline": "vlm",
+      "config_id": "vlm_gpt_5_4_mini_markdown_s2_5_rnone_strict_preserve",
+      "settings": {
+        "model": "gpt-5.4-mini",
+        "response_format": "markdown",
+        "scale": 2.5,
+        "reasoning_effort": "none",
+        "prompt_variant": "strict_preserve",
+        "max_completion_tokens": 12000,
+        "timeout_seconds": 180.0
+      }
+    },
+    {
+      "pipeline": "vlm",
+      "config_id": "vlm_gpt_5_4_mini_html_s2_0_rnone_strict_preserve",
+      "settings": {
+        "model": "gpt-5.4-mini",
+        "response_format": "html",
+        "scale": 2.0,
+        "reasoning_effort": "none",
+        "prompt_variant": "strict_preserve",
+        "max_completion_tokens": 12000,
+        "timeout_seconds": 180.0
+      }
+    }
+  ]
+}

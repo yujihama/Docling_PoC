@@ -1,0 +1,113 @@
+{
+  "run_id": "auto_table_case01_v2",
+  "pdf_path": "C:\\Users\\nyham\\work\\docling_poc\\outputs\\docling_benchmark\\pdfs\\case01_clean_financial_2p.pdf",
+  "filename": "case01_clean_financial_2p.pdf",
+  "created_at": "2026-05-05T11:23:52",
+  "page_count": 2,
+  "groups": [
+    {
+      "mode": "TEXT_TABLE_FAST",
+      "start_page": 1,
+      "end_page": 2,
+      "pages": [
+        1,
+        2
+      ]
+    }
+  ],
+  "options": {
+    "model": "gpt-5.4-mini",
+    "reconcile_compare_mode": "ocr_vlm",
+    "secondary_model": "gpt-5.4-mini",
+    "max_completion_tokens": 12000,
+    "reasoning_effort": "none",
+    "timeout_seconds": 180.0,
+    "vlm_scale": 2.0,
+    "response_format": "markdown",
+    "prompt_variant": "strict_preserve",
+    "text_chars_threshold": 200,
+    "text_quality_threshold": 0.8,
+    "table_score_threshold": 0.4,
+    "complex_table_score_threshold": 0.6,
+    "image_area_threshold": 0.4,
+    "enable_embedded_visual_append": true,
+    "embedded_visual_min_area_ratio": 0.08,
+    "embedded_visual_min_width_ratio": 0.3,
+    "embedded_visual_min_height_ratio": 0.06,
+    "embedded_visual_text_overlap_threshold": 0.05,
+    "embedded_visual_complexity_threshold": 0.35,
+    "embedded_visual_force_area_ratio": 0.25,
+    "embedded_visual_crop_margin_points": 8.0,
+    "parallel_reconcile_candidates": true,
+    "max_parallel_table_groups": 2,
+    "use_coordinate_table_reconstruction": true,
+    "enable_table_vlm_fallback": true,
+    "table_vlm_model": "gpt-5.4-mini",
+    "large_table_vlm_model": "gpt-5.4",
+    "table_vlm_prompt_variant": "table_first",
+    "table_vlm_reasoning_effort": "none",
+    "coordinate_min_span_coverage": 0.98,
+    "coordinate_max_cell_chars": 160,
+    "coordinate_max_cell_char_ratio": 8.0,
+    "table_vlm_large_min_columns": 12,
+    "table_vlm_large_min_area_ratio": 0.6,
+    "force_reconcile_pages": [],
+    "save_outputs": true
+  },
+  "comparison": {
+    "mode": "ocr_vlm",
+    "source_a_label": "ocr",
+    "source_b_label": "vlm:gpt-5.4-mini",
+    "primary_model": "gpt-5.4-mini",
+    "secondary_model": null
+  },
+  "preflight_seconds": 0.013,
+  "total_seconds": 12.214,
+  "seconds_per_page": 6.107,
+  "segment_timing_seconds_by_mode": {
+    "TEXT_TABLE_VLM": 9.975
+  },
+  "candidate_timing_seconds": {
+    "table_vlm:gpt-5.4-mini": 9.934
+  },
+  "page_timing_estimates": [
+    {
+      "page": 1,
+      "estimated_seconds": 5.066,
+      "segments": [
+        {
+          "mode": "TEXT_TABLE_VLM",
+          "estimated_seconds": 5.066,
+          "candidate_timings_seconds": {
+            "table_vlm:gpt-5.4-mini": 5.034
+          }
+        }
+      ]
+    },
+    {
+      "page": 2,
+      "estimated_seconds": 4.909,
+      "segments": [
+        {
+          "mode": "TEXT_TABLE_VLM",
+          "estimated_seconds": 4.909,
+          "candidate_timings_seconds": {
+            "table_vlm:gpt-5.4-mini": 4.9
+          }
+        }
+      ]
+    }
+  ],
+  "mode_page_counts": {
+    "TEXT_TABLE_FAST": 2
+  },
+  "extra_action_counts": {},
+  "embedded_visual_page_count": 0,
+  "warning_counts": {
+    "COORDINATE_TABLE_FALLBACK_TO_VLM": 2
+  },
+  "warning_level_counts": {
+    "info": 2
+  },
+  "safe_mask_count": 0
+}

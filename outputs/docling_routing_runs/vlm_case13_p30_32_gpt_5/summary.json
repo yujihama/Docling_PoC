@@ -1,0 +1,112 @@
+{
+  "pdf": "C:\\Users\\nyham\\work\\docling_poc\\outputs\\docling_benchmark\\pdfs\\case13.pdf",
+  "pages": "30-32",
+  "mode": "OPENAI_VLM_DIRECT",
+  "model": "gpt-5",
+  "response_format": "markdown",
+  "prompt_variant": "strict_preserve",
+  "scale": 2.0,
+  "elapsed_seconds": 67.818,
+  "markdown_chars": 10976,
+  "table_count": 7,
+  "tables": [
+    {
+      "index": 1,
+      "rows": 16,
+      "columns": 9,
+      "headers": [
+        "都道府県",
+        "面積（km²）",
+        "千分比（0/00）",
+        "都道府県",
+        "面積（km²）",
+        "千分比（0/00）",
+        "都道府県",
+        "面積（km²）",
+        "千分比（0/00）"
+      ]
+    },
+    {
+      "index": 2,
+      "rows": 25,
+      "columns": 6,
+      "headers": [
+        "都道府県",
+        "島の数 1)",
+        "2府県にまたがる島の数",
+        "都道府県",
+        "島の数 1)",
+        "2府県にまたがる島の数"
+      ]
+    },
+    {
+      "index": 3,
+      "rows": 17,
+      "columns": 6,
+      "headers": [
+        "島名",
+        "面積（km²）",
+        "所在 都道府県",
+        "島名",
+        "面積（km²）",
+        "所在 都道府県"
+      ]
+    },
+    {
+      "index": 4,
+      "rows": 2,
+      "columns": 9,
+      "headers": [
+        "区分",
+        "合計",
+        "農地",
+        "森林",
+        "原野等1)",
+        "水面・河川・水路",
+        "道路2)",
+        "宅地",
+        "その他"
+      ]
+    },
+    {
+      "index": 5,
+      "rows": 10,
+      "columns": 6,
+      "headers": [
+        "湖名",
+        "面積（km²）",
+        "所在 都道府県",
+        "湖名",
+        "面積（km²）",
+        "所在 都道府県"
+      ]
+    },
+    {
+      "index": 6,
+      "rows": 13,
+      "columns": 6,
+      "headers": [
+        "山名",
+        "標高（m）",
+        "所在都道府県",
+        "山名",
+        "標高（m）",
+        "所在都道府県"
+      ]
+    },
+    {
+      "index": 7,
+      "rows": 22,
+      "columns": 6,
+      "headers": [
+        "水系名",
+        "流域面積（km^2）",
+        "幹川流路延長（km）",
+        "水系名",
+        "流域面積（km^2）",
+        "幹川流路延長（km）"
+      ]
+    }
+  ],
+  "usage_events": []
+}

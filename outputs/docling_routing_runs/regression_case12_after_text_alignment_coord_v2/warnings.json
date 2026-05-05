@@ -1,0 +1,143 @@
+[
+  {
+    "page": 4,
+    "mode": "IMAGE_RECONCILE",
+    "level": "needs_retry",
+    "code": "VLM_TABLE_STRUCTURE_DISAGREEMENT",
+    "score": 0.86,
+    "message": "VLM candidates disagree on table structure.",
+    "suggested_action": "Use local table fallback or review the candidate with more complete columns.",
+    "evidence": {
+      "comparison_kind": "table_column_count_mismatch",
+      "primary_model": "gpt-5.4-mini",
+      "secondary_model": "gpt-5.4-mini",
+      "primary_numeric_cells": 120,
+      "secondary_numeric_cells": 120,
+      "chosen_source": "primary",
+      "shape_conflicts": [
+        {
+          "table_index": 0,
+          "comparison_kind": "table_column_count_mismatch",
+          "mismatched_aligned_row_count": 15,
+          "primary_extra_numeric_cells": 0,
+          "secondary_extra_numeric_cells": 0,
+          "examples": [
+            {
+              "primary_row_index": 3,
+              "secondary_row_index": 3,
+              "primary_columns": 12,
+              "secondary_columns": 11,
+              "alignment_score": 1.0
+            },
+            {
+              "primary_row_index": 4,
+              "secondary_row_index": 4,
+              "primary_columns": 12,
+              "secondary_columns": 11,
+              "alignment_score": 1.0
+            },
+            {
+              "primary_row_index": 5,
+              "secondary_row_index": 5,
+              "primary_columns": 12,
+              "secondary_columns": 11,
+              "alignment_score": 1.0
+            },
+            {
+              "primary_row_index": 6,
+              "secondary_row_index": 6,
+              "primary_columns": 12,
+              "secondary_columns": 11,
+              "alignment_score": 1.0
+            },
+            {
+              "primary_row_index": 7,
+              "secondary_row_index": 7,
+              "primary_columns": 12,
+              "secondary_columns": 11,
+              "alignment_score": 1.0
+            }
+          ]
+        }
+      ]
+    },
+    "target": null
+  },
+  {
+    "page": 5,
+    "mode": "IMAGE_RECONCILE_APPEND",
+    "level": "info",
+    "code": "EMBEDDED_VISUAL_REGION_CANDIDATE",
+    "score": 0.842,
+    "message": "テキストレイヤー付きページ内に、通常のテキスト抽出では拾えない可能性がある埋め込み画像領域を検知したため、OCR/VLM追加突合を実行しました。",
+    "suggested_action": "追加抽出結果と通常抽出結果を確認してください。不一致や読み取り不明がある場合は対象ページを絞るか解像度を上げて再投入してください。",
+    "evidence": {
+      "embedded_visual_region_count": 1,
+      "embedded_visual_regions": [
+        {
+          "region_index": 1,
+          "bbox": [
+            45.35,
+            330.9,
+            549.92,
+            731.2
+          ],
+          "area_ratio": 0.403,
+          "width_ratio": 0.8476,
+          "height_ratio": 0.4755,
+          "text_overlap_ratio": 0.0,
+          "visual_complexity_score": 0.842,
+          "caption_geometry_score": 1.0,
+          "nearest_caption": "表4:",
+          "page_visual_reference_count": 1,
+          "reasons": [
+            "visual_complexity",
+            "caption_geometry",
+            "large_visual_region",
+            "text_layer_visual_reference"
+          ]
+        }
+      ],
+      "visual_reference_count": 1
+    },
+    "target": null
+  },
+  {
+    "page": 6,
+    "mode": "IMAGE_RECONCILE_APPEND",
+    "level": "info",
+    "code": "EMBEDDED_VISUAL_REGION_CANDIDATE",
+    "score": 0.8341,
+    "message": "テキストレイヤー付きページ内に、通常のテキスト抽出では拾えない可能性がある埋め込み画像領域を検知したため、OCR/VLM追加突合を実行しました。",
+    "suggested_action": "追加抽出結果と通常抽出結果を確認してください。不一致や読み取り不明がある場合は対象ページを絞るか解像度を上げて再投入してください。",
+    "evidence": {
+      "embedded_visual_region_count": 1,
+      "embedded_visual_regions": [
+        {
+          "region_index": 1,
+          "bbox": [
+            76.97,
+            197.56,
+            518.31,
+            418.66
+          ],
+          "area_ratio": 0.1947,
+          "width_ratio": 0.7414,
+          "height_ratio": 0.2626,
+          "text_overlap_ratio": 0.0,
+          "visual_complexity_score": 0.8341,
+          "caption_geometry_score": 0.9725,
+          "nearest_caption": "表5+表6: テキスト表と画像表の混在ページ",
+          "page_visual_reference_count": 3,
+          "reasons": [
+            "visual_complexity",
+            "caption_geometry",
+            "text_layer_visual_reference"
+          ]
+        }
+      ],
+      "visual_reference_count": 3
+    },
+    "target": null
+  }
+]

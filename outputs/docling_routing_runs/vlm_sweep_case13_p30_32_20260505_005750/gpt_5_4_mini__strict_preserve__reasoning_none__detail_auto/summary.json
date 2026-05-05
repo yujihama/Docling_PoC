@@ -1,0 +1,130 @@
+{
+  "status": "ok",
+  "error": "",
+  "pdf": "C:\\Users\\nyham\\work\\docling_poc\\outputs\\docling_benchmark\\pdfs\\case13.pdf",
+  "pages": "30-32",
+  "mode": "OPENAI_VLM_SWEEP",
+  "model": "gpt-5.4-mini",
+  "response_format": "markdown",
+  "prompt_variant": "strict_preserve",
+  "reasoning_effort": "none",
+  "image_detail": "auto",
+  "scale": 2.0,
+  "elapsed_seconds": 33.256,
+  "markdown_chars": 11529,
+  "unknown_marker_count": 0,
+  "table_count": 7,
+  "zero_row_table_count": 0,
+  "one_row_table_count": 0,
+  "table_shapes": "17x9;25x6;18x8;2x9;10x8;11x6;22x6",
+  "adjustment_pool_mentions": 2,
+  "adjustment_pool_unknown": false,
+  "adjustment_pool_lines": [
+    "| 洞爺湖  | とうやこ   |      70.72 | 北海道      | 調整池  | ちょうせいち |            |          |",
+    "| 浜名湖  | はまなこ   |      64.91 | 静岡県      | 田沢湖  | たざわこ   |      25.80 | 秋田県      |"
+  ],
+  "usage_events": [],
+  "tables": [
+    {
+      "index": 1,
+      "rows": 17,
+      "columns": 9,
+      "headers": [
+        "都道府県",
+        "面積 (km²)",
+        "千分比 (0/00)",
+        "都道府県",
+        "面積 (km²)",
+        "千分比 (0/00)",
+        "都道府県",
+        "面積 (km²)",
+        "千分比 (0/00)"
+      ]
+    },
+    {
+      "index": 2,
+      "rows": 25,
+      "columns": 6,
+      "headers": [
+        "都道府県",
+        "島の数",
+        "2府県にまたがる島の数",
+        "都道府県",
+        "島の数",
+        "2府県にまたがる島の数"
+      ]
+    },
+    {
+      "index": 3,
+      "rows": 18,
+      "columns": 8,
+      "headers": [
+        "島名",
+        "",
+        "面積 (km²)",
+        "所在都道府県",
+        "島名",
+        "",
+        "面積 (km²)",
+        "所在都道府県"
+      ]
+    },
+    {
+      "index": 4,
+      "rows": 2,
+      "columns": 9,
+      "headers": [
+        "区分",
+        "合計",
+        "農地",
+        "森林",
+        "原野等 1)",
+        "水面・河川・水路",
+        "道路 2)",
+        "宅地",
+        "その他"
+      ]
+    },
+    {
+      "index": 5,
+      "rows": 10,
+      "columns": 8,
+      "headers": [
+        "湖名",
+        "",
+        "面積 (km²)",
+        "所在都道府県",
+        "湖名",
+        "",
+        "面積 (km²)",
+        "所在都道府県"
+      ]
+    },
+    {
+      "index": 6,
+      "rows": 11,
+      "columns": 6,
+      "headers": [
+        "山名",
+        "標高 (m)",
+        "所在 都道府県",
+        "山名",
+        "標高 (m)",
+        "所在 都道府県"
+      ]
+    },
+    {
+      "index": 7,
+      "rows": 22,
+      "columns": 6,
+      "headers": [
+        "水系名",
+        "流域 面積 (km²)",
+        "幹川流路 延長 (km)",
+        "水系名",
+        "流域 面積 (km²)",
+        "幹川流路 延長 (km)"
+      ]
+    }
+  ]
+}

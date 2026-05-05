@@ -1,0 +1,154 @@
+[
+  {
+    "index": 1,
+    "rows": 10,
+    "columns": 6,
+    "headers": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "csv": "0,1,2,3,4,5\r\nParent Group C10-P01-SPAN,Parent Group C10-P01-SPAN,Parent Group C10-P01-SPAN,Parent Group C10-P01-SPAN,Parent Group C10-P01-SPAN,Parent Group C10-P01-SPAN\r\nGroup,Nested ID,SKU,Quantity,Amount,Comment\r\nC10-P01-T1-R01,SKU-01101-165,QTY-395,AMT-2275.94,AMO-01-01-05,COM-01-01-06\r\nC10-P01-T1-R02,SKU-01102-222,QTY-180,AMT-9717.59,AMO-01-02-05,COM-01-02-06\r\nC10-P01-T1-R03,SKU-01103-383,QTY-499,AMT-7830.94,AMO-01-03-05,COM-01-03-06\r\nC10-P01-T1-R04,SKU-01104-971,QTY-934,AMT-9039.97,AMO-01-04-05,COM-01-04-06 WRAP-C10-01-04\r\nC10-P01-T1-R05,SKU-01105-212,QTY-97,AMT-1797.12,AMO-01-05-05,COM-01-05-06\r\nC10-P01-T1-R06,SKU-01106-307,QTY-844,AMT-8905.54,AMO-01-06-05,COM-01-06-06\r\nC10-P01-T1-R07,SKU-01107-597,QTY-56,AMT-8293.81,AMO-01-07-05,COM-01-07-06\r\nC10-P01-T1-R08,SKU-01108-358,QTY-300,AMT-3096.80,AMO-01-08-05,COM-01-08-06 WRAP-C10-01-08\r\n",
+    "html": "<table><tbody><tr><td colspan=\"6\">Parent Group C10-P01-SPAN</td></tr><tr><th>Group</th><th>Nested ID</th><th>SKU</th><th>Quantity</th><th>Amount</th><th>Comment</th></tr><tr><th>C10-P01-T1-R01</th><th>SKU-01101-165</th><th>QTY-395</th><th>AMT-2275.94</th><th>AMO-01-01-05</th><th>COM-01-01-06</th></tr><tr><th>C10-P01-T1-R02</th><th>SKU-01102-222</th><th>QTY-180</th><th>AMT-9717.59</th><th>AMO-01-02-05</th><th>COM-01-02-06</th></tr><tr><th>C10-P01-T1-R03</th><th>SKU-01103-383</th><th>QTY-499</th><th>AMT-7830.94</th><th>AMO-01-03-05</th><th>COM-01-03-06</th></tr><tr><th>C10-P01-T1-R04</th><th>SKU-01104-971</th><th>QTY-934</th><th>AMT-9039.97</th><th>AMO-01-04-05</th><th>COM-01-04-06 WRAP-C10-01-04</th></tr><tr><th>C10-P01-T1-R05</th><th>SKU-01105-212</th><th>QTY-97</th><th>AMT-1797.12</th><th>AMO-01-05-05</th><th>COM-01-05-06</th></tr><tr><th>C10-P01-T1-R06</th><th>SKU-01106-307</th><th>QTY-844</th><th>AMT-8905.54</th><th>AMO-01-06-05</th><th>COM-01-06-06</th></tr><tr><th>C10-P01-T1-R07</th><th>SKU-01107-597</th><th>QTY-56</th><th>AMT-8293.81</th><th>AMO-01-07-05</th><th>COM-01-07-06</th></tr><tr><th>C10-P01-T1-R08</th><th>SKU-01108-358</th><th>QTY-300</th><th>AMT-3096.80</th><th>AMO-01-08-05</th><th>COM-01-08-06 WRAP-C10-01-08</th></tr></tbody></table>",
+    "page": 1,
+    "repair": {},
+    "source_start_page": 1,
+    "source_end_page": 4,
+    "mode": "TEXT_TABLE_FAST"
+  },
+  {
+    "index": 2,
+    "rows": 4,
+    "columns": 4,
+    "headers": [
+      "Sub ID",
+      "SKU",
+      "Quantity",
+      "Amount"
+    ],
+    "csv": "Sub ID,SKU,Quantity,Amount\r\nC10-P01-T2-R01,SKU-01201-520,QTY-872,AMT-4337.71\r\nC10-P01-T2-R02,SKU-01202-976,QTY-339,AMT-1837.91\r\nC10-P01-T2-R03,SKU-01203-596,QTY-414,AMT-9404.96\r\nC10-P01-T2-R04,SKU-01204-318,QTY-599,AMT-4859.41\r\n",
+    "html": "<table><tbody><tr><th>Sub ID</th><th>SKU</th><th>Quantity</th><th>Amount</th></tr><tr><td>C10-P01-T2-R01</td><td>SKU-01201-520</td><td>QTY-872</td><td>AMT-4337.71</td></tr><tr><td>C10-P01-T2-R02</td><td>SKU-01202-976</td><td>QTY-339</td><td>AMT-1837.91</td></tr><tr><td>C10-P01-T2-R03</td><td>SKU-01203-596</td><td>QTY-414</td><td>AMT-9404.96</td></tr><tr><td>C10-P01-T2-R04</td><td>SKU-01204-318</td><td>QTY-599</td><td>AMT-4859.41</td></tr></tbody></table>",
+    "page": 1,
+    "repair": {},
+    "source_start_page": 1,
+    "source_end_page": 4,
+    "mode": "TEXT_TABLE_FAST"
+  },
+  {
+    "index": 3,
+    "rows": 10,
+    "columns": 6,
+    "headers": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "csv": "0,1,2,3,4,5\r\nParent Group C10-P02-SPAN,Parent Group C10-P02-SPAN,Parent Group C10-P02-SPAN,Parent Group C10-P02-SPAN,Parent Group C10-P02-SPAN,Parent Group C10-P02-SPAN\r\nGroup,Nested ID,SKU,Quantity,Amount,Comment\r\nC10-P02-T1-R01,SKU-02101-669,QTY-728,AMT-6198.52,AMO-02-01-05,COM-02-01-06\r\nC10-P02-T1-R02,SKU-02102-850,QTY-364,AMT-4404.79,AMO-02-02-05,COM-02-02-06\r\nC10-P02-T1-R03,SKU-02103-791,QTY-746,AMT-1481.49,AMO-02-03-05,COM-02-03-06\r\nC10-P02-T1-R04,SKU-02104-880,QTY-747,AMT-8039.69,AMO-02-04-05,COM-02-04-06 WRAP-C10-02-04\r\nC10-P02-T1-R05,SKU-02105-535,QTY-404,AMT-6964.54,AMO-02-05-05,COM-02-05-06\r\nC10-P02-T1-R06,SKU-02106-496,QTY-894,AMT-6282.40,AMO-02-06-05,COM-02-06-06\r\nC10-P02-T1-R07,SKU-02107-363,QTY-895,AMT-9126.24,AMO-02-07-05,COM-02-07-06\r\nC10-P02-T1-R08,SKU-02108-223,QTY-67,AMT-3329.56,AMO-02-08-05,COM-02-08-06 WRAP-C10-02-08\r\n",
+    "html": "<table><tbody><tr><td colspan=\"6\">Parent Group C10-P02-SPAN</td></tr><tr><th>Group</th><th>Nested ID</th><th>SKU</th><th>Quantity</th><th>Amount</th><th>Comment</th></tr><tr><th>C10-P02-T1-R01</th><th>SKU-02101-669</th><th>QTY-728</th><th>AMT-6198.52</th><th>AMO-02-01-05</th><th>COM-02-01-06</th></tr><tr><th>C10-P02-T1-R02</th><th>SKU-02102-850</th><th>QTY-364</th><th>AMT-4404.79</th><th>AMO-02-02-05</th><th>COM-02-02-06</th></tr><tr><th>C10-P02-T1-R03</th><th>SKU-02103-791</th><th>QTY-746</th><th>AMT-1481.49</th><th>AMO-02-03-05</th><th>COM-02-03-06</th></tr><tr><th>C10-P02-T1-R04</th><th>SKU-02104-880</th><th>QTY-747</th><th>AMT-8039.69</th><th>AMO-02-04-05</th><th>COM-02-04-06 WRAP-C10-02-04</th></tr><tr><th>C10-P02-T1-R05</th><th>SKU-02105-535</th><th>QTY-404</th><th>AMT-6964.54</th><th>AMO-02-05-05</th><th>COM-02-05-06</th></tr><tr><th>C10-P02-T1-R06</th><th>SKU-02106-496</th><th>QTY-894</th><th>AMT-6282.40</th><th>AMO-02-06-05</th><th>COM-02-06-06</th></tr><tr><th>C10-P02-T1-R07</th><th>SKU-02107-363</th><th>QTY-895</th><th>AMT-9126.24</th><th>AMO-02-07-05</th><th>COM-02-07-06</th></tr><tr><th>C10-P02-T1-R08</th><th>SKU-02108-223</th><th>QTY-67</th><th>AMT-3329.56</th><th>AMO-02-08-05</th><th>COM-02-08-06 WRAP-C10-02-08</th></tr></tbody></table>",
+    "page": 2,
+    "repair": {},
+    "source_start_page": 1,
+    "source_end_page": 4,
+    "mode": "TEXT_TABLE_FAST"
+  },
+  {
+    "index": 4,
+    "rows": 4,
+    "columns": 4,
+    "headers": [
+      "Sub ID",
+      "SKU",
+      "Quantity",
+      "Amount"
+    ],
+    "csv": "Sub ID,SKU,Quantity,Amount\r\nC10-P02-T2-R01,SKU-02201-751,QTY-303,AMT-4307.89\r\nC10-P02-T2-R02,SKU-02202-249,QTY-527,AMT-1756.95\r\nC10-P02-T2-R03,SKU-02203-197,QTY-319,AMT-3923.38\r\nC10-P02-T2-R04,SKU-02204-964,QTY-665,AMT-6502.37\r\n",
+    "html": "<table><tbody><tr><th>Sub ID</th><th>SKU</th><th>Quantity</th><th>Amount</th></tr><tr><td>C10-P02-T2-R01</td><td>SKU-02201-751</td><td>QTY-303</td><td>AMT-4307.89</td></tr><tr><td>C10-P02-T2-R02</td><td>SKU-02202-249</td><td>QTY-527</td><td>AMT-1756.95</td></tr><tr><td>C10-P02-T2-R03</td><td>SKU-02203-197</td><td>QTY-319</td><td>AMT-3923.38</td></tr><tr><td>C10-P02-T2-R04</td><td>SKU-02204-964</td><td>QTY-665</td><td>AMT-6502.37</td></tr></tbody></table>",
+    "page": 2,
+    "repair": {},
+    "source_start_page": 1,
+    "source_end_page": 4,
+    "mode": "TEXT_TABLE_FAST"
+  },
+  {
+    "index": 5,
+    "rows": 10,
+    "columns": 6,
+    "headers": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "csv": "0,1,2,3,4,5\r\nParent Group C10-P03-SPAN,Parent Group C10-P03-SPAN,Parent Group C10-P03-SPAN,Parent Group C10-P03-SPAN,Parent Group C10-P03-SPAN,Parent Group C10-P03-SPAN\r\nGroup,Nested ID,SKU,Quantity,Amount,Comment\r\nC10-P03-T1-R01,SKU-03101-640,QTY-530,AMT-5040.74,AMO-03-01-05,COM-03-01-06\r\nC10-P03-T1-R02,SKU-03102-359,QTY-135,AMT-5485.25,AMO-03-02-05,COM-03-02-06\r\nC10-P03-T1-R03,SKU-03103-987,QTY-521,AMT-1895.42,AMO-03-03-05,COM-03-03-06\r\nC10-P03-T1-R04,SKU-03104-625,QTY-363,AMT-4182.43,AMO-03-04-05,COM-03-04-06 WRAP-C10-03-04\r\nC10-P03-T1-R05,SKU-03105-170,QTY-199,AMT-3942.10,AMO-03-05-05,COM-03-05-06\r\nC10-P03-T1-R06,SKU-03106-655,QTY-787,AMT-7968.28,AMO-03-06-05,COM-03-06-06\r\nC10-P03-T1-R07,SKU-03107-296,QTY-307,AMT-3094.45,AMO-03-07-05,COM-03-07-06\r\nC10-P03-T1-R08,SKU-03108-532,QTY-259,AMT-5461.65,AMO-03-08-05,COM-03-08-06 WRAP-C10-03-08\r\n",
+    "html": "<table><tbody><tr><td colspan=\"6\">Parent Group C10-P03-SPAN</td></tr><tr><th>Group</th><th>Nested ID</th><th>SKU</th><th>Quantity</th><th>Amount</th><th>Comment</th></tr><tr><th>C10-P03-T1-R01</th><th>SKU-03101-640</th><th>QTY-530</th><th>AMT-5040.74</th><th>AMO-03-01-05</th><th>COM-03-01-06</th></tr><tr><th>C10-P03-T1-R02</th><th>SKU-03102-359</th><th>QTY-135</th><th>AMT-5485.25</th><th>AMO-03-02-05</th><th>COM-03-02-06</th></tr><tr><th>C10-P03-T1-R03</th><th>SKU-03103-987</th><th>QTY-521</th><th>AMT-1895.42</th><th>AMO-03-03-05</th><th>COM-03-03-06</th></tr><tr><th>C10-P03-T1-R04</th><th>SKU-03104-625</th><th>QTY-363</th><th>AMT-4182.43</th><th>AMO-03-04-05</th><th>COM-03-04-06 WRAP-C10-03-04</th></tr><tr><th>C10-P03-T1-R05</th><th>SKU-03105-170</th><th>QTY-199</th><th>AMT-3942.10</th><th>AMO-03-05-05</th><th>COM-03-05-06</th></tr><tr><th>C10-P03-T1-R06</th><th>SKU-03106-655</th><th>QTY-787</th><th>AMT-7968.28</th><th>AMO-03-06-05</th><th>COM-03-06-06</th></tr><tr><th>C10-P03-T1-R07</th><th>SKU-03107-296</th><th>QTY-307</th><th>AMT-3094.45</th><th>AMO-03-07-05</th><th>COM-03-07-06</th></tr><tr><th>C10-P03-T1-R08</th><th>SKU-03108-532</th><th>QTY-259</th><th>AMT-5461.65</th><th>AMO-03-08-05</th><th>COM-03-08-06 WRAP-C10-03-08</th></tr></tbody></table>",
+    "page": 3,
+    "repair": {},
+    "source_start_page": 1,
+    "source_end_page": 4,
+    "mode": "TEXT_TABLE_FAST"
+  },
+  {
+    "index": 6,
+    "rows": 4,
+    "columns": 4,
+    "headers": [
+      "Sub ID",
+      "SKU",
+      "Quantity",
+      "Amount"
+    ],
+    "csv": "Sub ID,SKU,Quantity,Amount\r\nC10-P03-T2-R01,SKU-03201-616,QTY-660,AMT-9721.78\r\nC10-P03-T2-R02,SKU-03202-779,QTY-756,AMT-9602.87\r\nC10-P03-T2-R03,SKU-03203-559,QTY-541,AMT-7088.22\r\nC10-P03-T2-R04,SKU-03204-955,QTY-105,AMT-5988.89\r\n",
+    "html": "<table><tbody><tr><th>Sub ID</th><th>SKU</th><th>Quantity</th><th>Amount</th></tr><tr><td>C10-P03-T2-R01</td><td>SKU-03201-616</td><td>QTY-660</td><td>AMT-9721.78</td></tr><tr><td>C10-P03-T2-R02</td><td>SKU-03202-779</td><td>QTY-756</td><td>AMT-9602.87</td></tr><tr><td>C10-P03-T2-R03</td><td>SKU-03203-559</td><td>QTY-541</td><td>AMT-7088.22</td></tr><tr><td>C10-P03-T2-R04</td><td>SKU-03204-955</td><td>QTY-105</td><td>AMT-5988.89</td></tr></tbody></table>",
+    "page": 3,
+    "repair": {},
+    "source_start_page": 1,
+    "source_end_page": 4,
+    "mode": "TEXT_TABLE_FAST"
+  },
+  {
+    "index": 7,
+    "rows": 10,
+    "columns": 6,
+    "headers": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "csv": "0,1,2,3,4,5\r\nParent Group C10-P04-SPAN,Parent Group C10-P04-SPAN,Parent Group C10-P04-SPAN,Parent Group C10-P04-SPAN,Parent Group C10-P04-SPAN,Parent Group C10-P04-SPAN\r\nGroup,Nested ID,SKU,Quantity,Amount,Comment\r\nC10-P04-T1-R01,SKU-04101-969,QTY-936,AMT-4575.47,AMO-04-01-05,COM-04-01-06\r\nC10-P04-T1-R02,SKU-04102-823,QTY-747,AMT-7551.97,AMO-04-02-05,COM-04-02-06\r\nC10-P04-T1-R03,SKU-04103-718,QTY-85,AMT-1969.32,AMO-04-03-05,COM-04-03-06\r\nC10-P04-T1-R04,SKU-04104-160,QTY-521,AMT-9143.86,AMO-04-04-05,COM-04-04-06 WRAP-C10-04-04\r\nC10-P04-T1-R05,SKU-04105-216,QTY-854,AMT-3249.56,AMO-04-05-05,COM-04-05-06\r\nC10-P04-T1-R06,SKU-04106-279,QTY-36,AMT-8348.64,AMO-04-06-05,COM-04-06-06\r\nC10-P04-T1-R07,SKU-04107-142,QTY-344,AMT-3225.23,AMO-04-07-05,COM-04-07-06\r\nC10-P04-T1-R08,SKU-04108-132,QTY-311,AMT-2696.98,AMO-04-08-05,COM-04-08-06 WRAP-C10-04-08\r\n",
+    "html": "<table><tbody><tr><td colspan=\"6\">Parent Group C10-P04-SPAN</td></tr><tr><th>Group</th><th>Nested ID</th><th>SKU</th><th>Quantity</th><th>Amount</th><th>Comment</th></tr><tr><th>C10-P04-T1-R01</th><th>SKU-04101-969</th><th>QTY-936</th><th>AMT-4575.47</th><th>AMO-04-01-05</th><th>COM-04-01-06</th></tr><tr><th>C10-P04-T1-R02</th><th>SKU-04102-823</th><th>QTY-747</th><th>AMT-7551.97</th><th>AMO-04-02-05</th><th>COM-04-02-06</th></tr><tr><th>C10-P04-T1-R03</th><th>SKU-04103-718</th><th>QTY-85</th><th>AMT-1969.32</th><th>AMO-04-03-05</th><th>COM-04-03-06</th></tr><tr><th>C10-P04-T1-R04</th><th>SKU-04104-160</th><th>QTY-521</th><th>AMT-9143.86</th><th>AMO-04-04-05</th><th>COM-04-04-06 WRAP-C10-04-04</th></tr><tr><th>C10-P04-T1-R05</th><th>SKU-04105-216</th><th>QTY-854</th><th>AMT-3249.56</th><th>AMO-04-05-05</th><th>COM-04-05-06</th></tr><tr><th>C10-P04-T1-R06</th><th>SKU-04106-279</th><th>QTY-36</th><th>AMT-8348.64</th><th>AMO-04-06-05</th><th>COM-04-06-06</th></tr><tr><th>C10-P04-T1-R07</th><th>SKU-04107-142</th><th>QTY-344</th><th>AMT-3225.23</th><th>AMO-04-07-05</th><th>COM-04-07-06</th></tr><tr><th>C10-P04-T1-R08</th><th>SKU-04108-132</th><th>QTY-311</th><th>AMT-2696.98</th><th>AMO-04-08-05</th><th>COM-04-08-06 WRAP-C10-04-08</th></tr></tbody></table>",
+    "page": 4,
+    "repair": {},
+    "source_start_page": 1,
+    "source_end_page": 4,
+    "mode": "TEXT_TABLE_FAST"
+  },
+  {
+    "index": 8,
+    "rows": 4,
+    "columns": 4,
+    "headers": [
+      "Sub ID",
+      "SKU",
+      "Quantity",
+      "Amount"
+    ],
+    "csv": "Sub ID,SKU,Quantity,Amount\r\nC10-P04-T2-R01,SKU-04201-482,QTY-594,AMT-4809.49\r\nC10-P04-T2-R02,SKU-04202-290,QTY-62,AMT-2451.62\r\nC10-P04-T2-R03,SKU-04203-550,QTY-322,AMT-2957.52\r\nC10-P04-T2-R04,SKU-04204-661,QTY-280,AMT-2175.15\r\n",
+    "html": "<table><tbody><tr><th>Sub ID</th><th>SKU</th><th>Quantity</th><th>Amount</th></tr><tr><td>C10-P04-T2-R01</td><td>SKU-04201-482</td><td>QTY-594</td><td>AMT-4809.49</td></tr><tr><td>C10-P04-T2-R02</td><td>SKU-04202-290</td><td>QTY-62</td><td>AMT-2451.62</td></tr><tr><td>C10-P04-T2-R03</td><td>SKU-04203-550</td><td>QTY-322</td><td>AMT-2957.52</td></tr><tr><td>C10-P04-T2-R04</td><td>SKU-04204-661</td><td>QTY-280</td><td>AMT-2175.15</td></tr></tbody></table>",
+    "page": 4,
+    "repair": {},
+    "source_start_page": 1,
+    "source_end_page": 4,
+    "mode": "TEXT_TABLE_FAST"
+  }
+]

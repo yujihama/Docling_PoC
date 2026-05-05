@@ -1,0 +1,44 @@
+[
+  {
+    "index": 1,
+    "rows": 7,
+    "columns": 5,
+    "headers": [
+      "■",
+      "■■■■■",
+      "■■",
+      "■■",
+      "■■"
+    ],
+    "csv": "■,■■■■■,■■,■■,■■\r\n1,JP-SKU-V04-101,部品交換費用 摘要-V04-1-1,2,JPY-11801\r\n2,JP-SKU-V04-102,部品交換費用 摘要-V04-1-2,3,JPY-12802\r\n3,JP-SKU-V04-103,部品交換費用 摘要-V04-1-3,4,JPY-13803\r\n4,JP-SKU-V04-104,部品交換費用 摘要-V04-1-4,5,JPY-14804\r\n5,JP-SKU-V04-105,部品交換費用 摘要-V04-1-5,6,JPY-15805\r\n6,JP-SKU-V04-106,部品交換費用 摘要-V04-1-6,7,JPY-16806\r\n7,JP-SKU-V04-107,部品交換費用 摘要-V04-1-7,8,JPY-17807\r\n",
+    "html": "<table><tbody><tr><th>■</th><th>■■■■■</th><th>■■</th><th>■■</th><th>■■</th></tr><tr><td>1</td><td>JP-SKU-V04-101</td><td>部品交換費用 摘要-V04-1-1</td><td>2</td><td>JPY-11801</td></tr><tr><td>2</td><td>JP-SKU-V04-102</td><td>部品交換費用 摘要-V04-1-2</td><td>3</td><td>JPY-12802</td></tr><tr><td>3</td><td>JP-SKU-V04-103</td><td>部品交換費用 摘要-V04-1-3</td><td>4</td><td>JPY-13803</td></tr><tr><td>4</td><td>JP-SKU-V04-104</td><td>部品交換費用 摘要-V04-1-4</td><td>5</td><td>JPY-14804</td></tr><tr><td>5</td><td>JP-SKU-V04-105</td><td>部品交換費用 摘要-V04-1-5</td><td>6</td><td>JPY-15805</td></tr><tr><td>6</td><td>JP-SKU-V04-106</td><td>部品交換費用 摘要-V04-1-6</td><td>7</td><td>JPY-16806</td></tr><tr><td>7</td><td>JP-SKU-V04-107</td><td>部品交換費用 摘要-V04-1-7</td><td>8</td><td>JPY-17807</td></tr></tbody></table>",
+    "page": 1,
+    "repair": {
+      "enabled": false
+    },
+    "source_start_page": 1,
+    "source_end_page": 1,
+    "mode": "IMAGE_RECONCILE"
+  },
+  {
+    "index": 2,
+    "rows": 7,
+    "columns": 5,
+    "headers": [
+      "■",
+      "■■■■■",
+      "■■",
+      "■■",
+      "■■"
+    ],
+    "csv": "■,■■■■■,■■,■■,■■\r\n1,JP-SKU-V04-201,部品交換費用 摘要-V04-2-1,2,JPY-21801\r\n2,JP-SKU-V04-202,部品交換費用 摘要-V04-2-2,3,JPY-22802\r\n3,JP-SKU-V04-203,部品交換費用 摘要-V04-2-3,4,JPY-23803\r\n4,JP-SKU-V04-204,部品交換費用 摘要-V04-2-4,5,JPY-24804\r\n5,JP-SKU-V04-205,部品交換費用 摘要-V04-2-5,6,JPY-25805\r\n6,JP-SKU-V04-206,部品交換費用 摘要-V04-2-6,7,JPY-26806\r\n7,JP-SKU-V04-207,部品交換費用 摘要-V04-2-7,8,JPY-27807\r\n",
+    "html": "<table><tbody><tr><th>■</th><th>■■■■■</th><th>■■</th><th>■■</th><th>■■</th></tr><tr><td>1</td><td>JP-SKU-V04-201</td><td>部品交換費用 摘要-V04-2-1</td><td>2</td><td>JPY-21801</td></tr><tr><td>2</td><td>JP-SKU-V04-202</td><td>部品交換費用 摘要-V04-2-2</td><td>3</td><td>JPY-22802</td></tr><tr><td>3</td><td>JP-SKU-V04-203</td><td>部品交換費用 摘要-V04-2-3</td><td>4</td><td>JPY-23803</td></tr><tr><td>4</td><td>JP-SKU-V04-204</td><td>部品交換費用 摘要-V04-2-4</td><td>5</td><td>JPY-24804</td></tr><tr><td>5</td><td>JP-SKU-V04-205</td><td>部品交換費用 摘要-V04-2-5</td><td>6</td><td>JPY-25805</td></tr><tr><td>6</td><td>JP-SKU-V04-206</td><td>部品交換費用 摘要-V04-2-6</td><td>7</td><td>JPY-26806</td></tr><tr><td>7</td><td>JP-SKU-V04-207</td><td>部品交換費用 摘要-V04-2-7</td><td>8</td><td>JPY-27807</td></tr></tbody></table>",
+    "page": 1,
+    "repair": {
+      "enabled": false
+    },
+    "source_start_page": 2,
+    "source_end_page": 2,
+    "mode": "IMAGE_RECONCILE"
+  }
+]

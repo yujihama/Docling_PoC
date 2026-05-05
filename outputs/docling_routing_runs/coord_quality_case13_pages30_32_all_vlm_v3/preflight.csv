@@ -1,0 +1,4 @@
+complex_table_score,elapsed_seconds,embedded_visual_region_count,embedded_visual_regions,extra_actions,height,image_area_ratio,image_read_risk_score,line_count,mode,page,reasons,rect_count,table_score,text_chars,text_density,text_quality_score,visual_reference_count,width
+0.6312,0.0198,0,[],[],595.28,0.0,0.2521,21,TEXT_TABLE_ACCURATE,1,"good_text_layer,complex_table_signal",21,1.0,1899,0.007604,0.8511,0,419.53
+0.8031,0.0092,0,[],[],595.28,0.0,0.2369,48,TEXT_TABLE_ACCURATE,2,"good_text_layer,complex_table_signal",49,0.9695,1641,0.006571,0.8772,0,419.53
+0.6,0.0103,0,[],[],595.28,0.0,0.2045,16,TEXT_TABLE_ACCURATE,3,"good_text_layer,complex_table_signal",16,0.9232,1954,0.007824,0.9433,0,419.53

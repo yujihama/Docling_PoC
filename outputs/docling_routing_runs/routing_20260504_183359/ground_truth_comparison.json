@@ -1,0 +1,1685 @@
+{
+  "run_dir": "outputs\\docling_routing_runs\\routing_20260504_183359",
+  "ground_truth": "outputs\\docling_benchmark\\ans\\complex_dummy_ground_truth.json",
+  "overall": {
+    "expected_values": 3478,
+    "hits": 2866,
+    "misses": 612,
+    "recall": 0.824
+  },
+  "tables": [
+    {
+      "table_key": "p1_cover_meta",
+      "page": 1,
+      "title": "表紙メタデータ表",
+      "expected_values": 14,
+      "hits": 13,
+      "misses": 1,
+      "recall": 0.9286,
+      "sample_misses": [
+        [
+          "R4C2",
+          "社外秘 (Confidential — Internal Use Only)"
+        ]
+      ]
+    },
+    {
+      "table_key": "p2_table1_dept_product_monthly",
+      "page": 2,
+      "title": "表1: 部門別・製品別 月次実績明細（千円）— 2025年4月〜2025年9月",
+      "expected_values": 1586,
+      "hits": 1259,
+      "misses": 327,
+      "recall": 0.7938,
+      "sample_misses": [
+        [
+          "header",
+          "04月_予算"
+        ],
+        [
+          "header",
+          "04月_実績"
+        ],
+        [
+          "header",
+          "04月_差異"
+        ],
+        [
+          "header",
+          "04月_達成%"
+        ],
+        [
+          "header",
+          "05月_予算"
+        ],
+        [
+          "header",
+          "05月_実績"
+        ],
+        [
+          "header",
+          "05月_差異"
+        ],
+        [
+          "header",
+          "05月_達成%"
+        ],
+        [
+          "header",
+          "06月_予算"
+        ],
+        [
+          "header",
+          "06月_実績"
+        ],
+        [
+          "header",
+          "06月_差異"
+        ],
+        [
+          "header",
+          "06月_達成%"
+        ],
+        [
+          "header",
+          "07月_予算"
+        ],
+        [
+          "header",
+          "07月_実績"
+        ],
+        [
+          "header",
+          "07月_差異"
+        ],
+        [
+          "header",
+          "07月_達成%"
+        ],
+        [
+          "header",
+          "08月_予算"
+        ],
+        [
+          "header",
+          "08月_実績"
+        ],
+        [
+          "header",
+          "08月_差異"
+        ],
+        [
+          "header",
+          "08月_達成%"
+        ]
+      ]
+    },
+    {
+      "table_key": "p3_table2_account_balance",
+      "page": 3,
+      "title": "表2: 勘定科目別 月末残高一覧（千円）",
+      "expected_values": 510,
+      "hits": 499,
+      "misses": 11,
+      "recall": 0.9784,
+      "sample_misses": [
+        [
+          "R41C2",
+          "その他有価証券評価差額金"
+        ],
+        [
+          "R48C1",
+          "7400"
+        ],
+        [
+          "R48C2",
+          "特別利益"
+        ],
+        [
+          "R48C3",
+          "3,717,361,214"
+        ],
+        [
+          "R48C4",
+          "4,150,163,567"
+        ],
+        [
+          "R48C5",
+          "4,042,857,233"
+        ],
+        [
+          "R48C6",
+          "4,439,969,987"
+        ],
+        [
+          "R48C7",
+          "4,305,079,504"
+        ],
+        [
+          "R48C8",
+          "4,601,629,534"
+        ],
+        [
+          "R48C9",
+          "4,342,854,619"
+        ],
+        [
+          "R48C10",
+          "+16.8%"
+        ]
+      ]
+    },
+    {
+      "table_key": "p4_table3_fx_kpi_image",
+      "page": 4,
+      "title": "表3: FX & KPI Monthly Trend (画像埋め込み)",
+      "expected_values": 176,
+      "hits": 172,
+      "misses": 4,
+      "recall": 0.9773,
+      "sample_misses": [
+        [
+          "header",
+          "標準偏差"
+        ],
+        [
+          "R4C3",
+          "USD/bbl"
+        ],
+        [
+          "R5C3",
+          "USD/MT"
+        ],
+        [
+          "R11C1",
+          "運転資本"
+        ]
+      ]
+    },
+    {
+      "table_key": "p5_table4_ar_aging_image_scan",
+      "page": 5,
+      "title": "表4: 取引先別 売掛金年齢調べ（スキャン風画像）",
+      "expected_values": 171,
+      "hits": 3,
+      "misses": 168,
+      "recall": 0.0175,
+      "sample_misses": [
+        [
+          "header",
+          "名称"
+        ],
+        [
+          "header",
+          "30日以内"
+        ],
+        [
+          "header",
+          "31-60日"
+        ],
+        [
+          "header",
+          "61-90日"
+        ],
+        [
+          "header",
+          "91-180日"
+        ],
+        [
+          "header",
+          "180日超"
+        ],
+        [
+          "R1C1",
+          "C-1001"
+        ],
+        [
+          "R1C2",
+          "株式会社サンプル商事"
+        ],
+        [
+          "R1C3",
+          "2,883,553"
+        ],
+        [
+          "R1C4",
+          "7,719,145"
+        ],
+        [
+          "R1C5",
+          "6,070,880"
+        ],
+        [
+          "R1C6",
+          "1,478,574"
+        ],
+        [
+          "R1C7",
+          "7,326,807"
+        ],
+        [
+          "R1C8",
+          "25,478,959"
+        ],
+        [
+          "R1C9",
+          "8,658,838"
+        ],
+        [
+          "R2C1",
+          "C-1002"
+        ],
+        [
+          "R2C2",
+          "東洋ダミー工業株式会社"
+        ],
+        [
+          "R2C3",
+          "4,082,173"
+        ],
+        [
+          "R2C4",
+          "7,309,439"
+        ],
+        [
+          "R2C5",
+          "6,718,433"
+        ]
+      ]
+    },
+    {
+      "table_key": "p6_table5_sga_text",
+      "page": 6,
+      "title": "表5: 販売費及び一般管理費 明細（千円・テキストレイヤー）",
+      "expected_values": 260,
+      "hits": 260,
+      "misses": 0,
+      "recall": 1.0,
+      "sample_misses": []
+    },
+    {
+      "table_key": "p6_table6_inventory_aging_image",
+      "page": 6,
+      "title": "表6: 棚卸資産 滞留分析（画像レイヤー）",
+      "expected_values": 88,
+      "hits": 18,
+      "misses": 70,
+      "recall": 0.2045,
+      "sample_misses": [
+        [
+          "header",
+          "残高(千円)"
+        ],
+        [
+          "header",
+          "0-30日"
+        ],
+        [
+          "header",
+          "31-90日"
+        ],
+        [
+          "header",
+          "91-180日"
+        ],
+        [
+          "header",
+          "180日超"
+        ],
+        [
+          "header",
+          "評価減"
+        ],
+        [
+          "R1C1",
+          "INV-18870"
+        ],
+        [
+          "R1C3",
+          "72,313"
+        ],
+        [
+          "R1C4",
+          "25,731"
+        ],
+        [
+          "R1C5",
+          "25,746"
+        ],
+        [
+          "R1C7",
+          "19,803"
+        ],
+        [
+          "R1C8",
+          "14,171"
+        ],
+        [
+          "R2C1",
+          "INV-71621"
+        ],
+        [
+          "R2C3",
+          "84,318"
+        ],
+        [
+          "R2C4",
+          "25,354"
+        ],
+        [
+          "R2C5",
+          "24,464"
+        ],
+        [
+          "R2C6",
+          "16,623"
+        ],
+        [
+          "R2C7",
+          "1,064"
+        ],
+        [
+          "R2C8",
+          "5,731"
+        ],
+        [
+          "R3C1",
+          "INV-56805"
+        ]
+      ]
+    },
+    {
+      "table_key": "p7_table7_consolidated_bs",
+      "page": 7,
+      "title": "表7: 連結貸借対照表（要約）— 階層インデント・複合ヘッダ・小計／合計入り",
+      "expected_values": 256,
+      "hits": 250,
+      "misses": 6,
+      "recall": 0.9766,
+      "sample_misses": [
+        [
+          "header",
+          "前期末_金額(千円)"
+        ],
+        [
+          "header",
+          "前期末_構成比"
+        ],
+        [
+          "header",
+          "当期末_金額(千円)"
+        ],
+        [
+          "header",
+          "当期末_構成比"
+        ],
+        [
+          "header",
+          "増減_金額(千円)"
+        ],
+        [
+          "header",
+          "増減_増減率"
+        ]
+      ]
+    },
+    {
+      "table_key": "p8_table8_pivot_segment_region",
+      "page": 8,
+      "title": "表8: セグメント × 地域 × 期間 売上クロス集計（ピボット）",
+      "expected_values": 273,
+      "hits": 248,
+      "misses": 25,
+      "recall": 0.9084,
+      "sample_misses": [
+        [
+          "header",
+          "日本_本州_上期"
+        ],
+        [
+          "header",
+          "日本_本州_前年比"
+        ],
+        [
+          "header",
+          "日本_その他_上期"
+        ],
+        [
+          "header",
+          "日本_その他_前年比"
+        ],
+        [
+          "header",
+          "北米_USA_上期"
+        ],
+        [
+          "header",
+          "北米_USA_前年比"
+        ],
+        [
+          "header",
+          "北米_CAN_上期"
+        ],
+        [
+          "header",
+          "北米_CAN_前年比"
+        ],
+        [
+          "header",
+          "アジア(除く日本)_中国_上期"
+        ],
+        [
+          "header",
+          "アジア(除く日本)_中国_前年比"
+        ],
+        [
+          "header",
+          "アジア(除く日本)_東南ア_上期"
+        ],
+        [
+          "header",
+          "アジア(除く日本)_東南ア_前年比"
+        ],
+        [
+          "header",
+          "欧州_DACH_上期"
+        ],
+        [
+          "header",
+          "欧州_DACH_前年比"
+        ],
+        [
+          "header",
+          "欧州_その他_上期"
+        ],
+        [
+          "header",
+          "欧州_その他_前年比"
+        ],
+        [
+          "header",
+          "全社合計_金額"
+        ],
+        [
+          "header",
+          "全社合計_構成比"
+        ],
+        [
+          "R1C1",
+          "インダストリアル"
+        ],
+        [
+          "R4C2",
+          "制御機器"
+        ]
+      ]
+    },
+    {
+      "table_key": "p9_table9_journal",
+      "page": 9,
+      "title": "表9: 仕訳帳（伝票単位で行数が可変）",
+      "expected_values": 144,
+      "hits": 144,
+      "misses": 0,
+      "recall": 1.0,
+      "sample_misses": []
+    }
+  ],
+  "table3_fx_kpi_cell_check": [
+    {
+      "row": 1,
+      "column": "分類",
+      "expected": "市場",
+      "actual": "市場",
+      "ok": true
+    },
+    {
+      "row": 1,
+      "column": "項目",
+      "expected": "USD/JPY 月中平均",
+      "actual": "USD/JPY 月中平均",
+      "ok": true
+    },
+    {
+      "row": 1,
+      "column": "単位",
+      "expected": "JPY",
+      "actual": "JPY",
+      "ok": true
+    },
+    {
+      "row": 1,
+      "column": "4月",
+      "expected": "152.19",
+      "actual": "152.19",
+      "ok": true
+    },
+    {
+      "row": 1,
+      "column": "5月",
+      "expected": "160.57",
+      "actual": "160.57",
+      "ok": true
+    },
+    {
+      "row": 1,
+      "column": "6月",
+      "expected": "145.88",
+      "actual": "145.88",
+      "ok": true
+    },
+    {
+      "row": 1,
+      "column": "7月",
+      "expected": "149.89",
+      "actual": "149.89",
+      "ok": true
+    },
+    {
+      "row": 1,
+      "column": "8月",
+      "expected": "150.31",
+      "actual": "150.31",
+      "ok": true
+    },
+    {
+      "row": 1,
+      "column": "9月",
+      "expected": "146.76",
+      "actual": "146.76",
+      "ok": true
+    },
+    {
+      "row": 1,
+      "column": "平均",
+      "expected": "150.93",
+      "actual": "150.93",
+      "ok": true
+    },
+    {
+      "row": 1,
+      "column": "標準偏差",
+      "expected": "4.81",
+      "actual": "4.81",
+      "ok": true
+    },
+    {
+      "row": 2,
+      "column": "分類",
+      "expected": "市場",
+      "actual": "市場",
+      "ok": true
+    },
+    {
+      "row": 2,
+      "column": "項目",
+      "expected": "EUR/JPY 月中平均",
+      "actual": "EUR/JPY 月中平均",
+      "ok": true
+    },
+    {
+      "row": 2,
+      "column": "単位",
+      "expected": "JPY",
+      "actual": "JPY",
+      "ok": true
+    },
+    {
+      "row": 2,
+      "column": "4月",
+      "expected": "166.63",
+      "actual": "166.63",
+      "ok": true
+    },
+    {
+      "row": 2,
+      "column": "5月",
+      "expected": "160.63",
+      "actual": "160.63",
+      "ok": true
+    },
+    {
+      "row": 2,
+      "column": "6月",
+      "expected": "166.20",
+      "actual": "166.20",
+      "ok": true
+    },
+    {
+      "row": 2,
+      "column": "7月",
+      "expected": "172.40",
+      "actual": "172.40",
+      "ok": true
+    },
+    {
+      "row": 2,
+      "column": "8月",
+      "expected": "163.95",
+      "actual": "163.95",
+      "ok": true
+    },
+    {
+      "row": 2,
+      "column": "9月",
+      "expected": "167.46",
+      "actual": "167.46",
+      "ok": true
+    },
+    {
+      "row": 2,
+      "column": "平均",
+      "expected": "166.21",
+      "actual": "166.21",
+      "ok": true
+    },
+    {
+      "row": 2,
+      "column": "標準偏差",
+      "expected": "3.57",
+      "actual": "3.57",
+      "ok": true
+    },
+    {
+      "row": 3,
+      "column": "分類",
+      "expected": "市場",
+      "actual": "市場",
+      "ok": true
+    },
+    {
+      "row": 3,
+      "column": "項目",
+      "expected": "CNY/JPY 月中平均",
+      "actual": "CNY/JPY 月中平均",
+      "ok": true
+    },
+    {
+      "row": 3,
+      "column": "単位",
+      "expected": "JPY",
+      "actual": "JPY",
+      "ok": true
+    },
+    {
+      "row": 3,
+      "column": "4月",
+      "expected": "19.46",
+      "actual": "19.46",
+      "ok": true
+    },
+    {
+      "row": 3,
+      "column": "5月",
+      "expected": "20.11",
+      "actual": "20.11",
+      "ok": true
+    },
+    {
+      "row": 3,
+      "column": "6月",
+      "expected": "19.91",
+      "actual": "19.91",
+      "ok": true
+    },
+    {
+      "row": 3,
+      "column": "7月",
+      "expected": "20.72",
+      "actual": "20.72",
+      "ok": true
+    },
+    {
+      "row": 3,
+      "column": "8月",
+      "expected": "21.24",
+      "actual": "21.24",
+      "ok": true
+    },
+    {
+      "row": 3,
+      "column": "9月",
+      "expected": "22.07",
+      "actual": "22.07",
+      "ok": true
+    },
+    {
+      "row": 3,
+      "column": "平均",
+      "expected": "20.58",
+      "actual": "20.58",
+      "ok": true
+    },
+    {
+      "row": 3,
+      "column": "標準偏差",
+      "expected": "0.88",
+      "actual": "0.88",
+      "ok": true
+    },
+    {
+      "row": 4,
+      "column": "分類",
+      "expected": "商品",
+      "actual": "商品",
+      "ok": true
+    },
+    {
+      "row": 4,
+      "column": "項目",
+      "expected": "WTI 原油先物",
+      "actual": "WTI 原油先物",
+      "ok": true
+    },
+    {
+      "row": 4,
+      "column": "単位",
+      "expected": "USD/bbl",
+      "actual": "USD…",
+      "ok": false
+    },
+    {
+      "row": 4,
+      "column": "4月",
+      "expected": "85.5",
+      "actual": "85.5",
+      "ok": true
+    },
+    {
+      "row": 4,
+      "column": "5月",
+      "expected": "86.9",
+      "actual": "86.9",
+      "ok": true
+    },
+    {
+      "row": 4,
+      "column": "6月",
+      "expected": "83.9",
+      "actual": "83.9",
+      "ok": true
+    },
+    {
+      "row": 4,
+      "column": "7月",
+      "expected": "85.2",
+      "actual": "85.2",
+      "ok": true
+    },
+    {
+      "row": 4,
+      "column": "8月",
+      "expected": "86.4",
+      "actual": "86.4",
+      "ok": true
+    },
+    {
+      "row": 4,
+      "column": "9月",
+      "expected": "87.3",
+      "actual": "87.3",
+      "ok": true
+    },
+    {
+      "row": 4,
+      "column": "平均",
+      "expected": "85.9",
+      "actual": "85.9",
+      "ok": true
+    },
+    {
+      "row": 4,
+      "column": "標準偏差",
+      "expected": "1.1",
+      "actual": "1.1",
+      "ok": true
+    },
+    {
+      "row": 5,
+      "column": "分類",
+      "expected": "商品",
+      "actual": "商品",
+      "ok": true
+    },
+    {
+      "row": 5,
+      "column": "項目",
+      "expected": "LME 銅 3M 先物",
+      "actual": "LME 銅 3M 先物",
+      "ok": true
+    },
+    {
+      "row": 5,
+      "column": "単位",
+      "expected": "USD/MT",
+      "actual": "USD…",
+      "ok": false
+    },
+    {
+      "row": 5,
+      "column": "4月",
+      "expected": "8,558",
+      "actual": "8,558",
+      "ok": true
+    },
+    {
+      "row": 5,
+      "column": "5月",
+      "expected": "9,047",
+      "actual": "9,047",
+      "ok": true
+    },
+    {
+      "row": 5,
+      "column": "6月",
+      "expected": "10,025",
+      "actual": "10,025",
+      "ok": true
+    },
+    {
+      "row": 5,
+      "column": "7月",
+      "expected": "10,343",
+      "actual": "10,343",
+      "ok": true
+    },
+    {
+      "row": 5,
+      "column": "8月",
+      "expected": "9,202",
+      "actual": "9,202",
+      "ok": true
+    },
+    {
+      "row": 5,
+      "column": "9月",
+      "expected": "8,863",
+      "actual": "8,863",
+      "ok": true
+    },
+    {
+      "row": 5,
+      "column": "平均",
+      "expected": "9,340",
+      "actual": "9,340",
+      "ok": true
+    },
+    {
+      "row": 5,
+      "column": "標準偏差",
+      "expected": "635",
+      "actual": "635",
+      "ok": true
+    },
+    {
+      "row": 6,
+      "column": "分類",
+      "expected": "株式",
+      "actual": "株式",
+      "ok": true
+    },
+    {
+      "row": 6,
+      "column": "項目",
+      "expected": "日経平均株価 月末",
+      "actual": "日経平均株価 月末",
+      "ok": true
+    },
+    {
+      "row": 6,
+      "column": "単位",
+      "expected": "JPY",
+      "actual": "JPY",
+      "ok": true
+    },
+    {
+      "row": 6,
+      "column": "4月",
+      "expected": "34,289",
+      "actual": "34,289",
+      "ok": true
+    },
+    {
+      "row": 6,
+      "column": "5月",
+      "expected": "38,916",
+      "actual": "38,916",
+      "ok": true
+    },
+    {
+      "row": 6,
+      "column": "6月",
+      "expected": "33,626",
+      "actual": "33,626",
+      "ok": true
+    },
+    {
+      "row": 6,
+      "column": "7月",
+      "expected": "39,669",
+      "actual": "39,669",
+      "ok": true
+    },
+    {
+      "row": 6,
+      "column": "8月",
+      "expected": "41,746",
+      "actual": "41,746",
+      "ok": true
+    },
+    {
+      "row": 6,
+      "column": "9月",
+      "expected": "33,826",
+      "actual": "33,826",
+      "ok": true
+    },
+    {
+      "row": 6,
+      "column": "平均",
+      "expected": "37,012",
+      "actual": "37,012",
+      "ok": true
+    },
+    {
+      "row": 6,
+      "column": "標準偏差",
+      "expected": "3,218",
+      "actual": "3,218",
+      "ok": true
+    },
+    {
+      "row": 7,
+      "column": "分類",
+      "expected": "株式",
+      "actual": "株式",
+      "ok": true
+    },
+    {
+      "row": 7,
+      "column": "項目",
+      "expected": "TOPIX 月末",
+      "actual": "TOPIX 月末",
+      "ok": true
+    },
+    {
+      "row": 7,
+      "column": "単位",
+      "expected": "pt",
+      "actual": "pt",
+      "ok": true
+    },
+    {
+      "row": 7,
+      "column": "4月",
+      "expected": "2,665",
+      "actual": "2,665",
+      "ok": true
+    },
+    {
+      "row": 7,
+      "column": "5月",
+      "expected": "2,588",
+      "actual": "2,588",
+      "ok": true
+    },
+    {
+      "row": 7,
+      "column": "6月",
+      "expected": "2,627",
+      "actual": "2,627",
+      "ok": true
+    },
+    {
+      "row": 7,
+      "column": "7月",
+      "expected": "2,479",
+      "actual": "2,479",
+      "ok": true
+    },
+    {
+      "row": 7,
+      "column": "8月",
+      "expected": "2,556",
+      "actual": "2,556",
+      "ok": true
+    },
+    {
+      "row": 7,
+      "column": "9月",
+      "expected": "2,562",
+      "actual": "2,562",
+      "ok": true
+    },
+    {
+      "row": 7,
+      "column": "平均",
+      "expected": "2,579",
+      "actual": "2,579",
+      "ok": true
+    },
+    {
+      "row": 7,
+      "column": "標準偏差",
+      "expected": "59",
+      "actual": "59",
+      "ok": true
+    },
+    {
+      "row": 8,
+      "column": "分類",
+      "expected": "金利",
+      "actual": "金利",
+      "ok": true
+    },
+    {
+      "row": 8,
+      "column": "項目",
+      "expected": "10年国債利回り",
+      "actual": "10年国債利回り",
+      "ok": true
+    },
+    {
+      "row": 8,
+      "column": "単位",
+      "expected": "%",
+      "actual": "%",
+      "ok": true
+    },
+    {
+      "row": 8,
+      "column": "4月",
+      "expected": "1.453",
+      "actual": "1.453",
+      "ok": true
+    },
+    {
+      "row": 8,
+      "column": "5月",
+      "expected": "1.177",
+      "actual": "1.177",
+      "ok": true
+    },
+    {
+      "row": 8,
+      "column": "6月",
+      "expected": "1.407",
+      "actual": "1.407",
+      "ok": true
+    },
+    {
+      "row": 8,
+      "column": "7月",
+      "expected": "0.824",
+      "actual": "0.824",
+      "ok": true
+    },
+    {
+      "row": 8,
+      "column": "8月",
+      "expected": "1.304",
+      "actual": "1.304",
+      "ok": true
+    },
+    {
+      "row": 8,
+      "column": "9月",
+      "expected": "0.740",
+      "actual": "0.740",
+      "ok": true
+    },
+    {
+      "row": 8,
+      "column": "平均",
+      "expected": "1.151",
+      "actual": "1.151",
+      "ok": true
+    },
+    {
+      "row": 8,
+      "column": "標準偏差",
+      "expected": "0.276",
+      "actual": "0.276",
+      "ok": true
+    },
+    {
+      "row": 9,
+      "column": "分類",
+      "expected": "業績",
+      "actual": "業績",
+      "ok": true
+    },
+    {
+      "row": 9,
+      "column": "項目",
+      "expected": "受注高",
+      "actual": "受注高",
+      "ok": true
+    },
+    {
+      "row": 9,
+      "column": "単位",
+      "expected": "百万円",
+      "actual": "百…",
+      "ok": false
+    },
+    {
+      "row": 9,
+      "column": "4月",
+      "expected": "4,286",
+      "actual": "4,286",
+      "ok": true
+    },
+    {
+      "row": 9,
+      "column": "5月",
+      "expected": "5,551",
+      "actual": "5,551",
+      "ok": true
+    },
+    {
+      "row": 9,
+      "column": "6月",
+      "expected": "5,484",
+      "actual": "5,484",
+      "ok": true
+    },
+    {
+      "row": 9,
+      "column": "7月",
+      "expected": "6,125",
+      "actual": "6,125",
+      "ok": true
+    },
+    {
+      "row": 9,
+      "column": "8月",
+      "expected": "5,450",
+      "actual": "5,450",
+      "ok": true
+    },
+    {
+      "row": 9,
+      "column": "9月",
+      "expected": "4,754",
+      "actual": "4,754",
+      "ok": true
+    },
+    {
+      "row": 9,
+      "column": "平均",
+      "expected": "5,275",
+      "actual": "5,275",
+      "ok": true
+    },
+    {
+      "row": 9,
+      "column": "標準偏差",
+      "expected": "595",
+      "actual": "595",
+      "ok": true
+    },
+    {
+      "row": 10,
+      "column": "分類",
+      "expected": "業績",
+      "actual": "業績",
+      "ok": true
+    },
+    {
+      "row": 10,
+      "column": "項目",
+      "expected": "受注残高",
+      "actual": "受注残高",
+      "ok": true
+    },
+    {
+      "row": 10,
+      "column": "単位",
+      "expected": "百万円",
+      "actual": "百…",
+      "ok": false
+    },
+    {
+      "row": 10,
+      "column": "4月",
+      "expected": "19,074",
+      "actual": "19,074",
+      "ok": true
+    },
+    {
+      "row": 10,
+      "column": "5月",
+      "expected": "18,071",
+      "actual": "18,071",
+      "ok": true
+    },
+    {
+      "row": 10,
+      "column": "6月",
+      "expected": "16,665",
+      "actual": "16,665",
+      "ok": true
+    },
+    {
+      "row": 10,
+      "column": "7月",
+      "expected": "20,069",
+      "actual": "20,069",
+      "ok": true
+    },
+    {
+      "row": 10,
+      "column": "8月",
+      "expected": "19,559",
+      "actual": "19,559",
+      "ok": true
+    },
+    {
+      "row": 10,
+      "column": "9月",
+      "expected": "19,162",
+      "actual": "19,162",
+      "ok": true
+    },
+    {
+      "row": 10,
+      "column": "平均",
+      "expected": "18,767",
+      "actual": "18,767",
+      "ok": true
+    },
+    {
+      "row": 10,
+      "column": "標準偏差",
+      "expected": "1,116",
+      "actual": "1,116",
+      "ok": true
+    },
+    {
+      "row": 11,
+      "column": "分類",
+      "expected": "運転資本",
+      "actual": "運転…",
+      "ok": false
+    },
+    {
+      "row": 11,
+      "column": "項目",
+      "expected": "在庫回転日数",
+      "actual": "在庫回転日数",
+      "ok": true
+    },
+    {
+      "row": 11,
+      "column": "単位",
+      "expected": "日",
+      "actual": "日",
+      "ok": true
+    },
+    {
+      "row": 11,
+      "column": "4月",
+      "expected": "49.3",
+      "actual": "49.3",
+      "ok": true
+    },
+    {
+      "row": 11,
+      "column": "5月",
+      "expected": "46.6",
+      "actual": "46.6",
+      "ok": true
+    },
+    {
+      "row": 11,
+      "column": "6月",
+      "expected": "69.5",
+      "actual": "69.5",
+      "ok": true
+    },
+    {
+      "row": 11,
+      "column": "7月",
+      "expected": "41.6",
+      "actual": "41.6",
+      "ok": true
+    },
+    {
+      "row": 11,
+      "column": "8月",
+      "expected": "46.1",
+      "actual": "46.1",
+      "ok": true
+    },
+    {
+      "row": 11,
+      "column": "9月",
+      "expected": "68.4",
+      "actual": "68.4",
+      "ok": true
+    },
+    {
+      "row": 11,
+      "column": "平均",
+      "expected": "53.6",
+      "actual": "53.6",
+      "ok": true
+    },
+    {
+      "row": 11,
+      "column": "標準偏差",
+      "expected": "11.1",
+      "actual": "11.1",
+      "ok": true
+    },
+    {
+      "row": 12,
+      "column": "分類",
+      "expected": "収益性",
+      "actual": "収益性",
+      "ok": true
+    },
+    {
+      "row": 12,
+      "column": "項目",
+      "expected": "売上総利益率",
+      "actual": "売上総利益率",
+      "ok": true
+    },
+    {
+      "row": 12,
+      "column": "単位",
+      "expected": "%",
+      "actual": "%",
+      "ok": true
+    },
+    {
+      "row": 12,
+      "column": "4月",
+      "expected": "30.37",
+      "actual": "30.37",
+      "ok": true
+    },
+    {
+      "row": 12,
+      "column": "5月",
+      "expected": "30.35",
+      "actual": "30.35",
+      "ok": true
+    },
+    {
+      "row": 12,
+      "column": "6月",
+      "expected": "27.03",
+      "actual": "27.03",
+      "ok": true
+    },
+    {
+      "row": 12,
+      "column": "7月",
+      "expected": "25.84",
+      "actual": "25.84",
+      "ok": true
+    },
+    {
+      "row": 12,
+      "column": "8月",
+      "expected": "28.48",
+      "actual": "28.48",
+      "ok": true
+    },
+    {
+      "row": 12,
+      "column": "9月",
+      "expected": "28.02",
+      "actual": "28.02",
+      "ok": true
+    },
+    {
+      "row": 12,
+      "column": "平均",
+      "expected": "28.35",
+      "actual": "28.35",
+      "ok": true
+    },
+    {
+      "row": 12,
+      "column": "標準偏差",
+      "expected": "1.65",
+      "actual": "1.65",
+      "ok": true
+    },
+    {
+      "row": 13,
+      "column": "分類",
+      "expected": "収益性",
+      "actual": "収益性",
+      "ok": true
+    },
+    {
+      "row": 13,
+      "column": "項目",
+      "expected": "営業利益率",
+      "actual": "営業利益率",
+      "ok": true
+    },
+    {
+      "row": 13,
+      "column": "単位",
+      "expected": "%",
+      "actual": "%",
+      "ok": true
+    },
+    {
+      "row": 13,
+      "column": "4月",
+      "expected": "6.78",
+      "actual": "6.78",
+      "ok": true
+    },
+    {
+      "row": 13,
+      "column": "5月",
+      "expected": "9.20",
+      "actual": "9.20",
+      "ok": true
+    },
+    {
+      "row": 13,
+      "column": "6月",
+      "expected": "7.38",
+      "actual": "7.38",
+      "ok": true
+    },
+    {
+      "row": 13,
+      "column": "7月",
+      "expected": "9.35",
+      "actual": "9.35",
+      "ok": true
+    },
+    {
+      "row": 13,
+      "column": "8月",
+      "expected": "10.01",
+      "actual": "10.01",
+      "ok": true
+    },
+    {
+      "row": 13,
+      "column": "9月",
+      "expected": "8.12",
+      "actual": "8.12",
+      "ok": true
+    },
+    {
+      "row": 13,
+      "column": "平均",
+      "expected": "8.47",
+      "actual": "8.47",
+      "ok": true
+    },
+    {
+      "row": 13,
+      "column": "標準偏差",
+      "expected": "1.14",
+      "actual": "1.14",
+      "ok": true
+    },
+    {
+      "row": 14,
+      "column": "分類",
+      "expected": "人事",
+      "actual": "人事",
+      "ok": true
+    },
+    {
+      "row": 14,
+      "column": "項目",
+      "expected": "従業員数",
+      "actual": "従業員数",
+      "ok": true
+    },
+    {
+      "row": 14,
+      "column": "単位",
+      "expected": "人",
+      "actual": "人",
+      "ok": true
+    },
+    {
+      "row": 14,
+      "column": "4月",
+      "expected": "2,498",
+      "actual": "2,498",
+      "ok": true
+    },
+    {
+      "row": 14,
+      "column": "5月",
+      "expected": "2,522",
+      "actual": "2,522",
+      "ok": true
+    },
+    {
+      "row": 14,
+      "column": "6月",
+      "expected": "2,501",
+      "actual": "2,501",
+      "ok": true
+    },
+    {
+      "row": 14,
+      "column": "7月",
+      "expected": "2,502",
+      "actual": "2,502",
+      "ok": true
+    },
+    {
+      "row": 14,
+      "column": "8月",
+      "expected": "2,475",
+      "actual": "2,475",
+      "ok": true
+    },
+    {
+      "row": 14,
+      "column": "9月",
+      "expected": "2,492",
+      "actual": "2,492",
+      "ok": true
+    },
+    {
+      "row": 14,
+      "column": "平均",
+      "expected": "2,498",
+      "actual": "2,498",
+      "ok": true
+    },
+    {
+      "row": 14,
+      "column": "標準偏差",
+      "expected": "14",
+      "actual": "14",
+      "ok": true
+    },
+    {
+      "row": 15,
+      "column": "分類",
+      "expected": "人事",
+      "actual": "人事",
+      "ok": true
+    },
+    {
+      "row": 15,
+      "column": "項目",
+      "expected": "月次離職率",
+      "actual": "月次離職率",
+      "ok": true
+    },
+    {
+      "row": 15,
+      "column": "単位",
+      "expected": "%",
+      "actual": "%",
+      "ok": true
+    },
+    {
+      "row": 15,
+      "column": "4月",
+      "expected": "1.20",
+      "actual": "1.20",
+      "ok": true
+    },
+    {
+      "row": 15,
+      "column": "5月",
+      "expected": "1.17",
+      "actual": "1.17",
+      "ok": true
+    },
+    {
+      "row": 15,
+      "column": "6月",
+      "expected": "1.50",
+      "actual": "1.50",
+      "ok": true
+    },
+    {
+      "row": 15,
+      "column": "7月",
+      "expected": "1.00",
+      "actual": "1.00",
+      "ok": true
+    },
+    {
+      "row": 15,
+      "column": "8月",
+      "expected": "1.17",
+      "actual": "1.17",
+      "ok": true
+    },
+    {
+      "row": 15,
+      "column": "9月",
+      "expected": "1.95",
+      "actual": "1.95",
+      "ok": true
+    },
+    {
+      "row": 15,
+      "column": "平均",
+      "expected": "1.33",
+      "actual": "1.33",
+      "ok": true
+    },
+    {
+      "row": 15,
+      "column": "標準偏差",
+      "expected": "0.31",
+      "actual": "0.31",
+      "ok": true
+    }
+  ]
+}

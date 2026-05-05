@@ -1,0 +1,168 @@
+{
+  "status": "ok",
+  "error": "",
+  "pdf": "C:\\Users\\nyham\\work\\docling_poc\\outputs\\docling_benchmark\\pdfs\\case13.pdf",
+  "pages": "30-32",
+  "mode": "OPENAI_VLM_SWEEP",
+  "model": "gpt-5.4-mini",
+  "response_format": "markdown",
+  "prompt_variant": "table_first",
+  "reasoning_effort": "medium",
+  "image_detail": "auto",
+  "scale": 2.0,
+  "elapsed_seconds": 169.742,
+  "markdown_chars": 9026,
+  "unknown_marker_count": 0,
+  "table_count": 12,
+  "zero_row_table_count": 9,
+  "one_row_table_count": 1,
+  "table_shapes": "16x9;25x6;0x1;0x6;0x4;1x9;0x1;0x6;0x1;0x6;0x1;0x6",
+  "adjustment_pool_mentions": 1,
+  "adjustment_pool_unknown": false,
+  "adjustment_pool_lines": [
+    "(km²) | 所在 都道府県 | 湖名 | 面積 (km²) | 所在 都道府県 | びわこ | 669.26 | 滋賀県 | 風蓮湖 ふうれんこ | 64.17 | 北海道 | かすみがうら | 168.21 | 茨城県 | 小川原湖 おがわらこ | 61.96 | 青森県 | さろまこ | 151.63 | 北海道 | 十和田湖 とわだこ | 61.10 | 青森県、秋田県 | いなわしろこ | 103.24 | 福島県 | 能取湖 のとろこ | 58.18 | 北海道 | なかうみ | 85.82 | 島根県、鳥取県 | 北浦 きたうら | 35.04 | 茨城県 | くっしゃろこ | 79.54 | 北海道 | 厚岸湖 あっけしこ | 32.70 | 北海道 | しんじこ | 79.26 | 島根県 | 網走湖 あばしりこ | 32.27 | 北海道 | しこつこ | 78.48 | 北海道 | 八郎潟 はちろうがた | 27.75 | 秋田県 | とうやこ | 70.72 | 北海道 | 調整池 ちょうせいち |  |  | はまなこ | 64.91 | 静岡県 | 田沢湖 たざわこ | 25.80 | 秋田県 |"
+  ],
+  "usage_events": [],
+  "tables": [
+    {
+      "index": 1,
+      "rows": 16,
+      "columns": 9,
+      "headers": [
+        "都道府県",
+        "面積 (km²)",
+        "千分比 (0/00)",
+        "都道府県",
+        "面積 (km²)",
+        "千分比 (0/00)",
+        "都道府県",
+        "面積 (km²)",
+        "千分比 (0/00)"
+      ]
+    },
+    {
+      "index": 2,
+      "rows": 25,
+      "columns": 6,
+      "headers": [
+        "都道府県",
+        "島の数 1)",
+        "2府県にまたがる島の数",
+        "都道府県",
+        "島の数 1)",
+        "2府県にまたがる島の数"
+      ]
+    },
+    {
+      "index": 3,
+      "rows": 0,
+      "columns": 1,
+      "headers": [
+        "島名"
+      ]
+    },
+    {
+      "index": 4,
+      "rows": 0,
+      "columns": 6,
+      "headers": [
+        "---",
+        "---:",
+        "---",
+        "---",
+        "---:",
+        "---"
+      ]
+    },
+    {
+      "index": 5,
+      "rows": 0,
+      "columns": 4,
+      "headers": [
+        "区分",
+        "合計",
+        "農地",
+        "森林"
+      ]
+    },
+    {
+      "index": 6,
+      "rows": 1,
+      "columns": 9,
+      "headers": [
+        "---",
+        "---:",
+        "---:",
+        "---:",
+        "---:",
+        "---:",
+        "---:",
+        "---:",
+        "---:"
+      ]
+    },
+    {
+      "index": 7,
+      "rows": 0,
+      "columns": 1,
+      "headers": [
+        "湖名"
+      ]
+    },
+    {
+      "index": 8,
+      "rows": 0,
+      "columns": 6,
+      "headers": [
+        "---",
+        "---:",
+        "---",
+        "---",
+        "---:",
+        "---"
+      ]
+    },
+    {
+      "index": 9,
+      "rows": 0,
+      "columns": 1,
+      "headers": [
+        "山名"
+      ]
+    },
+    {
+      "index": 10,
+      "rows": 0,
+      "columns": 6,
+      "headers": [
+        "---",
+        "---:",
+        "---",
+        "---",
+        "---:",
+        "---"
+      ]
+    },
+    {
+      "index": 11,
+      "rows": 0,
+      "columns": 1,
+      "headers": [
+        "水系名"
+      ]
+    },
+    {
+      "index": 12,
+      "rows": 0,
+      "columns": 6,
+      "headers": [
+        "---",
+        "---:",
+        "---:",
+        "---",
+        "---:",
+        "---:"
+      ]
+    }
+  ]
+}

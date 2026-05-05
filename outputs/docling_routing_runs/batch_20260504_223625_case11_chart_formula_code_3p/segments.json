@@ -1,0 +1,66 @@
+[
+  {
+    "mode": "TEXT_TABLE_FAST",
+    "start_page": 1,
+    "end_page": 3,
+    "markdown": "## Analytics Appendix C11-CHART-P01-ANCHOR\n\n<!-- image -->\n\n<!-- image -->\n\n| Chart ID       | SKU           | Quantity   | Amount      | Variance     |\n|----------------|---------------|------------|-------------|--------------|\n| C11-P01-T1-R01 | SKU-01101-699 | QTY-966    | AMT-5518.77 | VAR-01-01-05 |\n| C11-P01-T1-R02 | SKU-01102-647 | QTY-913    | AMT-7199.46 | VAR-01-02-05 |\n| C11-P01-T1-R03 | SKU-01103-583 | QTY-140    | AMT-3307.61 | VAR-01-03-05 |\n| C11-P01-T1-R04 | SKU-01104-250 | QTY-911    | AMT-5837.51 | VAR-01-04-05 |\n| C11-P01-T1-R05 | SKU-01105-772 | QTY-611    | AMT-6785.81 | VAR-01-05-05 |\n| C11-P01-T1-R06 | SKU-01106-730 | QTY-138    | AMT-8373.91 | VAR-01-06-05 |\n\n## Analytics Appendix C11-CHART-P02-ANCHOR\n\n<!-- image -->\n\n<!-- image -->\n\n| Chart ID       | SKU           | Quantity   | Amount      | Variance     |\n|----------------|---------------|------------|-------------|--------------|\n| C11-P02-T1-R01 | SKU-02101-900 | QTY-854    | AMT-7293.42 | VAR-02-01-05 |\n| C11-P02-T1-R02 | SKU-02102-909 | QTY-431    | AMT-1437.90 | VAR-02-02-05 |\n| C11-P02-T1-R03 | SKU-02103-381 | QTY-595    | AMT-1206.99 | VAR-02-03-05 |\n| C11-P02-T1-R04 | SKU-02104-868 | QTY-998    | AMT-8832.10 | VAR-02-04-05 |\n| C11-P02-T1-R05 | SKU-02105-601 | QTY-353    | AMT-4285.68 | VAR-02-05-05 |\n| C11-P02-T1-R06 | SKU-02106-626 | QTY-507    | AMT-4296.31 | VAR-02-06-05 |\n\n## Analytics Appendix C11-CHART-P03-ANCHOR\n\nFORMULA-C11-P03: gross\\_margin = (revenue - cost) / revenue\n\nCODE-C11-P03: if variance &gt; threshold: escalate(row\\_id)\n\n<!-- image -->\n\n| Chart ID       | SKU           | Quantity   | Amount      | Variance     |\n|----------------|---------------|------------|-------------|--------------|\n| C11-P03-T1-R01 | SKU-03101-153 | QTY-268    | AMT-3357.21 | VAR-03-01-05 |\n| C11-P03-T1-R02 | SKU-03102-983 | QTY-563    | AMT-4687.44 | VAR-03-02-05 |\n| C11-P03-T1-R03 | SKU-03103-917 | QTY-664    | AMT-3427.40 | VAR-03-03-05 |\n| C11-P03-T1-R04 | SKU-03104-545 | QTY-332    | AMT-8197.77 | VAR-03-04-05 |\n| C11-P03-T1-R05 | SKU-03105-524 | QTY-506    | AMT-5752.71 | VAR-03-05-05 |\n| C11-P03-T1-R06 | SKU-03106-101 | QTY-728    | AMT-8268.31 | VAR-03-06-05 |",
+    "safe_markdown": "## Analytics Appendix C11-CHART-P01-ANCHOR\n\n<!-- image -->\n\n<!-- image -->\n\n| Chart ID       | SKU           | Quantity   | Amount      | Variance     |\n|----------------|---------------|------------|-------------|--------------|\n| C11-P01-T1-R01 | SKU-01101-699 | QTY-966    | AMT-5518.77 | VAR-01-01-05 |\n| C11-P01-T1-R02 | SKU-01102-647 | QTY-913    | AMT-7199.46 | VAR-01-02-05 |\n| C11-P01-T1-R03 | SKU-01103-583 | QTY-140    | AMT-3307.61 | VAR-01-03-05 |\n| C11-P01-T1-R04 | SKU-01104-250 | QTY-911    | AMT-5837.51 | VAR-01-04-05 |\n| C11-P01-T1-R05 | SKU-01105-772 | QTY-611    | AMT-6785.81 | VAR-01-05-05 |\n| C11-P01-T1-R06 | SKU-01106-730 | QTY-138    | AMT-8373.91 | VAR-01-06-05 |\n\n## Analytics Appendix C11-CHART-P02-ANCHOR\n\n<!-- image -->\n\n<!-- image -->\n\n| Chart ID       | SKU           | Quantity   | Amount      | Variance     |\n|----------------|---------------|------------|-------------|--------------|\n| C11-P02-T1-R01 | SKU-02101-900 | QTY-854    | AMT-7293.42 | VAR-02-01-05 |\n| C11-P02-T1-R02 | SKU-02102-909 | QTY-431    | AMT-1437.90 | VAR-02-02-05 |\n| C11-P02-T1-R03 | SKU-02103-381 | QTY-595    | AMT-1206.99 | VAR-02-03-05 |\n| C11-P02-T1-R04 | SKU-02104-868 | QTY-998    | AMT-8832.10 | VAR-02-04-05 |\n| C11-P02-T1-R05 | SKU-02105-601 | QTY-353    | AMT-4285.68 | VAR-02-05-05 |\n| C11-P02-T1-R06 | SKU-02106-626 | QTY-507    | AMT-4296.31 | VAR-02-06-05 |\n\n## Analytics Appendix C11-CHART-P03-ANCHOR\n\nFORMULA-C11-P03: gross\\_margin = (revenue - cost) / revenue\n\nCODE-C11-P03: if variance &gt; threshold: escalate(row\\_id)\n\n<!-- image -->\n\n| Chart ID       | SKU           | Quantity   | Amount      | Variance     |\n|----------------|---------------|------------|-------------|--------------|\n| C11-P03-T1-R01 | SKU-03101-153 | QTY-268    | AMT-3357.21 | VAR-03-01-05 |\n| C11-P03-T1-R02 | SKU-03102-983 | QTY-563    | AMT-4687.44 | VAR-03-02-05 |\n| C11-P03-T1-R03 | SKU-03103-917 | QTY-664    | AMT-3427.40 | VAR-03-03-05 |\n| C11-P03-T1-R04 | SKU-03104-545 | QTY-332    | AMT-8197.77 | VAR-03-04-05 |\n| C11-P03-T1-R05 | SKU-03105-524 | QTY-506    | AMT-5752.71 | VAR-03-05-05 |\n| C11-P03-T1-R06 | SKU-03106-101 | QTY-728    | AMT-8268.31 | VAR-03-06-05 |",
+    "raw_ocr_markdown": "",
+    "raw_vlm_markdown": "",
+    "tables": [
+      {
+        "index": 1,
+        "rows": 6,
+        "columns": 5,
+        "headers": [
+          "Chart ID",
+          "SKU",
+          "Quantity",
+          "Amount",
+          "Variance"
+        ],
+        "csv": "Chart ID,SKU,Quantity,Amount,Variance\r\nC11-P01-T1-R01,SKU-01101-699,QTY-966,AMT-5518.77,VAR-01-01-05\r\nC11-P01-T1-R02,SKU-01102-647,QTY-913,AMT-7199.46,VAR-01-02-05\r\nC11-P01-T1-R03,SKU-01103-583,QTY-140,AMT-3307.61,VAR-01-03-05\r\nC11-P01-T1-R04,SKU-01104-250,QTY-911,AMT-5837.51,VAR-01-04-05\r\nC11-P01-T1-R05,SKU-01105-772,QTY-611,AMT-6785.81,VAR-01-05-05\r\nC11-P01-T1-R06,SKU-01106-730,QTY-138,AMT-8373.91,VAR-01-06-05\r\n",
+        "html": "<table><tbody><tr><th>Chart ID</th><th>SKU</th><th>Quantity</th><th>Amount</th><th>Variance</th></tr><tr><td>C11-P01-T1-R01</td><td>SKU-01101-699</td><td>QTY-966</td><td>AMT-5518.77</td><td>VAR-01-01-05</td></tr><tr><td>C11-P01-T1-R02</td><td>SKU-01102-647</td><td>QTY-913</td><td>AMT-7199.46</td><td>VAR-01-02-05</td></tr><tr><td>C11-P01-T1-R03</td><td>SKU-01103-583</td><td>QTY-140</td><td>AMT-3307.61</td><td>VAR-01-03-05</td></tr><tr><td>C11-P01-T1-R04</td><td>SKU-01104-250</td><td>QTY-911</td><td>AMT-5837.51</td><td>VAR-01-04-05</td></tr><tr><td>C11-P01-T1-R05</td><td>SKU-01105-772</td><td>QTY-611</td><td>AMT-6785.81</td><td>VAR-01-05-05</td></tr><tr><td>C11-P01-T1-R06</td><td>SKU-01106-730</td><td>QTY-138</td><td>AMT-8373.91</td><td>VAR-01-06-05</td></tr></tbody></table>",
+        "page": 1,
+        "repair": {}
+      },
+      {
+        "index": 2,
+        "rows": 7,
+        "columns": 5,
+        "headers": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "csv": "0,1,2,3,4\r\nChart ID,SKU,Quantity,Amount,Variance\r\nC11-P02-T1-R01,SKU-02101-900,QTY-854,AMT-7293.42,VAR-02-01-05\r\nC11-P02-T1-R02,SKU-02102-909,QTY-431,AMT-1437.90,VAR-02-02-05\r\nC11-P02-T1-R03,SKU-02103-381,QTY-595,AMT-1206.99,VAR-02-03-05\r\nC11-P02-T1-R04,SKU-02104-868,QTY-998,AMT-8832.10,VAR-02-04-05\r\nC11-P02-T1-R05,SKU-02105-601,QTY-353,AMT-4285.68,VAR-02-05-05\r\nC11-P02-T1-R06,SKU-02106-626,QTY-507,AMT-4296.31,VAR-02-06-05\r\n",
+        "html": "<table><tbody><tr><td>Chart ID</td><td>SKU</td><td>Quantity</td><td>Amount</td><td>Variance</td></tr><tr><td>C11-P02-T1-R01</td><td>SKU-02101-900</td><td>QTY-854</td><td>AMT-7293.42</td><td>VAR-02-01-05</td></tr><tr><td>C11-P02-T1-R02</td><td>SKU-02102-909</td><td>QTY-431</td><td>AMT-1437.90</td><td>VAR-02-02-05</td></tr><tr><td>C11-P02-T1-R03</td><td>SKU-02103-381</td><td>QTY-595</td><td>AMT-1206.99</td><td>VAR-02-03-05</td></tr><tr><td>C11-P02-T1-R04</td><td>SKU-02104-868</td><td>QTY-998</td><td>AMT-8832.10</td><td>VAR-02-04-05</td></tr><tr><td>C11-P02-T1-R05</td><td>SKU-02105-601</td><td>QTY-353</td><td>AMT-4285.68</td><td>VAR-02-05-05</td></tr><tr><td>C11-P02-T1-R06</td><td>SKU-02106-626</td><td>QTY-507</td><td>AMT-4296.31</td><td>VAR-02-06-05</td></tr></tbody></table>",
+        "page": 2,
+        "repair": {}
+      },
+      {
+        "index": 3,
+        "rows": 7,
+        "columns": 5,
+        "headers": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "csv": "0,1,2,3,4\r\nChart ID,SKU,Quantity,Amount,Variance\r\nC11-P03-T1-R01,SKU-03101-153,QTY-268,AMT-3357.21,VAR-03-01-05\r\nC11-P03-T1-R02,SKU-03102-983,QTY-563,AMT-4687.44,VAR-03-02-05\r\nC11-P03-T1-R03,SKU-03103-917,QTY-664,AMT-3427.40,VAR-03-03-05\r\nC11-P03-T1-R04,SKU-03104-545,QTY-332,AMT-8197.77,VAR-03-04-05\r\nC11-P03-T1-R05,SKU-03105-524,QTY-506,AMT-5752.71,VAR-03-05-05\r\nC11-P03-T1-R06,SKU-03106-101,QTY-728,AMT-8268.31,VAR-03-06-05\r\n",
+        "html": "<table><tbody><tr><td>Chart ID</td><td>SKU</td><td>Quantity</td><td>Amount</td><td>Variance</td></tr><tr><td>C11-P03-T1-R01</td><td>SKU-03101-153</td><td>QTY-268</td><td>AMT-3357.21</td><td>VAR-03-01-05</td></tr><tr><td>C11-P03-T1-R02</td><td>SKU-03102-983</td><td>QTY-563</td><td>AMT-4687.44</td><td>VAR-03-02-05</td></tr><tr><td>C11-P03-T1-R03</td><td>SKU-03103-917</td><td>QTY-664</td><td>AMT-3427.40</td><td>VAR-03-03-05</td></tr><tr><td>C11-P03-T1-R04</td><td>SKU-03104-545</td><td>QTY-332</td><td>AMT-8197.77</td><td>VAR-03-04-05</td></tr><tr><td>C11-P03-T1-R05</td><td>SKU-03105-524</td><td>QTY-506</td><td>AMT-5752.71</td><td>VAR-03-05-05</td></tr><tr><td>C11-P03-T1-R06</td><td>SKU-03106-101</td><td>QTY-728</td><td>AMT-8268.31</td><td>VAR-03-06-05</td></tr></tbody></table>",
+        "page": 3,
+        "repair": {}
+      }
+    ],
+    "elapsed_seconds": 3.264,
+    "candidate_timings_seconds": {},
+    "diagnostics": {
+      "coordinate_table_reconstruction": false
+    }
+  }
+]

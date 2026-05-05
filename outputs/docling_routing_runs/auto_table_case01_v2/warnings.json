@@ -1,0 +1,146 @@
+[
+  {
+    "page": 1,
+    "mode": "TEXT_TABLE_VLM",
+    "level": "info",
+    "code": "COORDINATE_TABLE_FALLBACK_TO_VLM",
+    "score": 0.65,
+    "message": "PDF座標ベースの表復元が低信頼のため、表抽出をVLMへフォールバックしました。",
+    "suggested_action": "出力表とPDF原本を確認してください。重要ページではVLM突合を検討してください。",
+    "evidence": {
+      "routing_source_mode": "TEXT_TABLE_FAST",
+      "coordinate_quality": {
+        "ok": false,
+        "reasons": [
+          "prose_row_risk"
+        ],
+        "rows": 12,
+        "columns": 6,
+        "span_count": 101,
+        "span_coverage": 1.0,
+        "spans_per_row": 8.4167,
+        "span_per_row_limit": 18.0,
+        "max_cell_chars": 70,
+        "max_to_median_cell_char_ratio": 5.8333,
+        "max_long_text_row_ratio": 0.5
+      },
+      "coordinate_diagnostics": {
+        "method": "pdf_coordinate_grid",
+        "page": 1,
+        "status": "ok",
+        "bbox": [
+          50.02,
+          51.02,
+          545.25,
+          364.44
+        ],
+        "table_area_ratio": 0.3097,
+        "x_line_count": 7,
+        "y_line_count": 13,
+        "raw_rows": 12,
+        "raw_columns": 6,
+        "trimmed_rows": 12,
+        "trimmed_columns": 6,
+        "span_count": 101,
+        "assigned_span_count": 101,
+        "span_coverage": 1.0,
+        "spans_per_trimmed_row": 8.4167,
+        "max_cell_chars": 70,
+        "median_cell_chars": 12.0,
+        "max_to_median_cell_char_ratio": 5.8333,
+        "max_long_text_row_ratio": 0.5,
+        "header_mode": "none",
+        "header_inference_enabled": false,
+        "header_row_count": 0,
+        "measure_start_column": null,
+        "filled_row_header_count": 0,
+        "pdf_grid_rows_preserved": true,
+        "headers": [
+          "col_001",
+          "col_002",
+          "col_003",
+          "col_004",
+          "col_005",
+          "col_006"
+        ],
+        "non_table_text_line_count": 3,
+        "non_table_text_chars": 176
+      },
+      "selected_model": "gpt-5.4-mini",
+      "model_selection_reasons": []
+    },
+    "target": null
+  },
+  {
+    "page": 2,
+    "mode": "TEXT_TABLE_VLM",
+    "level": "info",
+    "code": "COORDINATE_TABLE_FALLBACK_TO_VLM",
+    "score": 0.65,
+    "message": "PDF座標ベースの表復元が低信頼のため、表抽出をVLMへフォールバックしました。",
+    "suggested_action": "出力表とPDF原本を確認してください。重要ページではVLM突合を検討してください。",
+    "evidence": {
+      "routing_source_mode": "TEXT_TABLE_FAST",
+      "coordinate_quality": {
+        "ok": false,
+        "reasons": [
+          "prose_row_risk"
+        ],
+        "rows": 13,
+        "columns": 6,
+        "span_count": 107,
+        "span_coverage": 1.0,
+        "spans_per_row": 8.2308,
+        "span_per_row_limit": 18.0,
+        "max_cell_chars": 70,
+        "max_to_median_cell_char_ratio": 5.8333,
+        "max_long_text_row_ratio": 0.5
+      },
+      "coordinate_diagnostics": {
+        "method": "pdf_coordinate_grid",
+        "page": 2,
+        "status": "ok",
+        "bbox": [
+          50.02,
+          51.02,
+          545.25,
+          376.44
+        ],
+        "table_area_ratio": 0.3216,
+        "x_line_count": 7,
+        "y_line_count": 14,
+        "raw_rows": 13,
+        "raw_columns": 6,
+        "trimmed_rows": 13,
+        "trimmed_columns": 6,
+        "span_count": 107,
+        "assigned_span_count": 107,
+        "span_coverage": 1.0,
+        "spans_per_trimmed_row": 8.2308,
+        "max_cell_chars": 70,
+        "median_cell_chars": 12.0,
+        "max_to_median_cell_char_ratio": 5.8333,
+        "max_long_text_row_ratio": 0.5,
+        "header_mode": "none",
+        "header_inference_enabled": false,
+        "header_row_count": 0,
+        "measure_start_column": null,
+        "filled_row_header_count": 0,
+        "pdf_grid_rows_preserved": true,
+        "headers": [
+          "col_001",
+          "col_002",
+          "col_003",
+          "col_004",
+          "col_005",
+          "col_006"
+        ],
+        "non_table_text_line_count": 3,
+        "non_table_text_chars": 176
+      },
+      "selected_model": "gpt-5.4-mini",
+      "model_selection_reasons": []
+    },
+    "target": null
+  }
+]

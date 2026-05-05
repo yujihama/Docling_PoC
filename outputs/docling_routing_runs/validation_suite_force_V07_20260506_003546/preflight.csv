@@ -1,0 +1,2 @@
+complex_table_score,elapsed_seconds,embedded_visual_region_count,embedded_visual_regions,extra_actions,height,image_area_ratio,image_read_risk_score,line_count,mode,page,reasons,rect_count,table_score,text_chars,text_density,text_quality_score,visual_reference_count,width
+0.4333,0.009,0,[],[],841.89,0.0,0.2121,1,IMAGE_RECONCILE,1,forced_reconcile_page,51,0.825,586,0.001169,0.8654,0,595.28

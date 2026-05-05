@@ -1,0 +1,146 @@
+[
+  {
+    "page": 1,
+    "mode": "IMAGE_RECONCILE",
+    "level": "needs_retry",
+    "code": "CRITICAL_VALUE_DISAGREEMENT",
+    "score": 0.9,
+    "message": "id のOCR/VLM読み取り結果が一致しません。",
+    "suggested_action": "該当ページを確認し、必要なら高解像度で再投入してください。",
+    "evidence": {
+      "field_type": "id",
+      "ocr_values": [
+        "ScannedIntakePacket1C05-SCAN-P01-ANCHOR",
+        "tablemarkerC05-IMAGE-NOTE-P01"
+      ],
+      "vlm_values": [
+        "C05-SCAN-P01-ANCHOR",
+        "C05-IMAGE-NOTE-P01"
+      ]
+    },
+    "target": null
+  },
+  {
+    "page": 1,
+    "mode": "IMAGE_RECONCILE",
+    "level": "warning",
+    "code": "MASKED_AS_UNKNOWN",
+    "score": 0.8,
+    "message": "safe出力で低信頼箇所を読み取り不明に置換しました。",
+    "suggested_action": "raw_outputのOCR/VLM候補値を確認してください。",
+    "evidence": {
+      "masked_value_count": 2,
+      "masked_cell_count": 0,
+      "invalid_value_count": 0
+    },
+    "target": null
+  },
+  {
+    "page": 2,
+    "mode": "IMAGE_RECONCILE",
+    "level": "needs_retry",
+    "code": "CRITICAL_VALUE_DISAGREEMENT",
+    "score": 0.9,
+    "message": "id のOCR/VLM読み取り結果が一致しません。",
+    "suggested_action": "該当ページを確認し、必要なら高解像度で再投入してください。",
+    "evidence": {
+      "field_type": "id",
+      "ocr_values": [
+        "ScannedIntakePacket2C05-SCAN-P02-ANCHOR",
+        "tablemarkerC05-IMAGE-NOTE-P02"
+      ],
+      "vlm_values": [
+        "C05-SCAN-P02-ANCHOR",
+        "C05-IMAGE-NOTE-P02"
+      ]
+    },
+    "target": null
+  },
+  {
+    "page": 2,
+    "mode": "IMAGE_RECONCILE",
+    "level": "warning",
+    "code": "MASKED_AS_UNKNOWN",
+    "score": 0.8,
+    "message": "safe出力で低信頼箇所を読み取り不明に置換しました。",
+    "suggested_action": "raw_outputのOCR/VLM候補値を確認してください。",
+    "evidence": {
+      "masked_value_count": 2,
+      "masked_cell_count": 0,
+      "invalid_value_count": 0
+    },
+    "target": null
+  },
+  {
+    "page": 3,
+    "mode": "IMAGE_RECONCILE",
+    "level": "needs_retry",
+    "code": "CRITICAL_VALUE_DISAGREEMENT",
+    "score": 0.9,
+    "message": "id のOCR/VLM読み取り結果が一致しません。",
+    "suggested_action": "該当ページを確認し、必要なら高解像度で再投入してください。",
+    "evidence": {
+      "field_type": "id",
+      "ocr_values": [
+        "ScannedIntakePacket3C05-SCAN-P03-ANCHOR",
+        "tablemarkerC05-IMAGE-NOTE-P03"
+      ],
+      "vlm_values": [
+        "C05-SCAN-P03-ANCHOR",
+        "C05-IMAGE-NOTE-P03"
+      ]
+    },
+    "target": null
+  },
+  {
+    "page": 3,
+    "mode": "IMAGE_RECONCILE",
+    "level": "warning",
+    "code": "MASKED_AS_UNKNOWN",
+    "score": 0.8,
+    "message": "safe出力で低信頼箇所を読み取り不明に置換しました。",
+    "suggested_action": "raw_outputのOCR/VLM候補値を確認してください。",
+    "evidence": {
+      "masked_value_count": 2,
+      "masked_cell_count": 0,
+      "invalid_value_count": 0
+    },
+    "target": null
+  },
+  {
+    "page": 4,
+    "mode": "IMAGE_RECONCILE",
+    "level": "needs_retry",
+    "code": "CRITICAL_VALUE_DISAGREEMENT",
+    "score": 0.9,
+    "message": "id のOCR/VLM読み取り結果が一致しません。",
+    "suggested_action": "該当ページを確認し、必要なら高解像度で再投入してください。",
+    "evidence": {
+      "field_type": "id",
+      "ocr_values": [
+        "ScannedIntakePacket4C05-SCAN-P04-ANCHOR",
+        "tablemarkerC05-IMAGE-NOTE-P04"
+      ],
+      "vlm_values": [
+        "C05-SCAN-P04-ANCHOR",
+        "C05-IMAGE-NOTE-P04"
+      ]
+    },
+    "target": null
+  },
+  {
+    "page": 4,
+    "mode": "IMAGE_RECONCILE",
+    "level": "warning",
+    "code": "MASKED_AS_UNKNOWN",
+    "score": 0.8,
+    "message": "safe出力で低信頼箇所を読み取り不明に置換しました。",
+    "suggested_action": "raw_outputのOCR/VLM候補値を確認してください。",
+    "evidence": {
+      "masked_value_count": 2,
+      "masked_cell_count": 0,
+      "invalid_value_count": 0
+    },
+    "target": null
+  }
+]

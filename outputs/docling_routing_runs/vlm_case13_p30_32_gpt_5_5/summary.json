@@ -1,0 +1,207 @@
+{
+  "pdf": "C:\\Users\\nyham\\work\\docling_poc\\outputs\\docling_benchmark\\pdfs\\case13.pdf",
+  "pages": "30-32",
+  "mode": "OPENAI_VLM_DIRECT",
+  "model": "gpt-5.5",
+  "response_format": "markdown",
+  "prompt_variant": "strict_preserve",
+  "scale": 2.0,
+  "elapsed_seconds": 63.653,
+  "markdown_chars": 9707,
+  "table_count": 16,
+  "tables": [
+    {
+      "index": 1,
+      "rows": 0,
+      "columns": 1,
+      "headers": [
+        "都道府県"
+      ]
+    },
+    {
+      "index": 2,
+      "rows": 15,
+      "columns": 9,
+      "headers": [
+        "---",
+        "---:",
+        "---:",
+        "---",
+        "---:",
+        "---:",
+        "---",
+        "---:",
+        "---:"
+      ]
+    },
+    {
+      "index": 3,
+      "rows": 0,
+      "columns": 1,
+      "headers": [
+        "都道府県"
+      ]
+    },
+    {
+      "index": 4,
+      "rows": 24,
+      "columns": 6,
+      "headers": [
+        "---",
+        "---:",
+        "---:",
+        "---",
+        "---:",
+        "---:"
+      ]
+    },
+    {
+      "index": 5,
+      "rows": 17,
+      "columns": 8,
+      "headers": [
+        "島名",
+        "",
+        "面積（km²）",
+        "所在都道府県",
+        "島名",
+        "",
+        "面積（km²）",
+        "所在都道府県"
+      ]
+    },
+    {
+      "index": 6,
+      "rows": 2,
+      "columns": 9,
+      "headers": [
+        "区分",
+        "合計",
+        "農地",
+        "森林",
+        "原野等 1）",
+        "水面・河川・水路",
+        "道路 2）",
+        "宅地",
+        "その他"
+      ]
+    },
+    {
+      "index": 7,
+      "rows": 10,
+      "columns": 8,
+      "headers": [
+        "湖名",
+        "",
+        "面積（km²）",
+        "所在都道府県",
+        "湖名",
+        "",
+        "面積（km²）",
+        "所在都道府県"
+      ]
+    },
+    {
+      "index": 8,
+      "rows": 0,
+      "columns": 1,
+      "headers": [
+        "山名"
+      ]
+    },
+    {
+      "index": 9,
+      "rows": 0,
+      "columns": 6,
+      "headers": [
+        "---",
+        "---:",
+        "---",
+        "---",
+        "---:",
+        "---"
+      ]
+    },
+    {
+      "index": 10,
+      "rows": 0,
+      "columns": 6,
+      "headers": [
+        "奥穂高岳　おくほたかだけ",
+        "3,190",
+        "長野県、岐阜県",
+        "塩見岳　しおみだけ",
+        "3,052",
+        "長野県、静岡県"
+      ]
+    },
+    {
+      "index": 11,
+      "rows": 0,
+      "columns": 6,
+      "headers": [
+        "赤石岳　あかいしだけ",
+        "3,121",
+        "長野県、静岡県",
+        "南岳　みなみだけ",
+        "3,033",
+        "長野県、岐阜県"
+      ]
+    },
+    {
+      "index": 12,
+      "rows": 0,
+      "columns": 3,
+      "headers": [
+        "北穂高岳　きたほたかだけ",
+        "3,106",
+        "長野県、岐阜県"
+      ]
+    },
+    {
+      "index": 13,
+      "rows": 0,
+      "columns": 3,
+      "headers": [
+        "大喰岳　おおばみだけ",
+        "3,101",
+        "長野県、岐阜県"
+      ]
+    },
+    {
+      "index": 14,
+      "rows": 0,
+      "columns": 6,
+      "headers": [
+        "前穂高岳　まえほたかだけ",
+        "3,090",
+        "長野県",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "index": 15,
+      "rows": 0,
+      "columns": 1,
+      "headers": [
+        "水系名"
+      ]
+    },
+    {
+      "index": 16,
+      "rows": 21,
+      "columns": 6,
+      "headers": [
+        "---",
+        "---:",
+        "---:",
+        "---",
+        "---:",
+        "---:"
+      ]
+    }
+  ],
+  "usage_events": []
+}

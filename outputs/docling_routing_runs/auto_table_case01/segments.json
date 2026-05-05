@@ -1,0 +1,262 @@
+[
+  {
+    "mode": "TEXT_TABLE_COORD",
+    "start_page": 1,
+    "end_page": 1,
+    "markdown": "C01 | Clean financial summary Page 1 of 2\n\n| col_001                                                                | col_002                                            | col_003                                 | col_004                                | col_005                                  | col_006          |\n| ---------------------------------------------------------------------- | -------------------------------------------------- | --------------------------------------- | -------------------------------------- | ---------------------------------------- | ---------------- |\n| Quarterly This has clean page a repeated control marker deterministic. | Controls table, vector narrow C01-NOTE-P01. Values | C01-TEXT-P01-ALPHA footnotes, and a are | Reviewers compare The secondary marker | extracted anchors text C01-RIGHT-P01. is | and table cells. |\n| Control ID                                                             | SKU                                                | Quantity                                | Amount                                 | Owner                                    | Status           |\n| C01-P01-T1-R01                                                         | SKU-01101-905                                      | QTY-813                                 | AMT-7552.71                            | OWN-01-01-05                             | STA-01-01-06     |\n| C01-P01-T1-R02                                                         | SKU-01102-577                                      | QTY-397                                 | AMT-1611.12                            | OWN-01-02-05                             | STA-01-02-06     |\n| C01-P01-T1-R03                                                         | SKU-01103-593                                      | QTY-623                                 | AMT-7135.64                            | OWN-01-03-05                             | STA-01-03-06     |\n| C01-P01-T1-R04                                                         | SKU-01104-396                                      | QTY-538                                 | AMT-8810.36                            | OWN-01-04-05                             | STA-01-04-06     |\n| C01-P01-T1-R05                                                         | SKU-01105-691                                      | QTY-650                                 | AMT-1874.98                            | OWN-01-05-05                             | STA-01-05-06     |\n| C01-P01-T1-R06                                                         | SKU-01106-238                                      | QTY-800                                 | AMT-9166.90                            | OWN-01-06-05                             | STA-01-06-06     |\n| C01-P01-T1-R07                                                         | SKU-01107-795                                      | QTY-744                                 | AMT-8111.14                            | OWN-01-07-05                             | STA-01-07-06     |\n| C01-P01-T1-R08                                                         | SKU-01108-936                                      | QTY-117                                 | AMT-3167.56                            | OWN-01-08-05                             | STA-01-08-06     |\n| C01-P01-T1-R09                                                         | SKU-01109-255                                      | QTY-484                                 | AMT-7267.74                            | OWN-01-09-05                             | STA-01-09-06     |\n| C01-P01-T1-R10                                                         | SKU-01110-970                                      | QTY-436                                 | AMT-4747.10                            | OWN-01-10-05                             | STA-01-10-06     |\n\nFootnote C01-FOOTNOTE-P01: rounded values use USD.\nSynthetic benchmark document generated for Docling extraction testing. C01-FOOTER-P01",
+    "safe_markdown": "C01 | Clean financial summary Page 1 of 2\n\n| col_001                                                                | col_002                                            | col_003                                 | col_004                                | col_005                                  | col_006          |\n| ---------------------------------------------------------------------- | -------------------------------------------------- | --------------------------------------- | -------------------------------------- | ---------------------------------------- | ---------------- |\n| Quarterly This has clean page a repeated control marker deterministic. | Controls table, vector narrow C01-NOTE-P01. Values | C01-TEXT-P01-ALPHA footnotes, and a are | Reviewers compare The secondary marker | extracted anchors text C01-RIGHT-P01. is | and table cells. |\n| Control ID                                                             | SKU                                                | Quantity                                | Amount                                 | Owner                                    | Status           |\n| C01-P01-T1-R01                                                         | SKU-01101-905                                      | QTY-813                                 | AMT-7552.71                            | OWN-01-01-05                             | STA-01-01-06     |\n| C01-P01-T1-R02                                                         | SKU-01102-577                                      | QTY-397                                 | AMT-1611.12                            | OWN-01-02-05                             | STA-01-02-06     |\n| C01-P01-T1-R03                                                         | SKU-01103-593                                      | QTY-623                                 | AMT-7135.64                            | OWN-01-03-05                             | STA-01-03-06     |\n| C01-P01-T1-R04                                                         | SKU-01104-396                                      | QTY-538                                 | AMT-8810.36                            | OWN-01-04-05                             | STA-01-04-06     |\n| C01-P01-T1-R05                                                         | SKU-01105-691                                      | QTY-650                                 | AMT-1874.98                            | OWN-01-05-05                             | STA-01-05-06     |\n| C01-P01-T1-R06                                                         | SKU-01106-238                                      | QTY-800                                 | AMT-9166.90                            | OWN-01-06-05                             | STA-01-06-06     |\n| C01-P01-T1-R07                                                         | SKU-01107-795                                      | QTY-744                                 | AMT-8111.14                            | OWN-01-07-05                             | STA-01-07-06     |\n| C01-P01-T1-R08                                                         | SKU-01108-936                                      | QTY-117                                 | AMT-3167.56                            | OWN-01-08-05                             | STA-01-08-06     |\n| C01-P01-T1-R09                                                         | SKU-01109-255                                      | QTY-484                                 | AMT-7267.74                            | OWN-01-09-05                             | STA-01-09-06     |\n| C01-P01-T1-R10                                                         | SKU-01110-970                                      | QTY-436                                 | AMT-4747.10                            | OWN-01-10-05                             | STA-01-10-06     |\n\nFootnote C01-FOOTNOTE-P01: rounded values use USD.\nSynthetic benchmark document generated for Docling extraction testing. C01-FOOTER-P01",
+    "raw_ocr_markdown": "",
+    "raw_vlm_markdown": "",
+    "tables": [
+      {
+        "index": 1,
+        "rows": 12,
+        "columns": 6,
+        "headers": [
+          "col_001",
+          "col_002",
+          "col_003",
+          "col_004",
+          "col_005",
+          "col_006"
+        ],
+        "csv": "col_001,col_002,col_003,col_004,col_005,col_006\r\nQuarterly This has clean page a repeated control marker deterministic.,\"Controls table, vector narrow C01-NOTE-P01. Values\",\"C01-TEXT-P01-ALPHA footnotes, and a are\",Reviewers compare The secondary marker,extracted anchors text C01-RIGHT-P01. is,and table cells.\r\nControl ID,SKU,Quantity,Amount,Owner,Status\r\nC01-P01-T1-R01,SKU-01101-905,QTY-813,AMT-7552.71,OWN-01-01-05,STA-01-01-06\r\nC01-P01-T1-R02,SKU-01102-577,QTY-397,AMT-1611.12,OWN-01-02-05,STA-01-02-06\r\nC01-P01-T1-R03,SKU-01103-593,QTY-623,AMT-7135.64,OWN-01-03-05,STA-01-03-06\r\nC01-P01-T1-R04,SKU-01104-396,QTY-538,AMT-8810.36,OWN-01-04-05,STA-01-04-06\r\nC01-P01-T1-R05,SKU-01105-691,QTY-650,AMT-1874.98,OWN-01-05-05,STA-01-05-06\r\nC01-P01-T1-R06,SKU-01106-238,QTY-800,AMT-9166.90,OWN-01-06-05,STA-01-06-06\r\nC01-P01-T1-R07,SKU-01107-795,QTY-744,AMT-8111.14,OWN-01-07-05,STA-01-07-06\r\nC01-P01-T1-R08,SKU-01108-936,QTY-117,AMT-3167.56,OWN-01-08-05,STA-01-08-06\r\nC01-P01-T1-R09,SKU-01109-255,QTY-484,AMT-7267.74,OWN-01-09-05,STA-01-09-06\r\nC01-P01-T1-R10,SKU-01110-970,QTY-436,AMT-4747.10,OWN-01-10-05,STA-01-10-06\r\n",
+        "html": "<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th>col_001</th>\n      <th>col_002</th>\n      <th>col_003</th>\n      <th>col_004</th>\n      <th>col_005</th>\n      <th>col_006</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>Quarterly This has clean page a repeated control marker deterministic.</td>\n      <td>Controls table, vector narrow C01-NOTE-P01. Values</td>\n      <td>C01-TEXT-P01-ALPHA footnotes, and a are</td>\n      <td>Reviewers compare The secondary marker</td>\n      <td>extracted anchors text C01-RIGHT-P01. is</td>\n      <td>and table cells.</td>\n    </tr>\n    <tr>\n      <td>Control ID</td>\n      <td>SKU</td>\n      <td>Quantity</td>\n      <td>Amount</td>\n      <td>Owner</td>\n      <td>Status</td>\n    </tr>\n    <tr>\n      <td>C01-P01-T1-R01</td>\n      <td>SKU-01101-905</td>\n      <td>QTY-813</td>\n      <td>AMT-7552.71</td>\n      <td>OWN-01-01-05</td>\n      <td>STA-01-01-06</td>\n    </tr>\n    <tr>\n      <td>C01-P01-T1-R02</td>\n      <td>SKU-01102-577</td>\n      <td>QTY-397</td>\n      <td>AMT-1611.12</td>\n      <td>OWN-01-02-05</td>\n      <td>STA-01-02-06</td>\n    </tr>\n    <tr>\n      <td>C01-P01-T1-R03</td>\n      <td>SKU-01103-593</td>\n      <td>QTY-623</td>\n      <td>AMT-7135.64</td>\n      <td>OWN-01-03-05</td>\n      <td>STA-01-03-06</td>\n    </tr>\n    <tr>\n      <td>C01-P01-T1-R04</td>\n      <td>SKU-01104-396</td>\n      <td>QTY-538</td>\n      <td>AMT-8810.36</td>\n      <td>OWN-01-04-05</td>\n      <td>STA-01-04-06</td>\n    </tr>\n    <tr>\n      <td>C01-P01-T1-R05</td>\n      <td>SKU-01105-691</td>\n      <td>QTY-650</td>\n      <td>AMT-1874.98</td>\n      <td>OWN-01-05-05</td>\n      <td>STA-01-05-06</td>\n    </tr>\n    <tr>\n      <td>C01-P01-T1-R06</td>\n      <td>SKU-01106-238</td>\n      <td>QTY-800</td>\n      <td>AMT-9166.90</td>\n      <td>OWN-01-06-05</td>\n      <td>STA-01-06-06</td>\n    </tr>\n    <tr>\n      <td>C01-P01-T1-R07</td>\n      <td>SKU-01107-795</td>\n      <td>QTY-744</td>\n      <td>AMT-8111.14</td>\n      <td>OWN-01-07-05</td>\n      <td>STA-01-07-06</td>\n    </tr>\n    <tr>\n      <td>C01-P01-T1-R08</td>\n      <td>SKU-01108-936</td>\n      <td>QTY-117</td>\n      <td>AMT-3167.56</td>\n      <td>OWN-01-08-05</td>\n      <td>STA-01-08-06</td>\n    </tr>\n    <tr>\n      <td>C01-P01-T1-R09</td>\n      <td>SKU-01109-255</td>\n      <td>QTY-484</td>\n      <td>AMT-7267.74</td>\n      <td>OWN-01-09-05</td>\n      <td>STA-01-09-06</td>\n    </tr>\n    <tr>\n      <td>C01-P01-T1-R10</td>\n      <td>SKU-01110-970</td>\n      <td>QTY-436</td>\n      <td>AMT-4747.10</td>\n      <td>OWN-01-10-05</td>\n      <td>STA-01-10-06</td>\n    </tr>\n  </tbody>\n</table>",
+        "page": 1,
+        "repair": {
+          "enabled": false,
+          "coordinate_reconstruction": {
+            "method": "pdf_coordinate_grid",
+            "page": 1,
+            "status": "ok",
+            "bbox": [
+              50.02,
+              51.02,
+              545.25,
+              364.44
+            ],
+            "table_area_ratio": 0.3097,
+            "x_line_count": 7,
+            "y_line_count": 13,
+            "raw_rows": 12,
+            "raw_columns": 6,
+            "trimmed_rows": 12,
+            "trimmed_columns": 6,
+            "span_count": 101,
+            "assigned_span_count": 101,
+            "span_coverage": 1.0,
+            "spans_per_trimmed_row": 8.4167,
+            "max_cell_chars": 70,
+            "median_cell_chars": 12.0,
+            "max_to_median_cell_char_ratio": 5.8333,
+            "header_mode": "none",
+            "header_inference_enabled": false,
+            "header_row_count": 0,
+            "measure_start_column": null,
+            "filled_row_header_count": 0,
+            "pdf_grid_rows_preserved": true,
+            "headers": [
+              "col_001",
+              "col_002",
+              "col_003",
+              "col_004",
+              "col_005",
+              "col_006"
+            ],
+            "non_table_text_line_count": 3,
+            "non_table_text_chars": 176
+          }
+        }
+      }
+    ],
+    "elapsed_seconds": 0.018,
+    "candidate_timings_seconds": {},
+    "diagnostics": {
+      "routing_source_mode": "TEXT_TABLE_FAST",
+      "coordinate_table_reconstruction": true,
+      "coordinate_quality": {
+        "ok": true,
+        "reasons": [],
+        "rows": 12,
+        "columns": 6,
+        "span_count": 101,
+        "span_coverage": 1.0,
+        "spans_per_row": 8.4167,
+        "span_per_row_limit": 18.0,
+        "max_cell_chars": 70,
+        "max_to_median_cell_char_ratio": 5.8333
+      },
+      "coordinate_diagnostics": {
+        "method": "pdf_coordinate_grid",
+        "page": 1,
+        "status": "ok",
+        "bbox": [
+          50.02,
+          51.02,
+          545.25,
+          364.44
+        ],
+        "table_area_ratio": 0.3097,
+        "x_line_count": 7,
+        "y_line_count": 13,
+        "raw_rows": 12,
+        "raw_columns": 6,
+        "trimmed_rows": 12,
+        "trimmed_columns": 6,
+        "span_count": 101,
+        "assigned_span_count": 101,
+        "span_coverage": 1.0,
+        "spans_per_trimmed_row": 8.4167,
+        "max_cell_chars": 70,
+        "median_cell_chars": 12.0,
+        "max_to_median_cell_char_ratio": 5.8333,
+        "header_mode": "none",
+        "header_inference_enabled": false,
+        "header_row_count": 0,
+        "measure_start_column": null,
+        "filled_row_header_count": 0,
+        "pdf_grid_rows_preserved": true,
+        "headers": [
+          "col_001",
+          "col_002",
+          "col_003",
+          "col_004",
+          "col_005",
+          "col_006"
+        ],
+        "non_table_text_line_count": 3,
+        "non_table_text_chars": 176
+      }
+    }
+  },
+  {
+    "mode": "TEXT_TABLE_COORD",
+    "start_page": 2,
+    "end_page": 2,
+    "markdown": "C01 | Clean financial summary Page 2 of 2\n\n| col_001                                                                | col_002                                            | col_003                                 | col_004                                | col_005                                  | col_006          |\n| ---------------------------------------------------------------------- | -------------------------------------------------- | --------------------------------------- | -------------------------------------- | ---------------------------------------- | ---------------- |\n| Quarterly This has clean page a repeated control marker deterministic. | Controls table, vector narrow C01-NOTE-P02. Values | C01-TEXT-P02-ALPHA footnotes, and a are | Reviewers compare The secondary marker | extracted anchors text C01-RIGHT-P02. is | and table cells. |\n| Control ID                                                             | SKU                                                | Quantity                                | Amount                                 | Owner                                    | Status           |\n| C01-P02-T1-R01                                                         | SKU-02101-849                                      | QTY-240                                 | AMT-4613.49                            | OWN-02-01-05                             | STA-02-01-06     |\n| C01-P02-T1-R02                                                         | SKU-02102-654                                      | QTY-919                                 | AMT-6078.27                            | OWN-02-02-05                             | STA-02-02-06     |\n| C01-P02-T1-R03                                                         | SKU-02103-842                                      | QTY-652                                 | AMT-8538.49                            | OWN-02-03-05                             | STA-02-03-06     |\n| C01-P02-T1-R04                                                         | SKU-02104-980                                      | QTY-727                                 | AMT-5353.59                            | OWN-02-04-05                             | STA-02-04-06     |\n| C01-P02-T1-R05                                                         | SKU-02105-772                                      | QTY-109                                 | AMT-9961.52                            | OWN-02-05-05                             | STA-02-05-06     |\n| C01-P02-T1-R06                                                         | SKU-02106-746                                      | QTY-195                                 | AMT-6012.82                            | OWN-02-06-05                             | STA-02-06-06     |\n| C01-P02-T1-R07                                                         | SKU-02107-674                                      | QTY-271                                 | AMT-6527.28                            | OWN-02-07-05                             | STA-02-07-06     |\n| C01-P02-T1-R08                                                         | SKU-02108-949                                      | QTY-213                                 | AMT-7735.63                            | OWN-02-08-05                             | STA-02-08-06     |\n| C01-P02-T1-R09                                                         | SKU-02109-399                                      | QTY-304                                 | AMT-6053.62                            | OWN-02-09-05                             | STA-02-09-06     |\n| C01-P02-T1-R10                                                         | SKU-02110-761                                      | QTY-677                                 | AMT-7331.94                            | OWN-02-10-05                             | STA-02-10-06     |\n| C01-P02-T1-R11                                                         | SKU-02111-735                                      | QTY-906                                 | AMT-4967.10                            | OWN-02-11-05                             | STA-02-11-06     |\n\nFootnote C01-FOOTNOTE-P02: rounded values use USD.\nSynthetic benchmark document generated for Docling extraction testing. C01-FOOTER-P02",
+    "safe_markdown": "C01 | Clean financial summary Page 2 of 2\n\n| col_001                                                                | col_002                                            | col_003                                 | col_004                                | col_005                                  | col_006          |\n| ---------------------------------------------------------------------- | -------------------------------------------------- | --------------------------------------- | -------------------------------------- | ---------------------------------------- | ---------------- |\n| Quarterly This has clean page a repeated control marker deterministic. | Controls table, vector narrow C01-NOTE-P02. Values | C01-TEXT-P02-ALPHA footnotes, and a are | Reviewers compare The secondary marker | extracted anchors text C01-RIGHT-P02. is | and table cells. |\n| Control ID                                                             | SKU                                                | Quantity                                | Amount                                 | Owner                                    | Status           |\n| C01-P02-T1-R01                                                         | SKU-02101-849                                      | QTY-240                                 | AMT-4613.49                            | OWN-02-01-05                             | STA-02-01-06     |\n| C01-P02-T1-R02                                                         | SKU-02102-654                                      | QTY-919                                 | AMT-6078.27                            | OWN-02-02-05                             | STA-02-02-06     |\n| C01-P02-T1-R03                                                         | SKU-02103-842                                      | QTY-652                                 | AMT-8538.49                            | OWN-02-03-05                             | STA-02-03-06     |\n| C01-P02-T1-R04                                                         | SKU-02104-980                                      | QTY-727                                 | AMT-5353.59                            | OWN-02-04-05                             | STA-02-04-06     |\n| C01-P02-T1-R05                                                         | SKU-02105-772                                      | QTY-109                                 | AMT-9961.52                            | OWN-02-05-05                             | STA-02-05-06     |\n| C01-P02-T1-R06                                                         | SKU-02106-746                                      | QTY-195                                 | AMT-6012.82                            | OWN-02-06-05                             | STA-02-06-06     |\n| C01-P02-T1-R07                                                         | SKU-02107-674                                      | QTY-271                                 | AMT-6527.28                            | OWN-02-07-05                             | STA-02-07-06     |\n| C01-P02-T1-R08                                                         | SKU-02108-949                                      | QTY-213                                 | AMT-7735.63                            | OWN-02-08-05                             | STA-02-08-06     |\n| C01-P02-T1-R09                                                         | SKU-02109-399                                      | QTY-304                                 | AMT-6053.62                            | OWN-02-09-05                             | STA-02-09-06     |\n| C01-P02-T1-R10                                                         | SKU-02110-761                                      | QTY-677                                 | AMT-7331.94                            | OWN-02-10-05                             | STA-02-10-06     |\n| C01-P02-T1-R11                                                         | SKU-02111-735                                      | QTY-906                                 | AMT-4967.10                            | OWN-02-11-05                             | STA-02-11-06     |\n\nFootnote C01-FOOTNOTE-P02: rounded values use USD.\nSynthetic benchmark document generated for Docling extraction testing. C01-FOOTER-P02",
+    "raw_ocr_markdown": "",
+    "raw_vlm_markdown": "",
+    "tables": [
+      {
+        "index": 1,
+        "rows": 13,
+        "columns": 6,
+        "headers": [
+          "col_001",
+          "col_002",
+          "col_003",
+          "col_004",
+          "col_005",
+          "col_006"
+        ],
+        "csv": "col_001,col_002,col_003,col_004,col_005,col_006\r\nQuarterly This has clean page a repeated control marker deterministic.,\"Controls table, vector narrow C01-NOTE-P02. Values\",\"C01-TEXT-P02-ALPHA footnotes, and a are\",Reviewers compare The secondary marker,extracted anchors text C01-RIGHT-P02. is,and table cells.\r\nControl ID,SKU,Quantity,Amount,Owner,Status\r\nC01-P02-T1-R01,SKU-02101-849,QTY-240,AMT-4613.49,OWN-02-01-05,STA-02-01-06\r\nC01-P02-T1-R02,SKU-02102-654,QTY-919,AMT-6078.27,OWN-02-02-05,STA-02-02-06\r\nC01-P02-T1-R03,SKU-02103-842,QTY-652,AMT-8538.49,OWN-02-03-05,STA-02-03-06\r\nC01-P02-T1-R04,SKU-02104-980,QTY-727,AMT-5353.59,OWN-02-04-05,STA-02-04-06\r\nC01-P02-T1-R05,SKU-02105-772,QTY-109,AMT-9961.52,OWN-02-05-05,STA-02-05-06\r\nC01-P02-T1-R06,SKU-02106-746,QTY-195,AMT-6012.82,OWN-02-06-05,STA-02-06-06\r\nC01-P02-T1-R07,SKU-02107-674,QTY-271,AMT-6527.28,OWN-02-07-05,STA-02-07-06\r\nC01-P02-T1-R08,SKU-02108-949,QTY-213,AMT-7735.63,OWN-02-08-05,STA-02-08-06\r\nC01-P02-T1-R09,SKU-02109-399,QTY-304,AMT-6053.62,OWN-02-09-05,STA-02-09-06\r\nC01-P02-T1-R10,SKU-02110-761,QTY-677,AMT-7331.94,OWN-02-10-05,STA-02-10-06\r\nC01-P02-T1-R11,SKU-02111-735,QTY-906,AMT-4967.10,OWN-02-11-05,STA-02-11-06\r\n",
+        "html": "<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th>col_001</th>\n      <th>col_002</th>\n      <th>col_003</th>\n      <th>col_004</th>\n      <th>col_005</th>\n      <th>col_006</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>Quarterly This has clean page a repeated control marker deterministic.</td>\n      <td>Controls table, vector narrow C01-NOTE-P02. Values</td>\n      <td>C01-TEXT-P02-ALPHA footnotes, and a are</td>\n      <td>Reviewers compare The secondary marker</td>\n      <td>extracted anchors text C01-RIGHT-P02. is</td>\n      <td>and table cells.</td>\n    </tr>\n    <tr>\n      <td>Control ID</td>\n      <td>SKU</td>\n      <td>Quantity</td>\n      <td>Amount</td>\n      <td>Owner</td>\n      <td>Status</td>\n    </tr>\n    <tr>\n      <td>C01-P02-T1-R01</td>\n      <td>SKU-02101-849</td>\n      <td>QTY-240</td>\n      <td>AMT-4613.49</td>\n      <td>OWN-02-01-05</td>\n      <td>STA-02-01-06</td>\n    </tr>\n    <tr>\n      <td>C01-P02-T1-R02</td>\n      <td>SKU-02102-654</td>\n      <td>QTY-919</td>\n      <td>AMT-6078.27</td>\n      <td>OWN-02-02-05</td>\n      <td>STA-02-02-06</td>\n    </tr>\n    <tr>\n      <td>C01-P02-T1-R03</td>\n      <td>SKU-02103-842</td>\n      <td>QTY-652</td>\n      <td>AMT-8538.49</td>\n      <td>OWN-02-03-05</td>\n      <td>STA-02-03-06</td>\n    </tr>\n    <tr>\n      <td>C01-P02-T1-R04</td>\n      <td>SKU-02104-980</td>\n      <td>QTY-727</td>\n      <td>AMT-5353.59</td>\n      <td>OWN-02-04-05</td>\n      <td>STA-02-04-06</td>\n    </tr>\n    <tr>\n      <td>C01-P02-T1-R05</td>\n      <td>SKU-02105-772</td>\n      <td>QTY-109</td>\n      <td>AMT-9961.52</td>\n      <td>OWN-02-05-05</td>\n      <td>STA-02-05-06</td>\n    </tr>\n    <tr>\n      <td>C01-P02-T1-R06</td>\n      <td>SKU-02106-746</td>\n      <td>QTY-195</td>\n      <td>AMT-6012.82</td>\n      <td>OWN-02-06-05</td>\n      <td>STA-02-06-06</td>\n    </tr>\n    <tr>\n      <td>C01-P02-T1-R07</td>\n      <td>SKU-02107-674</td>\n      <td>QTY-271</td>\n      <td>AMT-6527.28</td>\n      <td>OWN-02-07-05</td>\n      <td>STA-02-07-06</td>\n    </tr>\n    <tr>\n      <td>C01-P02-T1-R08</td>\n      <td>SKU-02108-949</td>\n      <td>QTY-213</td>\n      <td>AMT-7735.63</td>\n      <td>OWN-02-08-05</td>\n      <td>STA-02-08-06</td>\n    </tr>\n    <tr>\n      <td>C01-P02-T1-R09</td>\n      <td>SKU-02109-399</td>\n      <td>QTY-304</td>\n      <td>AMT-6053.62</td>\n      <td>OWN-02-09-05</td>\n      <td>STA-02-09-06</td>\n    </tr>\n    <tr>\n      <td>C01-P02-T1-R10</td>\n      <td>SKU-02110-761</td>\n      <td>QTY-677</td>\n      <td>AMT-7331.94</td>\n      <td>OWN-02-10-05</td>\n      <td>STA-02-10-06</td>\n    </tr>\n    <tr>\n      <td>C01-P02-T1-R11</td>\n      <td>SKU-02111-735</td>\n      <td>QTY-906</td>\n      <td>AMT-4967.10</td>\n      <td>OWN-02-11-05</td>\n      <td>STA-02-11-06</td>\n    </tr>\n  </tbody>\n</table>",
+        "page": 2,
+        "repair": {
+          "enabled": false,
+          "coordinate_reconstruction": {
+            "method": "pdf_coordinate_grid",
+            "page": 2,
+            "status": "ok",
+            "bbox": [
+              50.02,
+              51.02,
+              545.25,
+              376.44
+            ],
+            "table_area_ratio": 0.3216,
+            "x_line_count": 7,
+            "y_line_count": 14,
+            "raw_rows": 13,
+            "raw_columns": 6,
+            "trimmed_rows": 13,
+            "trimmed_columns": 6,
+            "span_count": 107,
+            "assigned_span_count": 107,
+            "span_coverage": 1.0,
+            "spans_per_trimmed_row": 8.2308,
+            "max_cell_chars": 70,
+            "median_cell_chars": 12.0,
+            "max_to_median_cell_char_ratio": 5.8333,
+            "header_mode": "none",
+            "header_inference_enabled": false,
+            "header_row_count": 0,
+            "measure_start_column": null,
+            "filled_row_header_count": 0,
+            "pdf_grid_rows_preserved": true,
+            "headers": [
+              "col_001",
+              "col_002",
+              "col_003",
+              "col_004",
+              "col_005",
+              "col_006"
+            ],
+            "non_table_text_line_count": 3,
+            "non_table_text_chars": 176
+          }
+        }
+      }
+    ],
+    "elapsed_seconds": 0.008,
+    "candidate_timings_seconds": {},
+    "diagnostics": {
+      "routing_source_mode": "TEXT_TABLE_FAST",
+      "coordinate_table_reconstruction": true,
+      "coordinate_quality": {
+        "ok": true,
+        "reasons": [],
+        "rows": 13,
+        "columns": 6,
+        "span_count": 107,
+        "span_coverage": 1.0,
+        "spans_per_row": 8.2308,
+        "span_per_row_limit": 18.0,
+        "max_cell_chars": 70,
+        "max_to_median_cell_char_ratio": 5.8333
+      },
+      "coordinate_diagnostics": {
+        "method": "pdf_coordinate_grid",
+        "page": 2,
+        "status": "ok",
+        "bbox": [
+          50.02,
+          51.02,
+          545.25,
+          376.44
+        ],
+        "table_area_ratio": 0.3216,
+        "x_line_count": 7,
+        "y_line_count": 14,
+        "raw_rows": 13,
+        "raw_columns": 6,
+        "trimmed_rows": 13,
+        "trimmed_columns": 6,
+        "span_count": 107,
+        "assigned_span_count": 107,
+        "span_coverage": 1.0,
+        "spans_per_trimmed_row": 8.2308,
+        "max_cell_chars": 70,
+        "median_cell_chars": 12.0,
+        "max_to_median_cell_char_ratio": 5.8333,
+        "header_mode": "none",
+        "header_inference_enabled": false,
+        "header_row_count": 0,
+        "measure_start_column": null,
+        "filled_row_header_count": 0,
+        "pdf_grid_rows_preserved": true,
+        "headers": [
+          "col_001",
+          "col_002",
+          "col_003",
+          "col_004",
+          "col_005",
+          "col_006"
+        ],
+        "non_table_text_line_count": 3,
+        "non_table_text_chars": 176
+      }
+    }
+  }
+]

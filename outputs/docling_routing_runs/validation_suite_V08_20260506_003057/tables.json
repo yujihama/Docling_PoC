@@ -1,0 +1,42 @@
+[
+  {
+    "index": 1,
+    "rows": 5,
+    "columns": 4,
+    "headers": [
+      "Exception",
+      "Owner",
+      "Amount",
+      "Resolution"
+    ],
+    "csv": "Exception,Owner,Amount,Resolution\r\nEXC-V08-P01-R01,user1@example.test,811.07,pending\r\nEXC-V08-P01-R02,user2@example.test,1622.07,cleared\r\nEXC-V08-P01-R03,user3@example.test,2433.07,pending\r\nEXC-V08-P01-R04,user4@example.test,3244.07,cleared\r\nEXC-V08-P01-R05,user5@example.test,4055.07,pending\r\n",
+    "html": "<table><tbody><tr><th>Exception</th><th>Owner</th><th>Amount</th><th>Resolution</th></tr><tr><td>EXC-V08-P01-R01</td><td>user1@example.test</td><td>811.07</td><td>pending</td></tr><tr><td>EXC-V08-P01-R02</td><td>user2@example.test</td><td>1622.07</td><td>cleared</td></tr><tr><td>EXC-V08-P01-R03</td><td>user3@example.test</td><td>2433.07</td><td>pending</td></tr><tr><td>EXC-V08-P01-R04</td><td>user4@example.test</td><td>3244.07</td><td>cleared</td></tr><tr><td>EXC-V08-P01-R05</td><td>user5@example.test</td><td>4055.07</td><td>pending</td></tr></tbody></table>",
+    "page": 1,
+    "repair": {
+      "enabled": false
+    },
+    "source_start_page": 1,
+    "source_end_page": 1,
+    "mode": "TEXT_TABLE_VLM"
+  },
+  {
+    "index": 2,
+    "rows": 5,
+    "columns": 4,
+    "headers": [
+      "Exception",
+      "Owner",
+      "Amount",
+      "Resolution"
+    ],
+    "csv": "Exception,Owner,Amount,Resolution\r\nEXC-V08-P02-R01,user1@example.test,811.07,pending\r\nEXC-V08-P02-R02,user2@example.test,1622.07,cleared\r\nEXC-V08-P02-R03,user3@example.test,2433.07,pending\r\nEXC-V08-P02-R04,user4@example.test,3244.07,cleared\r\nEXC-V08-P02-R05,user5@example.test,4055.07,pending\r\n",
+    "html": "<table><tbody><tr><th>Exception</th><th>Owner</th><th>Amount</th><th>Resolution</th></tr><tr><td>EXC-V08-P02-R01</td><td>user1@example.test</td><td>811.07</td><td>pending</td></tr><tr><td>EXC-V08-P02-R02</td><td>user2@example.test</td><td>1622.07</td><td>cleared</td></tr><tr><td>EXC-V08-P02-R03</td><td>user3@example.test</td><td>2433.07</td><td>pending</td></tr><tr><td>EXC-V08-P02-R04</td><td>user4@example.test</td><td>3244.07</td><td>cleared</td></tr><tr><td>EXC-V08-P02-R05</td><td>user5@example.test</td><td>4055.07</td><td>pending</td></tr></tbody></table>",
+    "page": 1,
+    "repair": {
+      "enabled": false
+    },
+    "source_start_page": 2,
+    "source_end_page": 2,
+    "mode": "TEXT_TABLE_VLM"
+  }
+]

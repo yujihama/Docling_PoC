@@ -1,0 +1,318 @@
+[
+  {
+    "page": 1,
+    "mode": "IMAGE_RECONCILE",
+    "level": "needs_retry",
+    "code": "VLM_UNSUPPORTED_COORD_VALUE",
+    "score": 0.9,
+    "message": "VLM output contains critical values that are not supported by coordinate extraction.",
+    "suggested_action": "Fallback this table crop/page or review the source PDF for possible hallucinated values.",
+    "evidence": {
+      "source": "vlm_vlm_safe_output",
+      "model": "gpt-5.4-mini",
+      "vlm_only_values": {
+        "id": [
+          "NOTE-V07-DELTA-CHECK"
+        ]
+      },
+      "unsupported_value_count": 1,
+      "coordinate_metrics": {
+        "chars": 3344,
+        "table_count": 1,
+        "numeric_cell_count": 6,
+        "unknown_token_count": 0,
+        "max_table_columns": 17,
+        "table_column_counts": [
+          17
+        ]
+      },
+      "vlm_metrics": {
+        "chars": 1042,
+        "table_count": 1,
+        "numeric_cell_count": 5,
+        "unknown_token_count": 0,
+        "max_table_columns": 6,
+        "table_column_counts": [
+          6
+        ]
+      }
+    },
+    "target": null
+  },
+  {
+    "page": 1,
+    "mode": "IMAGE_RECONCILE",
+    "level": "needs_retry",
+    "code": "VLM_COORD_TABLE_STRUCTURE_MISMATCH",
+    "score": 0.84,
+    "message": "VLM table structure differs from coordinate extraction.",
+    "suggested_action": "Fallback this table crop/page and review row/column count differences.",
+    "evidence": {
+      "source": "vlm_vlm_safe_output",
+      "model": "gpt-5.4-mini",
+      "structure_mismatches": [
+        "column_count_mismatch"
+      ],
+      "coordinate_metrics": {
+        "chars": 3344,
+        "table_count": 1,
+        "numeric_cell_count": 6,
+        "unknown_token_count": 0,
+        "max_table_columns": 17,
+        "table_column_counts": [
+          17
+        ]
+      },
+      "vlm_metrics": {
+        "chars": 1042,
+        "table_count": 1,
+        "numeric_cell_count": 5,
+        "unknown_token_count": 0,
+        "max_table_columns": 6,
+        "table_column_counts": [
+          6
+        ]
+      }
+    },
+    "target": null
+  },
+  {
+    "page": 1,
+    "mode": "IMAGE_RECONCILE",
+    "level": "info",
+    "code": "VLM_COORD_FALLBACK_SKIPPED",
+    "score": 0.45,
+    "message": "Coordinate-validated fallback was run but was not better than the initial VLM output.",
+    "suggested_action": "Review the coordinate/VLM quality report before trusting unsupported values.",
+    "evidence": {
+      "source": "vlm_vlm_safe_output",
+      "model": "gpt-5.4",
+      "reason": "coordinate_vlm_fallback_not_better",
+      "initial_report": {
+        "needs_fallback": true,
+        "quality_score": 7.0,
+        "coordinate_evidence_strength": "medium",
+        "coordinate_numeric_evidence_weak": false,
+        "coordinate_absence_is_evidence": true,
+        "coordinate_presence_is_evidence": true,
+        "vlm_only_values": {
+          "id": [
+            "NOTE-V07-DELTA-CHECK"
+          ]
+        },
+        "coordinate_only_values": {},
+        "unsupported_value_count": 1,
+        "missing_value_count": 0,
+        "actionable_unsupported_value_count": 1,
+        "actionable_missing_value_count": 0,
+        "actionable_structure_mismatch_count": 1,
+        "structure_mismatches": [
+          "column_count_mismatch"
+        ],
+        "coordinate_metrics": {
+          "chars": 3344,
+          "table_count": 1,
+          "numeric_cell_count": 6,
+          "unknown_token_count": 0,
+          "max_table_columns": 17,
+          "table_column_counts": [
+            17
+          ]
+        },
+        "vlm_metrics": {
+          "chars": 1042,
+          "table_count": 1,
+          "numeric_cell_count": 5,
+          "unknown_token_count": 0,
+          "max_table_columns": 6,
+          "table_column_counts": [
+            6
+          ]
+        },
+        "coordinate_quality": {
+          "ok": false,
+          "reasons": [
+            "low_span_coverage"
+          ],
+          "rows": 13,
+          "columns": 16,
+          "span_count": 77,
+          "span_coverage": 0.961,
+          "spans_per_row": 5.9231,
+          "span_per_row_limit": 48.0,
+          "max_cell_chars": 20,
+          "max_to_median_cell_char_ratio": 4.0,
+          "max_long_text_row_ratio": 0.0
+        },
+        "coordinate_diagnostics_summary": {
+          "status": "ok",
+          "rows": 13,
+          "columns": 16,
+          "span_count": 77,
+          "span_coverage": 0.961,
+          "table_area_ratio": 0.8022
+        }
+      },
+      "fallback_report": {
+        "needs_fallback": true,
+        "quality_score": 7.0,
+        "coordinate_evidence_strength": "medium",
+        "coordinate_numeric_evidence_weak": false,
+        "coordinate_absence_is_evidence": true,
+        "coordinate_presence_is_evidence": true,
+        "vlm_only_values": {
+          "id": [
+            "NOTE-V07-DELTA-CHECK"
+          ]
+        },
+        "coordinate_only_values": {},
+        "unsupported_value_count": 1,
+        "missing_value_count": 0,
+        "actionable_unsupported_value_count": 1,
+        "actionable_missing_value_count": 0,
+        "actionable_structure_mismatch_count": 1,
+        "structure_mismatches": [
+          "column_count_mismatch"
+        ],
+        "coordinate_metrics": {
+          "chars": 3344,
+          "table_count": 1,
+          "numeric_cell_count": 6,
+          "unknown_token_count": 0,
+          "max_table_columns": 17,
+          "table_column_counts": [
+            17
+          ]
+        },
+        "vlm_metrics": {
+          "chars": 1044,
+          "table_count": 1,
+          "numeric_cell_count": 5,
+          "unknown_token_count": 0,
+          "max_table_columns": 6,
+          "table_column_counts": [
+            6
+          ]
+        },
+        "coordinate_quality": {
+          "ok": false,
+          "reasons": [
+            "low_span_coverage"
+          ],
+          "rows": 13,
+          "columns": 16,
+          "span_count": 77,
+          "span_coverage": 0.961,
+          "spans_per_row": 5.9231,
+          "span_per_row_limit": 48.0,
+          "max_cell_chars": 20,
+          "max_to_median_cell_char_ratio": 4.0,
+          "max_long_text_row_ratio": 0.0
+        },
+        "coordinate_diagnostics_summary": {
+          "status": "ok",
+          "rows": 13,
+          "columns": 16,
+          "span_count": 77,
+          "span_coverage": 0.961,
+          "table_area_ratio": 0.8022
+        }
+      }
+    },
+    "target": null
+  },
+  {
+    "page": 1,
+    "mode": "IMAGE_RECONCILE",
+    "level": "warning",
+    "code": "VLM_COORD_MASKED_UNSUPPORTED_VALUE",
+    "score": 0.86,
+    "message": "VLM-only critical values were masked because coordinate extraction did not support them.",
+    "suggested_action": "Review the source PDF or rerun the target page with higher resolution.",
+    "evidence": {
+      "source": "vlm_vlm_safe_output",
+      "masked_value_count": 1,
+      "final_report": {
+        "needs_fallback": true,
+        "quality_score": 7.0,
+        "coordinate_evidence_strength": "medium",
+        "coordinate_numeric_evidence_weak": false,
+        "coordinate_absence_is_evidence": true,
+        "coordinate_presence_is_evidence": true,
+        "vlm_only_values": {
+          "id": [
+            "NOTE-V07-DELTA-CHECK"
+          ]
+        },
+        "coordinate_only_values": {},
+        "unsupported_value_count": 1,
+        "missing_value_count": 0,
+        "actionable_unsupported_value_count": 1,
+        "actionable_missing_value_count": 0,
+        "actionable_structure_mismatch_count": 1,
+        "structure_mismatches": [
+          "column_count_mismatch"
+        ],
+        "coordinate_metrics": {
+          "chars": 3344,
+          "table_count": 1,
+          "numeric_cell_count": 6,
+          "unknown_token_count": 0,
+          "max_table_columns": 17,
+          "table_column_counts": [
+            17
+          ]
+        },
+        "vlm_metrics": {
+          "chars": 1042,
+          "table_count": 1,
+          "numeric_cell_count": 5,
+          "unknown_token_count": 0,
+          "max_table_columns": 6,
+          "table_column_counts": [
+            6
+          ]
+        },
+        "coordinate_quality": {
+          "ok": false,
+          "reasons": [
+            "low_span_coverage"
+          ],
+          "rows": 13,
+          "columns": 16,
+          "span_count": 77,
+          "span_coverage": 0.961,
+          "spans_per_row": 5.9231,
+          "span_per_row_limit": 48.0,
+          "max_cell_chars": 20,
+          "max_to_median_cell_char_ratio": 4.0,
+          "max_long_text_row_ratio": 0.0
+        },
+        "coordinate_diagnostics_summary": {
+          "status": "ok",
+          "rows": 13,
+          "columns": 16,
+          "span_count": 77,
+          "span_coverage": 0.961,
+          "table_area_ratio": 0.8022
+        }
+      }
+    },
+    "target": null
+  },
+  {
+    "page": 1,
+    "mode": "IMAGE_RECONCILE",
+    "level": "warning",
+    "code": "MASKED_AS_UNKNOWN",
+    "score": 0.8,
+    "message": "Unsupported VLM values were replaced with the unknown token in safe output.",
+    "suggested_action": "Review the coordinate/VLM quality report and source PDF.",
+    "evidence": {
+      "source": "vlm_vlm_safe_output",
+      "masked_value_count": 1,
+      "reason": "vlm_coordinate_unsupported_values"
+    },
+    "target": null
+  }
+]

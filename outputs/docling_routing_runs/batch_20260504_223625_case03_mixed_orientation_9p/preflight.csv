@@ -1,0 +1,10 @@
+complex_table_score,elapsed_seconds,embedded_visual_region_count,embedded_visual_regions,extra_actions,height,image_area_ratio,image_read_risk_score,line_count,mode,page,reasons,rect_count,table_score,text_chars,text_density,text_quality_score,visual_reference_count,width
+0.5292,0.0082,0,[],[],841.89,0.0,0.255,23,TEXT_TABLE_FAST,1,"good_text_layer,simple_table_signal",33,0.925,1199,0.002392,0.8,0,595.28
+0.526,0.0029,0,[],[],841.89,0.0,0.255,22,TEXT_TABLE_FAST,2,"good_text_layer,simple_table_signal",33,0.925,1247,0.002488,0.8,0,595.28
+0.599,0.0054,0,[],[],595.28,0.0,0.265,27,TEXT_TABLE_FAST,3,"good_text_layer,simple_table_signal",38,0.975,1971,0.003933,0.8,0,841.89
+0.526,0.0029,0,[],[],841.89,0.0,0.255,22,TEXT_TABLE_FAST,4,"good_text_layer,simple_table_signal",33,0.925,1250,0.002494,0.8,0,595.28
+0.5292,0.0027,0,[],[],841.89,0.0,0.255,23,TEXT_TABLE_FAST,5,"good_text_layer,simple_table_signal",33,0.925,1202,0.002398,0.8,0,595.28
+0.6021,0.0053,0,[],[],595.28,0.0,0.265,28,TEXT_TABLE_ACCURATE,6,"good_text_layer,complex_table_signal",38,0.975,2019,0.004029,0.8,0,841.89
+0.526,0.0029,0,[],[],841.89,0.0,0.255,22,TEXT_TABLE_FAST,7,"good_text_layer,simple_table_signal",33,0.925,1202,0.002398,0.8,0,595.28
+0.526,0.0028,0,[],[],841.89,0.0,0.255,22,TEXT_TABLE_FAST,8,"good_text_layer,simple_table_signal",33,0.925,1249,0.002492,0.8,0,595.28
+0.6021,0.0051,0,[],[],595.28,0.0,0.265,28,TEXT_TABLE_ACCURATE,9,"good_text_layer,complex_table_signal",38,0.975,1970,0.003931,0.8,0,841.89

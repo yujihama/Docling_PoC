@@ -1,0 +1,12 @@
+{
+  "run_id": "case13_standard_20260504_002",
+  "case_id": "C13",
+  "pdf_path": "C:\\Users\\nyham\\work\\docling_poc\\outputs\\docling_benchmark\\pdfs\\case13.pdf",
+  "depth": "focused",
+  "baseline_config": "std_baseline_accurate",
+  "expected_pages": 316,
+  "chunk_pages": 25,
+  "created_at": "2026-05-04T12:39:44",
+  "config_count": 1,
+  "relative_metric_note": "No ground truth is registered for this PDF; metrics are relative to the baseline Standard extraction."
+}

@@ -1,0 +1,257 @@
+[
+  {
+    "mode": "IMAGE_RECONCILE",
+    "start_page": 1,
+    "end_page": 1,
+    "markdown": "V07 | Lab report with units\n\nPage 1 of 1\n\nLAB-V07-2026-05-ABC\n\nPatient: Jane Validation / DOB: 1980-02-03\n\nMRN-V07-REDACTED-BAR\n\n| Test       | Result   | Unit          | Reference Range   | Flag   | Code           |\n|------------|----------|---------------|-------------------|--------|----------------|\n| Glucose    | 102      | mg/dL         | 70-99             | H      | LABCODE-V07-01 |\n| Creatinine | 0.82     | mg/dL         | 0.60-1.10         |        | LABCODE-V07-02 |\n| eGFR       | >90      | mL/min/1.73m2 | >=60              |        | LABCODE-V07-03 |\n| HbA1c      | 5.8      | %             | 4.0-5.6           | H      | LABCODE-V07-04 |\n| TSH        | 1.72     | uIU/mL        | 0.40-4.00         |        | LABCODE-V07-05 |\n| CRP        | <0.3     | mg/dL         | <0.5              |        | LABCODE-V07-06 |\n| Vitamin D  | 24.1     | ng/mL         | 30-100            | L      | LABCODE-V07-07 |\n\nNOTE-V07-DELTA-CHECK: compare against 2026-04 specimen.\n\nPDF validation suite for routed PDF extraction.\n\nV07-FOOTER-P01",
+    "safe_markdown": "V07 | Lab report with units\n\nPage 1 of 1\n\nLAB-V07-2026-05-ABC\n\nPatient: Jane Validation / DOB: 1980-02-03\n\nMRN-V07-REDACTED-BAR\n\n| Test       | Result   | Unit          | Reference Range   | Flag   | Code           |\n|------------|----------|---------------|-------------------|--------|----------------|\n| Glucose    | 102      | mg/dL         | 70-99             | H      | LABCODE-V07-01 |\n| Creatinine | 0.82     | mg/dL         | 0.60-1.10         |        | LABCODE-V07-02 |\n| eGFR       | >90      | mL/min/1.73m2 | >=60              |        | LABCODE-V07-03 |\n| HbA1c      | 5.8      | %             | 4.0-5.6           | H      | LABCODE-V07-04 |\n| TSH        | 1.72     | uIU/mL        | 0.40-4.00         |        | LABCODE-V07-05 |\n| CRP        | <0.3     | mg/dL         | <0.5              |        | LABCODE-V07-06 |\n| Vitamin D  | 24.1     | ng/mL         | 30-100            | L      | LABCODE-V07-07 |\n\n[[読み取り不明]]: compare against 2026-04 specimen.\n\nPDF validation suite for routed PDF extraction.\n\nV07-FOOTER-P01",
+    "raw_ocr_markdown": "V07 | Lab report with units\n\nPage 1 of 1\n\nLAB-V07-2026-05-ABC\n\nPatient: Jane Validation / DOB: 1980-02-03\n\nMRN-V07-REDACTED-BAR\n\n| Test       | Result   | Unit          | Reference Range   | Flag   | Code           |\n|------------|----------|---------------|-------------------|--------|----------------|\n| Glucose    | 102      | mg/dL         | 70-99             | H      | LABCODE-V07-01 |\n| Creatinine | 0.82     | mg/dL         | 0.60-1.10         |        | LABCODE-V07-02 |\n| eGFR       | >90      | mL/min/1.73m2 | >=60              |        | LABCODE-V07-03 |\n| HbA1c      | 5.8      | %             | 4.0-5.6           | H      | LABCODE-V07-04 |\n| TSH        | 1.72     | uIU/mL        | 0.40-4.00         |        | LABCODE-V07-05 |\n| CRP        | <0.3     | mg/dL         | <0.5              |        | LABCODE-V07-06 |\n| Vitamin D  | 24.1     | ng/mL         | 30-100            | L      | LABCODE-V07-07 |\n\nNOTE-V07-DELTA-CHECK: compare against 2026-04 specimen.\n\nPDF validation suite for routed PDF extraction.\n\nV07-FOOTER-P01",
+    "raw_vlm_markdown": "V07 | Lab report with units\n\nPage 1 of 1\n\nLAB-V07-2026-05-ABC\n\nPatient: Jane Validation / DOB: 1980-02-03\n\nMRN-V07-REDACTED-BAR\n\n| Test       | Result   | Unit          | Reference Range   | Flag   | Code           |\n|------------|----------|---------------|-------------------|--------|----------------|\n| Glucose    | 102      | mg/dL         | 70-99             | H      | LABCODE-V07-01 |\n| Creatinine | 0.82     | mg/dL         | 0.60-1.10         |        | LABCODE-V07-02 |\n| eGFR       | >90      | mL/min/1.73m2 | >=60              |        | LABCODE-V07-03 |\n| HbA1c      | 5.8      | %             | 4.0-5.6           | H      | LABCODE-V07-04 |\n| TSH        | 1.72     | uIU/mL        | 0.40-4.00         |        | LABCODE-V07-05 |\n| CRP        | <0.3     | mg/dL         | <0.5              |        | LABCODE-V07-06 |\n| Vitamin D  | 24.1     | ng/mL         | 30-100            | L      | LABCODE-V07-07 |\n\nNOTE-V07-DELTA-CHECK: compare against 2026-04 specimen.\n\nPDF validation suite for routed PDF extraction.\n\nV07-FOOTER-P01",
+    "tables": [
+      {
+        "index": 1,
+        "rows": 7,
+        "columns": 6,
+        "headers": [
+          "Test",
+          "Result",
+          "Unit",
+          "Reference Range",
+          "Flag",
+          "Code"
+        ],
+        "csv": "Test,Result,Unit,Reference Range,Flag,Code\r\nGlucose,102,mg/dL,70-99,H,LABCODE-V07-01\r\nCreatinine,0.82,mg/dL,0.60-1.10,,LABCODE-V07-02\r\neGFR,>90,mL/min/1.73m2,>=60,,LABCODE-V07-03\r\nHbA1c,5.8,%,4.0-5.6,H,LABCODE-V07-04\r\nTSH,1.72,uIU/mL,0.40-4.00,,LABCODE-V07-05\r\nCRP,<0.3,mg/dL,<0.5,,LABCODE-V07-06\r\nVitamin D,24.1,ng/mL,30-100,L,LABCODE-V07-07\r\n",
+        "html": "<table><tbody><tr><th>Test</th><th>Result</th><th>Unit</th><th>Reference Range</th><th>Flag</th><th>Code</th></tr><tr><td>Glucose</td><td>102</td><td>mg/dL</td><td>70-99</td><td>H</td><td>LABCODE-V07-01</td></tr><tr><td>Creatinine</td><td>0.82</td><td>mg/dL</td><td>0.60-1.10</td><td></td><td>LABCODE-V07-02</td></tr><tr><td>eGFR</td><td>&gt;90</td><td>mL/min/1.73m2</td><td>&gt;=60</td><td></td><td>LABCODE-V07-03</td></tr><tr><td>HbA1c</td><td>5.8</td><td>%</td><td>4.0-5.6</td><td>H</td><td>LABCODE-V07-04</td></tr><tr><td>TSH</td><td>1.72</td><td>uIU/mL</td><td>0.40-4.00</td><td></td><td>LABCODE-V07-05</td></tr><tr><td>CRP</td><td>&lt;0.3</td><td>mg/dL</td><td>&lt;0.5</td><td></td><td>LABCODE-V07-06</td></tr><tr><td>Vitamin D</td><td>24.1</td><td>ng/mL</td><td>30-100</td><td>L</td><td>LABCODE-V07-07</td></tr></tbody></table>",
+        "page": 1,
+        "repair": {
+          "enabled": false
+        }
+      }
+    ],
+    "elapsed_seconds": 8.786,
+    "candidate_timings_seconds": {
+      "vlm_primary": 3.599,
+      "vlm_secondary": 3.576,
+      "coordinate_vlm_fallback:gpt-5.4": 5.179
+    },
+    "diagnostics": {
+      "compare_mode": "vlm_vlm",
+      "parallel_reconcile_candidates": true,
+      "reconcile_table_fallback": {
+        "attempted": false,
+        "enabled": true,
+        "triggers": []
+      },
+      "coordinate_vlm_quality": {
+        "enabled": true,
+        "applicable": true,
+        "source": "vlm_vlm_safe_output",
+        "initial_report": {
+          "needs_fallback": true,
+          "quality_score": 7.0,
+          "coordinate_evidence_strength": "medium",
+          "coordinate_numeric_evidence_weak": false,
+          "coordinate_absence_is_evidence": true,
+          "coordinate_presence_is_evidence": true,
+          "vlm_only_values": {
+            "id": [
+              "NOTE-V07-DELTA-CHECK"
+            ]
+          },
+          "coordinate_only_values": {},
+          "unsupported_value_count": 1,
+          "missing_value_count": 0,
+          "actionable_unsupported_value_count": 1,
+          "actionable_missing_value_count": 0,
+          "actionable_structure_mismatch_count": 1,
+          "structure_mismatches": [
+            "column_count_mismatch"
+          ],
+          "coordinate_metrics": {
+            "chars": 3344,
+            "table_count": 1,
+            "numeric_cell_count": 6,
+            "unknown_token_count": 0,
+            "max_table_columns": 17,
+            "table_column_counts": [
+              17
+            ]
+          },
+          "vlm_metrics": {
+            "chars": 1042,
+            "table_count": 1,
+            "numeric_cell_count": 5,
+            "unknown_token_count": 0,
+            "max_table_columns": 6,
+            "table_column_counts": [
+              6
+            ]
+          },
+          "coordinate_quality": {
+            "ok": false,
+            "reasons": [
+              "low_span_coverage"
+            ],
+            "rows": 13,
+            "columns": 16,
+            "span_count": 77,
+            "span_coverage": 0.961,
+            "spans_per_row": 5.9231,
+            "span_per_row_limit": 48.0,
+            "max_cell_chars": 20,
+            "max_to_median_cell_char_ratio": 4.0,
+            "max_long_text_row_ratio": 0.0
+          },
+          "coordinate_diagnostics_summary": {
+            "status": "ok",
+            "rows": 13,
+            "columns": 16,
+            "span_count": 77,
+            "span_coverage": 0.961,
+            "table_area_ratio": 0.8022
+          }
+        },
+        "fallback": {
+          "attempted": true,
+          "accepted": false,
+          "reason": "coordinate_vlm_fallback_not_better",
+          "model": "gpt-5.4",
+          "elapsed_seconds": 5.179,
+          "report": {
+            "needs_fallback": true,
+            "quality_score": 7.0,
+            "coordinate_evidence_strength": "medium",
+            "coordinate_numeric_evidence_weak": false,
+            "coordinate_absence_is_evidence": true,
+            "coordinate_presence_is_evidence": true,
+            "vlm_only_values": {
+              "id": [
+                "NOTE-V07-DELTA-CHECK"
+              ]
+            },
+            "coordinate_only_values": {},
+            "unsupported_value_count": 1,
+            "missing_value_count": 0,
+            "actionable_unsupported_value_count": 1,
+            "actionable_missing_value_count": 0,
+            "actionable_structure_mismatch_count": 1,
+            "structure_mismatches": [
+              "column_count_mismatch"
+            ],
+            "coordinate_metrics": {
+              "chars": 3344,
+              "table_count": 1,
+              "numeric_cell_count": 6,
+              "unknown_token_count": 0,
+              "max_table_columns": 17,
+              "table_column_counts": [
+                17
+              ]
+            },
+            "vlm_metrics": {
+              "chars": 1044,
+              "table_count": 1,
+              "numeric_cell_count": 5,
+              "unknown_token_count": 0,
+              "max_table_columns": 6,
+              "table_column_counts": [
+                6
+              ]
+            },
+            "coordinate_quality": {
+              "ok": false,
+              "reasons": [
+                "low_span_coverage"
+              ],
+              "rows": 13,
+              "columns": 16,
+              "span_count": 77,
+              "span_coverage": 0.961,
+              "spans_per_row": 5.9231,
+              "span_per_row_limit": 48.0,
+              "max_cell_chars": 20,
+              "max_to_median_cell_char_ratio": 4.0,
+              "max_long_text_row_ratio": 0.0
+            },
+            "coordinate_diagnostics_summary": {
+              "status": "ok",
+              "rows": 13,
+              "columns": 16,
+              "span_count": 77,
+              "span_coverage": 0.961,
+              "table_area_ratio": 0.8022
+            }
+          },
+          "auto_corrections": [],
+          "usage_events": []
+        },
+        "final_report": {
+          "needs_fallback": true,
+          "quality_score": 7.0,
+          "coordinate_evidence_strength": "medium",
+          "coordinate_numeric_evidence_weak": false,
+          "coordinate_absence_is_evidence": true,
+          "coordinate_presence_is_evidence": true,
+          "vlm_only_values": {},
+          "coordinate_only_values": {},
+          "unsupported_value_count": 0,
+          "missing_value_count": 0,
+          "actionable_unsupported_value_count": 0,
+          "actionable_missing_value_count": 0,
+          "actionable_structure_mismatch_count": 1,
+          "structure_mismatches": [
+            "column_count_mismatch"
+          ],
+          "coordinate_metrics": {
+            "chars": 3344,
+            "table_count": 1,
+            "numeric_cell_count": 6,
+            "unknown_token_count": 0,
+            "max_table_columns": 17,
+            "table_column_counts": [
+              17
+            ]
+          },
+          "vlm_metrics": {
+            "chars": 1032,
+            "table_count": 1,
+            "numeric_cell_count": 5,
+            "unknown_token_count": 1,
+            "max_table_columns": 6,
+            "table_column_counts": [
+              6
+            ]
+          },
+          "coordinate_quality": {
+            "ok": false,
+            "reasons": [
+              "low_span_coverage"
+            ],
+            "rows": 13,
+            "columns": 16,
+            "span_count": 77,
+            "span_coverage": 0.961,
+            "spans_per_row": 5.9231,
+            "span_per_row_limit": 48.0,
+            "max_cell_chars": 20,
+            "max_to_median_cell_char_ratio": 4.0,
+            "max_long_text_row_ratio": 0.0
+          },
+          "coordinate_diagnostics_summary": {
+            "status": "ok",
+            "rows": 13,
+            "columns": 16,
+            "span_count": 77,
+            "span_coverage": 0.961,
+            "table_area_ratio": 0.8022
+          }
+        }
+      },
+      "input_pages": {
+        "pdf": "source_pdf",
+        "start_page": 1,
+        "end_page": 1
+      }
+    }
+  }
+]

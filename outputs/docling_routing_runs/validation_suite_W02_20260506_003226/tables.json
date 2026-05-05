@@ -1,0 +1,75 @@
+[
+  {
+    "index": 1,
+    "rows": 3,
+    "columns": 2,
+    "headers": [
+      "OMB APPROVAL",
+      ""
+    ],
+    "csv": "OMB APPROVAL,\r\nOMB Number:,3235-0063\r\nExpires:,\"December 31, 2026\"\r\nEstimated average burden hours per response......,\"1,695.19\"\r\n",
+    "html": "<table><tbody><tr><th>OMB APPROVAL</th><th></th></tr><tr><td>OMB Number:</td><td>3235-0063</td></tr><tr><td>Expires:</td><td>December 31, 2026</td></tr><tr><td>Estimated average burden hours per response......</td><td>1,695.19</td></tr></tbody></table>",
+    "page": 1,
+    "repair": {
+      "enabled": false
+    },
+    "source_start_page": 1,
+    "source_end_page": 1,
+    "mode": "TEXT_TABLE_VLM"
+  },
+  {
+    "index": 2,
+    "rows": 1,
+    "columns": 2,
+    "headers": [
+      "State or other jurisdiction of incorporation or organization",
+      "(I.R.S. Employer Identification No.)"
+    ],
+    "csv": "State or other jurisdiction of incorporation or organization,(I.R.S. Employer Identification No.)\r\n,\r\n",
+    "html": "<table><tbody><tr><th>State or other jurisdiction of incorporation or organization</th><th>(I.R.S. Employer Identification No.)</th></tr><tr><td></td><td></td></tr></tbody></table>",
+    "page": 1,
+    "repair": {
+      "enabled": false
+    },
+    "source_start_page": 8,
+    "source_end_page": 8,
+    "mode": "TEXT_TABLE_VLM"
+  },
+  {
+    "index": 3,
+    "rows": 1,
+    "columns": 2,
+    "headers": [
+      "(Address of principal executive offices)",
+      "(Zip Code)"
+    ],
+    "csv": "(Address of principal executive offices),(Zip Code)\r\n,\r\n",
+    "html": "<table><tbody><tr><th>(Address of principal executive offices)</th><th>(Zip Code)</th></tr><tr><td></td><td></td></tr></tbody></table>",
+    "page": 1,
+    "repair": {
+      "enabled": false
+    },
+    "source_start_page": 8,
+    "source_end_page": 8,
+    "mode": "TEXT_TABLE_VLM"
+  },
+  {
+    "index": 4,
+    "rows": 2,
+    "columns": 3,
+    "headers": [
+      "Title of each class",
+      "Trading Symbol(s)",
+      "Name of each exchange on which registered"
+    ],
+    "csv": "Title of each class,Trading Symbol(s),Name of each exchange on which registered\r\n,,\r\n,,\r\n",
+    "html": "<table><tbody><tr><th>Title of each class</th><th>Trading Symbol(s)</th><th>Name of each exchange on which registered</th></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr></tbody></table>",
+    "page": 1,
+    "repair": {
+      "enabled": false
+    },
+    "source_start_page": 8,
+    "source_end_page": 8,
+    "mode": "TEXT_TABLE_VLM"
+  }
+]
