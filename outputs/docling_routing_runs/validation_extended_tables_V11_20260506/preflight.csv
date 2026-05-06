@@ -1,0 +1,7 @@
+complex_table_score,elapsed_seconds,embedded_visual_region_count,embedded_visual_regions,extra_actions,height,image_area_ratio,image_read_risk_score,line_count,mode,page,reasons,rect_count,table_score,text_chars,text_density,text_quality_score,visual_reference_count,width
+0.7531,0.0405,0,[],[],595.28,0.0,0.27,1,TEXT_TABLE_ACCURATE,1,"good_text_layer,complex_table_signal",913,1.0,3997,0.007976,0.8,0,841.89
+0.7531,0.0329,0,[],[],595.28,0.0,0.27,1,TEXT_TABLE_ACCURATE,2,"good_text_layer,complex_table_signal",913,1.0,3946,0.007874,0.8,0,841.89
+0.7531,0.036,0,[],[],595.28,0.0,0.27,1,TEXT_TABLE_ACCURATE,3,"good_text_layer,complex_table_signal",913,1.0,3946,0.007874,0.8,0,841.89
+0.7531,0.0336,0,[],[],595.28,0.0,0.27,1,TEXT_TABLE_ACCURATE,4,"good_text_layer,complex_table_signal",913,1.0,3995,0.007972,0.8,0,841.89
+0.7531,0.0333,0,[],[],595.28,0.0,0.27,1,TEXT_TABLE_ACCURATE,5,"good_text_layer,complex_table_signal",913,1.0,4033,0.008047,0.8,0,841.89
+0.7531,0.0329,0,[],[],595.28,0.0,0.27,1,TEXT_TABLE_ACCURATE,6,"good_text_layer,complex_table_signal",913,1.0,4033,0.008047,0.8,0,841.89

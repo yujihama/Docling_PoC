@@ -1,0 +1,547 @@
+[
+  {
+    "mode": "TEXT_TABLE_COORD",
+    "start_page": 1,
+    "end_page": 1,
+    "markdown": "| col_001     | col_002           | col_003  | col_004       | col_005     | col_006                | col_007    | col_008   | col_009 | col_010              | col_011     | col_012 | col_013 | col_014  | col_015 | col_016 | col_017 | col_018 | col_019 | col_020            | col_021 | col_022     | col_023 | col_024 | col_025 | col_026 | col_027 | col_028 | col_029 | col_030 | col_031 | col_032  | col_033          | col_034      | col_035          | col_036 |\n| ----------- | ----------------- | -------- | ------------- | ----------- | ---------------------- | ---------- | --------- | ------- | -------------------- | ----------- | ------- | ------- | -------- | ------- | ------- | ------- | ------- | ------- | ------------------ | ------- | ----------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | -------- | ---------------- | ------------ | ---------------- | ------- |\n| V10         | Complex           |          | multi-row     |             | financial              | table      |           |         |                      |             |         |         |          |         |         |         |         |         |                    |         |             |         |         |         |         |         |         |         |         |         |          |                  |              | Page 1           | of 2    |\n|             |                   |          | waterfall     |             | review                 |            |           |         | V10-COMPLEX-BOOK-P01 |             |         |         |          |         |         |         |         |         |                    |         |             |         |         |         |         |         |         |         |         |         |          |                  |              |                  |         |\n| Three-level | header,           | subtotal | rows,         | conditional | notes,                 | values,    | and       | compact |                      | multi-field |         | cells.  |          |         |         |         |         |         |                    |         |             |         |         |         |         |         |         |         |         |         |          |                  |              |                  |         |\n|             | Identity          | /        | ownership     |             | V10-HDR-IDENTITY-GROUP |            |           |         |                      |             |         |         |          | Revenue | bridge  |         | JPYm    |         | V10-HDR-REV-BRIDGE |         |             |         |         |         |         |         |         |         | Quality | checks  | /        | comments         |              |                  |         |\n|             | hierarchy         |          |               |             |                        | metadata   |           |         |                      |             |         |         | Movement |         |         |         |         |         |                    |         | Revaluation | / close |         |         |         |         |         |         |         | Review  | workflow |                  |              |                  |         |\n| Entity      |                   | Segment  |               |             | Contract               |            | Scenario  |         |                      | Opening     |         |         | New      |         |         | Churn   |         |         | FX                 |         | Adj.        |         | Closing |         | Margin  | %       |         | Risk    |         | Owner   |          |                  | Note /       | condition        |         |\n| Japan       | Core              |          |               |             | CPLX-V10-P01-R01       | S1-1 Base  |           |         |                      |             | 947     |         |          | 53      |         |         |         | -       |                    | +5      |             | +3      |         | 1,008   |         | 24.3%   | green   |         | OPS-B   |         |          | term=13m /       | clause 001   |                  |         |\n| APAC        | Renewal           |          |               |             | CPLX-V10-P01-R02       | S1-2 Base  |           |         |                      |             | 964     |         |          | 66      |         |         |         | -       |                    | +5      |             | +3      |         | 1,038   |         | 24.7%   | green   |         | LEGAL-C |         |          | term=14m /       | clause 002   |                  |         |\n| EU          | Expansion         |          |               |             | CPLX-V10-P01-R03       | S1-3 Base  |           |         |                      |             | 981     |         |          | 79      |         |         |         | (14)    |                    | +5      |             | +3      |         | 1,054   |         | 25.0%   | green   |         | REV-D   |         |          | term=15m /       | clause 003   |                  |         |\n| US          | Partner           |          |               |             | CPLX-V10-P01-R04       | S1-4 Base  |           |         |                      |             | 998     |         |          | 92      |         |         |         | -       |                    | -6      |             | +3      |         | 1,087   |         | 25.3%   | red     |         | FIN-A   |         |          | NOTE-V10-P01-R04 |              |                  |         |\n| Japan       | Core              |          |               |             | CPLX-V10-P01-R05       | S1-5 Base  |           |         |                      |             | 1,015   |         |          | 105     |         |         |         | -       |                    | +5      |             | -12     |         | 1,113   |         | 25.7%   | green   |         | OPS-B   |         |          | term=17m /       | clause 005   |                  |         |\n| EU          | Subtotal          |          |               |             | SUBTOTAL-V10-P01-G01   | All cases  |           |         |                      |             | 1,242   |         |          | 98      |         |         |         | (26)    |                    | 9       |             | 1       |         | 1,348   |         | 28.6%   | watch   |         | LEGAL-C |         |          | rollup after     | eliminations | CPLX-V10-P01-R06 |         |\n| EU          | Expansion         |          |               |             | CPLX-V10-P01-R07       | S1-7 Base  |           |         |                      |             | 1,049   |         |          | 40      |         |         |         | -       |                    | +5      |             | +3      |         | 1,097   |         | 26.3%   | green   |         | REV-D   |         |          | term=19m /       | clause 007   |                  |         |\n| US          | Partner           |          |               |             | CPLX-V10-P01-R08       | S1-8 Base  |           |         |                      |             | 1,066   |         |          | 53      |         |         |         | -       |                    | -6      |             | +3      |         | 1,116   |         | 26.7%   | green   |         | FIN-A   |         |          | term=20m /       | clause 008   |                  |         |\n| Japan       | Core              |          |               |             | CPLX-V10-P01-R09       | S1-9 Base  |           |         |                      |             | 1,083   |         |          | 66      |         |         |         | (26)    |                    | +5      |             | +3      |         | 1,131   |         | 27.0%   | green   |         | OPS-B   |         |          | NOTE-V10-P01-R09 |              |                  |         |\n| APAC        | Renewal           |          |               |             | CPLX-V10-P01-R10       | S1-10 Base |           |         |                      |             | 1,100   |         |          | 79      |         |         |         | -       |                    | +5      |             | -12     |         | 1,172   |         | 27.3%   | red     |         | LEGAL-C |         |          | term=22m /       | clause 010   |                  |         |\n| EU          | Expansion         |          |               |             | CPLX-V10-P01-R11       | S1-11 Base |           |         |                      |             | 1,117   |         |          | 92      |         |         |         | -       |                    | +5      |             | +3      |         | 1,217   |         | 27.7%   | green   |         | REV-D   |         |          | term=23m /       | clause 011   |                  |         |\n| Japan       | Subtotal          |          |               |             | SUBTOTAL-V10-P01-G02   | All cases  |           |         |                      |             | 1,284   |         |          | 116     |         |         |         | (32)    |                    | 15      |             | -5      |         | 1,396   |         | 29.2%   | watch   |         | FIN-A   |         |          | rollup after     | eliminations | CPLX-V10-P01-R12 |         |\n| Footnote    | V10-FOOTNOTE-P01: |          | parenthetical |             | churn is               | signs are  | explicit. |         |                      |             |         |         |          |         |         |         |         |         |                    |         |             |         |         |         |         |         |         |         |         |         |          |                  |              |                  |         |\n| PDF         | suite             | for      | routed        | PDF         | extraction.            |            |           |         |                      |             |         |         |          |         |         |         |         |         |                    |         |             |         |         |         |         |         |         |         |         |         |          |                  |              | V10-FOOTER-P01   |         |\n\n<!-- text_layer_coverage_supplement lines=3 -->\n\nPDF validation suite for routed PDF extraction. V10-FOOTER-P01\nThree-level header, subtotal rows, conditional notes, negative values, and compact multi-field cells.\nOrg hierarchy Deal metadata Movement Revaluation / close Review workflow",
+    "safe_markdown": "| col_001     | col_002           | col_003  | col_004       | col_005     | col_006                | col_007    | col_008   | col_009 | col_010              | col_011     | col_012 | col_013 | col_014  | col_015 | col_016 | col_017 | col_018 | col_019 | col_020            | col_021 | col_022     | col_023 | col_024 | col_025 | col_026 | col_027 | col_028 | col_029 | col_030 | col_031 | col_032  | col_033          | col_034      | col_035          | col_036 |\n| ----------- | ----------------- | -------- | ------------- | ----------- | ---------------------- | ---------- | --------- | ------- | -------------------- | ----------- | ------- | ------- | -------- | ------- | ------- | ------- | ------- | ------- | ------------------ | ------- | ----------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | -------- | ---------------- | ------------ | ---------------- | ------- |\n| V10         | Complex           |          | multi-row     |             | financial              | table      |           |         |                      |             |         |         |          |         |         |         |         |         |                    |         |             |         |         |         |         |         |         |         |         |         |          |                  |              | Page 1           | of 2    |\n|             |                   |          | waterfall     |             | review                 |            |           |         | V10-COMPLEX-BOOK-P01 |             |         |         |          |         |         |         |         |         |                    |         |             |         |         |         |         |         |         |         |         |         |          |                  |              |                  |         |\n| Three-level | header,           | subtotal | rows,         | conditional | notes,                 | values,    | and       | compact |                      | multi-field |         | cells.  |          |         |         |         |         |         |                    |         |             |         |         |         |         |         |         |         |         |         |          |                  |              |                  |         |\n|             | Identity          | /        | ownership     |             | V10-HDR-IDENTITY-GROUP |            |           |         |                      |             |         |         |          | Revenue | bridge  |         | JPYm    |         | V10-HDR-REV-BRIDGE |         |             |         |         |         |         |         |         |         | Quality | checks  | /        | comments         |              |                  |         |\n|             | hierarchy         |          |               |             |                        | metadata   |           |         |                      |             |         |         | Movement |         |         |         |         |         |                    |         | Revaluation | / close |         |         |         |         |         |         |         | Review  | workflow |                  |              |                  |         |\n| Entity      |                   | Segment  |               |             | Contract               |            | Scenario  |         |                      | Opening     |         |         | New      |         |         | Churn   |         |         | FX                 |         | Adj.        |         | Closing |         | Margin  | %       |         | Risk    |         | Owner   |          |                  | Note /       | condition        |         |\n| Japan       | Core              |          |               |             | CPLX-V10-P01-R01       | S1-1 Base  |           |         |                      |             | 947     |         |          | 53      |         |         |         | -       |                    | +5      |             | +3      |         | 1,008   |         | 24.3%   | green   |         | OPS-B   |         |          | term=13m /       | clause 001   |                  |         |\n| APAC        | Renewal           |          |               |             | CPLX-V10-P01-R02       | S1-2 Base  |           |         |                      |             | 964     |         |          | 66      |         |         |         | -       |                    | +5      |             | +3      |         | 1,038   |         | 24.7%   | green   |         | LEGAL-C |         |          | term=14m /       | clause 002   |                  |         |\n| EU          | Expansion         |          |               |             | CPLX-V10-P01-R03       | S1-3 Base  |           |         |                      |             | 981     |         |          | 79      |         |         |         | (14)    |                    | +5      |             | +3      |         | 1,054   |         | 25.0%   | green   |         | REV-D   |         |          | term=15m /       | clause 003   |                  |         |\n| US          | Partner           |          |               |             | CPLX-V10-P01-R04       | S1-4 Base  |           |         |                      |             | 998     |         |          | 92      |         |         |         | -       |                    | -6      |             | +3      |         | 1,087   |         | 25.3%   | red     |         | FIN-A   |         |          | NOTE-V10-P01-R04 |              |                  |         |\n| Japan       | Core              |          |               |             | CPLX-V10-P01-R05       | S1-5 Base  |           |         |                      |             | 1,015   |         |          | 105     |         |         |         | -       |                    | +5      |             | -12     |         | 1,113   |         | 25.7%   | green   |         | OPS-B   |         |          | term=17m /       | clause 005   |                  |         |\n| EU          | Subtotal          |          |               |             | SUBTOTAL-V10-P01-G01   | All cases  |           |         |                      |             | 1,242   |         |          | 98      |         |         |         | (26)    |                    | 9       |             | 1       |         | 1,348   |         | 28.6%   | watch   |         | LEGAL-C |         |          | rollup after     | eliminations | CPLX-V10-P01-R06 |         |\n| EU          | Expansion         |          |               |             | CPLX-V10-P01-R07       | S1-7 Base  |           |         |                      |             | 1,049   |         |          | 40      |         |         |         | -       |                    | +5      |             | +3      |         | 1,097   |         | 26.3%   | green   |         | REV-D   |         |          | term=19m /       | clause 007   |                  |         |\n| US          | Partner           |          |               |             | CPLX-V10-P01-R08       | S1-8 Base  |           |         |                      |             | 1,066   |         |          | 53      |         |         |         | -       |                    | -6      |             | +3      |         | 1,116   |         | 26.7%   | green   |         | FIN-A   |         |          | term=20m /       | clause 008   |                  |         |\n| Japan       | Core              |          |               |             | CPLX-V10-P01-R09       | S1-9 Base  |           |         |                      |             | 1,083   |         |          | 66      |         |         |         | (26)    |                    | +5      |             | +3      |         | 1,131   |         | 27.0%   | green   |         | OPS-B   |         |          | NOTE-V10-P01-R09 |              |                  |         |\n| APAC        | Renewal           |          |               |             | CPLX-V10-P01-R10       | S1-10 Base |           |         |                      |             | 1,100   |         |          | 79      |         |         |         | -       |                    | +5      |             | -12     |         | 1,172   |         | 27.3%   | red     |         | LEGAL-C |         |          | term=22m /       | clause 010   |                  |         |\n| EU          | Expansion         |          |               |             | CPLX-V10-P01-R11       | S1-11 Base |           |         |                      |             | 1,117   |         |          | 92      |         |         |         | -       |                    | +5      |             | +3      |         | 1,217   |         | 27.7%   | green   |         | REV-D   |         |          | term=23m /       | clause 011   |                  |         |\n| Japan       | Subtotal          |          |               |             | SUBTOTAL-V10-P01-G02   | All cases  |           |         |                      |             | 1,284   |         |          | 116     |         |         |         | (32)    |                    | 15      |             | -5      |         | 1,396   |         | 29.2%   | watch   |         | FIN-A   |         |          | rollup after     | eliminations | CPLX-V10-P01-R12 |         |\n| Footnote    | V10-FOOTNOTE-P01: |          | parenthetical |             | churn is               | signs are  | explicit. |         |                      |             |         |         |          |         |         |         |         |         |                    |         |             |         |         |         |         |         |         |         |         |         |          |                  |              |                  |         |\n| PDF         | suite             | for      | routed        | PDF         | extraction.            |            |           |         |                      |             |         |         |          |         |         |         |         |         |                    |         |             |         |         |         |         |         |         |         |         |         |          |                  |              | V10-FOOTER-P01   |         |\n\n<!-- text_layer_coverage_supplement lines=3 -->\n\nPDF validation suite for routed PDF extraction. V10-FOOTER-P01\nThree-level header, subtotal rows, conditional notes, negative values, and compact multi-field cells.\nOrg hierarchy Deal metadata Movement Revaluation / close Review workflow",
+    "raw_ocr_markdown": "",
+    "raw_vlm_markdown": "",
+    "tables": [
+      {
+        "index": 1,
+        "rows": 20,
+        "columns": 36,
+        "headers": [
+          "col_001",
+          "col_002",
+          "col_003",
+          "col_004",
+          "col_005",
+          "col_006",
+          "col_007",
+          "col_008",
+          "col_009",
+          "col_010",
+          "col_011",
+          "col_012",
+          "col_013",
+          "col_014",
+          "col_015",
+          "col_016",
+          "col_017",
+          "col_018",
+          "col_019",
+          "col_020",
+          "col_021",
+          "col_022",
+          "col_023",
+          "col_024",
+          "col_025",
+          "col_026",
+          "col_027",
+          "col_028",
+          "col_029",
+          "col_030",
+          "col_031",
+          "col_032",
+          "col_033",
+          "col_034",
+          "col_035",
+          "col_036"
+        ],
+        "csv": "col_001,col_002,col_003,col_004,col_005,col_006,col_007,col_008,col_009,col_010,col_011,col_012,col_013,col_014,col_015,col_016,col_017,col_018,col_019,col_020,col_021,col_022,col_023,col_024,col_025,col_026,col_027,col_028,col_029,col_030,col_031,col_032,col_033,col_034,col_035,col_036\r\nV10,Complex,,multi-row,,financial,table,,,,,,,,,,,,,,,,,,,,,,,,,,,,Page 1,of 2\r\n,,,waterfall,,review,,,,V10-COMPLEX-BOOK-P01,,,,,,,,,,,,,,,,,,,,,,,,,,\r\nThree-level,\"header,\",subtotal,\"rows,\",conditional,\"notes,\",\"values,\",and,compact,,multi-field,,cells.,,,,,,,,,,,,,,,,,,,,,,,\r\n,Identity,/,ownership,,V10-HDR-IDENTITY-GROUP,,,,,,,,,Revenue,bridge,,JPYm,,V10-HDR-REV-BRIDGE,,,,,,,,,,Quality,checks,/,comments,,,\r\n,hierarchy,,,,,metadata,,,,,,,Movement,,,,,,,,Revaluation,/ close,,,,,,,,Review,workflow,,,,\r\nEntity,,Segment,,,Contract,,Scenario,,,Opening,,,New,,,Churn,,,FX,,Adj.,,Closing,,Margin,%,,Risk,,Owner,,,Note /,condition,\r\nJapan,Core,,,,CPLX-V10-P01-R01,S1-1 Base,,,,,947,,,53,,,,-,,+5,,+3,,\"1,008\",,24.3%,green,,OPS-B,,,term=13m /,clause 001,,\r\nAPAC,Renewal,,,,CPLX-V10-P01-R02,S1-2 Base,,,,,964,,,66,,,,-,,+5,,+3,,\"1,038\",,24.7%,green,,LEGAL-C,,,term=14m /,clause 002,,\r\nEU,Expansion,,,,CPLX-V10-P01-R03,S1-3 Base,,,,,981,,,79,,,,(14),,+5,,+3,,\"1,054\",,25.0%,green,,REV-D,,,term=15m /,clause 003,,\r\nUS,Partner,,,,CPLX-V10-P01-R04,S1-4 Base,,,,,998,,,92,,,,-,,-6,,+3,,\"1,087\",,25.3%,red,,FIN-A,,,NOTE-V10-P01-R04,,,\r\nJapan,Core,,,,CPLX-V10-P01-R05,S1-5 Base,,,,,\"1,015\",,,105,,,,-,,+5,,-12,,\"1,113\",,25.7%,green,,OPS-B,,,term=17m /,clause 005,,\r\nEU,Subtotal,,,,SUBTOTAL-V10-P01-G01,All cases,,,,,\"1,242\",,,98,,,,(26),,9,,1,,\"1,348\",,28.6%,watch,,LEGAL-C,,,rollup after,eliminations,CPLX-V10-P01-R06,\r\nEU,Expansion,,,,CPLX-V10-P01-R07,S1-7 Base,,,,,\"1,049\",,,40,,,,-,,+5,,+3,,\"1,097\",,26.3%,green,,REV-D,,,term=19m /,clause 007,,\r\nUS,Partner,,,,CPLX-V10-P01-R08,S1-8 Base,,,,,\"1,066\",,,53,,,,-,,-6,,+3,,\"1,116\",,26.7%,green,,FIN-A,,,term=20m /,clause 008,,\r\nJapan,Core,,,,CPLX-V10-P01-R09,S1-9 Base,,,,,\"1,083\",,,66,,,,(26),,+5,,+3,,\"1,131\",,27.0%,green,,OPS-B,,,NOTE-V10-P01-R09,,,\r\nAPAC,Renewal,,,,CPLX-V10-P01-R10,S1-10 Base,,,,,\"1,100\",,,79,,,,-,,+5,,-12,,\"1,172\",,27.3%,red,,LEGAL-C,,,term=22m /,clause 010,,\r\nEU,Expansion,,,,CPLX-V10-P01-R11,S1-11 Base,,,,,\"1,117\",,,92,,,,-,,+5,,+3,,\"1,217\",,27.7%,green,,REV-D,,,term=23m /,clause 011,,\r\nJapan,Subtotal,,,,SUBTOTAL-V10-P01-G02,All cases,,,,,\"1,284\",,,116,,,,(32),,15,,-5,,\"1,396\",,29.2%,watch,,FIN-A,,,rollup after,eliminations,CPLX-V10-P01-R12,\r\nFootnote,V10-FOOTNOTE-P01:,,parenthetical,,churn is,signs are,explicit.,,,,,,,,,,,,,,,,,,,,,,,,,,,,\r\nPDF,suite,for,routed,PDF,extraction.,,,,,,,,,,,,,,,,,,,,,,,,,,,,,V10-FOOTER-P01,\r\n",
+        "html": "<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th>col_001</th>\n      <th>col_002</th>\n      <th>col_003</th>\n      <th>col_004</th>\n      <th>col_005</th>\n      <th>col_006</th>\n      <th>col_007</th>\n      <th>col_008</th>\n      <th>col_009</th>\n      <th>col_010</th>\n      <th>col_011</th>\n      <th>col_012</th>\n      <th>col_013</th>\n      <th>col_014</th>\n      <th>col_015</th>\n      <th>col_016</th>\n      <th>col_017</th>\n      <th>col_018</th>\n      <th>col_019</th>\n      <th>col_020</th>\n      <th>col_021</th>\n      <th>col_022</th>\n      <th>col_023</th>\n      <th>col_024</th>\n      <th>col_025</th>\n      <th>col_026</th>\n      <th>col_027</th>\n      <th>col_028</th>\n      <th>col_029</th>\n      <th>col_030</th>\n      <th>col_031</th>\n      <th>col_032</th>\n      <th>col_033</th>\n      <th>col_034</th>\n      <th>col_035</th>\n      <th>col_036</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>V10</td>\n      <td>Complex</td>\n      <td></td>\n      <td>multi-row</td>\n      <td></td>\n      <td>financial</td>\n      <td>table</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>Page 1</td>\n      <td>of 2</td>\n    </tr>\n    <tr>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>waterfall</td>\n      <td></td>\n      <td>review</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>V10-COMPLEX-BOOK-P01</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>Three-level</td>\n      <td>header,</td>\n      <td>subtotal</td>\n      <td>rows,</td>\n      <td>conditional</td>\n      <td>notes,</td>\n      <td>values,</td>\n      <td>and</td>\n      <td>compact</td>\n      <td></td>\n      <td>multi-field</td>\n      <td></td>\n      <td>cells.</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td></td>\n      <td>Identity</td>\n      <td>/</td>\n      <td>ownership</td>\n      <td></td>\n      <td>V10-HDR-IDENTITY-GROUP</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>Revenue</td>\n      <td>bridge</td>\n      <td></td>\n      <td>JPYm</td>\n      <td></td>\n      <td>V10-HDR-REV-BRIDGE</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>Quality</td>\n      <td>checks</td>\n      <td>/</td>\n      <td>comments</td>\n      <td></td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td></td>\n      <td>hierarchy</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>metadata</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>Movement</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>Revaluation</td>\n      <td>/ close</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>Review</td>\n      <td>workflow</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>Entity</td>\n      <td></td>\n      <td>Segment</td>\n      <td></td>\n      <td></td>\n      <td>Contract</td>\n      <td></td>\n      <td>Scenario</td>\n      <td></td>\n      <td></td>\n      <td>Opening</td>\n      <td></td>\n      <td></td>\n      <td>New</td>\n      <td></td>\n      <td></td>\n      <td>Churn</td>\n      <td></td>\n      <td></td>\n      <td>FX</td>\n      <td></td>\n      <td>Adj.</td>\n      <td></td>\n      <td>Closing</td>\n      <td></td>\n      <td>Margin</td>\n      <td>%</td>\n      <td></td>\n      <td>Risk</td>\n      <td></td>\n      <td>Owner</td>\n      <td></td>\n      <td></td>\n      <td>Note /</td>\n      <td>condition</td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>Japan</td>\n      <td>Core</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>CPLX-V10-P01-R01</td>\n      <td>S1-1 Base</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>947</td>\n      <td></td>\n      <td></td>\n      <td>53</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>-</td>\n      <td></td>\n      <td>+5</td>\n      <td></td>\n      <td>+3</td>\n      <td></td>\n      <td>1,008</td>\n      <td></td>\n      <td>24.3%</td>\n      <td>green</td>\n      <td></td>\n      <td>OPS-B</td>\n      <td></td>\n      <td></td>\n      <td>term=13m /</td>\n      <td>clause 001</td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>APAC</td>\n      <td>Renewal</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>CPLX-V10-P01-R02</td>\n      <td>S1-2 Base</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>964</td>\n      <td></td>\n      <td></td>\n      <td>66</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>-</td>\n      <td></td>\n      <td>+5</td>\n      <td></td>\n      <td>+3</td>\n      <td></td>\n      <td>1,038</td>\n      <td></td>\n      <td>24.7%</td>\n      <td>green</td>\n      <td></td>\n      <td>LEGAL-C</td>\n      <td></td>\n      <td></td>\n      <td>term=14m /</td>\n      <td>clause 002</td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>EU</td>\n      <td>Expansion</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>CPLX-V10-P01-R03</td>\n      <td>S1-3 Base</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>981</td>\n      <td></td>\n      <td></td>\n      <td>79</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>(14)</td>\n      <td></td>\n      <td>+5</td>\n      <td></td>\n      <td>+3</td>\n      <td></td>\n      <td>1,054</td>\n      <td></td>\n      <td>25.0%</td>\n      <td>green</td>\n      <td></td>\n      <td>REV-D</td>\n      <td></td>\n      <td></td>\n      <td>term=15m /</td>\n      <td>clause 003</td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>US</td>\n      <td>Partner</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>CPLX-V10-P01-R04</td>\n      <td>S1-4 Base</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>998</td>\n      <td></td>\n      <td></td>\n      <td>92</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>-</td>\n      <td></td>\n      <td>-6</td>\n      <td></td>\n      <td>+3</td>\n      <td></td>\n      <td>1,087</td>\n      <td></td>\n      <td>25.3%</td>\n      <td>red</td>\n      <td></td>\n      <td>FIN-A</td>\n      <td></td>\n      <td></td>\n      <td>NOTE-V10-P01-R04</td>\n      <td></td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>Japan</td>\n      <td>Core</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>CPLX-V10-P01-R05</td>\n      <td>S1-5 Base</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>1,015</td>\n      <td></td>\n      <td></td>\n      <td>105</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>-</td>\n      <td></td>\n      <td>+5</td>\n      <td></td>\n      <td>-12</td>\n      <td></td>\n      <td>1,113</td>\n      <td></td>\n      <td>25.7%</td>\n      <td>green</td>\n      <td></td>\n      <td>OPS-B</td>\n      <td></td>\n      <td></td>\n      <td>term=17m /</td>\n      <td>clause 005</td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>EU</td>\n      <td>Subtotal</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>SUBTOTAL-V10-P01-G01</td>\n      <td>All cases</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>1,242</td>\n      <td></td>\n      <td></td>\n      <td>98</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>(26)</td>\n      <td></td>\n      <td>9</td>\n      <td></td>\n      <td>1</td>\n      <td></td>\n      <td>1,348</td>\n      <td></td>\n      <td>28.6%</td>\n      <td>watch</td>\n      <td></td>\n      <td>LEGAL-C</td>\n      <td></td>\n      <td></td>\n      <td>rollup after</td>\n      <td>eliminations</td>\n      <td>CPLX-V10-P01-R06</td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>EU</td>\n      <td>Expansion</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>CPLX-V10-P01-R07</td>\n      <td>S1-7 Base</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>1,049</td>\n      <td></td>\n      <td></td>\n      <td>40</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>-</td>\n      <td></td>\n      <td>+5</td>\n      <td></td>\n      <td>+3</td>\n      <td></td>\n      <td>1,097</td>\n      <td></td>\n      <td>26.3%</td>\n      <td>green</td>\n      <td></td>\n      <td>REV-D</td>\n      <td></td>\n      <td></td>\n      <td>term=19m /</td>\n      <td>clause 007</td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>US</td>\n      <td>Partner</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>CPLX-V10-P01-R08</td>\n      <td>S1-8 Base</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>1,066</td>\n      <td></td>\n      <td></td>\n      <td>53</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>-</td>\n      <td></td>\n      <td>-6</td>\n      <td></td>\n      <td>+3</td>\n      <td></td>\n      <td>1,116</td>\n      <td></td>\n      <td>26.7%</td>\n      <td>green</td>\n      <td></td>\n      <td>FIN-A</td>\n      <td></td>\n      <td></td>\n      <td>term=20m /</td>\n      <td>clause 008</td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>Japan</td>\n      <td>Core</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>CPLX-V10-P01-R09</td>\n      <td>S1-9 Base</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>1,083</td>\n      <td></td>\n      <td></td>\n      <td>66</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>(26)</td>\n      <td></td>\n      <td>+5</td>\n      <td></td>\n      <td>+3</td>\n      <td></td>\n      <td>1,131</td>\n      <td></td>\n      <td>27.0%</td>\n      <td>green</td>\n      <td></td>\n      <td>OPS-B</td>\n      <td></td>\n      <td></td>\n      <td>NOTE-V10-P01-R09</td>\n      <td></td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>APAC</td>\n      <td>Renewal</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>CPLX-V10-P01-R10</td>\n      <td>S1-10 Base</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>1,100</td>\n      <td></td>\n      <td></td>\n      <td>79</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>-</td>\n      <td></td>\n      <td>+5</td>\n      <td></td>\n      <td>-12</td>\n      <td></td>\n      <td>1,172</td>\n      <td></td>\n      <td>27.3%</td>\n      <td>red</td>\n      <td></td>\n      <td>LEGAL-C</td>\n      <td></td>\n      <td></td>\n      <td>term=22m /</td>\n      <td>clause 010</td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>EU</td>\n      <td>Expansion</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>CPLX-V10-P01-R11</td>\n      <td>S1-11 Base</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>1,117</td>\n      <td></td>\n      <td></td>\n      <td>92</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>-</td>\n      <td></td>\n      <td>+5</td>\n      <td></td>\n      <td>+3</td>\n      <td></td>\n      <td>1,217</td>\n      <td></td>\n      <td>27.7%</td>\n      <td>green</td>\n      <td></td>\n      <td>REV-D</td>\n      <td></td>\n      <td></td>\n      <td>term=23m /</td>\n      <td>clause 011</td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>Japan</td>\n      <td>Subtotal</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>SUBTOTAL-V10-P01-G02</td>\n      <td>All cases</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>1,284</td>\n      <td></td>\n      <td></td>\n      <td>116</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>(32)</td>\n      <td></td>\n      <td>15</td>\n      <td></td>\n      <td>-5</td>\n      <td></td>\n      <td>1,396</td>\n      <td></td>\n      <td>29.2%</td>\n      <td>watch</td>\n      <td></td>\n      <td>FIN-A</td>\n      <td></td>\n      <td></td>\n      <td>rollup after</td>\n      <td>eliminations</td>\n      <td>CPLX-V10-P01-R12</td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>Footnote</td>\n      <td>V10-FOOTNOTE-P01:</td>\n      <td></td>\n      <td>parenthetical</td>\n      <td></td>\n      <td>churn is</td>\n      <td>signs are</td>\n      <td>explicit.</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>PDF</td>\n      <td>suite</td>\n      <td>for</td>\n      <td>routed</td>\n      <td>PDF</td>\n      <td>extraction.</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>V10-FOOTER-P01</td>\n      <td></td>\n    </tr>\n  </tbody>\n</table>",
+        "page": 1,
+        "repair": {
+          "enabled": false,
+          "coordinate_reconstruction": {
+            "method": "pdf_text_alignment",
+            "page": 1,
+            "status": "ok",
+            "bbox": [
+              28.51,
+              29.57,
+              801.78,
+              564.17
+            ],
+            "table_area_ratio": 0.8249,
+            "horizontal_line_count": 1,
+            "vertical_line_count": 0,
+            "line_count": 20,
+            "table_line_count": 20,
+            "raw_rows": 20,
+            "raw_columns": 36,
+            "trimmed_rows": 20,
+            "trimmed_columns": 36,
+            "span_count": 294,
+            "assigned_span_count": 285,
+            "span_coverage": 0.9694,
+            "spans_per_trimmed_row": 14.7,
+            "max_cell_chars": 22,
+            "median_cell_chars": 5.0,
+            "max_to_median_cell_char_ratio": 4.4,
+            "max_long_text_row_ratio": 0.0,
+            "header_mode": "none",
+            "header_inference_enabled": false,
+            "header_row_count": 0,
+            "measure_start_column": null,
+            "filled_row_header_count": 0,
+            "pdf_grid_rows_preserved": true,
+            "headers": [
+              "col_001",
+              "col_002",
+              "col_003",
+              "col_004",
+              "col_005",
+              "col_006",
+              "col_007",
+              "col_008",
+              "col_009",
+              "col_010",
+              "col_011",
+              "col_012",
+              "col_013",
+              "col_014",
+              "col_015",
+              "col_016",
+              "col_017",
+              "col_018",
+              "col_019",
+              "col_020",
+              "col_021",
+              "col_022",
+              "col_023",
+              "col_024",
+              "col_025",
+              "col_026",
+              "col_027",
+              "col_028",
+              "col_029",
+              "col_030",
+              "col_031",
+              "col_032",
+              "col_033",
+              "col_034",
+              "col_035",
+              "col_036"
+            ],
+            "non_table_text_line_count": 0,
+            "non_table_text_chars": 0,
+            "text_layer_coverage": {
+              "raw_line_count": 30,
+              "supplemented_line_count": 3,
+              "supplemented_lines": [
+                {
+                  "text": "PDF validation suite for routed PDF extraction. V10-FOOTER-P01",
+                  "missing_tokens": [
+                    "validation"
+                  ]
+                },
+                {
+                  "text": "Three-level header, subtotal rows, conditional notes, negative values, and compact multi-field cells.",
+                  "missing_tokens": [
+                    "negative"
+                  ]
+                },
+                {
+                  "text": "Org hierarchy Deal metadata Movement Revaluation / close Review workflow",
+                  "missing_tokens": [
+                    "deal"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    ],
+    "elapsed_seconds": 0.028,
+    "candidate_timings_seconds": {},
+    "diagnostics": {
+      "routing_source_mode": "TEXT_TABLE_ACCURATE",
+      "coordinate_table_reconstruction": true,
+      "coordinate_quality": {
+        "ok": false,
+        "reasons": [
+          "low_span_coverage"
+        ],
+        "rows": 20,
+        "columns": 36,
+        "span_count": 294,
+        "span_coverage": 0.9694,
+        "spans_per_row": 14.7,
+        "span_per_row_limit": 108.0,
+        "max_cell_chars": 22,
+        "max_to_median_cell_char_ratio": 4.4,
+        "max_long_text_row_ratio": 0.0
+      },
+      "coordinate_diagnostics": {
+        "method": "pdf_text_alignment",
+        "page": 1,
+        "status": "ok",
+        "bbox": [
+          28.51,
+          29.57,
+          801.78,
+          564.17
+        ],
+        "table_area_ratio": 0.8249,
+        "horizontal_line_count": 1,
+        "vertical_line_count": 0,
+        "line_count": 20,
+        "table_line_count": 20,
+        "raw_rows": 20,
+        "raw_columns": 36,
+        "trimmed_rows": 20,
+        "trimmed_columns": 36,
+        "span_count": 294,
+        "assigned_span_count": 285,
+        "span_coverage": 0.9694,
+        "spans_per_trimmed_row": 14.7,
+        "max_cell_chars": 22,
+        "median_cell_chars": 5.0,
+        "max_to_median_cell_char_ratio": 4.4,
+        "max_long_text_row_ratio": 0.0,
+        "header_mode": "none",
+        "header_inference_enabled": false,
+        "header_row_count": 0,
+        "measure_start_column": null,
+        "filled_row_header_count": 0,
+        "pdf_grid_rows_preserved": true,
+        "headers": [
+          "col_001",
+          "col_002",
+          "col_003",
+          "col_004",
+          "col_005",
+          "col_006",
+          "col_007",
+          "col_008",
+          "col_009",
+          "col_010",
+          "col_011",
+          "col_012",
+          "col_013",
+          "col_014",
+          "col_015",
+          "col_016",
+          "col_017",
+          "col_018",
+          "col_019",
+          "col_020",
+          "col_021",
+          "col_022",
+          "col_023",
+          "col_024",
+          "col_025",
+          "col_026",
+          "col_027",
+          "col_028",
+          "col_029",
+          "col_030",
+          "col_031",
+          "col_032",
+          "col_033",
+          "col_034",
+          "col_035",
+          "col_036"
+        ],
+        "non_table_text_line_count": 0,
+        "non_table_text_chars": 0,
+        "text_layer_coverage": {
+          "raw_line_count": 30,
+          "supplemented_line_count": 3,
+          "supplemented_lines": [
+            {
+              "text": "PDF validation suite for routed PDF extraction. V10-FOOTER-P01",
+              "missing_tokens": [
+                "validation"
+              ]
+            },
+            {
+              "text": "Three-level header, subtotal rows, conditional notes, negative values, and compact multi-field cells.",
+              "missing_tokens": [
+                "negative"
+              ]
+            },
+            {
+              "text": "Org hierarchy Deal metadata Movement Revaluation / close Review workflow",
+              "missing_tokens": [
+                "deal"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "mode": "TEXT_TABLE_COORD",
+    "start_page": 2,
+    "end_page": 2,
+    "markdown": "| col_001     | col_002           | col_003  | col_004       | col_005              | col_006    | col_007   | col_008 | col_009              | col_010     | col_011 | col_012 | col_013  | col_014 | col_015 | col_016 | col_017 | col_018 | col_019     | col_020 | col_021 | col_022 | col_023 | col_024 | col_025 | col_026 | col_027 | col_028 | col_029  | col_030          | col_031      | col_032          | col_033 |\n| ----------- | ----------------- | -------- | ------------- | -------------------- | ---------- | --------- | ------- | -------------------- | ----------- | ------- | ------- | -------- | ------- | ------- | ------- | ------- | ------- | ----------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | -------- | ---------------- | ------------ | ---------------- | ------- |\n| V10         | Complex           |          | multi-row     | financial            | table      |           |         |                      |             |         |         |          |         |         |         |         |         |             |         |         |         |         |         |         |         |         |         |          |                  |              | Page 2           | of 2    |\n|             |                   |          | waterfall     | review               |            |           |         | V10-COMPLEX-BOOK-P02 |             |         |         |          |         |         |         |         |         |             |         |         |         |         |         |         |         |         |         |          |                  |              |                  |         |\n| Three-level | header,           | subtotal | rows,         | conditional notes,   | values,    | and       | compact |                      | multi-field |         | cells.  |          |         |         |         |         |         |             |         |         |         |         |         |         |         |         |         |          |                  |              |                  |         |\n|             |                   |          | Identity      | ownership            |            |           |         |                      |             |         |         |          |         | Revenue | bridge  | JPYm    |         |             |         |         |         |         |         |         |         | Quality | checks  | /        | comments         |              |                  |         |\n|             | hierarchy         |          |               |                      | metadata   |           |         |                      |             |         |         | Movement |         |         |         |         |         | Revaluation | / close |         |         |         |         |         |         |         | Review  | workflow |                  |              |                  |         |\n| Entity      |                   | Segment  |               | Contract             |            | Scenario  |         |                      | Opening     |         |         | New      |         | Churn   |         | FX      |         | Adj.        |         | Closing |         | Margin  | %       |         | Risk    |         | Owner   |          |                  | Note /       | condition        |         |\n| Japan       | Core              |          |               | CPLX-V10-P02-R01     | S2-1 Base  |           |         |                      |             | 1,151   |         |          | 53      |         | -       |         | +5      |             | +3      |         | 1,212   |         | 24.3%   | green   |         | OPS-B   |         |          | term=13m /       | clause 013   |                  |         |\n| APAC        | Renewal           |          |               | CPLX-V10-P02-R02     | S2-2 Base  |           |         |                      |             | 1,168   |         |          | 66      |         | -       |         | +5      |             | +3      |         | 1,242   |         | 24.7%   | green   |         | LEGAL-C |         |          | term=14m /       | clause 014   |                  |         |\n| EU          | Expansion         |          |               | CPLX-V10-P02-R03     | S2-3 Base  |           |         |                      |             | 1,185   |         |          | 79      |         | (14)    |         | +5      |             | +3      |         | 1,258   |         | 25.0%   | green   |         | REV-D   |         |          | term=15m /       | clause 015   |                  |         |\n| US          | Partner           |          |               | CPLX-V10-P02-R04     | S2-4 Base  |           |         |                      |             | 1,202   |         |          | 92      |         | -       |         | -6      |             | +3      |         | 1,291   |         | 25.3%   | red     |         | FIN-A   |         |          | NOTE-V10-P02-R04 |              |                  |         |\n| Japan       | Core              |          |               | CPLX-V10-P02-R05     | S2-5 Base  |           |         |                      |             | 1,219   |         |          | 105     |         | -       |         | +5      |             | -12     |         | 1,317   |         | 25.7%   | green   |         | OPS-B   |         |          | term=17m /       | clause 017   |                  |         |\n| EU          | Subtotal          |          |               | SUBTOTAL-V10-P02-G01 | All cases  |           |         |                      |             | 1,326   |         |          | 98      |         | (26)    |         | 9       |             | 1       |         | 1,444   |         | 28.6%   | watch   |         | LEGAL-C |         |          | rollup after     | eliminations | CPLX-V10-P02-R06 |         |\n| EU          | Expansion         |          |               | CPLX-V10-P02-R07     | S2-7 Base  |           |         |                      |             | 1,253   |         |          | 40      |         | -       |         | +5      |             | +3      |         | 1,301   |         | 26.3%   | green   |         | REV-D   |         |          | term=19m /       | clause 019   |                  |         |\n| US          | Partner           |          |               | CPLX-V10-P02-R08     | S2-8 Base  |           |         |                      |             | 1,270   |         |          | 53      |         | -       |         | -6      |             | +3      |         | 1,320   |         | 26.7%   | green   |         | FIN-A   |         |          | term=20m /       | clause 020   |                  |         |\n| Japan       | Core              |          |               | CPLX-V10-P02-R09     | S2-9 Base  |           |         |                      |             | 1,287   |         |          | 66      |         | (26)    |         | +5      |             | +3      |         | 1,335   |         | 27.0%   | green   |         | OPS-B   |         |          | NOTE-V10-P02-R09 |              |                  |         |\n| APAC        | Renewal           |          |               | CPLX-V10-P02-R10     | S2-10 Base |           |         |                      |             | 1,304   |         |          | 79      |         | -       |         | +5      |             | -12     |         | 1,376   |         | 27.3%   | red     |         | LEGAL-C |         |          | term=22m /       | clause 022   |                  |         |\n| EU          | Expansion         |          |               | CPLX-V10-P02-R11     | S2-11 Base |           |         |                      |             | 1,321   |         |          | 92      |         | -       |         | +5      |             | +3      |         | 1,421   |         | 27.7%   | green   |         | REV-D   |         |          | term=23m /       | clause 023   |                  |         |\n| Japan       | Subtotal          |          |               | SUBTOTAL-V10-P02-G02 | All cases  |           |         |                      |             | 1,368   |         |          | 116     |         | (32)    |         | 15      |             | -5      |         | 1,492   |         | 29.2%   | watch   |         | FIN-A   |         |          | rollup after     | eliminations | CPLX-V10-P02-R12 |         |\n| Footnote    | V10-FOOTNOTE-P02: |          | parenthetical | churn is             | signs are  | explicit. |         |                      |             |         |         |          |         |         |         |         |         |             |         |         |         |         |         |         |         |         |         |          |                  |              |                  |         |\n| PDF         | suite             | for      | routed PDF    | extraction.          |            |           |         |                      |             |         |         |          |         |         |         |         |         |             |         |         |         |         |         |         |         |         |         |          |                  |              | V10-FOOTER-P02   |         |\n\n<!-- text_layer_coverage_supplement lines=3 -->\n\nPDF validation suite for routed PDF extraction. V10-FOOTER-P02\nThree-level header, subtotal rows, conditional notes, negative values, and compact multi-field cells.\nOrg hierarchy Deal metadata Movement Revaluation / close Review workflow",
+    "safe_markdown": "| col_001     | col_002           | col_003  | col_004       | col_005              | col_006    | col_007   | col_008 | col_009              | col_010     | col_011 | col_012 | col_013  | col_014 | col_015 | col_016 | col_017 | col_018 | col_019     | col_020 | col_021 | col_022 | col_023 | col_024 | col_025 | col_026 | col_027 | col_028 | col_029  | col_030          | col_031      | col_032          | col_033 |\n| ----------- | ----------------- | -------- | ------------- | -------------------- | ---------- | --------- | ------- | -------------------- | ----------- | ------- | ------- | -------- | ------- | ------- | ------- | ------- | ------- | ----------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | -------- | ---------------- | ------------ | ---------------- | ------- |\n| V10         | Complex           |          | multi-row     | financial            | table      |           |         |                      |             |         |         |          |         |         |         |         |         |             |         |         |         |         |         |         |         |         |         |          |                  |              | Page 2           | of 2    |\n|             |                   |          | waterfall     | review               |            |           |         | V10-COMPLEX-BOOK-P02 |             |         |         |          |         |         |         |         |         |             |         |         |         |         |         |         |         |         |         |          |                  |              |                  |         |\n| Three-level | header,           | subtotal | rows,         | conditional notes,   | values,    | and       | compact |                      | multi-field |         | cells.  |          |         |         |         |         |         |             |         |         |         |         |         |         |         |         |         |          |                  |              |                  |         |\n|             |                   |          | Identity      | ownership            |            |           |         |                      |             |         |         |          |         | Revenue | bridge  | JPYm    |         |             |         |         |         |         |         |         |         | Quality | checks  | /        | comments         |              |                  |         |\n|             | hierarchy         |          |               |                      | metadata   |           |         |                      |             |         |         | Movement |         |         |         |         |         | Revaluation | / close |         |         |         |         |         |         |         | Review  | workflow |                  |              |                  |         |\n| Entity      |                   | Segment  |               | Contract             |            | Scenario  |         |                      | Opening     |         |         | New      |         | Churn   |         | FX      |         | Adj.        |         | Closing |         | Margin  | %       |         | Risk    |         | Owner   |          |                  | Note /       | condition        |         |\n| Japan       | Core              |          |               | CPLX-V10-P02-R01     | S2-1 Base  |           |         |                      |             | 1,151   |         |          | 53      |         | -       |         | +5      |             | +3      |         | 1,212   |         | 24.3%   | green   |         | OPS-B   |         |          | term=13m /       | clause 013   |                  |         |\n| APAC        | Renewal           |          |               | CPLX-V10-P02-R02     | S2-2 Base  |           |         |                      |             | 1,168   |         |          | 66      |         | -       |         | +5      |             | +3      |         | 1,242   |         | 24.7%   | green   |         | LEGAL-C |         |          | term=14m /       | clause 014   |                  |         |\n| EU          | Expansion         |          |               | CPLX-V10-P02-R03     | S2-3 Base  |           |         |                      |             | 1,185   |         |          | 79      |         | (14)    |         | +5      |             | +3      |         | 1,258   |         | 25.0%   | green   |         | REV-D   |         |          | term=15m /       | clause 015   |                  |         |\n| US          | Partner           |          |               | CPLX-V10-P02-R04     | S2-4 Base  |           |         |                      |             | 1,202   |         |          | 92      |         | -       |         | -6      |             | +3      |         | 1,291   |         | 25.3%   | red     |         | FIN-A   |         |          | NOTE-V10-P02-R04 |              |                  |         |\n| Japan       | Core              |          |               | CPLX-V10-P02-R05     | S2-5 Base  |           |         |                      |             | 1,219   |         |          | 105     |         | -       |         | +5      |             | -12     |         | 1,317   |         | 25.7%   | green   |         | OPS-B   |         |          | term=17m /       | clause 017   |                  |         |\n| EU          | Subtotal          |          |               | SUBTOTAL-V10-P02-G01 | All cases  |           |         |                      |             | 1,326   |         |          | 98      |         | (26)    |         | 9       |             | 1       |         | 1,444   |         | 28.6%   | watch   |         | LEGAL-C |         |          | rollup after     | eliminations | CPLX-V10-P02-R06 |         |\n| EU          | Expansion         |          |               | CPLX-V10-P02-R07     | S2-7 Base  |           |         |                      |             | 1,253   |         |          | 40      |         | -       |         | +5      |             | +3      |         | 1,301   |         | 26.3%   | green   |         | REV-D   |         |          | term=19m /       | clause 019   |                  |         |\n| US          | Partner           |          |               | CPLX-V10-P02-R08     | S2-8 Base  |           |         |                      |             | 1,270   |         |          | 53      |         | -       |         | -6      |             | +3      |         | 1,320   |         | 26.7%   | green   |         | FIN-A   |         |          | term=20m /       | clause 020   |                  |         |\n| Japan       | Core              |          |               | CPLX-V10-P02-R09     | S2-9 Base  |           |         |                      |             | 1,287   |         |          | 66      |         | (26)    |         | +5      |             | +3      |         | 1,335   |         | 27.0%   | green   |         | OPS-B   |         |          | NOTE-V10-P02-R09 |              |                  |         |\n| APAC        | Renewal           |          |               | CPLX-V10-P02-R10     | S2-10 Base |           |         |                      |             | 1,304   |         |          | 79      |         | -       |         | +5      |             | -12     |         | 1,376   |         | 27.3%   | red     |         | LEGAL-C |         |          | term=22m /       | clause 022   |                  |         |\n| EU          | Expansion         |          |               | CPLX-V10-P02-R11     | S2-11 Base |           |         |                      |             | 1,321   |         |          | 92      |         | -       |         | +5      |             | +3      |         | 1,421   |         | 27.7%   | green   |         | REV-D   |         |          | term=23m /       | clause 023   |                  |         |\n| Japan       | Subtotal          |          |               | SUBTOTAL-V10-P02-G02 | All cases  |           |         |                      |             | 1,368   |         |          | 116     |         | (32)    |         | 15      |             | -5      |         | 1,492   |         | 29.2%   | watch   |         | FIN-A   |         |          | rollup after     | eliminations | CPLX-V10-P02-R12 |         |\n| Footnote    | V10-FOOTNOTE-P02: |          | parenthetical | churn is             | signs are  | explicit. |         |                      |             |         |         |          |         |         |         |         |         |             |         |         |         |         |         |         |         |         |         |          |                  |              |                  |         |\n| PDF         | suite             | for      | routed PDF    | extraction.          |            |           |         |                      |             |         |         |          |         |         |         |         |         |             |         |         |         |         |         |         |         |         |         |          |                  |              | V10-FOOTER-P02   |         |\n\n<!-- text_layer_coverage_supplement lines=3 -->\n\nPDF validation suite for routed PDF extraction. V10-FOOTER-P02\nThree-level header, subtotal rows, conditional notes, negative values, and compact multi-field cells.\nOrg hierarchy Deal metadata Movement Revaluation / close Review workflow",
+    "raw_ocr_markdown": "",
+    "raw_vlm_markdown": "",
+    "tables": [
+      {
+        "index": 1,
+        "rows": 20,
+        "columns": 33,
+        "headers": [
+          "col_001",
+          "col_002",
+          "col_003",
+          "col_004",
+          "col_005",
+          "col_006",
+          "col_007",
+          "col_008",
+          "col_009",
+          "col_010",
+          "col_011",
+          "col_012",
+          "col_013",
+          "col_014",
+          "col_015",
+          "col_016",
+          "col_017",
+          "col_018",
+          "col_019",
+          "col_020",
+          "col_021",
+          "col_022",
+          "col_023",
+          "col_024",
+          "col_025",
+          "col_026",
+          "col_027",
+          "col_028",
+          "col_029",
+          "col_030",
+          "col_031",
+          "col_032",
+          "col_033"
+        ],
+        "csv": "col_001,col_002,col_003,col_004,col_005,col_006,col_007,col_008,col_009,col_010,col_011,col_012,col_013,col_014,col_015,col_016,col_017,col_018,col_019,col_020,col_021,col_022,col_023,col_024,col_025,col_026,col_027,col_028,col_029,col_030,col_031,col_032,col_033\r\nV10,Complex,,multi-row,financial,table,,,,,,,,,,,,,,,,,,,,,,,,,,Page 2,of 2\r\n,,,waterfall,review,,,,V10-COMPLEX-BOOK-P02,,,,,,,,,,,,,,,,,,,,,,,,\r\nThree-level,\"header,\",subtotal,\"rows,\",\"conditional notes,\",\"values,\",and,compact,,multi-field,,cells.,,,,,,,,,,,,,,,,,,,,,\r\n,,,Identity,ownership,,,,,,,,,,Revenue,bridge,JPYm,,,,,,,,,,Quality,checks,/,comments,,,\r\n,hierarchy,,,,metadata,,,,,,,Movement,,,,,,Revaluation,/ close,,,,,,,,Review,workflow,,,,\r\nEntity,,Segment,,Contract,,Scenario,,,Opening,,,New,,Churn,,FX,,Adj.,,Closing,,Margin,%,,Risk,,Owner,,,Note /,condition,\r\nJapan,Core,,,CPLX-V10-P02-R01,S2-1 Base,,,,,\"1,151\",,,53,,-,,+5,,+3,,\"1,212\",,24.3%,green,,OPS-B,,,term=13m /,clause 013,,\r\nAPAC,Renewal,,,CPLX-V10-P02-R02,S2-2 Base,,,,,\"1,168\",,,66,,-,,+5,,+3,,\"1,242\",,24.7%,green,,LEGAL-C,,,term=14m /,clause 014,,\r\nEU,Expansion,,,CPLX-V10-P02-R03,S2-3 Base,,,,,\"1,185\",,,79,,(14),,+5,,+3,,\"1,258\",,25.0%,green,,REV-D,,,term=15m /,clause 015,,\r\nUS,Partner,,,CPLX-V10-P02-R04,S2-4 Base,,,,,\"1,202\",,,92,,-,,-6,,+3,,\"1,291\",,25.3%,red,,FIN-A,,,NOTE-V10-P02-R04,,,\r\nJapan,Core,,,CPLX-V10-P02-R05,S2-5 Base,,,,,\"1,219\",,,105,,-,,+5,,-12,,\"1,317\",,25.7%,green,,OPS-B,,,term=17m /,clause 017,,\r\nEU,Subtotal,,,SUBTOTAL-V10-P02-G01,All cases,,,,,\"1,326\",,,98,,(26),,9,,1,,\"1,444\",,28.6%,watch,,LEGAL-C,,,rollup after,eliminations,CPLX-V10-P02-R06,\r\nEU,Expansion,,,CPLX-V10-P02-R07,S2-7 Base,,,,,\"1,253\",,,40,,-,,+5,,+3,,\"1,301\",,26.3%,green,,REV-D,,,term=19m /,clause 019,,\r\nUS,Partner,,,CPLX-V10-P02-R08,S2-8 Base,,,,,\"1,270\",,,53,,-,,-6,,+3,,\"1,320\",,26.7%,green,,FIN-A,,,term=20m /,clause 020,,\r\nJapan,Core,,,CPLX-V10-P02-R09,S2-9 Base,,,,,\"1,287\",,,66,,(26),,+5,,+3,,\"1,335\",,27.0%,green,,OPS-B,,,NOTE-V10-P02-R09,,,\r\nAPAC,Renewal,,,CPLX-V10-P02-R10,S2-10 Base,,,,,\"1,304\",,,79,,-,,+5,,-12,,\"1,376\",,27.3%,red,,LEGAL-C,,,term=22m /,clause 022,,\r\nEU,Expansion,,,CPLX-V10-P02-R11,S2-11 Base,,,,,\"1,321\",,,92,,-,,+5,,+3,,\"1,421\",,27.7%,green,,REV-D,,,term=23m /,clause 023,,\r\nJapan,Subtotal,,,SUBTOTAL-V10-P02-G02,All cases,,,,,\"1,368\",,,116,,(32),,15,,-5,,\"1,492\",,29.2%,watch,,FIN-A,,,rollup after,eliminations,CPLX-V10-P02-R12,\r\nFootnote,V10-FOOTNOTE-P02:,,parenthetical,churn is,signs are,explicit.,,,,,,,,,,,,,,,,,,,,,,,,,,\r\nPDF,suite,for,routed PDF,extraction.,,,,,,,,,,,,,,,,,,,,,,,,,,,V10-FOOTER-P02,\r\n",
+        "html": "<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th>col_001</th>\n      <th>col_002</th>\n      <th>col_003</th>\n      <th>col_004</th>\n      <th>col_005</th>\n      <th>col_006</th>\n      <th>col_007</th>\n      <th>col_008</th>\n      <th>col_009</th>\n      <th>col_010</th>\n      <th>col_011</th>\n      <th>col_012</th>\n      <th>col_013</th>\n      <th>col_014</th>\n      <th>col_015</th>\n      <th>col_016</th>\n      <th>col_017</th>\n      <th>col_018</th>\n      <th>col_019</th>\n      <th>col_020</th>\n      <th>col_021</th>\n      <th>col_022</th>\n      <th>col_023</th>\n      <th>col_024</th>\n      <th>col_025</th>\n      <th>col_026</th>\n      <th>col_027</th>\n      <th>col_028</th>\n      <th>col_029</th>\n      <th>col_030</th>\n      <th>col_031</th>\n      <th>col_032</th>\n      <th>col_033</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>V10</td>\n      <td>Complex</td>\n      <td></td>\n      <td>multi-row</td>\n      <td>financial</td>\n      <td>table</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>Page 2</td>\n      <td>of 2</td>\n    </tr>\n    <tr>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>waterfall</td>\n      <td>review</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>V10-COMPLEX-BOOK-P02</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>Three-level</td>\n      <td>header,</td>\n      <td>subtotal</td>\n      <td>rows,</td>\n      <td>conditional notes,</td>\n      <td>values,</td>\n      <td>and</td>\n      <td>compact</td>\n      <td></td>\n      <td>multi-field</td>\n      <td></td>\n      <td>cells.</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>Identity</td>\n      <td>ownership</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>Revenue</td>\n      <td>bridge</td>\n      <td>JPYm</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>Quality</td>\n      <td>checks</td>\n      <td>/</td>\n      <td>comments</td>\n      <td></td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td></td>\n      <td>hierarchy</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>metadata</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>Movement</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>Revaluation</td>\n      <td>/ close</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>Review</td>\n      <td>workflow</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>Entity</td>\n      <td></td>\n      <td>Segment</td>\n      <td></td>\n      <td>Contract</td>\n      <td></td>\n      <td>Scenario</td>\n      <td></td>\n      <td></td>\n      <td>Opening</td>\n      <td></td>\n      <td></td>\n      <td>New</td>\n      <td></td>\n      <td>Churn</td>\n      <td></td>\n      <td>FX</td>\n      <td></td>\n      <td>Adj.</td>\n      <td></td>\n      <td>Closing</td>\n      <td></td>\n      <td>Margin</td>\n      <td>%</td>\n      <td></td>\n      <td>Risk</td>\n      <td></td>\n      <td>Owner</td>\n      <td></td>\n      <td></td>\n      <td>Note /</td>\n      <td>condition</td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>Japan</td>\n      <td>Core</td>\n      <td></td>\n      <td></td>\n      <td>CPLX-V10-P02-R01</td>\n      <td>S2-1 Base</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>1,151</td>\n      <td></td>\n      <td></td>\n      <td>53</td>\n      <td></td>\n      <td>-</td>\n      <td></td>\n      <td>+5</td>\n      <td></td>\n      <td>+3</td>\n      <td></td>\n      <td>1,212</td>\n      <td></td>\n      <td>24.3%</td>\n      <td>green</td>\n      <td></td>\n      <td>OPS-B</td>\n      <td></td>\n      <td></td>\n      <td>term=13m /</td>\n      <td>clause 013</td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>APAC</td>\n      <td>Renewal</td>\n      <td></td>\n      <td></td>\n      <td>CPLX-V10-P02-R02</td>\n      <td>S2-2 Base</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>1,168</td>\n      <td></td>\n      <td></td>\n      <td>66</td>\n      <td></td>\n      <td>-</td>\n      <td></td>\n      <td>+5</td>\n      <td></td>\n      <td>+3</td>\n      <td></td>\n      <td>1,242</td>\n      <td></td>\n      <td>24.7%</td>\n      <td>green</td>\n      <td></td>\n      <td>LEGAL-C</td>\n      <td></td>\n      <td></td>\n      <td>term=14m /</td>\n      <td>clause 014</td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>EU</td>\n      <td>Expansion</td>\n      <td></td>\n      <td></td>\n      <td>CPLX-V10-P02-R03</td>\n      <td>S2-3 Base</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>1,185</td>\n      <td></td>\n      <td></td>\n      <td>79</td>\n      <td></td>\n      <td>(14)</td>\n      <td></td>\n      <td>+5</td>\n      <td></td>\n      <td>+3</td>\n      <td></td>\n      <td>1,258</td>\n      <td></td>\n      <td>25.0%</td>\n      <td>green</td>\n      <td></td>\n      <td>REV-D</td>\n      <td></td>\n      <td></td>\n      <td>term=15m /</td>\n      <td>clause 015</td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>US</td>\n      <td>Partner</td>\n      <td></td>\n      <td></td>\n      <td>CPLX-V10-P02-R04</td>\n      <td>S2-4 Base</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>1,202</td>\n      <td></td>\n      <td></td>\n      <td>92</td>\n      <td></td>\n      <td>-</td>\n      <td></td>\n      <td>-6</td>\n      <td></td>\n      <td>+3</td>\n      <td></td>\n      <td>1,291</td>\n      <td></td>\n      <td>25.3%</td>\n      <td>red</td>\n      <td></td>\n      <td>FIN-A</td>\n      <td></td>\n      <td></td>\n      <td>NOTE-V10-P02-R04</td>\n      <td></td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>Japan</td>\n      <td>Core</td>\n      <td></td>\n      <td></td>\n      <td>CPLX-V10-P02-R05</td>\n      <td>S2-5 Base</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>1,219</td>\n      <td></td>\n      <td></td>\n      <td>105</td>\n      <td></td>\n      <td>-</td>\n      <td></td>\n      <td>+5</td>\n      <td></td>\n      <td>-12</td>\n      <td></td>\n      <td>1,317</td>\n      <td></td>\n      <td>25.7%</td>\n      <td>green</td>\n      <td></td>\n      <td>OPS-B</td>\n      <td></td>\n      <td></td>\n      <td>term=17m /</td>\n      <td>clause 017</td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>EU</td>\n      <td>Subtotal</td>\n      <td></td>\n      <td></td>\n      <td>SUBTOTAL-V10-P02-G01</td>\n      <td>All cases</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>1,326</td>\n      <td></td>\n      <td></td>\n      <td>98</td>\n      <td></td>\n      <td>(26)</td>\n      <td></td>\n      <td>9</td>\n      <td></td>\n      <td>1</td>\n      <td></td>\n      <td>1,444</td>\n      <td></td>\n      <td>28.6%</td>\n      <td>watch</td>\n      <td></td>\n      <td>LEGAL-C</td>\n      <td></td>\n      <td></td>\n      <td>rollup after</td>\n      <td>eliminations</td>\n      <td>CPLX-V10-P02-R06</td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>EU</td>\n      <td>Expansion</td>\n      <td></td>\n      <td></td>\n      <td>CPLX-V10-P02-R07</td>\n      <td>S2-7 Base</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>1,253</td>\n      <td></td>\n      <td></td>\n      <td>40</td>\n      <td></td>\n      <td>-</td>\n      <td></td>\n      <td>+5</td>\n      <td></td>\n      <td>+3</td>\n      <td></td>\n      <td>1,301</td>\n      <td></td>\n      <td>26.3%</td>\n      <td>green</td>\n      <td></td>\n      <td>REV-D</td>\n      <td></td>\n      <td></td>\n      <td>term=19m /</td>\n      <td>clause 019</td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>US</td>\n      <td>Partner</td>\n      <td></td>\n      <td></td>\n      <td>CPLX-V10-P02-R08</td>\n      <td>S2-8 Base</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>1,270</td>\n      <td></td>\n      <td></td>\n      <td>53</td>\n      <td></td>\n      <td>-</td>\n      <td></td>\n      <td>-6</td>\n      <td></td>\n      <td>+3</td>\n      <td></td>\n      <td>1,320</td>\n      <td></td>\n      <td>26.7%</td>\n      <td>green</td>\n      <td></td>\n      <td>FIN-A</td>\n      <td></td>\n      <td></td>\n      <td>term=20m /</td>\n      <td>clause 020</td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>Japan</td>\n      <td>Core</td>\n      <td></td>\n      <td></td>\n      <td>CPLX-V10-P02-R09</td>\n      <td>S2-9 Base</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>1,287</td>\n      <td></td>\n      <td></td>\n      <td>66</td>\n      <td></td>\n      <td>(26)</td>\n      <td></td>\n      <td>+5</td>\n      <td></td>\n      <td>+3</td>\n      <td></td>\n      <td>1,335</td>\n      <td></td>\n      <td>27.0%</td>\n      <td>green</td>\n      <td></td>\n      <td>OPS-B</td>\n      <td></td>\n      <td></td>\n      <td>NOTE-V10-P02-R09</td>\n      <td></td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>APAC</td>\n      <td>Renewal</td>\n      <td></td>\n      <td></td>\n      <td>CPLX-V10-P02-R10</td>\n      <td>S2-10 Base</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>1,304</td>\n      <td></td>\n      <td></td>\n      <td>79</td>\n      <td></td>\n      <td>-</td>\n      <td></td>\n      <td>+5</td>\n      <td></td>\n      <td>-12</td>\n      <td></td>\n      <td>1,376</td>\n      <td></td>\n      <td>27.3%</td>\n      <td>red</td>\n      <td></td>\n      <td>LEGAL-C</td>\n      <td></td>\n      <td></td>\n      <td>term=22m /</td>\n      <td>clause 022</td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>EU</td>\n      <td>Expansion</td>\n      <td></td>\n      <td></td>\n      <td>CPLX-V10-P02-R11</td>\n      <td>S2-11 Base</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>1,321</td>\n      <td></td>\n      <td></td>\n      <td>92</td>\n      <td></td>\n      <td>-</td>\n      <td></td>\n      <td>+5</td>\n      <td></td>\n      <td>+3</td>\n      <td></td>\n      <td>1,421</td>\n      <td></td>\n      <td>27.7%</td>\n      <td>green</td>\n      <td></td>\n      <td>REV-D</td>\n      <td></td>\n      <td></td>\n      <td>term=23m /</td>\n      <td>clause 023</td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>Japan</td>\n      <td>Subtotal</td>\n      <td></td>\n      <td></td>\n      <td>SUBTOTAL-V10-P02-G02</td>\n      <td>All cases</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>1,368</td>\n      <td></td>\n      <td></td>\n      <td>116</td>\n      <td></td>\n      <td>(32)</td>\n      <td></td>\n      <td>15</td>\n      <td></td>\n      <td>-5</td>\n      <td></td>\n      <td>1,492</td>\n      <td></td>\n      <td>29.2%</td>\n      <td>watch</td>\n      <td></td>\n      <td>FIN-A</td>\n      <td></td>\n      <td></td>\n      <td>rollup after</td>\n      <td>eliminations</td>\n      <td>CPLX-V10-P02-R12</td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>Footnote</td>\n      <td>V10-FOOTNOTE-P02:</td>\n      <td></td>\n      <td>parenthetical</td>\n      <td>churn is</td>\n      <td>signs are</td>\n      <td>explicit.</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>PDF</td>\n      <td>suite</td>\n      <td>for</td>\n      <td>routed PDF</td>\n      <td>extraction.</td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>V10-FOOTER-P02</td>\n      <td></td>\n    </tr>\n  </tbody>\n</table>",
+        "page": 2,
+        "repair": {
+          "enabled": false,
+          "coordinate_reconstruction": {
+            "method": "pdf_text_alignment",
+            "page": 2,
+            "status": "ok",
+            "bbox": [
+              28.51,
+              29.57,
+              801.83,
+              564.17
+            ],
+            "table_area_ratio": 0.8249,
+            "horizontal_line_count": 1,
+            "vertical_line_count": 0,
+            "line_count": 20,
+            "table_line_count": 20,
+            "raw_rows": 20,
+            "raw_columns": 33,
+            "trimmed_rows": 20,
+            "trimmed_columns": 33,
+            "span_count": 292,
+            "assigned_span_count": 282,
+            "span_coverage": 0.9658,
+            "spans_per_trimmed_row": 14.6,
+            "max_cell_chars": 20,
+            "median_cell_chars": 5.0,
+            "max_to_median_cell_char_ratio": 4.0,
+            "max_long_text_row_ratio": 0.0,
+            "header_mode": "none",
+            "header_inference_enabled": false,
+            "header_row_count": 0,
+            "measure_start_column": null,
+            "filled_row_header_count": 0,
+            "pdf_grid_rows_preserved": true,
+            "headers": [
+              "col_001",
+              "col_002",
+              "col_003",
+              "col_004",
+              "col_005",
+              "col_006",
+              "col_007",
+              "col_008",
+              "col_009",
+              "col_010",
+              "col_011",
+              "col_012",
+              "col_013",
+              "col_014",
+              "col_015",
+              "col_016",
+              "col_017",
+              "col_018",
+              "col_019",
+              "col_020",
+              "col_021",
+              "col_022",
+              "col_023",
+              "col_024",
+              "col_025",
+              "col_026",
+              "col_027",
+              "col_028",
+              "col_029",
+              "col_030",
+              "col_031",
+              "col_032",
+              "col_033"
+            ],
+            "non_table_text_line_count": 0,
+            "non_table_text_chars": 0,
+            "text_layer_coverage": {
+              "raw_line_count": 30,
+              "supplemented_line_count": 3,
+              "supplemented_lines": [
+                {
+                  "text": "PDF validation suite for routed PDF extraction. V10-FOOTER-P02",
+                  "missing_tokens": [
+                    "validation"
+                  ]
+                },
+                {
+                  "text": "Three-level header, subtotal rows, conditional notes, negative values, and compact multi-field cells.",
+                  "missing_tokens": [
+                    "negative"
+                  ]
+                },
+                {
+                  "text": "Org hierarchy Deal metadata Movement Revaluation / close Review workflow",
+                  "missing_tokens": [
+                    "deal"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    ],
+    "elapsed_seconds": 0.02,
+    "candidate_timings_seconds": {},
+    "diagnostics": {
+      "routing_source_mode": "TEXT_TABLE_ACCURATE",
+      "coordinate_table_reconstruction": true,
+      "coordinate_quality": {
+        "ok": false,
+        "reasons": [
+          "low_span_coverage"
+        ],
+        "rows": 20,
+        "columns": 33,
+        "span_count": 292,
+        "span_coverage": 0.9658,
+        "spans_per_row": 14.6,
+        "span_per_row_limit": 99.0,
+        "max_cell_chars": 20,
+        "max_to_median_cell_char_ratio": 4.0,
+        "max_long_text_row_ratio": 0.0
+      },
+      "coordinate_diagnostics": {
+        "method": "pdf_text_alignment",
+        "page": 2,
+        "status": "ok",
+        "bbox": [
+          28.51,
+          29.57,
+          801.83,
+          564.17
+        ],
+        "table_area_ratio": 0.8249,
+        "horizontal_line_count": 1,
+        "vertical_line_count": 0,
+        "line_count": 20,
+        "table_line_count": 20,
+        "raw_rows": 20,
+        "raw_columns": 33,
+        "trimmed_rows": 20,
+        "trimmed_columns": 33,
+        "span_count": 292,
+        "assigned_span_count": 282,
+        "span_coverage": 0.9658,
+        "spans_per_trimmed_row": 14.6,
+        "max_cell_chars": 20,
+        "median_cell_chars": 5.0,
+        "max_to_median_cell_char_ratio": 4.0,
+        "max_long_text_row_ratio": 0.0,
+        "header_mode": "none",
+        "header_inference_enabled": false,
+        "header_row_count": 0,
+        "measure_start_column": null,
+        "filled_row_header_count": 0,
+        "pdf_grid_rows_preserved": true,
+        "headers": [
+          "col_001",
+          "col_002",
+          "col_003",
+          "col_004",
+          "col_005",
+          "col_006",
+          "col_007",
+          "col_008",
+          "col_009",
+          "col_010",
+          "col_011",
+          "col_012",
+          "col_013",
+          "col_014",
+          "col_015",
+          "col_016",
+          "col_017",
+          "col_018",
+          "col_019",
+          "col_020",
+          "col_021",
+          "col_022",
+          "col_023",
+          "col_024",
+          "col_025",
+          "col_026",
+          "col_027",
+          "col_028",
+          "col_029",
+          "col_030",
+          "col_031",
+          "col_032",
+          "col_033"
+        ],
+        "non_table_text_line_count": 0,
+        "non_table_text_chars": 0,
+        "text_layer_coverage": {
+          "raw_line_count": 30,
+          "supplemented_line_count": 3,
+          "supplemented_lines": [
+            {
+              "text": "PDF validation suite for routed PDF extraction. V10-FOOTER-P02",
+              "missing_tokens": [
+                "validation"
+              ]
+            },
+            {
+              "text": "Three-level header, subtotal rows, conditional notes, negative values, and compact multi-field cells.",
+              "missing_tokens": [
+                "negative"
+              ]
+            },
+            {
+              "text": "Org hierarchy Deal metadata Movement Revaluation / close Review workflow",
+              "missing_tokens": [
+                "deal"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+]

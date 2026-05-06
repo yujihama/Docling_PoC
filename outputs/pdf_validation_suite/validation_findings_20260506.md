@@ -4,10 +4,12 @@
 
 - `docs/pdf_validation_command_guide.md` の標準実行をベースに、実務で起こりやすいPDFを10件作成・取得して実行した。
 - 追加で、本文はテキストレイヤー、押印だけが画像レイヤーの混在PDF `V09` を作成し、標準実行相当で検証した。
+- 追加で、複雑な多段ヘッダー表 `V10` と、Excelの長大・横長表をPDF化した想定の `V11` を作成し、標準実行相当で検証した。
 - 作成PDFは `outputs/pdf_validation_suite/pdfs/` に保存した。
 - 期待アンカーは `outputs/pdf_validation_suite/manifest.json` に保存した。
 - 標準実行の集計は `outputs/pdf_validation_suite/validation_summary_20260506.csv` と `outputs/pdf_validation_suite/validation_summary_20260506.md` に保存した。
 - 画像押印ケースの集計は `outputs/pdf_validation_suite/validation_image_stamps_summary_20260506.csv` と `outputs/pdf_validation_suite/validation_image_stamps_summary_20260506.md` に保存した。
+- 複雑表・Excel長大表ケースの集計は `outputs/pdf_validation_suite/validation_extended_tables_summary_20260506.csv` と `outputs/pdf_validation_suite/validation_extended_tables_summary_20260506.md` に保存した。
 - 欠落が出た5件は `--force-reconcile-pages` でも再実行し、`outputs/pdf_validation_suite/validation_force_summary_20260506.csv` と `outputs/pdf_validation_suite/validation_force_summary_20260506.md` に保存した。
 
 ## テストデータ
@@ -23,6 +25,8 @@
 | V07 | ラボレポート、単位、不等号、基準範囲、黒塗り | 1 | 生成 |
 | V08 | メールスレッドPDF、引用、コード風テキスト、例外表 | 2 | 生成 |
 | V09 | 本文テキストレイヤー + 画像レイヤー押印。大きな承認印、受領印、表に重なる薄い印、小型印 | 2 | 生成 |
+| V10 | 複雑な構造の表。結合セル風の多段ヘッダー、サブヘッダー、小計行、複数行セル、注記列 | 2 | 生成 |
+| V11 | Excelの長大・横長表をPDF化した想定。6ページ、極小文字、繰り返しヘッダー、数式風セル | 6 | 生成 |
 | W01 | IRS Form W-9、記入フォーム、チェックボックス、説明ページ | 6 | Web取得 |
 | W02 | SEC Form 10-K、長文法定フォーム、表項目、長文 | 19 | Web取得 |
 
@@ -51,6 +55,17 @@
 - V09 page 2: 受領印 `IMG-STAMP-V09-P02-RECEIVED` は埋め込み画像候補として検知されたが、VLM候補間で `IMG` / `MG` の差分が出て安全側でマスクされた。
 - V09 page 2: 表に重なる薄い押印 `IMG-STAMP-V09-P02-OVERLAP` と小型押印 `IMG-STAMP-V09-P02-SMALL` は現在の埋め込み画像候補条件では回収対象外になった。
 
+## 複雑表・Excel長大表 追加検証
+
+| case | mode概要 | unknown | mask | needs_retry | アンカー回収 | warning |
+|---|---|---:|---:|---:|---:|---|
+| V10 | TEXT_TABLE_ACCURATE -> TEXT_TABLE_COORD | 0 | 0 | 0 | 38/38 | COORDINATE_TEXT_LAYER_SUPPLEMENTED x2, COORDINATE_TABLE_ACCEPTED_WITH_WARNINGS x2 |
+| V11 | TEXT_TABLE_ACCURATE -> TEXT_TABLE_COORD | 0 | 0 | 0 | 44/44 | COORDINATE_TEXT_LAYER_SUPPLEMENTED x6 |
+
+- V10: 2ページとも複雑表シグナルで `TEXT_TABLE_ACCURATE` に入り、座標復元で処理された。多段ヘッダーや小計行のアンカーは回収できた。
+- V11: 6ページのExcel風長大表も `TEXT_TABLE_ACCURATE` で処理され、期待アンカーは全件回収できた。
+- 両ケースともVLM fallbackは発生せず、テキストレイヤー補完のinfo warningのみ発生した。
+
 ## 見つかった抜け漏れ
 
 - V01: 回転承認スタンプ `V01-APPROVAL-STAMP-P01/P02` が `safe_output.md` に出なかった。標準実行では warning なし相当で、unknown/mask/retry も0。
@@ -74,6 +89,7 @@
 
 - rotated text、vertical text、tiny callout、form header/footer、table外注記を含むアンカー回収テストを回帰テストに入れる。
 - 画像レイヤー押印について、大きい独立画像・本文に重なる画像・小型印を分けた回帰テストを入れる。
+- 複雑表について、多段ヘッダー、小計行、Excel由来の長大・横長表を回帰テストに入れる。
 - `TEXT_TABLE_COORD`/`TEXT_TABLE_FAST` の出力で、表に巻き込まれているページ上部・下部テキストが消えていないかをチェックする。
 - `VLM_COORD_WEAK_EVIDENCE` と `COORDINATE_TABLE_FALLBACK_TO_VLM` が多いWebフォームは、アンカー回収は成功してもコスト・再現性リスクありとしてレビュー対象にする。
 - `--force-reconcile-pages` は全体適用ではなく、回転・縦書き・画像化ページに絞って使う。

@@ -122,6 +122,58 @@ def draw_table(
     return top - (len(all_rows) * row_height)
 
 
+def fitted_text(value: str, font: str, size: float, max_width: float) -> str:
+    text = str(value)
+    if pdfmetrics.stringWidth(text, font, size) <= max_width:
+        return text
+    if max_width <= pdfmetrics.stringWidth("...", font, size):
+        return ""
+    shortened = text
+    while shortened and pdfmetrics.stringWidth(f"{shortened}...", font, size) > max_width:
+        shortened = shortened[:-1]
+    return f"{shortened}..." if shortened else ""
+
+
+def draw_cell(
+    c: canvas.Canvas,
+    x: float,
+    y: float,
+    width: float,
+    height: float,
+    text: str,
+    *,
+    font: str = "Helvetica",
+    size: float = 5.0,
+    fill: colors.Color | None = None,
+    text_color: colors.Color = colors.HexColor("#263238"),
+    stroke: colors.Color = colors.HexColor("#78909C"),
+    align: str = "left",
+    bold: bool = False,
+) -> None:
+    if fill is not None:
+        c.setFillColor(fill)
+        c.rect(x, y, width, height, stroke=0, fill=1)
+    c.setStrokeColor(stroke)
+    c.rect(x, y, width, height, stroke=1, fill=0)
+    text_font = "Helvetica-Bold" if bold else font
+    c.setFont(text_font, size)
+    c.setFillColor(text_color)
+    lines = str(text).splitlines() or [""]
+    max_lines = max(1, int((height - 3) / (size + 1)))
+    visible_lines = lines[:max_lines]
+    block_height = len(visible_lines) * (size + 1)
+    start_y = y + (height + block_height) / 2 - size
+    for line_index, line in enumerate(visible_lines):
+        fitted = fitted_text(line, text_font, size, width - 4)
+        if align == "right":
+            tx = x + width - 2 - pdfmetrics.stringWidth(fitted, text_font, size)
+        elif align == "center":
+            tx = x + (width - pdfmetrics.stringWidth(fitted, text_font, size)) / 2
+        else:
+            tx = x + 2
+        c.drawString(tx, start_y - line_index * (size + 1), fitted)
+
+
 def add_case(
     cases: list[dict[str, Any]],
     *,
@@ -707,6 +759,363 @@ def build_image_layer_stamps(cases: list[dict[str, Any]]) -> None:
     )
 
 
+def build_complex_structured_table(cases: list[dict[str, Any]]) -> None:
+    case_id = "V10"
+    filename = "v10_complex_multi_header_table_2p.pdf"
+    path = PDF_DIR / filename
+    page_size = landscape(A4)
+    c = make_canvas(path, page_size)
+    width, height = page_size
+    anchors: list[str] = []
+    col_widths = [18, 21, 28, 20, 17, 17, 17, 15, 15, 18, 17, 16, 20, 40]
+    col_widths_pt = [value * mm for value in col_widths]
+    x0 = 10 * mm
+    header_rows = [7 * mm, 7 * mm, 8 * mm]
+    data_height = 7.2 * mm
+    header_anchor_identity = "V10-HDR-IDENTITY-GROUP"
+    header_anchor_rollforward = "V10-HDR-REV-BRIDGE"
+    anchors.extend([header_anchor_identity, header_anchor_rollforward])
+    col_headers = [
+        "Entity",
+        "Segment",
+        "Contract ID",
+        "Scenario",
+        "Opening",
+        "New",
+        "Churn",
+        "FX",
+        "Adj.",
+        "Closing",
+        "Margin %",
+        "Risk",
+        "Owner",
+        "Note / condition",
+    ]
+    regions = ["Japan", "APAC", "EU", "US"]
+    segments = ["Core", "Renewal", "Expansion", "Partner"]
+    owners = ["FIN-A", "OPS-B", "LEGAL-C", "REV-D"]
+    for page in range(1, 3):
+        draw_header(c, "Complex multi-row financial table", case_id, page, 2, page_size)
+        c.setFont("Helvetica-Bold", 14)
+        c.setFillColor(colors.HexColor("#111827"))
+        c.drawString(x0, height - 30 * mm, f"Revenue waterfall review V10-COMPLEX-BOOK-P{page:02d}")
+        anchors.append(f"V10-COMPLEX-BOOK-P{page:02d}")
+        c.setFont("Helvetica", 7)
+        c.drawString(x0, height - 36 * mm, "Three-level header, subtotal rows, conditional notes, negative values, and compact multi-field cells.")
+        table_top = height - 44 * mm
+        y = table_top
+
+        group_specs = [
+            (0, 4, f"Identity / ownership {header_anchor_identity if page == 1 else ''}".strip(), colors.HexColor("#E8EEF7")),
+            (4, 6, f"Revenue bridge JPYm {header_anchor_rollforward if page == 1 else ''}".strip(), colors.HexColor("#E8F5E9")),
+            (10, 4, "Quality checks / comments", colors.HexColor("#FFF3E0")),
+        ]
+        for start, span, label, fill in group_specs:
+            left = x0 + sum(col_widths_pt[:start])
+            draw_cell(
+                c,
+                left,
+                y - header_rows[0],
+                sum(col_widths_pt[start : start + span]),
+                header_rows[0],
+                label,
+                size=6,
+                fill=fill,
+                align="center",
+                bold=True,
+            )
+        y -= header_rows[0]
+        subgroups = [
+            (0, 2, "Org hierarchy"),
+            (2, 2, "Deal metadata"),
+            (4, 3, "Movement"),
+            (7, 3, "Revaluation / close"),
+            (10, 4, "Review workflow"),
+        ]
+        for start, span, label in subgroups:
+            left = x0 + sum(col_widths_pt[:start])
+            draw_cell(
+                c,
+                left,
+                y - header_rows[1],
+                sum(col_widths_pt[start : start + span]),
+                header_rows[1],
+                label,
+                size=5.4,
+                fill=colors.HexColor("#ECEFF1"),
+                align="center",
+                bold=True,
+            )
+        y -= header_rows[1]
+        left = x0
+        for col_width, header in zip(col_widths_pt, col_headers, strict=True):
+            draw_cell(
+                c,
+                left,
+                y - header_rows[2],
+                col_width,
+                header_rows[2],
+                header,
+                size=5.1,
+                fill=colors.HexColor("#CFD8DC"),
+                align="center",
+                bold=True,
+            )
+            left += col_width
+        y -= header_rows[2]
+
+        for row in range(1, 13):
+            global_row = (page - 1) * 12 + row
+            is_subtotal = row in {6, 12}
+            contract_token = f"CPLX-V10-P{page:02d}-R{row:02d}"
+            anchors.append(contract_token)
+            if is_subtotal:
+                subtotal_token = f"SUBTOTAL-V10-P{page:02d}-G{row // 6:02d}"
+                anchors.append(subtotal_token)
+                cells = [
+                    regions[(global_row // 3) % len(regions)],
+                    "Subtotal",
+                    subtotal_token,
+                    "All cases",
+                    f"{1200 + global_row * 7:,}",
+                    f"{80 + row * 3:,}",
+                    f"({20 + row})",
+                    f"{(-1) ** row * (row + 3)}",
+                    f"{7 - row}",
+                    f"{1300 + global_row * 8:,}",
+                    f"{28 + row / 10:.1f}%",
+                    "watch",
+                    owners[row % len(owners)],
+                    f"rollup after eliminations {contract_token}",
+                ]
+            else:
+                note_token = f"NOTE-V10-P{page:02d}-R{row:02d}" if row in {4, 9} else ""
+                if note_token:
+                    anchors.append(note_token)
+                opening = 930 + global_row * 17
+                new = 40 + (row * 13) % 91
+                churn = -1 * (8 + row * 2) if row % 3 == 0 else 0
+                fx = -6 if row % 4 == 0 else 5
+                adj = 3 if row % 5 else -12
+                closing = opening + new + churn + fx + adj
+                cells = [
+                    regions[(global_row - 1) % len(regions)],
+                    segments[(row - 1) % len(segments)],
+                    contract_token,
+                    f"Base\nS{page}-{row}",
+                    f"{opening:,}",
+                    f"{new:,}",
+                    f"({abs(churn)})" if churn else "-",
+                    f"{fx:+}",
+                    f"{adj:+}",
+                    f"{closing:,}",
+                    f"{24 + row / 3:.1f}%",
+                    "red" if row in {4, 10} else "green",
+                    owners[row % len(owners)],
+                    note_token or f"term={12 + row}m / clause {global_row:03d}",
+                ]
+            fill = colors.HexColor("#ECEFF1") if is_subtotal else (colors.HexColor("#FAFAFA") if row % 2 else None)
+            left = x0
+            for col_index, (col_width, cell) in enumerate(zip(col_widths_pt, cells, strict=True)):
+                align = "right" if 4 <= col_index <= 10 else "left"
+                draw_cell(
+                    c,
+                    left,
+                    y - data_height,
+                    col_width,
+                    data_height,
+                    str(cell),
+                    size=4.8,
+                    fill=fill,
+                    align=align,
+                    bold=is_subtotal and col_index in {1, 2, 9},
+                )
+                left += col_width
+            y -= data_height
+        c.setFont("Helvetica", 6)
+        c.setFillColor(colors.HexColor("#455A64"))
+        c.drawString(x0, 24 * mm, f"Footnote V10-FOOTNOTE-P{page:02d}: parenthetical churn is negative; FX signs are explicit.")
+        anchors.append(f"V10-FOOTNOTE-P{page:02d}")
+        c.showPage()
+    c.save()
+    add_case(
+        cases,
+        case_id=case_id,
+        filename=filename,
+        description=(
+            "Complex financial table with merged-style multi-row headers, nested group labels, subtotal rows, "
+            "multi-line cells, negative values, percentages, workflow status, and dense notes."
+        ),
+        pages=2,
+        expected_anchors=anchors,
+        tags=["complex-table", "multi-row-header", "merged-header", "subtotal", "financial-table"],
+    )
+
+
+def build_excel_long_table_pdf(cases: list[dict[str, Any]]) -> None:
+    case_id = "V11"
+    filename = "v11_excel_long_wide_ledger_6p.pdf"
+    path = PDF_DIR / filename
+    page_size = landscape(A4)
+    c = make_canvas(path, page_size)
+    width, height = page_size
+    anchors: list[str] = []
+    workbook_anchor = "EXCEL-V11-BOOK-2026"
+    repeated_header_anchor = "V11-COLHEADER-REPEATED"
+    anchors.extend([workbook_anchor, repeated_header_anchor])
+    columns = [
+        ("#", 8),
+        ("Period", 12),
+        ("Account", 15),
+        ("Dept", 14),
+        ("CostCtr", 16),
+        ("Customer", 18),
+        ("Invoice ID", 20),
+        ("Qty", 10),
+        ("Unit", 12),
+        ("Gross", 15),
+        ("Disc", 13),
+        ("Net", 15),
+        ("Tax", 13),
+        ("Local", 15),
+        ("FX", 12),
+        ("USD", 15),
+        ("Status", 14),
+        ("Formula", 18),
+        ("Comment", 25),
+    ]
+    col_widths_pt = [width_mm * mm for _, width_mm in columns]
+    x0 = 8 * mm
+    rows_per_page = 28
+    row_height = 5.1 * mm
+    page_count = 6
+    for page in range(1, page_count + 1):
+        draw_header(c, "Excel-like long wide ledger", case_id, page, page_count, page_size)
+        c.setFont("Helvetica-Bold", 12)
+        c.setFillColor(colors.HexColor("#111827"))
+        page_anchor = f"{workbook_anchor}-P{page:02d}"
+        anchors.append(page_anchor)
+        c.drawString(x0, height - 27 * mm, f"{page_anchor} / print area A:S / repeated title rows")
+        c.setFont("Helvetica", 6)
+        if page == 1:
+            c.drawString(x0, height - 31 * mm, f"Repeated column header control: {repeated_header_anchor}")
+        c.drawRightString(width - 8 * mm, height - 27 * mm, "Scale 72% | Fit all columns on one page wide")
+        table_top = height - 36 * mm
+
+        y = table_top
+        left = x0
+        for excel_col_index, col_width in enumerate(col_widths_pt, start=1):
+            excel_label = chr(ord("A") + excel_col_index - 1)
+            draw_cell(
+                c,
+                left,
+                y - 4.5 * mm,
+                col_width,
+                4.5 * mm,
+                excel_label,
+                size=4.2,
+                fill=colors.HexColor("#E0E0E0"),
+                align="center",
+                bold=True,
+            )
+            left += col_width
+        y -= 4.5 * mm
+
+        left = x0
+        for col_index, ((header, _), col_width) in enumerate(zip(columns, col_widths_pt, strict=True)):
+            label = f"{header}\n{repeated_header_anchor}" if page == 1 and col_index == 6 else header
+            draw_cell(
+                c,
+                left,
+                y - 7.4 * mm,
+                col_width,
+                7.4 * mm,
+                label,
+                size=4.4,
+                fill=colors.HexColor("#B0BEC5"),
+                align="center",
+                bold=True,
+            )
+            left += col_width
+        y -= 7.4 * mm
+
+        for row_on_page in range(1, rows_per_page + 1):
+            global_row = (page - 1) * rows_per_page + row_on_page
+            invoice_token = f"XL-V11-R{global_row:04d}"
+            selected_anchor = row_on_page in {1, 14, 28}
+            if selected_anchor:
+                anchors.append(invoice_token)
+            comment_token = f"CM-V11-R{global_row:04d}" if row_on_page in {7, 21} else ""
+            if comment_token:
+                anchors.append(comment_token)
+            gross = 1000 + global_row * 37
+            discount = -1 * (global_row % 9) * 3
+            net = gross + discount
+            tax = round(net * 0.1)
+            local = net + tax
+            fx = 142.5 + (global_row % 11) / 10
+            usd = local / fx
+            values = [
+                str(global_row),
+                f"2026-{((global_row - 1) // 14) % 12 + 1:02d}",
+                f"4{global_row % 900:03d}",
+                f"D{global_row % 17:02d}",
+                f"CC-{global_row % 41:02d}",
+                f"CUST-{global_row % 73:03d}",
+                invoice_token,
+                str((global_row % 8) + 1),
+                f"{120 + global_row % 25}.50",
+                f"{gross:,}",
+                f"({abs(discount):,})" if discount else "-",
+                f"{net:,}",
+                f"{tax:,}",
+                f"{local:,}",
+                f"{fx:.1f}",
+                f"{usd:,.2f}",
+                "closed" if global_row % 5 else "review",
+                f"=SUM(J{global_row + 4}:M{global_row + 4})",
+                comment_token or f"carry {global_row % 13:02d}",
+            ]
+            fill = colors.HexColor("#F5F5F5") if row_on_page % 2 else None
+            if row_on_page in {14, 28}:
+                fill = colors.HexColor("#FFFDE7")
+            left = x0
+            for col_index, (col_width, value) in enumerate(zip(col_widths_pt, values, strict=True)):
+                align = "right" if col_index in {0, 7, 8, 9, 10, 11, 12, 13, 14, 15} else "left"
+                draw_cell(
+                    c,
+                    left,
+                    y - row_height,
+                    col_width,
+                    row_height,
+                    value,
+                    size=4.05,
+                    fill=fill,
+                    align=align,
+                )
+                left += col_width
+            y -= row_height
+        subtotal_anchor = f"V11-SUBTOTAL-P{page:02d}"
+        anchors.append(subtotal_anchor)
+        c.setFont("Helvetica-Bold", 5.5)
+        c.setFillColor(colors.HexColor("#263238"))
+        c.drawRightString(width - 8 * mm, 15 * mm, f"{subtotal_anchor} rows {(page - 1) * rows_per_page + 1}-{page * rows_per_page}")
+        c.showPage()
+    c.save()
+    add_case(
+        cases,
+        case_id=case_id,
+        filename=filename,
+        description=(
+            "Excel-like PDF export of a long wide ledger: six landscape pages, tiny grid text, repeated title rows, "
+            "column letters, formulas, negative values, and hundreds of data rows."
+        ),
+        pages=page_count,
+        expected_anchors=anchors,
+        tags=["excel-export", "long-table", "wide-table", "repeated-header", "tiny-text"],
+    )
+
+
 def build_technical_drawing(cases: list[dict[str, Any]]) -> None:
     case_id = "V06"
     filename = "v06_landscape_technical_drawing_1p.pdf"
@@ -945,6 +1354,8 @@ def build_suite(skip_web: bool = False) -> dict[str, Any]:
     build_lab_report(cases)
     build_email_thread(cases)
     build_image_layer_stamps(cases)
+    build_complex_structured_table(cases)
+    build_excel_long_table_pdf(cases)
     add_web_cases(cases, skip_download=skip_web)
     manifest = {
         "generated_at": "2026-05-06",
@@ -955,6 +1366,8 @@ def build_suite(skip_web: bool = False) -> dict[str, Any]:
             "Web cases use a small set of stable public-form anchors.",
             "The image-only case is intentionally difficult and should exercise IMAGE_RECONCILE/OCR paths.",
             "The image-layer stamp case keeps normal body text in the PDF text layer while stamp text exists only inside embedded raster images.",
+            "The complex table case stresses multi-row headers, subtotal rows, multi-line cells, and conditional notes.",
+            "The Excel-like long table case stresses tiny repeated headers across many landscape pages.",
         ],
         "cases": cases,
     }

@@ -1,0 +1,140 @@
+[
+  {
+    "page": 1,
+    "mode": "TEXT_TABLE_COORD",
+    "level": "info",
+    "code": "COORDINATE_TEXT_LAYER_SUPPLEMENTED",
+    "score": 0.7,
+    "message": "Coordinate table output was supplemented with PDF text-layer lines that were not represented in the reconstructed table.",
+    "suggested_action": "Review supplemented lines if this page is business-critical.",
+    "evidence": {
+      "raw_line_count": 37,
+      "supplemented_line_count": 1,
+      "supplemented_lines": [
+        {
+          "text": "PDF validation suite for routed PDF extraction. V11-FOOTER-P01",
+          "missing_tokens": [
+            "validation"
+          ]
+        }
+      ],
+      "table_index_in_segment": 1
+    },
+    "target": null
+  },
+  {
+    "page": 2,
+    "mode": "TEXT_TABLE_COORD",
+    "level": "info",
+    "code": "COORDINATE_TEXT_LAYER_SUPPLEMENTED",
+    "score": 0.7,
+    "message": "Coordinate table output was supplemented with PDF text-layer lines that were not represented in the reconstructed table.",
+    "suggested_action": "Review supplemented lines if this page is business-critical.",
+    "evidence": {
+      "raw_line_count": 34,
+      "supplemented_line_count": 1,
+      "supplemented_lines": [
+        {
+          "text": "PDF validation suite for routed PDF extraction. V11-FOOTER-P02",
+          "missing_tokens": [
+            "validation"
+          ]
+        }
+      ],
+      "table_index_in_segment": 1
+    },
+    "target": null
+  },
+  {
+    "page": 3,
+    "mode": "TEXT_TABLE_COORD",
+    "level": "info",
+    "code": "COORDINATE_TEXT_LAYER_SUPPLEMENTED",
+    "score": 0.7,
+    "message": "Coordinate table output was supplemented with PDF text-layer lines that were not represented in the reconstructed table.",
+    "suggested_action": "Review supplemented lines if this page is business-critical.",
+    "evidence": {
+      "raw_line_count": 34,
+      "supplemented_line_count": 1,
+      "supplemented_lines": [
+        {
+          "text": "PDF validation suite for routed PDF extraction. V11-FOOTER-P03",
+          "missing_tokens": [
+            "validation"
+          ]
+        }
+      ],
+      "table_index_in_segment": 1
+    },
+    "target": null
+  },
+  {
+    "page": 4,
+    "mode": "TEXT_TABLE_COORD",
+    "level": "info",
+    "code": "COORDINATE_TEXT_LAYER_SUPPLEMENTED",
+    "score": 0.7,
+    "message": "Coordinate table output was supplemented with PDF text-layer lines that were not represented in the reconstructed table.",
+    "suggested_action": "Review supplemented lines if this page is business-critical.",
+    "evidence": {
+      "raw_line_count": 34,
+      "supplemented_line_count": 1,
+      "supplemented_lines": [
+        {
+          "text": "PDF validation suite for routed PDF extraction. V11-FOOTER-P04",
+          "missing_tokens": [
+            "validation"
+          ]
+        }
+      ],
+      "table_index_in_segment": 1
+    },
+    "target": null
+  },
+  {
+    "page": 5,
+    "mode": "TEXT_TABLE_COORD",
+    "level": "info",
+    "code": "COORDINATE_TEXT_LAYER_SUPPLEMENTED",
+    "score": 0.7,
+    "message": "Coordinate table output was supplemented with PDF text-layer lines that were not represented in the reconstructed table.",
+    "suggested_action": "Review supplemented lines if this page is business-critical.",
+    "evidence": {
+      "raw_line_count": 34,
+      "supplemented_line_count": 1,
+      "supplemented_lines": [
+        {
+          "text": "PDF validation suite for routed PDF extraction. V11-FOOTER-P05",
+          "missing_tokens": [
+            "validation"
+          ]
+        }
+      ],
+      "table_index_in_segment": 1
+    },
+    "target": null
+  },
+  {
+    "page": 6,
+    "mode": "TEXT_TABLE_COORD",
+    "level": "info",
+    "code": "COORDINATE_TEXT_LAYER_SUPPLEMENTED",
+    "score": 0.7,
+    "message": "Coordinate table output was supplemented with PDF text-layer lines that were not represented in the reconstructed table.",
+    "suggested_action": "Review supplemented lines if this page is business-critical.",
+    "evidence": {
+      "raw_line_count": 34,
+      "supplemented_line_count": 1,
+      "supplemented_lines": [
+        {
+          "text": "PDF validation suite for routed PDF extraction. V11-FOOTER-P06",
+          "missing_tokens": [
+            "validation"
+          ]
+        }
+      ],
+      "table_index_in_segment": 1
+    },
+    "target": null
+  }
+]
