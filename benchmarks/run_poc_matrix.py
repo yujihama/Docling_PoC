@@ -9,11 +9,8 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 
-from dotenv import load_dotenv
-
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-load_dotenv(ROOT / ".env", override=True)
 
 from benchmarks.poc_common import (  # noqa: E402
     METRIC_FORMULA,
@@ -32,21 +29,32 @@ from docling.datamodel.pipeline_options import (  # noqa: E402
 )
 from docling.document_converter import DocumentConverter, PdfFormatOption  # noqa: E402
 from docling_openai_vlm import (  # noqa: E402
-    DEFAULT_VLM_MAX_COMPLETION_TOKENS,
-    DEFAULT_VLM_TIMEOUT_SECONDS,
     build_openai_vlm_converter,
     check_openai_chat_access,
     clear_vlm_usage_events,
     get_vlm_usage_events,
 )
+from settings import load_settings  # noqa: E402
 
 
-VLM_MODELS = ["gpt-5.5", "gpt-5.4", "gpt-5.4-mini", "gpt-5.2"]
+SETTINGS = load_settings()
+VLM_MODELS = list(
+    dict.fromkeys(
+        [
+            SETTINGS.models.primary,
+            SETTINGS.models.large_table_vlm,
+            SETTINGS.models.table_vlm,
+            SETTINGS.models.secondary,
+        ]
+    )
+)
 VLM_RESPONSE_FORMATS = ["markdown", "html"]
 VLM_SCALES = [1.0, 2.0, 2.5]
-VLM_REASONING_EFFORTS = ["none", "low", "medium"]
+VLM_REASONING_EFFORTS = list(
+    dict.fromkeys([SETTINGS.vlm.reasoning_effort, "low", "medium"])
+)
 VLM_PROMPT_VARIANTS = ["strict_preserve", "table_first"]
-FIXED_MAX_COMPLETION_TOKENS = DEFAULT_VLM_MAX_COMPLETION_TOKENS
+FIXED_MAX_COMPLETION_TOKENS = SETTINGS.vlm.max_completion_tokens
 DEFAULT_PILOT_CASE_IDS = ["C01", "C03", "C05", "C06", "C09"]
 
 # Prices are deliberately isolated here because OpenAI model pricing changes.
@@ -193,7 +201,8 @@ def build_vlm_configs() -> list[MatrixConfig]:
                                     "reasoning_effort": reasoning_effort,
                                     "prompt_variant": prompt_variant,
                                     "max_completion_tokens": FIXED_MAX_COMPLETION_TOKENS,
-                                    "timeout_seconds": DEFAULT_VLM_TIMEOUT_SECONDS,
+                                    "timeout_seconds": SETTINGS.vlm.timeout_seconds,
+                                    "image_detail": SETTINGS.vlm.image_detail or "auto",
                                 },
                             )
                         )
@@ -228,7 +237,7 @@ def select_pilot_vlm_configs(configs: list[MatrixConfig]) -> list[MatrixConfig]:
             settings["reasoning_effort"],
             settings["prompt_variant"],
         )
-        if settings["model"] == "gpt-5.4-mini" and key in mini_variants:
+        if settings["model"] == SETTINGS.models.table_vlm and key in mini_variants:
             selected.append(config)
 
     seen: set[str] = set()
@@ -274,6 +283,15 @@ def build_converter(config: MatrixConfig) -> DocumentConverter:
         scale=float(settings["scale"]),
         response_format=settings["response_format"],
         prompt_variant=settings["prompt_variant"],
+        image_detail=settings.get("image_detail"),
+        provider=SETTINGS.provider.name,
+        api_key=SETTINGS.provider.api_key,
+        chat_completions_url=SETTINGS.provider.chat_completions_url,
+        azure_endpoint=SETTINGS.provider.azure_endpoint,
+        azure_deployment=SETTINGS.provider.azure_deployment,
+        azure_api_version=SETTINGS.provider.azure_api_version,
+        max_retries=SETTINGS.openai.max_retries,
+        initial_backoff_seconds=SETTINGS.openai.initial_backoff_seconds,
     )
 
 
@@ -286,7 +304,7 @@ def ensure_corpus(skip_generate: bool) -> None:
 
 
 def price_for_tokens(model: str, prompt_tokens: int, completion_tokens: int) -> float:
-    price = MODEL_PRICES_PER_MTOK[model]
+    price = MODEL_PRICES_PER_MTOK.get(model, MODEL_PRICES_PER_MTOK["gpt-5.4"])
     return (
         (prompt_tokens / 1_000_000) * price["input"]
         + (completion_tokens / 1_000_000) * price["output"]
@@ -506,6 +524,14 @@ def preflight_vlm(config: MatrixConfig, cache: dict[tuple[str, str], str | None]
             settings["model"],
             reasoning_effort=settings["reasoning_effort"],
             timeout_seconds=min(float(settings["timeout_seconds"]), 60),
+            chat_completions_url=SETTINGS.openai.chat_completions_url,
+            provider=SETTINGS.provider.name,
+            api_key=SETTINGS.provider.api_key,
+            azure_endpoint=SETTINGS.provider.azure_endpoint,
+            azure_deployment=SETTINGS.provider.azure_deployment,
+            azure_api_version=SETTINGS.provider.azure_api_version,
+            max_retries=SETTINGS.openai.max_retries,
+            initial_backoff_seconds=SETTINGS.openai.initial_backoff_seconds,
         )
         cache[key] = None
     except Exception as exc:

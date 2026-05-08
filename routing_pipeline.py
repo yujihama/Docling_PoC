@@ -1,11 +1,15 @@
 from __future__ import annotations
 
 import csv
+import html
+import importlib.metadata
 import json
 import math
 import os
 import re
 import shutil
+import subprocess
+import sys
 import time
 import unicodedata
 from collections import Counter
@@ -20,13 +24,17 @@ import pandas as pd
 from docling.datamodel.base_models import InputFormat
 from docling.datamodel.pipeline_options import PdfPipelineOptions, TableFormerMode
 from docling.document_converter import DocumentConverter, PdfFormatOption
-from dotenv import load_dotenv
 
 from docling_openai_vlm import (
+    DEFAULT_AZURE_OPENAI_API_VERSION,
+    DEFAULT_OPENAI_INITIAL_BACKOFF_SECONDS,
+    DEFAULT_OPENAI_MAX_RETRIES,
+    DEFAULT_VLM_IMAGE_DETAIL,
     DEFAULT_VLM_MAX_COMPLETION_TOKENS,
     DEFAULT_VLM_REASONING_EFFORT,
     DEFAULT_VLM_SCALE,
     DEFAULT_VLM_TIMEOUT_SECONDS,
+    OPENAI_CHAT_COMPLETIONS_URL,
     build_openai_vlm_converter,
     check_openai_chat_access,
     clear_vlm_usage_events,
@@ -62,6 +70,7 @@ class RoutedPdfOptions:
     vlm_scale: float = DEFAULT_VLM_SCALE
     response_format: str = "markdown"
     prompt_variant: str = "strict_preserve"
+    vlm_image_detail: str | None = DEFAULT_VLM_IMAGE_DETAIL
     text_chars_threshold: int = 200
     text_quality_threshold: float = 0.80
     table_text_quality_threshold: float = 0.70
@@ -97,6 +106,95 @@ class RoutedPdfOptions:
     table_vlm_large_min_area_ratio: float = 0.60
     force_reconcile_pages: list[int] = field(default_factory=list)
     save_outputs: bool = True
+    output_root: str | None = None
+    routing_runs_subdir: str = "docling_routing_runs"
+    llm_provider: str = "openai"
+    llm_api_key: str | None = None
+    openai_chat_completions_url: str = OPENAI_CHAT_COMPLETIONS_URL
+    azure_openai_endpoint: str | None = None
+    azure_openai_deployment: str | None = None
+    azure_openai_api_version: str = DEFAULT_AZURE_OPENAI_API_VERSION
+    openai_max_retries: int = DEFAULT_OPENAI_MAX_RETRIES
+    openai_initial_backoff_seconds: float = DEFAULT_OPENAI_INITIAL_BACKOFF_SECONDS
+    resolved_settings: dict[str, Any] = field(default_factory=dict)
+    config_sources: list[str] = field(default_factory=list)
+    invocation: str | None = None
+
+    @classmethod
+    def from_settings(cls, settings: Any, **overrides: Any) -> "RoutedPdfOptions":
+        values = {
+            "model": settings.models.primary,
+            "reconcile_compare_mode": settings.routing.reconcile_compare_mode,
+            "secondary_model": settings.models.secondary,
+            "max_completion_tokens": settings.vlm.max_completion_tokens,
+            "reasoning_effort": settings.vlm.reasoning_effort,
+            "timeout_seconds": settings.vlm.timeout_seconds,
+            "vlm_scale": settings.vlm.scale,
+            "response_format": settings.vlm.response_format,
+            "prompt_variant": settings.vlm.prompt_variant,
+            "vlm_image_detail": settings.vlm.image_detail,
+            "text_chars_threshold": settings.routing.text_chars_threshold,
+            "text_quality_threshold": settings.routing.text_quality_threshold,
+            "table_text_quality_threshold": settings.routing.table_text_quality_threshold,
+            "table_score_threshold": settings.routing.table_score_threshold,
+            "complex_table_score_threshold": settings.routing.complex_table_score_threshold,
+            "image_area_threshold": settings.routing.image_area_threshold,
+            "enable_embedded_visual_append": settings.routing.enable_embedded_visual_append,
+            "embedded_visual_min_area_ratio": settings.routing.embedded_visual_min_area_ratio,
+            "embedded_visual_min_width_ratio": settings.routing.embedded_visual_min_width_ratio,
+            "embedded_visual_min_height_ratio": settings.routing.embedded_visual_min_height_ratio,
+            "embedded_visual_text_overlap_threshold": (
+                settings.routing.embedded_visual_text_overlap_threshold
+            ),
+            "embedded_visual_complexity_threshold": (
+                settings.routing.embedded_visual_complexity_threshold
+            ),
+            "embedded_visual_force_area_ratio": settings.routing.embedded_visual_force_area_ratio,
+            "embedded_visual_crop_margin_points": settings.routing.embedded_visual_crop_margin_points,
+            "parallel_reconcile_candidates": settings.routing.parallel_reconcile_candidates,
+            "max_parallel_table_groups": settings.routing.max_parallel_table_groups,
+            "use_coordinate_table_reconstruction": (
+                settings.routing.use_coordinate_table_reconstruction
+            ),
+            "enable_table_vlm_fallback": settings.routing.enable_table_vlm_fallback,
+            "table_vlm_model": settings.models.table_vlm,
+            "large_table_vlm_model": settings.models.large_table_vlm,
+            "table_vlm_prompt_variant": settings.routing.table_vlm_prompt_variant,
+            "table_vlm_reasoning_effort": settings.routing.table_vlm_reasoning_effort,
+            "enable_reconcile_table_fallback": settings.routing.enable_reconcile_table_fallback,
+            "reconcile_table_fallback_model": settings.models.reconcile_table_fallback,
+            "reconcile_table_fallback_prompt_variant": (
+                settings.routing.reconcile_table_fallback_prompt_variant
+            ),
+            "reconcile_table_fallback_reasoning_effort": (
+                settings.routing.reconcile_table_fallback_reasoning_effort
+            ),
+            "enable_vlm_coordinate_quality_check": (
+                settings.routing.enable_vlm_coordinate_quality_check
+            ),
+            "enable_vlm_coordinate_auto_correct": (
+                settings.routing.enable_vlm_coordinate_auto_correct
+            ),
+            "coordinate_min_span_coverage": settings.routing.coordinate_min_span_coverage,
+            "coordinate_max_cell_chars": settings.routing.coordinate_max_cell_chars,
+            "coordinate_max_cell_char_ratio": settings.routing.coordinate_max_cell_char_ratio,
+            "table_vlm_large_min_columns": settings.routing.table_vlm_large_min_columns,
+            "table_vlm_large_min_area_ratio": settings.routing.table_vlm_large_min_area_ratio,
+            "save_outputs": settings.outputs.save_outputs,
+            "output_root": str(settings.outputs.root),
+            "routing_runs_subdir": settings.outputs.routing_runs_subdir,
+            "llm_provider": settings.provider.name,
+            "llm_api_key": settings.provider.api_key,
+            "openai_chat_completions_url": settings.provider.chat_completions_url,
+            "azure_openai_endpoint": settings.provider.azure_endpoint,
+            "azure_openai_deployment": settings.provider.azure_deployment,
+            "azure_openai_api_version": settings.provider.azure_api_version,
+            "openai_max_retries": settings.provider.max_retries,
+            "openai_initial_backoff_seconds": settings.provider.initial_backoff_seconds,
+            "config_sources": list(settings.config_sources),
+        }
+        values.update(overrides)
+        return cls(**values)
 
 
 @dataclass
@@ -176,6 +274,41 @@ ProgressCallback = Callable[[str], None]
 def _progress(callback: ProgressCallback | None, message: str) -> None:
     if callback is not None:
         callback(message)
+
+
+def routing_runs_dir_for_options(options: RoutedPdfOptions) -> Path:
+    output_root = Path(options.output_root) if options.output_root else ROOT / "outputs"
+    if not output_root.is_absolute():
+        output_root = (ROOT / output_root).resolve()
+    return output_root / options.routing_runs_subdir
+
+
+def safe_options_dict(options: RoutedPdfOptions) -> dict[str, Any]:
+    payload = asdict(options)
+    if payload.get("llm_api_key"):
+        payload["llm_api_key"] = "***"
+    return payload
+
+
+def package_version(name: str) -> str | None:
+    try:
+        return importlib.metadata.version(name)
+    except importlib.metadata.PackageNotFoundError:
+        return None
+
+
+def git_commit() -> str | None:
+    try:
+        completed = subprocess.run(
+            ["git", "rev-parse", "HEAD"],
+            cwd=ROOT,
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+    except Exception:
+        return None
+    return completed.stdout.strip() or None
 
 
 def normalize_reconcile_compare_mode(value: str) -> ReconcileCompareMode:
@@ -708,6 +841,128 @@ def classify_page(
     return "IMAGE_RECONCILE", reasons
 
 
+def prose_line_like(text: str) -> bool:
+    value = normalized_text(text)
+    if not value:
+        return False
+    words = re.findall(r"[A-Za-z][A-Za-z'\-]*", value)
+    if len(words) < 7:
+        return False
+    if definition_key_like(words[0]) and len(words[0]) >= 3:
+        return False
+    sentence_punctuation = len(re.findall(r"[.!?;:]", value))
+    return sentence_punctuation >= 1 or len(words) >= 10
+
+
+def prose_layout_like(lines: list[dict[str, Any]]) -> tuple[bool, dict[str, Any]]:
+    line_texts = [
+        normalized_text(" ".join(str(span.get("text") or "") for span in line.get("spans") or []))
+        for line in lines
+    ]
+    line_texts = [line for line in line_texts if line]
+    prose_lines = [line for line in line_texts if prose_line_like(line)]
+    sentence_lines = [
+        line
+        for line in line_texts
+        if len(re.findall(r"[A-Za-z][A-Za-z'\-]*", line)) >= 5
+        and re.search(r"[.!?;:]", line)
+    ]
+    is_prose = len(prose_lines) >= 8 or (len(prose_lines) >= 5 and len(sentence_lines) >= 4)
+    return is_prose, {
+        "text_line_count": len(line_texts),
+        "prose_line_count": len(prose_lines),
+        "sentence_line_count": len(sentence_lines),
+    }
+
+
+def coordinate_preflight_table_evidence(
+    *,
+    page: Any,
+    textpage: Any,
+    page_no: int,
+    page_width: float,
+    page_height: float,
+    options: RoutedPdfOptions,
+) -> tuple[bool, dict[str, Any]]:
+    try:
+        dataframe, diagnostics = coordinate_table_dataframe(
+            page=page,
+            textpage=textpage,
+            page_no=page_no,
+            page_width=page_width,
+            page_height=page_height,
+        )
+    except Exception as exc:
+        return False, {
+            "status": "probe_failed",
+            "error": str(exc),
+        }
+    if dataframe is None:
+        return False, {
+            "status": "no_coordinate_dataframe",
+            "diagnostics": diagnostics,
+        }
+    quality = coordinate_quality_report(diagnostics, options)
+    method = str(diagnostics.get("method") or "")
+    strong_evidence = bool(quality.get("ok")) or (
+        method == "pdf_text_key_value"
+        and diagnostics.get("status") == "ok"
+        and int(diagnostics.get("trimmed_rows") or 0) >= 6
+        and int(diagnostics.get("trimmed_columns") or 0) == 2
+    )
+    return strong_evidence, {
+        "status": "coordinate_dataframe",
+        "method": method,
+        "quality": quality,
+        "diagnostics": diagnostics,
+    }
+
+
+def suppress_table_routing_for_prose_layout(
+    *,
+    page: Any,
+    textpage: Any,
+    page_no: int,
+    page_width: float,
+    page_height: float,
+    mode: RoutingMode,
+    options: RoutedPdfOptions,
+) -> tuple[RoutingMode, list[str]]:
+    if mode not in {"TEXT_TABLE_FAST", "TEXT_TABLE_ACCURATE"}:
+        return mode, []
+    spans = pdf_text_spans_in_rect(
+        textpage,
+        page_height=page_height,
+        rect=(0.0, 0.0, page_width, page_height),
+        tolerance=0.0,
+    )
+    lines = group_spans_into_lines(spans)
+    has_table_evidence, evidence = coordinate_preflight_table_evidence(
+        page=page,
+        textpage=textpage,
+        page_no=page_no,
+        page_width=page_width,
+        page_height=page_height,
+        options=options,
+    )
+    if has_table_evidence:
+        method = str(evidence.get("method") or "")
+        return mode, [f"preflight_table_evidence_{method}"]
+
+    is_prose, prose_metrics = prose_layout_like(lines)
+    if not is_prose:
+        return mode, ["preflight_table_evidence_weak_but_not_prose"]
+
+    probe_diagnostics = evidence.get("diagnostics") or {}
+    probe_quality = evidence.get("quality") or {}
+    reason = str(probe_diagnostics.get("status") or evidence.get("status") or "weak")
+    return "TEXT_LIGHT", [
+        "table_routing_suppressed_prose_layout",
+        f"coordinate_probe_{reason}",
+        f"prose_lines_{prose_metrics['prose_line_count']}",
+    ]
+
+
 def pdf_preflight(pdf_path: Path, options: RoutedPdfOptions) -> list[PagePreflight]:
     try:
         import pypdfium2 as pdfium
@@ -793,6 +1048,17 @@ def pdf_preflight(pdf_path: Path, options: RoutedPdfOptions) -> list[PagePreflig
                     complex_table_score=complex_table_score,
                     options=options,
                 )
+                mode, suppression_reasons = suppress_table_routing_for_prose_layout(
+                    page=page,
+                    textpage=textpage,
+                    page_no=page_index + 1,
+                    page_width=float(width),
+                    page_height=float(height),
+                    mode=mode,
+                    options=options,
+                )
+                if suppression_reasons:
+                    reasons = [*reasons, *suppression_reasons]
                 good_text_layer = (
                     len(text.strip()) >= options.text_chars_threshold
                     and quality >= options.text_quality_threshold
@@ -926,22 +1192,6 @@ def build_standard_converter(
     )
 
 
-def bbox_to_dict(bbox: Any) -> dict[str, Any]:
-    if bbox is None:
-        return {}
-    if hasattr(bbox, "model_dump"):
-        return bbox.model_dump()
-    if hasattr(bbox, "dict"):
-        return bbox.dict()
-    return {
-        "l": float(getattr(bbox, "l")),
-        "t": float(getattr(bbox, "t")),
-        "r": float(getattr(bbox, "r")),
-        "b": float(getattr(bbox, "b")),
-        "coord_origin": str(getattr(bbox, "coord_origin", "")),
-    }
-
-
 def table_page_number(table: Any) -> int | None:
     prov = getattr(table, "prov", None) or []
     if not prov:
@@ -1017,6 +1267,10 @@ def dataframe_to_markdown(dataframe: pd.DataFrame) -> str:
 
     separator = "| " + " | ".join("-" * max(width, 3) for width in widths) + " |"
     return "\n".join([format_row(headers), separator, *[format_row(row) for row in rows]])
+
+
+def markdown_visible_text(markdown: str) -> str:
+    return html.unescape(re.sub(r"<[^>]+>", " ", markdown))
 
 
 def replace_markdown_table(markdown: str, table_index: int, dataframe: pd.DataFrame) -> str:
@@ -1179,11 +1433,24 @@ def significant_coverage_tokens(line: str) -> list[str]:
     return [compact_line] if len(compact_line) >= 4 else []
 
 
+def short_token_line_covered(line: str, output_compact: str) -> bool:
+    tokens = [
+        compact_for_compare(token)
+        for token in re.split(r"\s+", normalized_text(line))
+        if compact_for_compare(token)
+    ]
+    if len(tokens) < 5:
+        return False
+    if any(len(token) > 3 for token in tokens):
+        return False
+    return all(token in output_compact for token in tokens)
+
+
 def supplement_missing_text_layer_lines(
     markdown: str,
     textpage: Any,
 ) -> tuple[str, dict[str, Any]]:
-    output_compact = compact_for_compare(markdown)
+    output_compact = compact_for_compare(markdown_visible_text(markdown))
     lines = pdf_text_layer_logical_lines(textpage)
     supplemented: list[dict[str, Any]] = []
     seen_lines: set[str] = set()
@@ -1191,6 +1458,8 @@ def supplement_missing_text_layer_lines(
     for line in lines:
         line_compact = compact_for_compare(line)
         if len(line_compact) < 4 or line_compact in output_compact:
+            continue
+        if short_token_line_covered(line, output_compact):
             continue
         tokens = significant_coverage_tokens(line)
         missing_tokens = [token for token in tokens if token not in output_compact]
@@ -1506,213 +1775,115 @@ def coordinate_cell_empty(value: str) -> bool:
     return not compact_for_compare(value)
 
 
-def coordinate_row_numeric_count(row: list[str]) -> int:
-    return sum(1 for cell in row if is_numeric_like(cell))
+def merged_cell_text(row: list[str], start_col: int, end_col: int) -> str:
+    return normalized_text(" ".join(cell for cell in row[start_col:end_col] if normalized_text(cell)))
 
 
-def infer_coordinate_header_rows(matrix: list[list[str]]) -> int:
-    if not matrix:
-        return 0
-    column_count = len(matrix[0])
-    for row_index, row in enumerate(matrix[: min(len(matrix), 8)]):
-        numeric_count = coordinate_row_numeric_count(row)
-        if numeric_count >= max(2, int(column_count * 0.25)):
-            return max(row_index, 1)
-    return 1
-
-
-def infer_measure_start_column(body_rows: list[list[str]]) -> int:
-    if not body_rows:
-        return 0
-    column_count = len(body_rows[0])
-    sample_rows = body_rows[: min(len(body_rows), 20)]
-    numeric_ratios: list[float] = []
-    for col_index in range(column_count):
-        values = [row[col_index] for row in sample_rows if not coordinate_cell_empty(row[col_index])]
-        if not values:
-            numeric_ratios.append(0.0)
-            continue
-        numeric_ratios.append(sum(1 for value in values if is_numeric_like(value)) / len(values))
-    for col_index in range(column_count - 1):
-        if numeric_ratios[col_index] >= 0.55 and numeric_ratios[col_index + 1] >= 0.55:
-            return col_index
-    for col_index, ratio in enumerate(numeric_ratios):
-        if ratio >= 0.70:
-            return col_index
-    return 0
-
-
-def nearest_header_value(row: list[str], positions: list[int], col_index: int) -> str:
-    if not positions:
-        return ""
-    nearest = min(positions, key=lambda position: (abs(position - col_index), position > col_index))
-    return row[nearest]
-
-
-def scoped_header_fill_value(
-    row: list[str],
-    positions: list[int],
-    col_index: int,
-) -> str:
-    if not positions:
-        return ""
-    left_positions = [position for position in positions if position <= col_index]
-    if left_positions:
-        return row[max(left_positions)]
-    right_positions = [position for position in positions if position >= col_index]
-    if right_positions:
-        return row[min(right_positions)]
-    return ""
-
-
-def expand_coordinate_header_rows(
-    header_rows: list[list[str]],
-    *,
-    measure_start_col: int,
-) -> list[list[str]]:
-    if not header_rows:
-        return []
-    expanded = [list(row) for row in header_rows]
-    column_count = len(expanded[0])
-
-    for row_index, row in enumerate(expanded):
-        explicit_measure_positions = [
-            col_index
-            for col_index in range(measure_start_col, column_count)
-            if not coordinate_cell_empty(row[col_index])
-        ]
-        if row_index == 0:
-            if explicit_measure_positions:
-                original_empty = [
-                    coordinate_cell_empty(header_rows[0][col_index])
-                    for col_index in range(column_count)
-                ]
-                for col_index in range(measure_start_col, column_count):
-                    if coordinate_cell_empty(row[col_index]):
-                        row[col_index] = nearest_header_value(row, explicit_measure_positions, col_index)
-                if len(expanded) > 1:
-                    child_row = expanded[1]
-                    for col_index in range(measure_start_col + 1, column_count):
-                        if (
-                            original_empty[col_index]
-                            and row[col_index] != row[col_index - 1]
-                            and coordinate_cell_empty(child_row[col_index])
-                        ):
-                            row[col_index] = row[col_index - 1]
-            continue
-        if explicit_measure_positions:
-            for col_index in range(measure_start_col, column_count):
-                if coordinate_cell_empty(row[col_index]):
-                    if row_index > 0:
-                        parent_value = expanded[row_index - 1][col_index]
-                        parent_compact = compact_for_compare(parent_value)
-                        scoped_positions = [
-                            position
-                            for position in explicit_measure_positions
-                            if compact_for_compare(expanded[row_index - 1][position]) == parent_compact
-                        ]
-                        if not scoped_positions:
-                            continue
-                    else:
-                        scoped_positions = explicit_measure_positions
-                    row[col_index] = scoped_header_fill_value(row, scoped_positions, col_index)
-        if row_index > 0:
-            for col_index in range(measure_start_col):
-                if coordinate_cell_empty(row[col_index]):
-                    row[col_index] = expanded[row_index - 1][col_index]
-    return expanded
-
-
-def make_unique_headers(headers: list[str]) -> list[str]:
-    counts: Counter[str] = Counter()
-    unique: list[str] = []
-    for index, header in enumerate(headers, start=1):
-        base = normalized_text(header) or f"col_{index}"
-        counts[base] += 1
-        unique.append(base if counts[base] == 1 else f"{base}.{counts[base]}")
-    return unique
-
-
-def build_coordinate_headers(
-    header_rows: list[list[str]],
-    *,
-    measure_start_col: int,
-) -> list[str]:
-    if not header_rows:
-        return []
-    expanded = expand_coordinate_header_rows(
-        header_rows,
-        measure_start_col=measure_start_col,
-    )
-    headers: list[str] = []
-    column_count = len(expanded[0])
-    for col_index in range(column_count):
-        parts: list[str] = []
-        for row in expanded:
-            value = normalized_text(row[col_index])
-            if value and value not in parts:
-                parts.append(value)
-        headers.append(".".join(parts))
-    return make_unique_headers(headers)
-
-
-def fill_coordinate_row_headers(
-    body_rows: list[list[str]],
-    *,
-    measure_start_col: int,
+def normalize_horizontal_merged_cells(
+    matrix: list[list[str]],
+    merge_groups: list[list[tuple[int, int]]] | None,
 ) -> tuple[list[list[str]], int]:
-    if not body_rows or measure_start_col <= 0:
-        return body_rows, 0
-    filled = [list(row) for row in body_rows]
-    fill_count = 0
-    last_values = ["" for _ in range(measure_start_col)]
-    for row in filled:
-        for col_index in range(measure_start_col):
-            value = row[col_index]
-            if coordinate_cell_empty(value):
-                if last_values[col_index]:
-                    row[col_index] = last_values[col_index]
-                    fill_count += 1
-            else:
-                last_values[col_index] = value
-    for col_index in range(measure_start_col):
-        first_value = next(
-            (row[col_index] for row in filled if not coordinate_cell_empty(row[col_index])),
-            "",
-        )
-        if not first_value:
-            continue
-        for row in filled:
-            if not coordinate_cell_empty(row[col_index]):
-                break
-            row[col_index] = first_value
-            fill_count += 1
-    return filled, fill_count
+    if not merge_groups:
+        return [list(row) for row in matrix], 0
+    normalized_rows = [list(row) for row in matrix]
+    normalized_count = 0
+    for row_index, row in enumerate(normalized_rows):
+        if row_index >= len(merge_groups):
+            break
+        for start_col, end_col in merge_groups[row_index]:
+            if end_col - start_col <= 1:
+                continue
+            value = merged_cell_text(row, start_col, end_col)
+            if not value:
+                continue
+            row[start_col] = value
+            for col_index in range(start_col + 1, end_col):
+                row[col_index] = ""
+            normalized_count += 1
+    return normalized_rows, normalized_count
 
 
-def structure_coordinate_matrix(matrix: list[list[str]]) -> tuple[pd.DataFrame, dict[str, Any]]:
+def normalize_vertical_merged_cells(
+    matrix: list[list[str]],
+    merge_groups: list[list[tuple[int, int]]] | None,
+) -> tuple[list[list[str]], int]:
+    if not merge_groups:
+        return [list(row) for row in matrix], 0
+    normalized_rows = [list(row) for row in matrix]
+    normalized_count = 0
+    for col_index, col_groups in enumerate(merge_groups):
+        for start_row, end_row in col_groups:
+            if end_row - start_row <= 1:
+                continue
+            values = [
+                normalized_rows[row_index][col_index]
+                for row_index in range(start_row, min(end_row, len(normalized_rows)))
+                if col_index < len(normalized_rows[row_index])
+                and not coordinate_cell_empty(normalized_rows[row_index][col_index])
+            ]
+            value = normalized_text(" ".join(values))
+            if not value:
+                continue
+            normalized_rows[start_row][col_index] = value
+            for row_index in range(start_row + 1, min(end_row, len(normalized_rows))):
+                if col_index < len(normalized_rows[row_index]):
+                    normalized_rows[row_index][col_index] = ""
+            normalized_count += 1
+    return normalized_rows, normalized_count
+
+
+def structure_coordinate_matrix(
+    matrix: list[list[str]],
+    horizontal_merge_groups: list[list[tuple[int, int]]] | None = None,
+    vertical_merge_groups: list[list[tuple[int, int]]] | None = None,
+) -> tuple[pd.DataFrame, dict[str, Any]]:
     column_count = len(matrix[0]) if matrix else 0
-    headers = [f"col_{index + 1:03d}" for index in range(column_count)]
-    dataframe = pd.DataFrame(matrix, columns=headers)
+    fallback_headers = [f"col_{index + 1:03d}" for index in range(column_count)]
+    horizontal_merged_region_count = sum(
+        1
+        for row_groups in (horizontal_merge_groups or [])
+        for start_col, end_col in row_groups
+        if end_col - start_col > 1
+    )
+    vertical_merged_region_count = sum(
+        1
+        for col_groups in (vertical_merge_groups or [])
+        for start_row, end_row in col_groups
+        if end_row - start_row > 1
+    )
+    normalized_matrix, normalized_horizontal_count = normalize_horizontal_merged_cells(
+        matrix,
+        horizontal_merge_groups,
+    )
+    normalized_matrix, normalized_vertical_count = normalize_vertical_merged_cells(
+        normalized_matrix,
+        vertical_merge_groups,
+    )
+    dataframe = pd.DataFrame(normalized_matrix, columns=fallback_headers)
     return dataframe, {
-        "header_mode": "none",
+        "header_mode": "synthetic",
         "header_inference_enabled": False,
         "header_row_count": 0,
         "measure_start_column": None,
         "filled_row_header_count": 0,
+        "horizontal_merged_region_count": horizontal_merged_region_count,
+        "vertical_merged_region_count": vertical_merged_region_count,
+        "normalized_horizontal_merged_cell_count": normalized_horizontal_count,
+        "normalized_vertical_merged_cell_count": normalized_vertical_count,
         "pdf_grid_rows_preserved": True,
-        "headers": headers,
+        "headers": fallback_headers,
+        "header_rejection_reasons": [],
     }
 
 
-def page_grid_lines(page: Any, page_height: float) -> tuple[list[dict[str, float]], list[dict[str, float]]]:
+def page_grid_lines(page: Any, page_height: float) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     try:
         import pypdfium2 as pdfium
     except Exception:
         return [], []
     raw = pdfium.raw
-    horizontal: list[dict[str, float]] = []
-    vertical: list[dict[str, float]] = []
+    horizontal: list[dict[str, Any]] = []
+    vertical: list[dict[str, Any]] = []
     try:
         objects = list(page.get_objects())
     except Exception:
@@ -1730,39 +1901,350 @@ def page_grid_lines(page: Any, page_height: float) -> tuple[list[dict[str, float
             top_y = page_height - top
             bottom_y = page_height - bottom
             if width >= 20.0 and height <= 2.5:
-                horizontal.append({"x1": left, "x2": right, "y": (top_y + bottom_y) / 2.0})
+                horizontal.append(
+                    {"x1": left, "x2": right, "y": (top_y + bottom_y) / 2.0, "source": "thin_path"}
+                )
             elif height >= 20.0 and width <= 2.5:
-                vertical.append({"x": (left + right) / 2.0, "y1": top_y, "y2": bottom_y})
+                vertical.append(
+                    {"x": (left + right) / 2.0, "y1": top_y, "y2": bottom_y, "source": "thin_path"}
+                )
+            elif width >= 4.0 and height >= 4.0:
+                horizontal.extend(
+                    [
+                        {"x1": left, "x2": right, "y": top_y, "source": "rect_edge"},
+                        {"x1": left, "x2": right, "y": bottom_y, "source": "rect_edge"},
+                    ]
+                )
+                vertical.extend(
+                    [
+                        {"x": left, "y1": top_y, "y2": bottom_y, "source": "rect_edge"},
+                        {"x": right, "y1": top_y, "y2": bottom_y, "source": "rect_edge"},
+                    ]
+                )
     except Exception:
         return [], []
     return horizontal, vertical
 
 
+def merged_interval_coverage(intervals: list[tuple[float, float]], *, tolerance: float = 3.0) -> float:
+    if not intervals:
+        return 0.0
+    normalized = [(min(start, end), max(start, end)) for start, end in intervals]
+    normalized.sort()
+    merged: list[list[float]] = []
+    for start, end in normalized:
+        if not merged or start > merged[-1][1] + tolerance:
+            merged.append([start, end])
+            continue
+        merged[-1][1] = max(merged[-1][1], end)
+    return sum(end - start for start, end in merged)
+
+
+def grid_axis_clusters(
+    lines: list[dict[str, Any]],
+    *,
+    position_key: str,
+    interval_start_key: str,
+    interval_end_key: str,
+    tolerance: float = 3.0,
+) -> list[dict[str, Any]]:
+    clusters: list[dict[str, Any]] = []
+    for line in sorted(lines, key=lambda item: float(item[position_key])):
+        position = float(line[position_key])
+        interval = (float(line[interval_start_key]), float(line[interval_end_key]))
+        if not clusters or abs(position - float(clusters[-1]["position"])) > tolerance:
+            clusters.append(
+                {
+                    "positions": [position],
+                    "position": position,
+                    "intervals": [interval],
+                    "count": 1,
+                }
+            )
+            continue
+        cluster = clusters[-1]
+        cluster["positions"].append(position)
+        cluster["position"] = sum(cluster["positions"]) / len(cluster["positions"])
+        cluster["intervals"].append(interval)
+        cluster["count"] += 1
+
+    for cluster in clusters:
+        intervals = list(cluster["intervals"])
+        cluster["coverage"] = merged_interval_coverage(intervals, tolerance=tolerance)
+        cluster["min_interval_start"] = min(min(start, end) for start, end in intervals)
+        cluster["max_interval_end"] = max(max(start, end) for start, end in intervals)
+    return clusters
+
+
+def line_segment_coverage_at_position(
+    lines: list[dict[str, Any]],
+    *,
+    position_key: str,
+    target_position: float,
+    interval_start_key: str,
+    interval_end_key: str,
+    target_start: float,
+    target_end: float,
+    position_tolerance: float = 3.0,
+    interval_tolerance: float = 3.0,
+) -> float:
+    target_low = min(target_start, target_end)
+    target_high = max(target_start, target_end)
+    intervals: list[tuple[float, float]] = []
+    for line in lines:
+        if abs(float(line[position_key]) - target_position) > position_tolerance:
+            continue
+        line_low = min(float(line[interval_start_key]), float(line[interval_end_key]))
+        line_high = max(float(line[interval_start_key]), float(line[interval_end_key]))
+        overlap_start = max(target_low, line_low)
+        overlap_end = min(target_high, line_high)
+        if overlap_end <= overlap_start:
+            continue
+        intervals.append((overlap_start, overlap_end))
+    return merged_interval_coverage(intervals, tolerance=interval_tolerance)
+
+
+def vertical_boundary_present_for_row(
+    vertical: list[dict[str, Any]],
+    *,
+    x: float,
+    top: float,
+    bottom: float,
+) -> bool:
+    height = max(abs(bottom - top), 1.0)
+    coverage = line_segment_coverage_at_position(
+        vertical,
+        position_key="x",
+        target_position=x,
+        interval_start_key="y1",
+        interval_end_key="y2",
+        target_start=top,
+        target_end=bottom,
+    )
+    return coverage / height >= 0.55
+
+
+def horizontal_boundary_present_for_column(
+    horizontal: list[dict[str, Any]],
+    *,
+    y: float,
+    left: float,
+    right: float,
+) -> bool:
+    width = max(abs(right - left), 1.0)
+    coverage = line_segment_coverage_at_position(
+        horizontal,
+        position_key="y",
+        target_position=y,
+        interval_start_key="x1",
+        interval_end_key="x2",
+        target_start=left,
+        target_end=right,
+    )
+    return coverage / width >= 0.55
+
+
+def horizontal_merge_groups_for_grid(
+    *,
+    x_lines: list[float],
+    y_lines: list[float],
+    vertical: list[dict[str, Any]],
+) -> list[list[tuple[int, int]]]:
+    columns = max(len(x_lines) - 1, 0)
+    rows = max(len(y_lines) - 1, 0)
+    all_groups: list[list[tuple[int, int]]] = []
+    for row_index in range(rows):
+        top = y_lines[row_index]
+        bottom = y_lines[row_index + 1]
+        row_groups: list[tuple[int, int]] = []
+        start_col = 0
+        for boundary_index in range(1, columns):
+            if vertical_boundary_present_for_row(
+                vertical,
+                x=x_lines[boundary_index],
+                top=top,
+                bottom=bottom,
+            ):
+                row_groups.append((start_col, boundary_index))
+                start_col = boundary_index
+        row_groups.append((start_col, columns))
+        all_groups.append(row_groups)
+    return all_groups
+
+
+def vertical_merge_groups_for_grid(
+    *,
+    x_lines: list[float],
+    y_lines: list[float],
+    horizontal: list[dict[str, Any]],
+) -> list[list[tuple[int, int]]]:
+    columns = max(len(x_lines) - 1, 0)
+    rows = max(len(y_lines) - 1, 0)
+    all_groups: list[list[tuple[int, int]]] = []
+    for col_index in range(columns):
+        left = x_lines[col_index]
+        right = x_lines[col_index + 1]
+        col_groups: list[tuple[int, int]] = []
+        start_row = 0
+        for boundary_index in range(1, rows):
+            if horizontal_boundary_present_for_column(
+                horizontal,
+                y=y_lines[boundary_index],
+                left=left,
+                right=right,
+            ):
+                col_groups.append((start_row, boundary_index))
+                start_row = boundary_index
+        col_groups.append((start_row, rows))
+        all_groups.append(col_groups)
+    return all_groups
+
+
+def trim_merge_groups(
+    merge_groups: list[list[tuple[int, int]]],
+    *,
+    row_indices: list[int],
+    col_indices: list[int],
+) -> list[list[tuple[int, int]]]:
+    col_lookup = {old_index: new_index for new_index, old_index in enumerate(col_indices)}
+    trimmed_groups: list[list[tuple[int, int]]] = []
+    for row_index in row_indices:
+        row_groups: list[tuple[int, int]] = []
+        for start_col, end_col in merge_groups[row_index]:
+            included = [
+                col_lookup[col_index]
+                for col_index in range(start_col, end_col)
+                if col_index in col_lookup
+            ]
+            if not included:
+                continue
+            row_groups.append((min(included), max(included) + 1))
+        trimmed_groups.append(row_groups)
+    return trimmed_groups
+
+
+def trim_vertical_merge_groups(
+    merge_groups: list[list[tuple[int, int]]],
+    *,
+    row_indices: list[int],
+    col_indices: list[int],
+) -> list[list[tuple[int, int]]]:
+    row_lookup = {old_index: new_index for new_index, old_index in enumerate(row_indices)}
+    trimmed_groups: list[list[tuple[int, int]]] = []
+    for col_index in col_indices:
+        col_groups: list[tuple[int, int]] = []
+        if col_index >= len(merge_groups):
+            trimmed_groups.append(col_groups)
+            continue
+        for start_row, end_row in merge_groups[col_index]:
+            included = [
+                row_lookup[row_index]
+                for row_index in range(start_row, end_row)
+                if row_index in row_lookup
+            ]
+            if not included:
+                continue
+            col_groups.append((min(included), max(included) + 1))
+        trimmed_groups.append(col_groups)
+    return trimmed_groups
+
+
 def coordinate_table_bbox(
-    horizontal: list[dict[str, float]],
-    vertical: list[dict[str, float]],
+    horizontal: list[dict[str, Any]],
+    vertical: list[dict[str, Any]],
     page_width: float,
     page_height: float,
 ) -> tuple[float, float, float, float] | None:
     if len(horizontal) < 3 or len(vertical) < 3:
         return None
+    thin_horizontal = [
+        line for line in horizontal if str(line.get("source") or "thin_path") != "rect_edge"
+    ]
+    thin_vertical = [
+        line for line in vertical if str(line.get("source") or "thin_path") != "rect_edge"
+    ]
     long_horizontal = [
         line
-        for line in horizontal
+        for line in thin_horizontal
         if (line["x2"] - line["x1"]) >= page_width * 0.25
     ]
     long_vertical = [
         line
-        for line in vertical
+        for line in thin_vertical
         if (line["y2"] - line["y1"]) >= page_height * 0.08
     ]
-    if len(long_horizontal) < 3 or len(long_vertical) < 3:
+    if len(long_horizontal) >= 3 and len(long_vertical) >= 3:
+        left = min(line["x1"] for line in long_horizontal)
+        right = max(line["x2"] for line in long_horizontal)
+        top = min(line["y"] for line in long_horizontal)
+        bottom = max(line["y"] for line in long_horizontal)
+        return (left, top, right, bottom)
+
+    x_clusters = grid_axis_clusters(
+        vertical,
+        position_key="x",
+        interval_start_key="y1",
+        interval_end_key="y2",
+    )
+    y_clusters = grid_axis_clusters(
+        horizontal,
+        position_key="y",
+        interval_start_key="x1",
+        interval_end_key="x2",
+    )
+    strong_x = [
+        cluster
+        for cluster in x_clusters
+        if int(cluster["count"]) >= 2 and float(cluster["coverage"]) >= page_height * 0.03
+    ]
+    strong_y = [
+        cluster
+        for cluster in y_clusters
+        if int(cluster["count"]) >= 2 and float(cluster["coverage"]) >= page_width * 0.05
+    ]
+    if len(strong_x) < 3 or len(strong_y) < 3:
         return None
-    left = min(line["x1"] for line in long_horizontal)
-    right = max(line["x2"] for line in long_horizontal)
-    top = min(line["y"] for line in long_horizontal)
-    bottom = max(line["y"] for line in long_horizontal)
+    left = min(float(cluster["position"]) for cluster in strong_x)
+    right = max(float(cluster["position"]) for cluster in strong_x)
+    top = min(float(cluster["position"]) for cluster in strong_y)
+    bottom = max(float(cluster["position"]) for cluster in strong_y)
+    if right - left < page_width * 0.10 or bottom - top < page_height * 0.05:
+        return None
     return (left, top, right, bottom)
+
+
+def span_horizontal_overlap_ratio(left: dict[str, Any], right: dict[str, Any]) -> float:
+    left_box = left["bbox"]
+    right_box = right["bbox"]
+    overlap = min(float(left_box[2]), float(right_box[2])) - max(float(left_box[0]), float(right_box[0]))
+    if overlap <= 0:
+        return 0.0
+    left_width = max(float(left_box[2]) - float(left_box[0]), 1.0)
+    right_width = max(float(right_box[2]) - float(right_box[0]), 1.0)
+    return overlap / max(min(left_width, right_width), 1.0)
+
+
+def order_spans_for_visual_line(spans: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    if len(spans) <= 1:
+        return list(spans)
+    column_groups: list[list[dict[str, Any]]] = []
+    for span in sorted(spans, key=lambda item: float(item["bbox"][0])):
+        if column_groups and any(
+            span_horizontal_overlap_ratio(span, existing) >= 0.35
+            for existing in column_groups[-1]
+        ):
+            column_groups[-1].append(span)
+            continue
+        column_groups.append([span])
+
+    ordered: list[dict[str, Any]] = []
+    for group in column_groups:
+        y_values = [float(span["center"][1]) for span in group]
+        if max(y_values) - min(y_values) >= 3.0:
+            ordered.extend(sorted(group, key=lambda item: (float(item["center"][1]), float(item["bbox"][0]))))
+        else:
+            ordered.extend(sorted(group, key=lambda item: float(item["bbox"][0])))
+    return ordered
 
 
 def group_spans_into_lines(spans: list[dict[str, Any]], *, tolerance: float = 5.0) -> list[dict[str, Any]]:
@@ -1776,8 +2258,18 @@ def group_spans_into_lines(spans: list[dict[str, Any]], *, tolerance: float = 5.
         line_spans = lines[-1]["spans"]
         lines[-1]["y"] = sum(float(item["center"][1]) for item in line_spans) / len(line_spans)
     for line in lines:
-        line["spans"] = sorted(line["spans"], key=lambda item: item["bbox"][0])
+        line["spans"] = order_spans_for_visual_line(line["spans"])
     return lines
+
+
+def text_from_ordered_spans(spans: list[dict[str, Any]], *, line_tolerance: float = 5.0) -> str:
+    lines = group_spans_into_lines(spans, tolerance=line_tolerance)
+    line_texts: list[str] = []
+    for line in lines:
+        text = normalized_text(" ".join(str(span.get("text") or "") for span in line["spans"]))
+        if text:
+            line_texts.append(text)
+    return normalized_text(" ".join(line_texts))
 
 
 def line_table_likelihood(line: dict[str, Any]) -> float:
@@ -1795,6 +2287,470 @@ def line_table_likelihood(line: dict[str, Any]) -> float:
     return 0.0
 
 
+def definition_key_like(text: str) -> bool:
+    value = normalized_text(text)
+    if len(value) < 2 or len(value) > 48:
+        return False
+    if any(char.isspace() for char in value):
+        return False
+    if ":" in value:
+        return False
+    if not re.fullmatch(r"[A-Za-z][A-Za-z0-9_.\-/()]*", value):
+        return False
+    letters = [char for char in value if char.isalpha()]
+    if not letters:
+        return False
+    uppercase_ratio = sum(1 for char in letters if char.isupper()) / len(letters)
+    digit_or_symbol_ratio = sum(
+        1 for char in value if char.isdigit() or char in {"_", "-", ".", "/", "(", ")"}
+    ) / len(value)
+    return uppercase_ratio >= 0.60 or digit_or_symbol_ratio >= 0.20
+
+
+def definition_key_text_from_spans(
+    key_spans: list[dict[str, Any]],
+    *,
+    line_index: int,
+    lines: list[dict[str, Any]],
+) -> tuple[str, list[dict[str, Any]]]:
+    if not key_spans:
+        return "", []
+    extra_spans: list[dict[str, Any]] = []
+    parts = [
+        normalized_text(str(span.get("text") or ""))
+        for span in key_spans
+    ]
+    parts = [part for part in parts if part]
+    if not parts:
+        return "", []
+
+    underline_insertions: dict[int, str] = {}
+    next_index = line_index + 1
+    if next_index < len(lines):
+        next_spans = list(lines[next_index].get("spans") or [])
+        if (
+            len(next_spans) == 1
+            and normalized_text(str(next_spans[0].get("text") or "")) == "_"
+            and len(key_spans) >= 2
+        ):
+            underline = next_spans[0]
+            underline_x = float(underline["center"][0])
+            for index in range(len(key_spans) - 1):
+                left = float(key_spans[index]["bbox"][2]) - 2.0
+                right = float(key_spans[index + 1]["bbox"][0]) + 2.0
+                if left <= underline_x <= right:
+                    underline_insertions[index] = "_"
+                    extra_spans.append(underline)
+                    break
+
+    key = ""
+    for index, part in enumerate(parts):
+        key += part
+        if index in underline_insertions:
+            key += underline_insertions[index]
+    return key, extra_spans
+
+
+def coordinate_key_value_definition_dataframe(
+    *,
+    lines: list[dict[str, Any]],
+    page_no: int,
+    page_width: float,
+    page_height: float,
+    horizontal_line_count: int,
+    vertical_line_count: int,
+    span_count: int,
+) -> tuple[pd.DataFrame | None, dict[str, Any]]:
+    candidates: list[dict[str, Any]] = []
+    for index, line in enumerate(lines):
+        spans = list(line.get("spans") or [])
+        if len(spans) < 2:
+            continue
+        gaps: list[tuple[float, int]] = []
+        for span_index in range(len(spans) - 1):
+            gap = float(spans[span_index + 1]["bbox"][0]) - float(spans[span_index]["bbox"][2])
+            gaps.append((gap, span_index + 1))
+        largest_gap, split_index = max(gaps, key=lambda item: item[0])
+        if largest_gap < 18.0:
+            continue
+        key_spans = spans[:split_index]
+        value_spans = spans[split_index:]
+        key_text, extra_key_spans = definition_key_text_from_spans(
+            key_spans,
+            line_index=index,
+            lines=lines,
+        )
+        if not definition_key_like(key_text):
+            continue
+        value_text = text_from_ordered_spans(value_spans)
+        if len(value_text) < 2:
+            continue
+        candidates.append(
+            {
+                "line_index": index,
+                "line": line,
+                "key": key_text,
+                "value": value_text,
+                "key_left": min(float(span["bbox"][0]) for span in key_spans),
+                "key_right": max(float(span["bbox"][2]) for span in key_spans),
+                "value_left": min(float(span["bbox"][0]) for span in value_spans),
+                "span_count": len(spans) + len(extra_key_spans),
+                "extra_key_spans": extra_key_spans,
+            }
+        )
+
+    if len(candidates) < 6:
+        return None, {
+            "method": "pdf_text_key_value",
+            "page": page_no,
+            "status": "too_few_key_value_rows",
+            "candidate_row_count": len(candidates),
+            "horizontal_line_count": horizontal_line_count,
+            "vertical_line_count": vertical_line_count,
+            "span_count": span_count,
+            "line_count": len(lines),
+        }
+
+    blocks: list[list[dict[str, Any]]] = []
+    current: list[dict[str, Any]] = []
+    previous_index: int | None = None
+    previous_y: float | None = None
+    for candidate in candidates:
+        line_index = int(candidate["line_index"])
+        y = float(candidate["line"]["y"])
+        starts_new = False
+        if previous_index is not None and line_index - previous_index > 2:
+            starts_new = True
+        if previous_y is not None and y - previous_y > 28.0:
+            starts_new = True
+        if starts_new and current:
+            blocks.append(current)
+            current = []
+        current.append(candidate)
+        previous_index = line_index
+        previous_y = y
+    if current:
+        blocks.append(current)
+
+    block = max(blocks, key=len)
+    if len(block) < 6:
+        return None, {
+            "method": "pdf_text_key_value",
+            "page": page_no,
+            "status": "no_stable_key_value_block",
+            "candidate_row_count": len(candidates),
+            "largest_block_row_count": len(block),
+            "horizontal_line_count": horizontal_line_count,
+            "vertical_line_count": vertical_line_count,
+            "span_count": span_count,
+            "line_count": len(lines),
+        }
+
+    key_lefts = [float(row["key_left"]) for row in block]
+    value_lefts = [float(row["value_left"]) for row in block]
+    key_rights = [float(row["key_right"]) for row in block]
+    median_key_left = float(pd.Series(key_lefts).median())
+    median_value_left = float(pd.Series(value_lefts).median())
+    key_left_spread = max(abs(value - median_key_left) for value in key_lefts)
+    value_left_spread = max(abs(value - median_value_left) for value in value_lefts)
+    column_gap = median_value_left - median_key_left
+    max_key_right = max(key_rights)
+    tight_key_column = key_left_spread <= 10.0
+    stable_value_column = value_left_spread <= 18.0
+    separated_columns = column_gap >= max(60.0, page_width * 0.12)
+    values_start_after_keys = median_value_left > max_key_right + 8.0
+    if not (tight_key_column and stable_value_column and separated_columns and values_start_after_keys):
+        return None, {
+            "method": "pdf_text_key_value",
+            "page": page_no,
+            "status": "unstable_key_value_columns",
+            "candidate_row_count": len(candidates),
+            "block_row_count": len(block),
+            "key_left_spread": round(key_left_spread, 2),
+            "value_left_spread": round(value_left_spread, 2),
+            "column_gap": round(column_gap, 2),
+            "max_key_right": round(max_key_right, 2),
+            "median_value_left": round(median_value_left, 2),
+            "horizontal_line_count": horizontal_line_count,
+            "vertical_line_count": vertical_line_count,
+            "span_count": span_count,
+            "line_count": len(lines),
+        }
+
+    matrix = [[str(row["key"]), str(row["value"])] for row in block]
+    dataframe, structure_diagnostics = structure_coordinate_matrix(matrix)
+    used_spans = [
+        span
+        for row in block
+        for span in [*row["line"]["spans"], *list(row.get("extra_key_spans") or [])]
+    ]
+    left = min(float(span["bbox"][0]) for span in used_spans)
+    top = min(float(span["bbox"][1]) for span in used_spans)
+    right = max(float(span["bbox"][2]) for span in used_spans)
+    bottom = max(float(span["bbox"][3]) for span in used_spans)
+    page_area = max(page_width * page_height, 1.0)
+    table_area = max((right - left) * (bottom - top), 0.0)
+    cell_lengths = [
+        len(normalized_text(cell))
+        for row in matrix
+        for cell in row
+        if normalized_text(cell)
+    ]
+    median_cell_chars = float(pd.Series(cell_lengths).median()) if cell_lengths else 0.0
+    max_cell_chars = max(cell_lengths) if cell_lengths else 0
+    row_span_count = sum(int(row["span_count"]) for row in block)
+    return dataframe, {
+        "method": "pdf_text_key_value",
+        "page": page_no,
+        "status": "ok",
+        "bbox": [round(value, 2) for value in (left, top, right, bottom)],
+        "table_area_ratio": round(table_area / page_area, 4),
+        "horizontal_line_count": horizontal_line_count,
+        "vertical_line_count": vertical_line_count,
+        "line_count": len(lines),
+        "table_line_count": len(block),
+        "raw_rows": len(block),
+        "raw_columns": 2,
+        "trimmed_rows": len(dataframe),
+        "trimmed_columns": len(dataframe.columns),
+        "span_count": row_span_count,
+        "assigned_span_count": row_span_count,
+        "span_coverage": 1.0,
+        "spans_per_trimmed_row": round(row_span_count / max(len(dataframe), 1), 4),
+        "max_cell_chars": max_cell_chars,
+        "median_cell_chars": round(median_cell_chars, 4),
+        "max_to_median_cell_char_ratio": round(
+            max_cell_chars / max(median_cell_chars, 1.0),
+            4,
+        ),
+        "max_long_text_row_ratio": 0.0,
+        "key_value_candidate_row_count": len(candidates),
+        "key_value_block_row_count": len(block),
+        "key_left_spread": round(key_left_spread, 2),
+        "value_left_spread": round(value_left_spread, 2),
+        "column_gap": round(column_gap, 2),
+        **coordinate_matrix_structure_metrics(matrix),
+        **structure_diagnostics,
+    }
+
+
+def coordinate_matrix_structure_metrics(matrix: list[list[str]]) -> dict[str, Any]:
+    if not matrix:
+        return {
+            "nonempty_cell_count": 0,
+            "median_nonempty_cells_per_row": 0.0,
+            "mean_nonempty_cells_per_row": 0.0,
+            "column_inflation_ratio": 0.0,
+            "sparse_column_ratio": 0.0,
+        }
+    row_count = len(matrix)
+    column_count = len(matrix[0]) if matrix[0] else 0
+    nonempty_per_row = [
+        sum(1 for cell in row if not coordinate_cell_empty(cell))
+        for row in matrix
+    ]
+    nonempty_cell_count = sum(nonempty_per_row)
+    median_nonempty = float(pd.Series(nonempty_per_row).median()) if nonempty_per_row else 0.0
+    mean_nonempty = nonempty_cell_count / max(row_count, 1)
+    sparse_columns = 0
+    if column_count:
+        sparse_limit = max(1, int(row_count * 0.10))
+        for col_index in range(column_count):
+            nonempty_count = sum(
+                1 for row in matrix if not coordinate_cell_empty(row[col_index])
+            )
+            if nonempty_count <= sparse_limit:
+                sparse_columns += 1
+    return {
+        "nonempty_cell_count": nonempty_cell_count,
+        "median_nonempty_cells_per_row": round(median_nonempty, 4),
+        "mean_nonempty_cells_per_row": round(mean_nonempty, 4),
+        "column_inflation_ratio": round(column_count / max(median_nonempty, 1.0), 4),
+        "sparse_column_ratio": round(sparse_columns / max(column_count, 1), 4),
+    }
+
+
+def alignment_numeric_cell_count(row: list[str]) -> int:
+    return sum(1 for cell in row if is_numeric_like(cell))
+
+
+def alignment_data_start_index(matrix: list[list[str]]) -> int | None:
+    if not matrix:
+        return None
+    column_count = len(matrix[0])
+    threshold = max(3, int(math.ceil(column_count * 0.30)))
+    for index, row in enumerate(matrix):
+        if alignment_numeric_cell_count(row) >= threshold:
+            return index
+    return None
+
+
+def merge_cell_text(left: str, right: str) -> str:
+    values = [value for value in [normalized_text(left), normalized_text(right)] if value]
+    return normalized_text(" ".join(values))
+
+
+def merge_alignment_header_only_columns(
+    matrix: list[list[str]],
+) -> tuple[list[list[str]], dict[str, Any]]:
+    data_start = alignment_data_start_index(matrix)
+    column_count = len(matrix[0]) if matrix else 0
+    if data_start is None or data_start <= 0 or column_count < 3:
+        return matrix, {
+            "alignment_header_column_merge_count": 0,
+            "alignment_header_column_merge_pairs": [],
+            "alignment_data_start_row": data_start,
+            "alignment_initial_column_count": column_count,
+            "alignment_final_column_count": column_count,
+        }
+
+    merged = [list(row) for row in matrix]
+    merge_pairs: list[dict[str, int | str]] = []
+
+    def column_counts(col_index: int) -> tuple[int, int, int]:
+        header_nonempty = sum(
+            1 for row in merged[:data_start] if not coordinate_cell_empty(row[col_index])
+        )
+        data_nonempty = sum(
+            1 for row in merged[data_start:] if not coordinate_cell_empty(row[col_index])
+        )
+        data_numeric = sum(1 for row in merged[data_start:] if is_numeric_like(row[col_index]))
+        return header_nonempty, data_nonempty, data_numeric
+
+    def is_header_only(col_index: int) -> bool:
+        header_nonempty, data_nonempty, _data_numeric = column_counts(col_index)
+        data_rows = max(len(merged) - data_start, 1)
+        return header_nonempty >= 1 and data_nonempty <= max(1, int(data_rows * 0.08))
+
+    def is_data_rich(col_index: int) -> bool:
+        _header_nonempty, data_nonempty, data_numeric = column_counts(col_index)
+        data_rows = max(len(merged) - data_start, 1)
+        threshold = max(3, int(data_rows * 0.50))
+        return data_nonempty >= threshold and data_numeric >= threshold
+
+    col_index = 0
+    while col_index < len(merged[0]) - 1:
+        left_header_only = is_header_only(col_index)
+        right_header_only = is_header_only(col_index + 1)
+        left_data_rich = is_data_rich(col_index)
+        right_data_rich = is_data_rich(col_index + 1)
+        next_data_rich = (
+            col_index + 2 < len(merged[0])
+            and is_data_rich(col_index + 2)
+        )
+        if left_data_rich and right_header_only and next_data_rich:
+            for row in merged:
+                row[col_index + 2] = merge_cell_text(row[col_index + 1], row[col_index + 2])
+                del row[col_index + 1]
+            merge_pairs.append({"direction": "middle_into_right", "column": col_index + 1})
+            continue
+        if left_header_only and right_data_rich:
+            for row in merged:
+                row[col_index + 1] = merge_cell_text(row[col_index], row[col_index + 1])
+                del row[col_index]
+            merge_pairs.append({"direction": "left_into_right", "column": col_index})
+            continue
+        if left_data_rich and right_header_only:
+            for row in merged:
+                row[col_index] = merge_cell_text(row[col_index], row[col_index + 1])
+                del row[col_index + 1]
+            merge_pairs.append({"direction": "right_into_left", "column": col_index + 1})
+            continue
+        col_index += 1
+
+    return merged, {
+        "alignment_header_column_merge_count": len(merge_pairs),
+        "alignment_header_column_merge_pairs": merge_pairs,
+        "alignment_data_start_row": data_start,
+        "alignment_initial_column_count": column_count,
+        "alignment_final_column_count": len(merged[0]) if merged else 0,
+    }
+
+
+def merge_matrix_column_range(
+    matrix: list[list[str]],
+    column_centers: list[float],
+    *,
+    start_col: int,
+    end_col: int,
+) -> tuple[list[list[str]], list[float]]:
+    merged_matrix: list[list[str]] = []
+    for row in matrix:
+        merged_cell = normalized_text(" ".join(row[start_col:end_col]))
+        merged_matrix.append([*row[:start_col], merged_cell, *row[end_col:]])
+    merged_center = sum(column_centers[start_col:end_col]) / max(end_col - start_col, 1)
+    merged_centers = [*column_centers[:start_col], merged_center, *column_centers[end_col:]]
+    return merged_matrix, merged_centers
+
+
+def merge_alignment_columns_before_separator(
+    matrix: list[list[str]],
+    column_centers: list[float],
+    table_lines: list[dict[str, Any]],
+    vertical_lines: list[dict[str, Any]] | None,
+) -> tuple[list[list[str]], list[float], dict[str, Any]]:
+    if not matrix or len(column_centers) < 3 or not vertical_lines or not table_lines:
+        return matrix, column_centers, {
+            "alignment_separator_column_merge_count": 0,
+            "alignment_separator_column_merge_groups": [],
+        }
+    table_top = min(
+        min(float(span["bbox"][1]) for span in line["spans"])
+        for line in table_lines
+        if line.get("spans")
+    )
+    table_bottom = max(
+        max(float(span["bbox"][3]) for span in line["spans"])
+        for line in table_lines
+        if line.get("spans")
+    )
+    table_height = max(table_bottom - table_top, 1.0)
+    candidates: list[float] = []
+    for line in vertical_lines:
+        line_top = min(float(line["y1"]), float(line["y2"]))
+        line_bottom = max(float(line["y1"]), float(line["y2"]))
+        overlap = min(table_bottom, line_bottom) - max(table_top, line_top)
+        if overlap / table_height >= 0.35:
+            candidates.append(float(line["x"]))
+    if not candidates:
+        return matrix, column_centers, {
+            "alignment_separator_column_merge_count": 0,
+            "alignment_separator_column_merge_groups": [],
+        }
+
+    separator_x = min(candidates)
+    leading_count = sum(1 for center in column_centers if center < separator_x - 1.0)
+    if leading_count <= 1 or leading_count >= len(column_centers):
+        return matrix, column_centers, {
+            "alignment_separator_column_merge_count": 0,
+            "alignment_separator_column_merge_groups": [],
+        }
+    merged_matrix, merged_centers = merge_matrix_column_range(
+        matrix,
+        column_centers,
+        start_col=0,
+        end_col=leading_count,
+    )
+    return merged_matrix, merged_centers, {
+        "alignment_separator_column_merge_count": 1,
+        "alignment_separator_column_merge_groups": [
+            {
+                "start_column": 0,
+                "end_column": leading_count,
+                "separator_x": round(separator_x, 2),
+            }
+        ],
+    }
+
+
+def sparse_right_aligned_note_line(line: dict[str, Any], *, page_width: float) -> bool:
+    spans = list(line.get("spans") or [])
+    if not spans or len(spans) > 3:
+        return False
+    min_center_x = min(float(span["center"][0]) for span in spans)
+    return min_center_x >= page_width * 0.60
+
+
 def coordinate_text_alignment_dataframe(
     *,
     textpage: Any,
@@ -1803,6 +2759,7 @@ def coordinate_text_alignment_dataframe(
     page_height: float,
     horizontal_line_count: int,
     vertical_line_count: int,
+    vertical_lines: list[dict[str, Any]] | None = None,
 ) -> tuple[pd.DataFrame | None, dict[str, Any]]:
     spans = pdf_text_spans_in_rect(
         textpage,
@@ -1811,6 +2768,18 @@ def coordinate_text_alignment_dataframe(
         tolerance=0.0,
     )
     lines = group_spans_into_lines(spans)
+    key_value_dataframe, key_value_diagnostics = coordinate_key_value_definition_dataframe(
+        lines=lines,
+        page_no=page_no,
+        page_width=page_width,
+        page_height=page_height,
+        horizontal_line_count=horizontal_line_count,
+        vertical_line_count=vertical_line_count,
+        span_count=len(spans),
+    )
+    if key_value_dataframe is not None:
+        return key_value_dataframe, key_value_diagnostics
+
     candidate_indices = [
         index for index, line in enumerate(lines) if line_table_likelihood(line) >= 0.65
     ]
@@ -1832,6 +2801,8 @@ def coordinate_text_alignment_dataframe(
         previous = lines[start_index - 1]
         previous_gap = current_y - float(previous["y"])
         if previous_gap > 24.0 or len(previous.get("spans") or []) == 0:
+            break
+        if sparse_right_aligned_note_line(previous, page_width=page_width):
             break
         if float(previous["y"]) < page_height * 0.06:
             break
@@ -1886,13 +2857,21 @@ def coordinate_text_alignment_dataframe(
             row_cells[nearest_index].append(str(span["text"]))
             assigned_span_count += 1
         matrix.append([normalized_text(" ".join(cell)) for cell in row_cells])
+    matrix, column_centers, separator_column_diagnostics = merge_alignment_columns_before_separator(
+        matrix,
+        column_centers,
+        table_lines,
+        vertical_lines,
+    )
+    matrix, alignment_column_diagnostics = merge_alignment_header_only_columns(matrix)
+    matrix_column_count = len(matrix[0]) if matrix else 0
 
     nonempty_row_indices = [
         index for index, row in enumerate(matrix) if any(compact_for_compare(cell) for cell in row)
     ]
     nonempty_col_indices = [
         index
-        for index in range(len(column_centers))
+        for index in range(matrix_column_count)
         if any(compact_for_compare(row[index]) for row in matrix)
     ]
     if not nonempty_row_indices or len(nonempty_col_indices) < 2:
@@ -1953,7 +2932,7 @@ def coordinate_text_alignment_dataframe(
         "line_count": len(lines),
         "table_line_count": len(table_lines),
         "raw_rows": len(matrix),
-        "raw_columns": len(column_centers),
+        "raw_columns": matrix_column_count,
         "trimmed_rows": trimmed_rows,
         "trimmed_columns": trimmed_columns,
         "span_count": table_span_count,
@@ -1973,6 +2952,9 @@ def coordinate_text_alignment_dataframe(
             4,
         ),
         "max_long_text_row_ratio": round(max(long_text_row_ratios or [0.0]), 4),
+        **separator_column_diagnostics,
+        **alignment_column_diagnostics,
+        **coordinate_matrix_structure_metrics(trimmed),
         **structure_diagnostics,
     }
     return dataframe, diagnostics
@@ -2034,6 +3016,7 @@ def coordinate_table_dataframe(
             page_height=page_height,
             horizontal_line_count=len(horizontal),
             vertical_line_count=len(vertical),
+            vertical_lines=vertical,
         )
         if alignment_dataframe is not None:
             return alignment_dataframe, alignment_diagnostics
@@ -2074,6 +3057,16 @@ def coordinate_table_dataframe(
             "x_line_count": len(x_lines),
             "y_line_count": len(y_lines),
         }
+    raw_merge_groups = horizontal_merge_groups_for_grid(
+        x_lines=x_lines,
+        y_lines=y_lines,
+        vertical=vertical,
+    )
+    raw_vertical_merge_groups = vertical_merge_groups_for_grid(
+        x_lines=x_lines,
+        y_lines=y_lines,
+        horizontal=horizontal,
+    )
 
     spans = pdf_text_spans_in_rect(
         textpage,
@@ -2106,9 +3099,7 @@ def coordinate_table_dataframe(
     for row in cells:
         values: list[str] = []
         for cell_spans in row:
-            ordered = sorted(cell_spans, key=lambda item: (item["bbox"][1], item["bbox"][0]))
-            text = " ".join(str(item["text"]) for item in ordered)
-            values.append(normalized_text(text))
+            values.append(text_from_ordered_spans(cell_spans))
         matrix.append(values)
 
     nonempty_row_indices = [
@@ -2132,7 +3123,21 @@ def coordinate_table_dataframe(
         [matrix[row_index][col_index] for col_index in nonempty_col_indices]
         for row_index in nonempty_row_indices
     ]
-    dataframe, structure_diagnostics = structure_coordinate_matrix(trimmed)
+    trimmed_merge_groups = trim_merge_groups(
+        raw_merge_groups,
+        row_indices=nonempty_row_indices,
+        col_indices=nonempty_col_indices,
+    )
+    trimmed_vertical_merge_groups = trim_vertical_merge_groups(
+        raw_vertical_merge_groups,
+        row_indices=nonempty_row_indices,
+        col_indices=nonempty_col_indices,
+    )
+    dataframe, structure_diagnostics = structure_coordinate_matrix(
+        trimmed,
+        horizontal_merge_groups=trimmed_merge_groups,
+        vertical_merge_groups=trimmed_vertical_merge_groups,
+    )
     cell_lengths = [
         len(normalized_text(cell))
         for row in trimmed
@@ -2184,6 +3189,7 @@ def coordinate_table_dataframe(
             4,
         ),
         "max_long_text_row_ratio": round(max(long_text_row_ratios or [0.0]), 4),
+        **coordinate_matrix_structure_metrics(trimmed),
         **structure_diagnostics,
     }
     if grid_reconstruction_collapsed(diagnostics):
@@ -2194,6 +3200,7 @@ def coordinate_table_dataframe(
             page_height=page_height,
             horizontal_line_count=len(horizontal),
             vertical_line_count=len(vertical),
+            vertical_lines=vertical,
         )
         if (
             alignment_dataframe is not None
@@ -2217,6 +3224,7 @@ def coordinate_quality_report(
 ) -> dict[str, Any]:
     reasons: list[str] = []
     status = str(diagnostics.get("status") or "")
+    method = str(diagnostics.get("method") or "")
     rows = int(diagnostics.get("trimmed_rows") or diagnostics.get("rows") or 0)
     columns = int(diagnostics.get("trimmed_columns") or diagnostics.get("columns") or 0)
     span_count = int(diagnostics.get("span_count") or 0)
@@ -2225,6 +3233,9 @@ def coordinate_quality_report(
     max_cell_chars = int(diagnostics.get("max_cell_chars") or 0)
     max_to_median = float(diagnostics.get("max_to_median_cell_char_ratio") or 0.0)
     max_long_text_row_ratio = float(diagnostics.get("max_long_text_row_ratio") or 0.0)
+    median_nonempty = float(diagnostics.get("median_nonempty_cells_per_row") or 0.0)
+    column_inflation = float(diagnostics.get("column_inflation_ratio") or 0.0)
+    sparse_column_ratio = float(diagnostics.get("sparse_column_ratio") or 0.0)
     span_per_row_limit = max(12.0, float(columns) * 3.0)
 
     if status != "ok":
@@ -2243,6 +3254,15 @@ def coordinate_quality_report(
         reasons.append("cell_size_skew")
     if max_long_text_row_ratio >= 0.50:
         reasons.append("prose_row_risk")
+    if (
+        method == "pdf_text_alignment"
+        and columns >= 12
+        and median_nonempty >= 4.0
+        and column_inflation >= 2.0
+    ):
+        reasons.append("table_structure_oversegmented")
+    if method == "pdf_text_alignment" and columns >= 10 and sparse_column_ratio >= 0.45:
+        reasons.append("sparse_column_structure")
 
     return {
         "ok": not reasons,
@@ -2256,6 +3276,9 @@ def coordinate_quality_report(
         "max_cell_chars": max_cell_chars,
         "max_to_median_cell_char_ratio": round(max_to_median, 4),
         "max_long_text_row_ratio": round(max_long_text_row_ratio, 4),
+        "median_nonempty_cells_per_row": round(median_nonempty, 4),
+        "column_inflation_ratio": round(column_inflation, 4),
+        "sparse_column_ratio": round(sparse_column_ratio, 4),
     }
 
 
@@ -2418,6 +3441,7 @@ def convert_coordinate_table_page(
             "rows": int(len(dataframe)),
             "columns": int(len(dataframe.columns)),
             "headers": [str(column) for column in dataframe.columns],
+            "display_headers": True,
             "csv": csv_text,
             "html": html_text,
             "page": page_no,
@@ -2430,47 +3454,6 @@ def convert_coordinate_table_page(
     finally:
         textpage.close()
         page.close()
-
-
-def convert_coordinate_tables_range(
-    pdf_path: Path,
-    start_page: int,
-    end_page: int,
-) -> tuple[str, list[dict[str, Any]], str, list[TableRepairWarning]]:
-    try:
-        import pypdfium2 as pdfium
-    except Exception as exc:
-        raise RuntimeError("pypdfium2 is required for coordinate table reconstruction.") from exc
-
-    started = time.perf_counter()
-    document = pdfium.PdfDocument(str(pdf_path))
-    markdown_parts: list[str] = []
-    tables: list[dict[str, Any]] = []
-    table_text_parts: list[str] = []
-    warnings: list[TableRepairWarning] = []
-    try:
-        for page_no in range(start_page, end_page + 1):
-            page_markdown, page_tables, page_table_text, page_warnings, _diagnostics = (
-                convert_coordinate_table_page(document=document, page_no=page_no)
-            )
-            for table in page_tables:
-                adjusted = dict(table)
-                adjusted["index"] = len(tables) + 1
-                tables.append(adjusted)
-            for warning in page_warnings:
-                warning.table_index = len(tables) + 1
-                warnings.append(warning)
-            if page_markdown:
-                markdown_parts.append(page_markdown)
-            if page_table_text:
-                table_text_parts.append(page_table_text)
-    finally:
-        document.close()
-
-    elapsed = round(time.perf_counter() - started, 3)
-    if markdown_parts:
-        markdown_parts.insert(0, f"<!-- coordinate_table_reconstruction elapsed_seconds: {elapsed} -->")
-    return "\n\n".join(markdown_parts), tables, "\n".join(table_text_parts), warnings
 
 
 def export_docling_result(
@@ -3238,6 +4221,8 @@ def coordinate_evidence_strength(coordinate_quality: dict[str, Any]) -> str:
         "row_collapse_risk",
         "giant_cell_risk",
         "prose_row_risk",
+        "table_structure_oversegmented",
+        "sparse_column_structure",
         "too_few_rows",
         "too_few_columns",
     }
@@ -4918,13 +5903,13 @@ def run_routed_pdf(
     output_dir: Path | None = None,
     progress_callback: ProgressCallback | None = None,
 ) -> dict[str, Any]:
-    load_dotenv(ROOT / ".env", override=True)
     pdf_path = pdf_path.resolve()
     if not pdf_path.exists():
         raise FileNotFoundError(pdf_path)
 
     run_id = run_id or f"routing_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
-    run_dir = output_dir or (ROUTING_RUNS_DIR / run_id)
+    routing_runs_dir = routing_runs_dir_for_options(options)
+    run_dir = output_dir or (routing_runs_dir / run_id)
     started = time.perf_counter()
     options.reconcile_compare_mode = normalize_reconcile_compare_mode(
         options.reconcile_compare_mode
@@ -4951,21 +5936,33 @@ def run_routed_pdf(
             and page.mode in {"TEXT_TABLE_FAST", "TEXT_TABLE_ACCURATE"}
         )
     ]
-    if (reconcile_pages or table_vlm_candidate_pages) and not os.getenv("OPENAI_API_KEY"):
-        raise RuntimeError(
-            "VLM pages require OPENAI_API_KEY because reconciliation or table VLM fallback is executed."
-        )
     if reconcile_pages:
         check_openai_chat_access(
             model=options.model,
             reasoning_effort=options.reasoning_effort,
             timeout_seconds=min(options.timeout_seconds, 60),
+            chat_completions_url=options.openai_chat_completions_url,
+            provider=options.llm_provider,
+            api_key=options.llm_api_key,
+            azure_endpoint=options.azure_openai_endpoint,
+            azure_deployment=options.azure_openai_deployment,
+            azure_api_version=options.azure_openai_api_version,
+            max_retries=options.openai_max_retries,
+            initial_backoff_seconds=options.openai_initial_backoff_seconds,
         )
         if options.reconcile_compare_mode == "vlm_vlm" and options.secondary_model != options.model:
             check_openai_chat_access(
                 model=options.secondary_model,
                 reasoning_effort=options.reasoning_effort,
                 timeout_seconds=min(options.timeout_seconds, 60),
+                chat_completions_url=options.openai_chat_completions_url,
+                provider=options.llm_provider,
+                api_key=options.llm_api_key,
+                azure_endpoint=options.azure_openai_endpoint,
+                azure_deployment=options.azure_openai_deployment,
+                azure_api_version=options.azure_openai_api_version,
+                max_retries=options.openai_max_retries,
+                initial_backoff_seconds=options.openai_initial_backoff_seconds,
             )
     if table_vlm_candidate_pages:
         for table_model in sorted(
@@ -4975,6 +5972,14 @@ def run_routed_pdf(
                 model=table_model,
                 reasoning_effort=options.table_vlm_reasoning_effort,
                 timeout_seconds=min(options.timeout_seconds, 60),
+                chat_completions_url=options.openai_chat_completions_url,
+                provider=options.llm_provider,
+                api_key=options.llm_api_key,
+                azure_endpoint=options.azure_openai_endpoint,
+                azure_deployment=options.azure_openai_deployment,
+                azure_api_version=options.azure_openai_api_version,
+                max_retries=options.openai_max_retries,
+                initial_backoff_seconds=options.openai_initial_backoff_seconds,
             )
 
     converters: dict[str, DocumentConverter] = {}
@@ -5004,6 +6009,78 @@ def run_routed_pdf(
             for warning in table_warnings
         ]
 
+    def supplement_suppressed_text_light_markdown(
+        markdown: str,
+        group_preflight: list[PagePreflight],
+    ) -> tuple[str, list[WarningItem], dict[str, Any]]:
+        suppressed_pages = [
+            page
+            for page in group_preflight
+            if "table_routing_suppressed_prose_layout" in page.reasons
+        ]
+        if not suppressed_pages:
+            return markdown, [], {"enabled": False}
+        try:
+            import pypdfium2 as pdfium
+        except Exception:
+            return markdown, [], {
+                "enabled": True,
+                "supplemented_page_count": 0,
+                "error": "pypdfium2_unavailable",
+            }
+
+        supplemented_markdown = markdown
+        supplement_warnings: list[WarningItem] = []
+        page_diagnostics: list[dict[str, Any]] = []
+        document = pdfium.PdfDocument(str(pdf_path))
+        try:
+            for page_preflight in suppressed_pages:
+                page = document[page_preflight.page - 1]
+                textpage = page.get_textpage()
+                try:
+                    supplemented_markdown, diagnostics = supplement_missing_text_layer_lines(
+                        supplemented_markdown,
+                        textpage,
+                    )
+                finally:
+                    textpage.close()
+                    page.close()
+                page_diagnostics.append(
+                    {
+                        "page": page_preflight.page,
+                        **diagnostics,
+                    }
+                )
+                supplemented_count = int(diagnostics.get("supplemented_line_count") or 0)
+                if supplemented_count:
+                    supplement_warnings.append(
+                        WarningItem(
+                            page=page_preflight.page,
+                            mode="TEXT_LIGHT",
+                            level="info",
+                            code="TEXT_LIGHT_TEXT_LAYER_SUPPLEMENTED",
+                            score=0.65,
+                            message=(
+                                "TEXT_LIGHT output was supplemented with PDF text-layer "
+                                "lines to avoid omissions after table routing suppression."
+                            ),
+                            suggested_action=(
+                                "Review supplemental lines if the page is business-critical."
+                            ),
+                            evidence=diagnostics,
+                        )
+                    )
+        finally:
+            document.close()
+        return supplemented_markdown, supplement_warnings, {
+            "enabled": True,
+            "suppressed_page_count": len(suppressed_pages),
+            "supplemented_page_count": sum(
+                1 for item in page_diagnostics if int(item.get("supplemented_line_count") or 0)
+            ),
+            "pages": page_diagnostics,
+        }
+
     def convert_standard_group(group: RoutingGroup) -> tuple[list[ConversionSegment], list[WarningItem]]:
         group_started = time.perf_counter()
         group_pages = set(group.pages)
@@ -5013,36 +6090,32 @@ def run_routed_pdf(
             and group.mode in {"TEXT_TABLE_FAST", "TEXT_TABLE_ACCURATE"}
         ):
             return convert_table_group_with_coordinate_fallback(group, group_preflight)
-        use_coordinate = (
-            options.use_coordinate_table_reconstruction
-            and group.mode == "TEXT_TABLE_ACCURATE"
+        converter = build_standard_converter(group.mode)
+        markdown, tables, _table_text, table_warnings = convert_docling_range(
+            converter,
+            pdf_path,
+            group.start_page,
+            group.end_page,
+            repair_tables=group.mode in {"TEXT_TABLE_FAST", "TEXT_TABLE_ACCURATE"},
         )
-        if use_coordinate:
-            markdown, tables, _table_text, table_warnings = convert_coordinate_tables_range(
-                pdf_path,
-                group.start_page,
-                group.end_page,
-            )
-        else:
-            converter = build_standard_converter(group.mode)
-            markdown, tables, _table_text, table_warnings = convert_docling_range(
-                converter,
-                pdf_path,
-                group.start_page,
-                group.end_page,
-                repair_tables=group.mode in {"TEXT_TABLE_FAST", "TEXT_TABLE_ACCURATE"},
-            )
         group_warnings = table_warnings_to_items(table_warnings, mode=group.mode)
+        safe_markdown, supplement_warnings, supplement_diagnostics = (
+            supplement_suppressed_text_light_markdown(markdown, group_preflight)
+            if group.mode == "TEXT_LIGHT"
+            else (markdown, [], {"enabled": False})
+        )
+        group_warnings.extend(supplement_warnings)
         segment = ConversionSegment(
             mode=group.mode,
             start_page=group.start_page,
             end_page=group.end_page,
             markdown=markdown,
-            safe_markdown=markdown,
+            safe_markdown=safe_markdown,
             tables=tables,
             elapsed_seconds=round(time.perf_counter() - group_started, 3),
             diagnostics={
-                "coordinate_table_reconstruction": use_coordinate,
+                "coordinate_table_reconstruction": False,
+                "text_layer_supplement": supplement_diagnostics,
             },
         )
         if group.mode in {"TEXT_TABLE_FAST", "TEXT_TABLE_ACCURATE"} and not tables:
@@ -5077,6 +6150,15 @@ def run_routed_pdf(
                 scale=options.vlm_scale,
                 response_format=options.response_format,
                 prompt_variant=options.prompt_variant,
+                image_detail=options.vlm_image_detail,
+                provider=options.llm_provider,
+                api_key=options.llm_api_key,
+                chat_completions_url=options.openai_chat_completions_url,
+                azure_endpoint=options.azure_openai_endpoint,
+                azure_deployment=options.azure_openai_deployment,
+                azure_api_version=options.azure_openai_api_version,
+                max_retries=options.openai_max_retries,
+                initial_backoff_seconds=options.openai_initial_backoff_seconds,
             )
             converters[key] = converter
         return converter
@@ -5096,6 +6178,15 @@ def run_routed_pdf(
                 scale=options.vlm_scale,
                 response_format=options.response_format,
                 prompt_variant=options.table_vlm_prompt_variant,
+                image_detail=options.vlm_image_detail,
+                provider=options.llm_provider,
+                api_key=options.llm_api_key,
+                chat_completions_url=options.openai_chat_completions_url,
+                azure_endpoint=options.azure_openai_endpoint,
+                azure_deployment=options.azure_openai_deployment,
+                azure_api_version=options.azure_openai_api_version,
+                max_retries=options.openai_max_retries,
+                initial_backoff_seconds=options.openai_initial_backoff_seconds,
             )
             converters[key] = converter
         return converter
@@ -5116,6 +6207,15 @@ def run_routed_pdf(
                 scale=options.vlm_scale,
                 response_format=options.response_format,
                 prompt_variant=options.reconcile_table_fallback_prompt_variant,
+                image_detail=options.vlm_image_detail,
+                provider=options.llm_provider,
+                api_key=options.llm_api_key,
+                chat_completions_url=options.openai_chat_completions_url,
+                azure_endpoint=options.azure_openai_endpoint,
+                azure_deployment=options.azure_openai_deployment,
+                azure_api_version=options.azure_openai_api_version,
+                max_retries=options.openai_max_retries,
+                initial_backoff_seconds=options.openai_initial_backoff_seconds,
             )
             converters[key] = converter
         return converter
@@ -5793,40 +6893,36 @@ def run_routed_pdf(
                 segments.extend(append_segments)
                 warnings.extend(append_warnings)
                 continue
-            use_coordinate = (
-                options.use_coordinate_table_reconstruction
-                and group.mode == "TEXT_TABLE_ACCURATE"
+            converter = converters.get(group.mode)
+            if converter is None:
+                converter = build_standard_converter(group.mode)
+                converters[group.mode] = converter
+            markdown, tables, _table_text, table_warnings = convert_docling_range(
+                converter,
+                pdf_path,
+                group.start_page,
+                group.end_page,
+                repair_tables=group.mode in {"TEXT_TABLE_FAST", "TEXT_TABLE_ACCURATE"},
             )
-            if use_coordinate:
-                markdown, tables, _table_text, table_warnings = convert_coordinate_tables_range(
-                    pdf_path,
-                    group.start_page,
-                    group.end_page,
-                )
-            else:
-                converter = converters.get(group.mode)
-                if converter is None:
-                    converter = build_standard_converter(group.mode)
-                    converters[group.mode] = converter
-                markdown, tables, _table_text, table_warnings = convert_docling_range(
-                    converter,
-                    pdf_path,
-                    group.start_page,
-                    group.end_page,
-                    repair_tables=group.mode in {"TEXT_TABLE_FAST", "TEXT_TABLE_ACCURATE"},
-                )
-            warnings.extend(table_warnings_to_items(table_warnings, mode=group.mode))
+            group_warnings = table_warnings_to_items(table_warnings, mode=group.mode)
+            safe_markdown, supplement_warnings, supplement_diagnostics = (
+                supplement_suppressed_text_light_markdown(markdown, group_preflight)
+                if group.mode == "TEXT_LIGHT"
+                else (markdown, [], {"enabled": False})
+            )
+            warnings.extend([*group_warnings, *supplement_warnings])
             segments.append(
                 ConversionSegment(
                     mode=group.mode,
                     start_page=group.start_page,
                     end_page=group.end_page,
                     markdown=markdown,
-                    safe_markdown=markdown,
+                    safe_markdown=safe_markdown,
                     tables=tables,
                     elapsed_seconds=round(time.perf_counter() - group_started, 3),
                     diagnostics={
-                        "coordinate_table_reconstruction": use_coordinate,
+                        "coordinate_table_reconstruction": False,
+                        "text_layer_supplement": supplement_diagnostics,
                     },
                 )
             )
@@ -6052,9 +7148,22 @@ def run_routed_pdf(
         "pdf_path": str(pdf_path),
         "filename": pdf_path.name,
         "created_at": datetime.now().isoformat(timespec="seconds"),
+        "invocation": options.invocation,
+        "runtime": {
+            "python": sys.version.split()[0],
+            "packages": {
+                "docling": package_version("docling"),
+                "openai": package_version("openai"),
+                "pandas": package_version("pandas"),
+                "pypdfium2": package_version("pypdfium2"),
+            },
+            "git_commit": git_commit(),
+        },
+        "config_sources": list(options.config_sources),
+        "resolved_settings": options.resolved_settings,
         "page_count": len(preflight),
         "groups": [asdict(group) for group in groups],
-        "options": asdict(options),
+        "options": safe_options_dict(options),
         "comparison": {
             "mode": options.reconcile_compare_mode,
             "source_a_label": source_a_label,

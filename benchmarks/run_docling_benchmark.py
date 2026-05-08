@@ -21,9 +21,11 @@ from benchmarks.metrics import (
     shape_presence_rates,
     table_shapes,
 )
+from settings import load_settings
 
 
-OUT_DIR = ROOT / "outputs" / "docling_benchmark"
+SETTINGS = load_settings()
+OUT_DIR = SETTINGS.outputs.benchmark_dir
 PDF_DIR = OUT_DIR / "pdfs"
 RESULTS_DIR = OUT_DIR / "results"
 EXTRACTED_DIR = RESULTS_DIR / "extracted"
@@ -233,7 +235,7 @@ def write_report(rows: list[dict[str, Any]]) -> None:
     lines.extend(["", "## Notes", ""])
     for row in rows:
         lines.append(f"### {row['case_id']} - {row['description']}")
-        lines.append(f"- File: `outputs/docling_benchmark/pdfs/{row['filename']}`")
+        lines.append(f"- File: `{PDF_DIR / row['filename']}`")
         if row["sample_missing_text_anchors"]:
             lines.append(f"- Missing text anchors sample: `{', '.join(row['sample_missing_text_anchors'][:5])}`")
         else:

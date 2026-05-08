@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import csv
 import json
-import os
 import re
 import sys
 import time
@@ -11,11 +10,8 @@ from datetime import date
 from pathlib import Path
 from typing import Any
 
-from dotenv import load_dotenv
-
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-load_dotenv(ROOT / ".env", override=True)
 
 from benchmarks.metrics import (  # noqa: E402
     calc_detection_metrics,
@@ -24,16 +20,15 @@ from benchmarks.metrics import (  # noqa: E402
     table_shapes,
 )
 from docling_openai_vlm import (  # noqa: E402
-    DEFAULT_VLM_MAX_COMPLETION_TOKENS,
-    DEFAULT_VLM_REASONING_EFFORT,
-    DEFAULT_VLM_SCALE,
-    DEFAULT_VLM_TIMEOUT_SECONDS,
     build_openai_vlm_converter,
     check_openai_chat_access,
 )
+from settings import load_settings, settings_to_safe_dict  # noqa: E402
 
 
-OUT_DIR = ROOT / "outputs" / "docling_benchmark"
+SETTINGS = load_settings()
+SAFE_SETTINGS = settings_to_safe_dict(SETTINGS)
+OUT_DIR = SETTINGS.outputs.benchmark_dir
 PDF_DIR = OUT_DIR / "pdfs"
 RESULTS_DIR = OUT_DIR / "results_openai_vlm"
 EXTRACTED_DIR = RESULTS_DIR / "extracted"
@@ -112,7 +107,7 @@ def benchmark_case(converter: Any, case: dict[str, Any]) -> dict[str, Any]:
         tables, table_text = export_tables(document)
         if not markdown.strip():
             raise RuntimeError(
-                "OpenAI VLM returned empty Markdown. The API call likely failed and "
+                "VLM provider returned empty Markdown. The API call likely failed and "
                 "Docling continued with an empty page response."
             )
 
@@ -259,7 +254,7 @@ def write_outputs(rows: list[dict[str, Any]], model: str, settings: dict[str, An
             writer.writerow({field: row.get(field) for field in fields})
 
     lines = [
-        "# OpenAI VLM Benchmark Report",
+        "# Provider VLM Benchmark Report",
         "",
         f"- Model: `{model}`",
         f"- Settings: `{json.dumps(settings, ensure_ascii=False)}`",
@@ -294,27 +289,32 @@ def write_outputs(rows: list[dict[str, Any]], model: str, settings: dict[str, An
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Run Docling OpenAI VLM benchmark against generated PDFs."
+        description="Run Docling provider VLM benchmark against generated PDFs."
     )
-    parser.add_argument("--model", default=os.getenv("OPENAI_MODEL", "gpt-5.2"))
+    parser.add_argument("--model", default=SETTINGS.models.primary)
     parser.add_argument(
         "--results-dir",
         type=Path,
         default=None,
-        help="Output directory. Defaults to outputs/docling_benchmark/results_openai_vlm_<model>.",
+        help="Output directory. Defaults under the configured benchmark output root.",
     )
     parser.add_argument(
         "--max-completion-tokens",
         type=int,
-        default=DEFAULT_VLM_MAX_COMPLETION_TOKENS,
+        default=SETTINGS.vlm.max_completion_tokens,
     )
     parser.add_argument(
         "--reasoning-effort",
-        default=DEFAULT_VLM_REASONING_EFFORT,
+        default=SETTINGS.vlm.reasoning_effort,
         choices=["none", "low", "medium", "high", "xhigh"],
     )
-    parser.add_argument("--timeout-seconds", type=float, default=DEFAULT_VLM_TIMEOUT_SECONDS)
-    parser.add_argument("--scale", type=float, default=DEFAULT_VLM_SCALE)
+    parser.add_argument("--timeout-seconds", type=float, default=SETTINGS.vlm.timeout_seconds)
+    parser.add_argument("--scale", type=float, default=SETTINGS.vlm.scale)
+    parser.add_argument(
+        "--image-detail",
+        default=SETTINGS.vlm.image_detail or "auto",
+        choices=["auto", "low", "high"],
+    )
     parser.add_argument(
         "--response-format",
         choices=["markdown", "html"],
@@ -345,6 +345,9 @@ def main() -> int:
         "timeout_seconds": args.timeout_seconds,
         "scale": args.scale,
         "response_format": args.response_format,
+        "image_detail": args.image_detail,
+        "config_sources": list(SETTINGS.config_sources),
+        "resolved_settings": SAFE_SETTINGS,
     }
 
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
@@ -359,6 +362,14 @@ def main() -> int:
             model,
             reasoning_effort=args.reasoning_effort,
             timeout_seconds=min(args.timeout_seconds, 60),
+            chat_completions_url=SETTINGS.openai.chat_completions_url,
+            provider=SETTINGS.provider.name,
+            api_key=SETTINGS.provider.api_key,
+            azure_endpoint=SETTINGS.provider.azure_endpoint,
+            azure_deployment=SETTINGS.provider.azure_deployment,
+            azure_api_version=SETTINGS.provider.azure_api_version,
+            max_retries=SETTINGS.openai.max_retries,
+            initial_backoff_seconds=SETTINGS.openai.initial_backoff_seconds,
         )
     except Exception as exc:
         row = {
@@ -394,7 +405,7 @@ def main() -> int:
             "sample_missing_table_cells": [],
         }
         write_outputs([row], model, settings)
-        print(f"OpenAI preflight failed: {exc}", flush=True)
+        print(f"Provider preflight failed: {exc}", flush=True)
         print(f"Wrote {JSON_PATH}")
         print(f"Wrote {CSV_PATH}")
         print(f"Wrote {REPORT_PATH}")
@@ -407,10 +418,19 @@ def main() -> int:
         timeout_seconds=args.timeout_seconds,
         scale=args.scale,
         response_format=args.response_format,
+        image_detail=args.image_detail,
+        provider=SETTINGS.provider.name,
+        api_key=SETTINGS.provider.api_key,
+        chat_completions_url=SETTINGS.provider.chat_completions_url,
+        azure_endpoint=SETTINGS.provider.azure_endpoint,
+        azure_deployment=SETTINGS.provider.azure_deployment,
+        azure_api_version=SETTINGS.provider.azure_api_version,
+        max_retries=SETTINGS.openai.max_retries,
+        initial_backoff_seconds=SETTINGS.openai.initial_backoff_seconds,
     )
     rows: list[dict[str, Any]] = []
     for case in cases:
-        print(f"Benchmarking OpenAI VLM {case['case_id']} {case['filename']} ...", flush=True)
+        print(f"Benchmarking provider VLM {case['case_id']} {case['filename']} ...", flush=True)
         row = benchmark_case(converter, case)
         rows.append(row)
         print(

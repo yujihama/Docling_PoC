@@ -8,6 +8,7 @@
     "The image-only case is intentionally difficult and should exercise IMAGE_RECONCILE/OCR paths.",
     "The image-layer stamp case keeps normal body text in the PDF text layer while stamp text exists only inside embedded raster images.",
     "The complex table case stresses multi-row headers, subtotal rows, multi-line cells, and conditional notes.",
+    "The vertical merged table case stresses real rowspan cells where inner horizontal borders are absent.",
     "The Excel-like long table case stresses tiny repeated headers across many landscape pages."
   ],
   "cases": [
@@ -496,6 +497,34 @@
         "merged-header",
         "subtotal",
         "financial-table"
+      ],
+      "source_url": null
+    },
+    {
+      "case_id": "V12",
+      "filename": "v12_vertical_merged_rowspan_table_1p.pdf",
+      "description": "Operational schedule with real vertical merged cells in the first column. The inner horizontal borders are absent inside each rowspan cell.",
+      "pages": 1,
+      "expected_anchors": [
+        "V12-FOOTNOTE-P01",
+        "V12-PROC-E01",
+        "V12-PROC-E02",
+        "V12-PROC-N01",
+        "V12-PROC-N02",
+        "V12-PROC-S01",
+        "V12-PROC-S02",
+        "V12-PROC-S03",
+        "V12-ROWSPAN-BOOK-P01",
+        "V12-ROWSPAN-CHECK",
+        "V12-ROWSPAN-EAST",
+        "V12-ROWSPAN-NORTH",
+        "V12-ROWSPAN-SOUTH"
+      ],
+      "tags": [
+        "complex-table",
+        "vertical-merge",
+        "rowspan",
+        "text-layer-table"
       ],
       "source_url": null
     },

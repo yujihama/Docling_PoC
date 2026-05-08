@@ -4,8 +4,11 @@ import base64
 import json
 import os
 import threading
+import time
+from dataclasses import dataclass
 from io import BytesIO
 from typing import Any
+from urllib.parse import quote
 
 import requests
 from docling.datamodel.base_models import (
@@ -23,17 +26,17 @@ from docling.models.inference_engines.vlm import api_openai_compatible_engine
 from docling.pipeline.vlm_pipeline import VlmPipeline
 
 
-DEFAULT_VLM_MAX_COMPLETION_TOKENS = int(
-    os.getenv("OPENAI_VLM_MAX_COMPLETION_TOKENS", "12000")
-)
-DEFAULT_VLM_REASONING_EFFORT = os.getenv("OPENAI_VLM_REASONING_EFFORT", "none")
-DEFAULT_VLM_TIMEOUT_SECONDS = float(os.getenv("OPENAI_VLM_TIMEOUT_SECONDS", "180"))
-DEFAULT_VLM_SCALE = float(os.getenv("OPENAI_VLM_SCALE", "2.0"))
-DEFAULT_VLM_PROMPT_VARIANT = os.getenv(
-    "OPENAI_VLM_PROMPT_VARIANT", "strict_preserve"
-)
-DEFAULT_VLM_IMAGE_DETAIL = os.getenv("OPENAI_VLM_IMAGE_DETAIL", "auto")
+DEFAULT_VLM_MAX_COMPLETION_TOKENS = 12000
+DEFAULT_VLM_REASONING_EFFORT = "none"
+DEFAULT_VLM_TIMEOUT_SECONDS = 180.0
+DEFAULT_VLM_SCALE = 2.0
+DEFAULT_VLM_PROMPT_VARIANT = "strict_preserve"
+DEFAULT_VLM_IMAGE_DETAIL = "auto"
+DEFAULT_OPENAI_MAX_RETRIES = 2
+DEFAULT_OPENAI_INITIAL_BACKOFF_SECONDS = 1.0
 OPENAI_CHAT_COMPLETIONS_URL = "https://api.openai.com/v1/chat/completions"
+DEFAULT_AZURE_OPENAI_API_VERSION = "2024-10-21"
+SUPPORTED_LLM_PROVIDERS = {"openai", "azure"}
 SUPPORTED_VLM_PROMPT_VARIANTS = {"strict_preserve", "table_first"}
 SUPPORTED_VLM_IMAGE_DETAILS = {"auto", "low", "high"}
 
@@ -86,6 +89,15 @@ _DOCLING_OPENAI_PATCHED = False
 _VLM_USAGE_LOCAL = threading.local()
 
 
+@dataclass(frozen=True)
+class LlmProviderRequest:
+    provider: str
+    url: str
+    headers: dict[str, str]
+    strip_model_from_payload: bool = False
+    display_model: str | None = None
+
+
 def _current_vlm_usage_events() -> list[dict[str, Any]]:
     events = getattr(_VLM_USAGE_LOCAL, "events", None)
     if events is None:
@@ -96,6 +108,85 @@ def _current_vlm_usage_events() -> list[dict[str, Any]]:
 
 def supports_reasoning_effort(model: str) -> bool:
     return model.startswith("gpt-5")
+
+
+def normalize_llm_provider(provider: str | None) -> str:
+    normalized = (provider or "openai").strip().lower()
+    if normalized not in SUPPORTED_LLM_PROVIDERS:
+        raise ValueError(f"Unsupported LLM provider: {provider}")
+    return normalized
+
+
+def azure_chat_completions_url(
+    *,
+    endpoint: str,
+    deployment: str,
+    api_version: str = DEFAULT_AZURE_OPENAI_API_VERSION,
+) -> str:
+    base = endpoint.rstrip("/")
+    deployment_path = quote(deployment, safe="")
+    return (
+        f"{base}/openai/deployments/{deployment_path}/chat/completions"
+        f"?api-version={api_version}"
+    )
+
+
+def resolve_llm_provider_request(
+    *,
+    provider: str | None = "openai",
+    api_key: str | None = None,
+    model: str | None = None,
+    chat_completions_url: str = OPENAI_CHAT_COMPLETIONS_URL,
+    azure_endpoint: str | None = None,
+    azure_deployment: str | None = None,
+    azure_api_version: str = DEFAULT_AZURE_OPENAI_API_VERSION,
+) -> LlmProviderRequest:
+    resolved_provider = normalize_llm_provider(provider)
+    if resolved_provider == "azure":
+        key = api_key or os.getenv("AZURE_OPENAI_API_KEY") or os.getenv("OPENAI_API_KEY")
+        if not key:
+            raise RuntimeError("AZURE_OPENAI_API_KEY is required for Azure OpenAI.")
+        endpoint = azure_endpoint or os.getenv("AZURE_OPENAI_ENDPOINT")
+        if not endpoint:
+            raise RuntimeError("AZURE_OPENAI_ENDPOINT is required for Azure OpenAI.")
+        deployment = (
+            azure_deployment
+            or os.getenv("AZURE_OPENAI_DEPLOYMENT")
+            or os.getenv("AZURE_OPENAI_CHAT_DEPLOYMENT")
+            or model
+        )
+        if not deployment:
+            raise RuntimeError("AZURE_OPENAI_DEPLOYMENT is required for Azure OpenAI.")
+        version = (
+            azure_api_version
+            or os.getenv("AZURE_OPENAI_API_VERSION")
+            or DEFAULT_AZURE_OPENAI_API_VERSION
+        )
+        return LlmProviderRequest(
+            provider="azure",
+            url=azure_chat_completions_url(
+                endpoint=endpoint,
+                deployment=deployment,
+                api_version=version,
+            ),
+            headers={"api-key": key, "Content-Type": "application/json"},
+            strip_model_from_payload=True,
+            display_model=deployment,
+        )
+
+    key = api_key or os.getenv("OPENAI_API_KEY")
+    if not key:
+        raise RuntimeError("OPENAI_API_KEY is required for OpenAI.")
+    return LlmProviderRequest(
+        provider="openai",
+        url=chat_completions_url,
+        headers={
+            "Authorization": f"Bearer {key}",
+            "Content-Type": "application/json",
+        },
+        strip_model_from_payload=False,
+        display_model=model,
+    )
 
 
 def resolve_response_format(response_format: str | ResponseFormat) -> ResponseFormat:
@@ -139,6 +230,42 @@ def prompt_for_response_format(
     if resolved_variant == "table_first":
         return f"{base_prompt.rstrip()}\n{suffix.strip()}\n"
     return base_prompt
+
+
+def _post_openai_json(
+    *,
+    url: str,
+    headers: dict[str, str],
+    payload: dict[str, Any],
+    timeout_seconds: float,
+    max_retries: int = DEFAULT_OPENAI_MAX_RETRIES,
+    initial_backoff_seconds: float = DEFAULT_OPENAI_INITIAL_BACKOFF_SECONDS,
+) -> requests.Response:
+    attempts = max(int(max_retries), 0) + 1
+    last_error: Exception | None = None
+    for attempt in range(attempts):
+        try:
+            response = requests.post(
+                url,
+                headers=headers,
+                json=payload,
+                timeout=timeout_seconds,
+            )
+        except requests.RequestException as exc:
+            last_error = exc
+            retryable = True
+        else:
+            retryable = response.status_code == 429 or response.status_code >= 500
+            if response.ok or not retryable or attempt == attempts - 1:
+                return response
+
+        if attempt == attempts - 1:
+            break
+        time.sleep(float(initial_backoff_seconds) * (2**attempt))
+
+    if last_error is not None:
+        raise RuntimeError(f"OpenAI API request failed after {attempts} attempt(s): {last_error}")
+    raise RuntimeError(f"OpenAI API request failed after {attempts} attempt(s).")
 
 
 def clear_vlm_usage_events() -> None:
@@ -199,6 +326,16 @@ def patch_docling_openai_gpt5_params() -> None:
         if should_drop_temperature(params):
             params.pop("temperature", None)
         image_detail = resolve_image_detail(params.pop("image_detail", None))
+        max_retries = int(params.pop("request_max_retries", DEFAULT_OPENAI_MAX_RETRIES))
+        initial_backoff_seconds = float(
+            params.pop(
+                "request_initial_backoff_seconds",
+                DEFAULT_OPENAI_INITIAL_BACKOFF_SECONDS,
+            )
+        )
+        request_provider = str(params.pop("request_provider", "openai"))
+        strip_model_from_payload = bool(params.pop("request_strip_model_from_payload", False))
+        display_model = params.pop("request_display_model", params.get("model"))
 
         img_io = BytesIO()
         image = image.copy().convert("RGBA")
@@ -222,12 +359,16 @@ def patch_docling_openai_gpt5_params() -> None:
             ],
             **params,
         }
+        if strip_model_from_payload:
+            payload.pop("model", None)
 
-        response = requests.post(
-            str(url),
+        response = _post_openai_json(
+            url=str(url),
             headers=headers or {},
-            json=payload,
-            timeout=timeout,
+            payload=payload,
+            timeout_seconds=timeout,
+            max_retries=max_retries,
+            initial_backoff_seconds=initial_backoff_seconds,
         )
         if not response.ok:
             try:
@@ -247,7 +388,8 @@ def patch_docling_openai_gpt5_params() -> None:
             usage_payload = usage.model_dump(mode="json")
         _current_vlm_usage_events().append(
             {
-                "model": params.get("model"),
+                "provider": request_provider,
+                "model": display_model,
                 "image_detail": image_detail,
                 "prompt_chars": len(prompt),
                 "generated_chars": len(generated_text),
@@ -264,6 +406,11 @@ def patch_docling_openai_gpt5_params() -> None:
     def patched_streaming_request(*args: Any, **kwargs: Any) -> Any:
         if should_drop_temperature(kwargs):
             kwargs.pop("temperature", None)
+        kwargs.pop("request_max_retries", None)
+        kwargs.pop("request_initial_backoff_seconds", None)
+        kwargs.pop("request_provider", None)
+        kwargs.pop("request_strip_model_from_payload", None)
+        kwargs.pop("request_display_model", None)
         return original_streaming_request(*args, **kwargs)
 
     api_openai_compatible_engine.api_image_request = patched_request
@@ -275,11 +422,24 @@ def check_openai_chat_access(
     model: str,
     reasoning_effort: str = DEFAULT_VLM_REASONING_EFFORT,
     timeout_seconds: float = 30,
+    chat_completions_url: str = OPENAI_CHAT_COMPLETIONS_URL,
+    provider: str = "openai",
+    api_key: str | None = None,
+    azure_endpoint: str | None = None,
+    azure_deployment: str | None = None,
+    azure_api_version: str = DEFAULT_AZURE_OPENAI_API_VERSION,
+    max_retries: int = DEFAULT_OPENAI_MAX_RETRIES,
+    initial_backoff_seconds: float = DEFAULT_OPENAI_INITIAL_BACKOFF_SECONDS,
 ) -> None:
-    api_key = os.getenv("OPENAI_API_KEY")
-    if not api_key:
-        raise RuntimeError("OPENAI_API_KEY is not set in .env.")
-
+    request = resolve_llm_provider_request(
+        provider=provider,
+        api_key=api_key,
+        model=model,
+        chat_completions_url=chat_completions_url,
+        azure_endpoint=azure_endpoint,
+        azure_deployment=azure_deployment,
+        azure_api_version=azure_api_version,
+    )
     params: dict[str, Any] = {
         "model": model,
         "messages": [{"role": "user", "content": "Reply with exactly OK."}],
@@ -287,15 +447,16 @@ def check_openai_chat_access(
     }
     if reasoning_effort and supports_reasoning_effort(model):
         params["reasoning_effort"] = reasoning_effort
+    if request.strip_model_from_payload:
+        params.pop("model", None)
 
-    response = requests.post(
-        OPENAI_CHAT_COMPLETIONS_URL,
-        headers={
-            "Authorization": f"Bearer {api_key}",
-            "Content-Type": "application/json",
-        },
-        json=params,
-        timeout=timeout_seconds,
+    response = _post_openai_json(
+        url=request.url,
+        headers=request.headers,
+        payload=params,
+        timeout_seconds=timeout_seconds,
+        max_retries=max_retries,
+        initial_backoff_seconds=initial_backoff_seconds,
     )
     if response.ok:
         return
@@ -306,7 +467,68 @@ def check_openai_chat_access(
         error = {"message": response.text}
     message = error.get("message", response.text)
     code = error.get("code") or error.get("type") or response.status_code
-    raise RuntimeError(f"OpenAI API preflight failed ({code}): {message}")
+    raise RuntimeError(f"{request.provider} API preflight failed ({code}): {message}")
+
+
+def chat_completion_text(
+    *,
+    model: str,
+    messages: list[dict[str, str]],
+    provider: str = "openai",
+    api_key: str | None = None,
+    chat_completions_url: str = OPENAI_CHAT_COMPLETIONS_URL,
+    azure_endpoint: str | None = None,
+    azure_deployment: str | None = None,
+    azure_api_version: str = DEFAULT_AZURE_OPENAI_API_VERSION,
+    max_completion_tokens: int = 1200,
+    reasoning_effort: str = DEFAULT_VLM_REASONING_EFFORT,
+    timeout_seconds: float = 60,
+    max_retries: int = DEFAULT_OPENAI_MAX_RETRIES,
+    initial_backoff_seconds: float = DEFAULT_OPENAI_INITIAL_BACKOFF_SECONDS,
+) -> str:
+    request = resolve_llm_provider_request(
+        provider=provider,
+        api_key=api_key,
+        model=model,
+        chat_completions_url=chat_completions_url,
+        azure_endpoint=azure_endpoint,
+        azure_deployment=azure_deployment,
+        azure_api_version=azure_api_version,
+    )
+    payload: dict[str, Any] = {
+        "model": model,
+        "messages": messages,
+        "max_completion_tokens": max_completion_tokens,
+    }
+    if reasoning_effort and supports_reasoning_effort(model):
+        payload["reasoning_effort"] = reasoning_effort
+    if request.strip_model_from_payload:
+        payload.pop("model", None)
+
+    response = _post_openai_json(
+        url=request.url,
+        headers=request.headers,
+        payload=payload,
+        timeout_seconds=timeout_seconds,
+        max_retries=max_retries,
+        initial_backoff_seconds=initial_backoff_seconds,
+    )
+    if not response.ok:
+        try:
+            error = response.json().get("error", {})
+        except Exception:
+            error = {"message": response.text}
+        message = error.get("message", response.text)
+        code = error.get("code") or error.get("type") or response.status_code
+        raise RuntimeError(f"{request.provider} API error ({code}): {message}")
+
+    data = response.json()
+    choices = data.get("choices") or []
+    if not choices:
+        return ""
+    message = choices[0].get("message") or {}
+    content = message.get("content")
+    return content.strip() if isinstance(content, str) else ""
 
 
 def build_openai_vlm_converter(
@@ -319,19 +541,37 @@ def build_openai_vlm_converter(
     prompt_variant: str = DEFAULT_VLM_PROMPT_VARIANT,
     image_detail: str | None = DEFAULT_VLM_IMAGE_DETAIL,
     max_size: int | None = None,
+    provider: str = "openai",
+    api_key: str | None = None,
+    chat_completions_url: str = OPENAI_CHAT_COMPLETIONS_URL,
+    azure_endpoint: str | None = None,
+    azure_deployment: str | None = None,
+    azure_api_version: str = DEFAULT_AZURE_OPENAI_API_VERSION,
+    max_retries: int = DEFAULT_OPENAI_MAX_RETRIES,
+    initial_backoff_seconds: float = DEFAULT_OPENAI_INITIAL_BACKOFF_SECONDS,
 ) -> DocumentConverter:
     patch_docling_openai_gpt5_params()
     resolved_response_format = resolve_response_format(response_format)
     resolved_prompt_variant = resolve_prompt_variant(prompt_variant)
     resolved_image_detail = resolve_image_detail(image_detail)
-
-    api_key = os.getenv("OPENAI_API_KEY")
-    if not api_key:
-        raise RuntimeError("OPENAI_API_KEY is not set in .env.")
+    request = resolve_llm_provider_request(
+        provider=provider,
+        api_key=api_key,
+        model=model,
+        chat_completions_url=chat_completions_url,
+        azure_endpoint=azure_endpoint,
+        azure_deployment=azure_deployment,
+        azure_api_version=azure_api_version,
+    )
 
     params: dict[str, Any] = {
         "model": model,
         "max_completion_tokens": max_completion_tokens,
+        "request_provider": request.provider,
+        "request_strip_model_from_payload": request.strip_model_from_payload,
+        "request_display_model": request.display_model or model,
+        "request_max_retries": max_retries,
+        "request_initial_backoff_seconds": initial_backoff_seconds,
     }
     if resolved_image_detail:
         params["image_detail"] = resolved_image_detail
@@ -340,7 +580,8 @@ def build_openai_vlm_converter(
 
     engine_options = ApiVlmEngineOptions(
         engine_type=VlmEngineType.API_OPENAI,
-        headers={"Authorization": f"Bearer {api_key}"},
+        url=request.url,
+        headers=request.headers,
         params=params,
         timeout=timeout_seconds,
         concurrency=1,
@@ -348,8 +589,8 @@ def build_openai_vlm_converter(
     vlm_options = VlmConvertOptions(
         engine_options=engine_options,
         model_spec=VlmModelSpec(
-            name=f"OpenAI {model}",
-            default_repo_id="openai",
+            name=f"{request.provider} {request.display_model or model}",
+            default_repo_id=request.provider,
             prompt=prompt_for_response_format(
                 resolved_response_format, resolved_prompt_variant
             ),

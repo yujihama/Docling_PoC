@@ -8,10 +8,13 @@ from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
-BENCHMARK_OUT_DIR = ROOT / "outputs" / "docling_benchmark"
+from settings import load_settings  # noqa: E402
+
+SETTINGS = load_settings()
+BENCHMARK_OUT_DIR = SETTINGS.outputs.benchmark_dir
 PDF_DIR = BENCHMARK_OUT_DIR / "pdfs"
 GT_PATH = BENCHMARK_OUT_DIR / "ground_truth.json"
-POC_RUNS_DIR = ROOT / "outputs" / "docling_poc_runs"
+POC_RUNS_DIR = SETTINGS.outputs.poc_runs_dir
 METRIC_FORMULA = (
     "0.35 * text_anchor_recall + 0.55 * table_cell_recall + "
     "0.10 * table_detection_ratio"

@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import json
 import random
+import sys
 import urllib.request
 from pathlib import Path
 from typing import Any
@@ -18,7 +19,12 @@ from reportlab.pdfgen import canvas
 
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT_DIR = ROOT / "outputs" / "pdf_validation_suite"
+sys.path.insert(0, str(ROOT))
+
+from settings import load_settings  # noqa: E402
+
+SETTINGS = load_settings()
+OUT_DIR = SETTINGS.outputs.root / "pdf_validation_suite"
 PDF_DIR = OUT_DIR / "pdfs"
 MANIFEST_PATH = OUT_DIR / "manifest.json"
 
@@ -952,6 +958,168 @@ def build_complex_structured_table(cases: list[dict[str, Any]]) -> None:
     )
 
 
+def build_vertical_merged_table(cases: list[dict[str, Any]]) -> None:
+    case_id = "V12"
+    filename = "v12_vertical_merged_rowspan_table_1p.pdf"
+    path = PDF_DIR / filename
+    page_size = landscape(A4)
+    c = make_canvas(path, page_size)
+    width, height = page_size
+    anchors: list[str] = []
+    x0 = 14 * mm
+    table_top = height - 46 * mm
+    row_height = 10 * mm
+    col_widths = [38, 34, 34, 32, 34, 76]
+    col_widths_pt = [value * mm for value in col_widths]
+    headers = ["Region", "Team", "Process ID", "Window", "Owner", "Escalation note"]
+    rows = [
+        {
+            "region": "North Region V12-ROWSPAN-NORTH",
+            "span": 2,
+            "team": "Ops A",
+            "process": "V12-PROC-N01",
+            "window": "08:00-10:00",
+            "owner": "Matsui",
+            "note": "review handoff / no missing-row text",
+        },
+        {
+            "team": "Ops B",
+            "process": "V12-PROC-N02",
+            "window": "10:00-12:00",
+            "owner": "Sato",
+            "note": "same region cell spans vertically",
+        },
+        {
+            "region": "South Region V12-ROWSPAN-SOUTH",
+            "span": 3,
+            "team": "Billing",
+            "process": "V12-PROC-S01",
+            "window": "12:30-14:00",
+            "owner": "Tanaka",
+            "note": "three-row merged region",
+        },
+        {
+            "team": "Credit",
+            "process": "V12-PROC-S02",
+            "window": "14:00-15:30",
+            "owner": "Kato",
+            "note": "middle row must not duplicate region",
+        },
+        {
+            "team": "Support",
+            "process": "V12-PROC-S03",
+            "window": "15:30-17:00",
+            "owner": "Yamada",
+            "note": "bottom row closes merged border",
+        },
+        {
+            "region": "East Region V12-ROWSPAN-EAST",
+            "span": 2,
+            "team": "QA",
+            "process": "V12-PROC-E01",
+            "window": "09:00-11:00",
+            "owner": "Ito",
+            "note": "second merged block on same page",
+        },
+        {
+            "team": "Release",
+            "process": "V12-PROC-E02",
+            "window": "11:00-13:00",
+            "owner": "Suzuki",
+            "note": "rowspan coverage check token V12-ROWSPAN-CHECK",
+        },
+    ]
+    anchors.extend(
+        [
+            "V12-ROWSPAN-NORTH",
+            "V12-ROWSPAN-SOUTH",
+            "V12-ROWSPAN-EAST",
+            "V12-ROWSPAN-CHECK",
+        ]
+    )
+    anchors.extend(str(row["process"]) for row in rows)
+
+    draw_header(c, "Vertical merged rowspan table", case_id, 1, 1, page_size)
+    c.setFont("Helvetica-Bold", 14)
+    c.setFillColor(colors.HexColor("#111827"))
+    c.drawString(x0, height - 30 * mm, "Rowspan operational schedule V12-ROWSPAN-BOOK-P01")
+    anchors.append("V12-ROWSPAN-BOOK-P01")
+    c.setFont("Helvetica", 7)
+    c.drawString(
+        x0,
+        height - 36 * mm,
+        "First column contains real vertical merged cells; inner horizontal borders are intentionally absent.",
+    )
+
+    y = table_top
+    left = x0
+    for col_width, header in zip(col_widths_pt, headers, strict=True):
+        draw_cell(
+            c,
+            left,
+            y - row_height,
+            col_width,
+            row_height,
+            header,
+            size=6.0,
+            fill=colors.HexColor("#CFD8DC"),
+            align="center",
+            bold=True,
+        )
+        left += col_width
+    y -= row_height
+
+    for row_index, row in enumerate(rows):
+        if "region" in row:
+            draw_cell(
+                c,
+                x0,
+                y - row_height * int(row["span"]),
+                col_widths_pt[0],
+                row_height * int(row["span"]),
+                str(row["region"]),
+                size=5.7,
+                fill=colors.HexColor("#E8EEF7"),
+                align="center",
+                bold=True,
+            )
+        left = x0 + col_widths_pt[0]
+        values = [row["team"], row["process"], row["window"], row["owner"], row["note"]]
+        for col_width, value in zip(col_widths_pt[1:], values, strict=True):
+            draw_cell(
+                c,
+                left,
+                y - row_height,
+                col_width,
+                row_height,
+                str(value),
+                size=5.5,
+                fill=colors.HexColor("#FAFAFA") if row_index % 2 else None,
+            )
+            left += col_width
+        y -= row_height
+
+    footer_anchor = "V12-FOOTNOTE-P01"
+    anchors.append(footer_anchor)
+    c.setFont("Helvetica", 6)
+    c.setFillColor(colors.HexColor("#455A64"))
+    c.drawString(x0, 24 * mm, f"{footer_anchor}: rowspan cells should be represented once with blank continuation cells.")
+    c.showPage()
+    c.save()
+    add_case(
+        cases,
+        case_id=case_id,
+        filename=filename,
+        description=(
+            "Operational schedule with real vertical merged cells in the first column. "
+            "The inner horizontal borders are absent inside each rowspan cell."
+        ),
+        pages=1,
+        expected_anchors=anchors,
+        tags=["complex-table", "vertical-merge", "rowspan", "text-layer-table"],
+    )
+
+
 def build_excel_long_table_pdf(cases: list[dict[str, Any]]) -> None:
     case_id = "V11"
     filename = "v11_excel_long_wide_ledger_6p.pdf"
@@ -1355,6 +1523,7 @@ def build_suite(skip_web: bool = False) -> dict[str, Any]:
     build_email_thread(cases)
     build_image_layer_stamps(cases)
     build_complex_structured_table(cases)
+    build_vertical_merged_table(cases)
     build_excel_long_table_pdf(cases)
     add_web_cases(cases, skip_download=skip_web)
     manifest = {
@@ -1367,6 +1536,7 @@ def build_suite(skip_web: bool = False) -> dict[str, Any]:
             "The image-only case is intentionally difficult and should exercise IMAGE_RECONCILE/OCR paths.",
             "The image-layer stamp case keeps normal body text in the PDF text layer while stamp text exists only inside embedded raster images.",
             "The complex table case stresses multi-row headers, subtotal rows, multi-line cells, and conditional notes.",
+            "The vertical merged table case stresses real rowspan cells where inner horizontal borders are absent.",
             "The Excel-like long table case stresses tiny repeated headers across many landscape pages.",
         ],
         "cases": cases,

@@ -4,14 +4,20 @@ import argparse
 import csv
 import json
 import re
+import sys
 from collections import Counter
 from pathlib import Path
 from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SUITE_DIR = ROOT / "outputs" / "pdf_validation_suite"
-RUNS_DIR = ROOT / "outputs" / "docling_routing_runs"
+sys.path.insert(0, str(ROOT))
+
+from settings import load_settings  # noqa: E402
+
+SETTINGS = load_settings()
+SUITE_DIR = SETTINGS.outputs.root / "pdf_validation_suite"
+RUNS_DIR = SETTINGS.outputs.routing_runs_dir
 
 
 def norm_text(value: str) -> str:

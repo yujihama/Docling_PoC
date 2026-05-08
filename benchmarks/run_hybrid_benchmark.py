@@ -15,8 +15,10 @@ from docling.document_converter import DocumentConverter
 from benchmarks.run_docling_benchmark import benchmark_case as benchmark_docling_case
 from benchmarks.run_openai_vlm_benchmark import benchmark_case as benchmark_vlm_case
 from docling_openai_vlm import build_openai_vlm_converter
+from settings import load_settings
 
-OUT_DIR = ROOT / "outputs" / "docling_benchmark"
+SETTINGS = load_settings()
+OUT_DIR = SETTINGS.outputs.benchmark_dir
 GT_PATH = OUT_DIR / "ground_truth.json"
 RESULTS_DIR = OUT_DIR / "results_hybrid"
 JSON_PATH = RESULTS_DIR / "hybrid_results.json"
@@ -29,7 +31,7 @@ def should_rerun_with_vlm(row: dict[str, Any], threshold: float) -> bool:
 
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(description="Run hybrid benchmark (Docling + selective VLM rerun).")
-    p.add_argument("--model", default="gpt-5.4-mini")
+    p.add_argument("--model", default=SETTINGS.models.table_vlm)
     p.add_argument("--threshold", type=float, default=0.75)
     p.add_argument("--limit", type=int, default=None)
     return p.parse_args()
@@ -52,7 +54,17 @@ def main() -> int:
         final_row = base_row
         if should_rerun_with_vlm(base_row, args.threshold):
             if vlm_converter is None:
-                vlm_converter = build_openai_vlm_converter(args.model)
+                vlm_converter = build_openai_vlm_converter(
+                    args.model,
+                    provider=SETTINGS.provider.name,
+                    api_key=SETTINGS.provider.api_key,
+                    chat_completions_url=SETTINGS.provider.chat_completions_url,
+                    azure_endpoint=SETTINGS.provider.azure_endpoint,
+                    azure_deployment=SETTINGS.provider.azure_deployment,
+                    azure_api_version=SETTINGS.provider.azure_api_version,
+                    max_retries=SETTINGS.openai.max_retries,
+                    initial_backoff_seconds=SETTINGS.openai.initial_backoff_seconds,
+                )
             vlm_row = benchmark_vlm_case(vlm_converter, case)
             if vlm_row.get("status") == "ok" and vlm_row.get("overall_score", 0.0) >= base_row.get("overall_score", 0.0):
                 final_row = vlm_row

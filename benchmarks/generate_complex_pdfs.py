@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import random
+import sys
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont, JpegImagePlugin
@@ -16,7 +17,12 @@ from reportlab.platypus import Paragraph, Table, TableStyle
 
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT_DIR = ROOT / "outputs" / "docling_benchmark"
+sys.path.insert(0, str(ROOT))
+
+from settings import load_settings  # noqa: E402
+
+SETTINGS = load_settings()
+OUT_DIR = SETTINGS.outputs.benchmark_dir
 PDF_DIR = OUT_DIR / "pdfs"
 GT_PATH = OUT_DIR / "ground_truth.json"
 

@@ -1,0 +1,68 @@
+[models]
+primary = "gpt-5.2"
+secondary = "gpt-5.4-mini"
+table_vlm = "gpt-5.4-mini"
+large_table_vlm = "gpt-5.4"
+reconcile_table_fallback = "gpt-5.4"
+
+[vlm]
+max_completion_tokens = 12000
+reasoning_effort = "none"
+timeout_seconds = 180.0
+scale = 2.0
+response_format = "markdown"
+prompt_variant = "strict_preserve"
+image_detail = "auto"
+
+[routing]
+reconcile_compare_mode = "ocr_vlm"
+text_chars_threshold = 200
+text_quality_threshold = 0.80
+table_text_quality_threshold = 0.70
+table_score_threshold = 0.40
+complex_table_score_threshold = 0.60
+image_area_threshold = 0.40
+enable_embedded_visual_append = true
+embedded_visual_min_area_ratio = 0.08
+embedded_visual_min_width_ratio = 0.30
+embedded_visual_min_height_ratio = 0.06
+embedded_visual_text_overlap_threshold = 0.05
+embedded_visual_complexity_threshold = 0.35
+embedded_visual_force_area_ratio = 0.25
+embedded_visual_crop_margin_points = 8.0
+parallel_reconcile_candidates = true
+max_parallel_table_groups = 2
+use_coordinate_table_reconstruction = false
+enable_table_vlm_fallback = false
+table_vlm_prompt_variant = "table_first"
+table_vlm_reasoning_effort = "none"
+enable_reconcile_table_fallback = true
+reconcile_table_fallback_prompt_variant = "table_first"
+reconcile_table_fallback_reasoning_effort = "none"
+enable_vlm_coordinate_quality_check = true
+enable_vlm_coordinate_auto_correct = true
+coordinate_min_span_coverage = 0.98
+coordinate_max_cell_chars = 160
+coordinate_max_cell_char_ratio = 8.0
+table_vlm_large_min_columns = 12
+table_vlm_large_min_area_ratio = 0.60
+
+[outputs]
+root = "outputs"
+routing_runs_subdir = "docling_routing_runs"
+benchmark_subdir = "docling_benchmark"
+poc_runs_subdir = "docling_poc_runs"
+save_outputs = true
+
+[runtime]
+max_llm_context_chars = 40000
+streamlit_port = 8501
+
+[provider]
+name = "openai"
+chat_completions_url = "https://api.openai.com/v1/chat/completions"
+azure_endpoint = ""
+azure_deployment = ""
+azure_api_version = "2024-10-21"
+max_retries = 2
+initial_backoff_seconds = 1.0

@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import os
 import tempfile
 from io import StringIO
 from pathlib import Path
@@ -9,25 +8,26 @@ from typing import Any, Literal
 import pandas as pd
 import streamlit as st
 from docling.document_converter import DocumentConverter
-from dotenv import load_dotenv
-from openai import OpenAI
 
-
-load_dotenv(override=True)
 
 from docling_openai_vlm import (
-    DEFAULT_VLM_MAX_COMPLETION_TOKENS,
-    DEFAULT_VLM_REASONING_EFFORT,
-    DEFAULT_VLM_SCALE,
-    DEFAULT_VLM_TIMEOUT_SECONDS,
     build_openai_vlm_converter,
     check_openai_chat_access,
+    chat_completion_text,
 )
 from routing_pipeline import RoutedPdfOptions, run_routed_pdf
+from settings import load_settings, settings_to_safe_dict
 
-DEFAULT_MODEL = os.getenv("OPENAI_MODEL", "gpt-5.2")
-DEFAULT_SECONDARY_MODEL = os.getenv("OPENAI_SECONDARY_MODEL", "gpt-5.4-mini")
-MAX_LLM_CONTEXT_CHARS = int(os.getenv("MAX_LLM_CONTEXT_CHARS", "40000"))
+SETTINGS = load_settings()
+SAFE_SETTINGS = settings_to_safe_dict(SETTINGS)
+DEFAULT_MODEL = SETTINGS.models.primary
+DEFAULT_SECONDARY_MODEL = SETTINGS.models.secondary
+DEFAULT_VLM_MAX_COMPLETION_TOKENS = SETTINGS.vlm.max_completion_tokens
+DEFAULT_VLM_REASONING_EFFORT = SETTINGS.vlm.reasoning_effort
+DEFAULT_VLM_TIMEOUT_SECONDS = SETTINGS.vlm.timeout_seconds
+DEFAULT_VLM_SCALE = SETTINGS.vlm.scale
+DEFAULT_VLM_IMAGE_DETAIL = SETTINGS.vlm.image_detail
+MAX_LLM_CONTEXT_CHARS = SETTINGS.runtime.max_llm_context_chars
 
 ConversionMode = Literal["standard", "openai_vlm", "routed"]
 ResponseFormatMode = Literal["markdown", "html"]
@@ -39,10 +39,31 @@ st.set_page_config(
 )
 
 
-def get_openai_client() -> OpenAI | None:
-    if not os.getenv("OPENAI_API_KEY"):
-        return None
-    return OpenAI()
+def llm_provider_kwargs() -> dict[str, Any]:
+    return {
+        "provider": SETTINGS.provider.name,
+        "api_key": SETTINGS.provider.api_key,
+        "chat_completions_url": SETTINGS.provider.chat_completions_url,
+        "azure_endpoint": SETTINGS.provider.azure_endpoint,
+        "azure_deployment": SETTINGS.provider.azure_deployment,
+        "azure_api_version": SETTINGS.provider.azure_api_version,
+    }
+
+
+def llm_config_error() -> str | None:
+    if not SETTINGS.provider.api_key:
+        key_name = (
+            "AZURE_OPENAI_API_KEY"
+            if SETTINGS.provider.name == "azure"
+            else "OPENAI_API_KEY"
+        )
+        return f"{key_name} is not configured."
+    if SETTINGS.provider.name == "azure":
+        if not SETTINGS.provider.azure_endpoint:
+            return "AZURE_OPENAI_ENDPOINT is not configured."
+        if not SETTINGS.provider.azure_deployment:
+            return "AZURE_OPENAI_DEPLOYMENT is not configured."
+    return None
 
 
 def build_converter(
@@ -53,15 +74,20 @@ def build_converter(
     timeout_seconds: float,
     scale: float,
     response_format: ResponseFormatMode,
+    image_detail: str | None,
 ) -> DocumentConverter:
     if mode == "openai_vlm":
         return build_openai_vlm_converter(
-            model,
-            max_completion_tokens,
-            reasoning_effort,
-            timeout_seconds,
-            scale,
-            response_format,
+            model=model,
+            max_completion_tokens=max_completion_tokens,
+            reasoning_effort=reasoning_effort,
+            timeout_seconds=timeout_seconds,
+            scale=scale,
+            response_format=response_format,
+            image_detail=image_detail,
+            **llm_provider_kwargs(),
+            max_retries=SETTINGS.openai.max_retries,
+            initial_backoff_seconds=SETTINGS.openai.initial_backoff_seconds,
         )
     return DocumentConverter()
 
@@ -77,6 +103,7 @@ def convert_pdf(
     timeout_seconds: float,
     scale: float,
     response_format: ResponseFormatMode,
+    image_detail: str | None,
 ) -> dict[str, Any]:
     suffix = Path(filename).suffix or ".pdf"
 
@@ -89,6 +116,14 @@ def convert_pdf(
                 model=model,
                 reasoning_effort=reasoning_effort,
                 timeout_seconds=min(timeout_seconds, 60),
+                chat_completions_url=SETTINGS.openai.chat_completions_url,
+                provider=SETTINGS.provider.name,
+                api_key=SETTINGS.provider.api_key,
+                azure_endpoint=SETTINGS.provider.azure_endpoint,
+                azure_deployment=SETTINGS.provider.azure_deployment,
+                azure_api_version=SETTINGS.provider.azure_api_version,
+                max_retries=SETTINGS.openai.max_retries,
+                initial_backoff_seconds=SETTINGS.openai.initial_backoff_seconds,
             )
 
         converter = build_converter(
@@ -99,6 +134,7 @@ def convert_pdf(
             timeout_seconds=timeout_seconds,
             scale=scale,
             response_format=response_format,
+            image_detail=image_detail,
         )
         result = converter.convert(input_path)
         document = result.document
@@ -120,7 +156,7 @@ def convert_pdf(
         markdown = document.export_to_markdown()
         if mode == "openai_vlm" and not markdown.strip():
             raise RuntimeError(
-                "OpenAI VLM returned no Markdown. Check the Streamlit log for the "
+                "VLM provider returned no Markdown. Check the Streamlit log for the "
                 "upstream API error; common causes are insufficient quota, an invalid "
                 "model name, or unsupported API parameters."
             )
@@ -154,19 +190,31 @@ def build_llm_context(markdown: str, tables: list[dict[str, Any]]) -> str:
     )
 
 
-def ask_llm(client: OpenAI, model: str, prompt: str, context: str) -> str:
-    response = client.responses.create(
+def ask_llm(model: str, prompt: str, context: str) -> str:
+    return chat_completion_text(
         model=model,
-        instructions=(
-            "You analyze PDF content extracted by Docling. "
-            "Answer in Japanese. Be precise about tables, column names, units, "
-            "and uncertainty. If the extracted context does not contain enough "
-            "information, say so clearly."
-        ),
-        input=f"{prompt}\n\n--- Extracted context ---\n{context}",
-        store=False,
+        messages=[
+            {
+                "role": "system",
+                "content": (
+                    "You analyze PDF content extracted by Docling. "
+                    "Answer in Japanese. Be precise about tables, column names, units, "
+                    "and uncertainty. If the extracted context does not contain enough "
+                    "information, say so clearly."
+                ),
+            },
+            {
+                "role": "user",
+                "content": f"{prompt}\n\n--- Extracted context ---\n{context}",
+            },
+        ],
+        max_completion_tokens=2000,
+        reasoning_effort=DEFAULT_VLM_REASONING_EFFORT,
+        timeout_seconds=min(float(DEFAULT_VLM_TIMEOUT_SECONDS), 60),
+        **llm_provider_kwargs(),
+        max_retries=SETTINGS.provider.max_retries,
+        initial_backoff_seconds=SETTINGS.provider.initial_backoff_seconds,
     )
-    return response.output_text
 
 
 st.title("Docling PDF Table Extractor")
@@ -175,24 +223,24 @@ with st.sidebar:
     st.header("Settings")
     conversion_label = st.radio(
         "Conversion pipeline",
-        ["Standard Docling", "OpenAI VLM", "Routed OCR/VLM Reconcile"],
+        ["Standard Docling", "Provider VLM", "Routed OCR/VLM Reconcile"],
         index=0,
         help=(
-            "OpenAI VLM sends rendered PDF page images to the OpenAI Chat Completions API "
-            "through Docling's VlmPipeline."
+            "Provider VLM sends rendered PDF page images to the configured "
+            "Chat Completions provider through Docling's VlmPipeline."
         ),
     )
-    if conversion_label == "OpenAI VLM":
+    if conversion_label == "Provider VLM":
         conversion_mode: ConversionMode = "openai_vlm"
     elif conversion_label == "Routed OCR/VLM Reconcile":
         conversion_mode = "routed"
     else:
         conversion_mode = "standard"
-    model = st.text_input("OpenAI model", value=DEFAULT_MODEL)
+    model = st.text_input("LLM model / Azure deployment", value=DEFAULT_MODEL)
 
     if conversion_mode in {"openai_vlm", "routed"}:
         st.caption(
-            "VLM settings are used by OpenAI VLM mode and by IMAGE_RECONCILE / IMAGE_RECONCILE_APPEND pages."
+            "VLM settings are used by provider VLM mode and by IMAGE_RECONCILE / IMAGE_RECONCILE_APPEND pages."
         )
         max_completion_tokens = st.number_input(
             "VLM max completion tokens",
@@ -234,10 +282,15 @@ with st.sidebar:
         force_reconcile_pages = ""
         enable_embedded_visual_append = True
         if conversion_mode == "routed":
+            default_compare_label = (
+                "VLM vs VLM"
+                if SETTINGS.routing.reconcile_compare_mode == "vlm_vlm"
+                else "OCR vs VLM"
+            )
             compare_label = st.selectbox(
                 "Reconcile comparison",
                 ["OCR vs VLM", "VLM vs VLM"],
-                index=0,
+                index=["OCR vs VLM", "VLM vs VLM"].index(default_compare_label),
                 help="Choose the source pair used for IMAGE_RECONCILE and embedded visual append pages.",
             )
             reconcile_compare_mode = (
@@ -246,9 +299,9 @@ with st.sidebar:
             secondary_model = DEFAULT_SECONDARY_MODEL
             if reconcile_compare_mode == "vlm_vlm":
                 secondary_model = st.text_input(
-                    "Secondary OpenAI model",
+                    "Secondary LLM model / Azure deployment",
                     value=DEFAULT_SECONDARY_MODEL,
-                    help="Compared against the primary OpenAI model above.",
+                    help="Compared against the primary LLM model above.",
                 )
             force_reconcile_pages = st.text_input(
                 "Force IMAGE_RECONCILE pages",
@@ -258,7 +311,7 @@ with st.sidebar:
             )
             enable_embedded_visual_append = st.checkbox(
                 "Detect embedded visual regions",
-                value=True,
+                value=SETTINGS.routing.enable_embedded_visual_append,
                 help=(
                     "When a text-layer page contains a large low-text-overlap visual region, "
                     "run an additional OCR/VLM reconciliation pass for that page."
@@ -266,20 +319,20 @@ with st.sidebar:
             )
             parallel_reconcile_candidates = st.checkbox(
                 "Parallel reconcile candidates",
-                value=True,
+                value=SETTINGS.routing.parallel_reconcile_candidates,
                 help="Run OCR/VLM or primary/secondary VLM candidates concurrently for each reconciled page.",
             )
             max_parallel_table_groups = st.number_input(
                 "Max parallel table groups",
                 min_value=1,
                 max_value=4,
-                value=2,
+                value=SETTINGS.routing.max_parallel_table_groups,
                 step=1,
                 help="Runs independent standard Docling table groups concurrently. Higher values use more CPU and memory.",
             )
             use_coordinate_table_reconstruction = st.checkbox(
                 "Coordinate grid reconstruction",
-                value=False,
+                value=SETTINGS.routing.use_coordinate_table_reconstruction,
                 help=(
                     "Try PDF line/text coordinates for text-table pages. "
                     "Column headers are not inferred; PDF grid rows are preserved under col_001, col_002, ..."
@@ -287,35 +340,44 @@ with st.sidebar:
             )
             enable_table_vlm_fallback = st.checkbox(
                 "Auto VLM fallback for tables",
-                value=False,
+                value=SETTINGS.routing.enable_table_vlm_fallback,
                 help=(
                     "When coordinate-grid reconstruction looks unreliable, rerun that page with "
-                    "a table-focused OpenAI VLM model."
+                    "a table-focused VLM provider model."
                 ),
             )
             table_vlm_model = st.text_input(
                 "Table VLM model",
-                value="gpt-5.4-mini",
+                value=SETTINGS.models.table_vlm,
                 help="Used for normal table VLM fallback.",
             )
             large_table_vlm_model = st.text_input(
                 "Large table VLM model",
-                value="gpt-5.4",
+                value=SETTINGS.models.large_table_vlm,
                 help="Used when the table is wide, dense, large, or coordinate collapse is detected.",
             )
             table_vlm_prompt_variant = st.selectbox(
                 "Table VLM prompt",
                 ["table_first", "strict_preserve"],
-                index=0,
+                index=["table_first", "strict_preserve"].index(
+                    SETTINGS.routing.table_vlm_prompt_variant
+                    if SETTINGS.routing.table_vlm_prompt_variant in {"table_first", "strict_preserve"}
+                    else "table_first"
+                ),
             )
             table_vlm_reasoning_effort = st.selectbox(
                 "Table VLM reasoning effort",
                 ["none", "low", "medium", "high", "xhigh"],
-                index=0,
+                index=["none", "low", "medium", "high", "xhigh"].index(
+                    SETTINGS.routing.table_vlm_reasoning_effort
+                    if SETTINGS.routing.table_vlm_reasoning_effort
+                    in {"none", "low", "medium", "high", "xhigh"}
+                    else "none"
+                ),
             )
             enable_reconcile_table_fallback = st.checkbox(
                 "Local table fallback on reconcile warnings",
-                value=True,
+                value=SETTINGS.routing.enable_reconcile_table_fallback,
                 help=(
                     "When OCR/VLM or VLM/VLM reconciliation creates unknown cells or "
                     "detects table-structure mismatch, rerun only the reconciled page/crop "
@@ -324,22 +386,32 @@ with st.sidebar:
             )
             reconcile_table_fallback_model = st.text_input(
                 "Reconcile table fallback model",
-                value="gpt-5.4",
+                value=SETTINGS.models.reconcile_table_fallback,
                 help="Used only after reconcile warnings such as unknown cells or column mismatch.",
             )
             reconcile_table_fallback_prompt_variant = st.selectbox(
                 "Reconcile table fallback prompt",
                 ["table_first", "strict_preserve"],
-                index=0,
+                index=["table_first", "strict_preserve"].index(
+                    SETTINGS.routing.reconcile_table_fallback_prompt_variant
+                    if SETTINGS.routing.reconcile_table_fallback_prompt_variant
+                    in {"table_first", "strict_preserve"}
+                    else "table_first"
+                ),
             )
             reconcile_table_fallback_reasoning_effort = st.selectbox(
                 "Reconcile table fallback reasoning effort",
                 ["none", "low", "medium", "high", "xhigh"],
-                index=0,
+                index=["none", "low", "medium", "high", "xhigh"].index(
+                    SETTINGS.routing.reconcile_table_fallback_reasoning_effort
+                    if SETTINGS.routing.reconcile_table_fallback_reasoning_effort
+                    in {"none", "low", "medium", "high", "xhigh"}
+                    else "none"
+                ),
             )
             enable_vlm_coordinate_quality_check = st.checkbox(
                 "Validate table VLM with coordinate evidence",
-                value=True,
+                value=SETTINGS.routing.enable_vlm_coordinate_quality_check,
                 help=(
                     "For TEXT_TABLE_VLM pages, compare VLM critical values with "
                     "coordinate-grid extraction and fallback or mask unsupported values."
@@ -347,7 +419,7 @@ with st.sidebar:
             )
             enable_vlm_coordinate_auto_correct = st.checkbox(
                 "Auto-correct table VLM cells from coordinates",
-                value=True,
+                value=SETTINGS.routing.enable_vlm_coordinate_auto_correct,
                 help=(
                     "Only corrects uniquely aligned numeric cells where coordinate evidence "
                     "identifies a single replacement value."
@@ -361,22 +433,22 @@ with st.sidebar:
         timeout_seconds = DEFAULT_VLM_TIMEOUT_SECONDS
         vlm_scale = DEFAULT_VLM_SCALE
         force_reconcile_pages = ""
-        enable_embedded_visual_append = True
-        parallel_reconcile_candidates = True
-        max_parallel_table_groups = 2
-        use_coordinate_table_reconstruction = False
-        enable_table_vlm_fallback = False
-        table_vlm_model = "gpt-5.4-mini"
-        large_table_vlm_model = "gpt-5.4"
-        table_vlm_prompt_variant = "table_first"
-        table_vlm_reasoning_effort = "none"
-        enable_reconcile_table_fallback = True
-        reconcile_table_fallback_model = "gpt-5.4"
-        reconcile_table_fallback_prompt_variant = "table_first"
-        reconcile_table_fallback_reasoning_effort = "none"
-        enable_vlm_coordinate_quality_check = True
-        enable_vlm_coordinate_auto_correct = True
-        reconcile_compare_mode = "ocr_vlm"
+        enable_embedded_visual_append = SETTINGS.routing.enable_embedded_visual_append
+        parallel_reconcile_candidates = SETTINGS.routing.parallel_reconcile_candidates
+        max_parallel_table_groups = SETTINGS.routing.max_parallel_table_groups
+        use_coordinate_table_reconstruction = SETTINGS.routing.use_coordinate_table_reconstruction
+        enable_table_vlm_fallback = SETTINGS.routing.enable_table_vlm_fallback
+        table_vlm_model = SETTINGS.models.table_vlm
+        large_table_vlm_model = SETTINGS.models.large_table_vlm
+        table_vlm_prompt_variant = SETTINGS.routing.table_vlm_prompt_variant
+        table_vlm_reasoning_effort = SETTINGS.routing.table_vlm_reasoning_effort
+        enable_reconcile_table_fallback = SETTINGS.routing.enable_reconcile_table_fallback
+        reconcile_table_fallback_model = SETTINGS.models.reconcile_table_fallback
+        reconcile_table_fallback_prompt_variant = SETTINGS.routing.reconcile_table_fallback_prompt_variant
+        reconcile_table_fallback_reasoning_effort = SETTINGS.routing.reconcile_table_fallback_reasoning_effort
+        enable_vlm_coordinate_quality_check = SETTINGS.routing.enable_vlm_coordinate_quality_check
+        enable_vlm_coordinate_auto_correct = SETTINGS.routing.enable_vlm_coordinate_auto_correct
+        reconcile_compare_mode = SETTINGS.routing.reconcile_compare_mode
         secondary_model = DEFAULT_SECONDARY_MODEL
 
 uploaded_file = st.file_uploader("Upload a PDF", type=["pdf"])
@@ -385,9 +457,11 @@ if uploaded_file is None:
     st.info("Upload a PDF to extract Markdown and tables with the selected pipeline.")
     st.stop()
 
-if conversion_mode == "openai_vlm" and not os.getenv("OPENAI_API_KEY"):
-    st.error("OPENAI_API_KEY is not set in .env. VLM mode requires an OpenAI API key.")
-    st.stop()
+if conversion_mode == "openai_vlm":
+    error = llm_config_error()
+    if error:
+        st.error(f"{SETTINGS.provider.name} provider is not configured: {error}")
+        st.stop()
 
 pdf_bytes = uploaded_file.getvalue()
 
@@ -428,7 +502,8 @@ if conversion_mode == "routed":
                 input_path.write_bytes(pdf_bytes)
                 routed = run_routed_pdf(
                     input_path,
-                    options=RoutedPdfOptions(
+                    options=RoutedPdfOptions.from_settings(
+                        SETTINGS,
                         model=model,
                         reconcile_compare_mode=reconcile_compare_mode,
                         secondary_model=secondary_model,
@@ -453,8 +528,22 @@ if conversion_mode == "routed":
                         reconcile_table_fallback_reasoning_effort=reconcile_table_fallback_reasoning_effort,
                         enable_vlm_coordinate_quality_check=enable_vlm_coordinate_quality_check,
                         enable_vlm_coordinate_auto_correct=enable_vlm_coordinate_auto_correct,
+                        vlm_image_detail=DEFAULT_VLM_IMAGE_DETAIL,
+                        output_root=str(SETTINGS.outputs.root),
+                        routing_runs_subdir=SETTINGS.outputs.routing_runs_subdir,
+                        llm_provider=SETTINGS.provider.name,
+                        llm_api_key=SETTINGS.provider.api_key,
+                        openai_chat_completions_url=SETTINGS.openai.chat_completions_url,
+                        azure_openai_endpoint=SETTINGS.provider.azure_endpoint,
+                        azure_openai_deployment=SETTINGS.provider.azure_deployment,
+                        azure_openai_api_version=SETTINGS.provider.azure_api_version,
+                        openai_max_retries=SETTINGS.openai.max_retries,
+                        openai_initial_backoff_seconds=SETTINGS.openai.initial_backoff_seconds,
+                        resolved_settings=SAFE_SETTINGS,
+                        config_sources=list(SETTINGS.config_sources),
+                        invocation="streamlit_app",
                         force_reconcile_pages=parse_page_ranges(force_reconcile_pages),
-                        save_outputs=True,
+                        save_outputs=SETTINGS.outputs.save_outputs,
                     ),
                     progress_callback=lambda message: progress_placeholder.info(message),
                 )
@@ -554,9 +643,9 @@ if conversion_mode == "routed":
                     st.dataframe(dataframe, use_container_width=True)
 
     with tab_llm:
-        client = get_openai_client()
-        if client is None:
-            st.warning("Set OPENAI_API_KEY in .env to summarize or ask questions.")
+        error = llm_config_error()
+        if error:
+            st.warning(f"{SETTINGS.provider.name} provider is not configured: {error}")
             st.stop()
 
         context = build_llm_context(markdown, tables)
@@ -565,7 +654,6 @@ if conversion_mode == "routed":
             if st.button("Generate Summary", use_container_width=True):
                 with st.spinner(f"Summarizing with {model}..."):
                     answer = ask_llm(
-                        client,
                         model,
                         "文書全体を要約し、検出された表の内容を箇条書きで説明してください。",
                         context,
@@ -584,12 +672,12 @@ if conversion_mode == "routed":
                 st.warning("Enter a question first.")
             else:
                 with st.spinner(f"Answering with {model}..."):
-                    answer = ask_llm(client, model, question.strip(), context)
+                    answer = ask_llm(model, question.strip(), context)
                 st.markdown(answer)
     st.stop()
 
 spinner_text = (
-    f"Converting with OpenAI VLM ({model}). This sends rendered PDF page images to OpenAI..."
+    f"Converting with VLM ({model}) via {SETTINGS.provider.name}..."
     if conversion_mode == "openai_vlm"
     else "Converting with standard Docling..."
 )
@@ -605,6 +693,7 @@ with st.spinner(spinner_text):
             float(timeout_seconds),
             float(vlm_scale),
             response_format,
+            DEFAULT_VLM_IMAGE_DETAIL,
         )
     except Exception as exc:
         st.error("PDF conversion failed.")
@@ -618,7 +707,7 @@ summary_cols = st.columns(4)
 summary_cols[0].metric("Markdown chars", f"{len(markdown):,}")
 summary_cols[1].metric("Tables", extracted["table_count"])
 summary_cols[2].metric("File size", f"{len(pdf_bytes) / 1024 / 1024:.2f} MB")
-summary_cols[3].metric("Pipeline", "OpenAI VLM" if conversion_mode == "openai_vlm" else "Standard")
+summary_cols[3].metric("Pipeline", "VLM" if conversion_mode == "openai_vlm" else "Standard")
 
 tab_markdown, tab_tables, tab_llm = st.tabs(["Markdown", "Tables", "Ask GPT"])
 
@@ -657,9 +746,9 @@ with tab_tables:
             )
 
 with tab_llm:
-    client = get_openai_client()
-    if client is None:
-        st.warning("Set OPENAI_API_KEY in .env to summarize or ask questions.")
+    error = llm_config_error()
+    if error:
+        st.warning(f"{SETTINGS.provider.name} provider is not configured: {error}")
         st.stop()
 
     context = build_llm_context(markdown, tables)
@@ -669,7 +758,6 @@ with tab_llm:
         if st.button("Generate Summary", use_container_width=True):
             with st.spinner(f"Summarizing with {model}..."):
                 answer = ask_llm(
-                    client,
                     model,
                     "文書全体を要約し、検出された表の内容を箇条書きで説明してください。",
                     context,
@@ -689,5 +777,5 @@ with tab_llm:
             st.warning("Enter a question first.")
         else:
             with st.spinner(f"Answering with {model}..."):
-                answer = ask_llm(client, model, question.strip(), context)
+                answer = ask_llm(model, question.strip(), context)
             st.markdown(answer)
